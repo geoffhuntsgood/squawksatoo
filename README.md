@@ -14,7 +14,7 @@ Once a layer is selected, two more options appear.
 
 **Include these:** This section shows several categories of banana, all of which are enabled by default. Click any of them to exclude them from the banana pool. For example, deselecting "Battle" will mean that no Battle Stages will be considered for the random selection.
 
-**How many:** The number of bananas to generate, with a maximum of 5. Choosing this will automatically generate a list of bananas.
+**How many:** The number of bananas to generate, with a maximum of 5.
 
 ## Navigating the Generated List
 
