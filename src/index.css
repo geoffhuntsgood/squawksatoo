@@ -1,11 +1,42 @@
 @font-face {
-  font-family: Honk;
-  src: url("./font/Honk.ttf");
+  font-family: Jersey10;
+  src: url("./font/Jersey10.ttf");
 }
 
-@font-face {
-  font-family: LuckiestGuy;
-  src: url("./font/LuckiestGuy.ttf");
+@keyframes pauseTimer {
+  0% {
+    color: white;
+  }
+  50% {
+    color: #0d47a1;
+  }
+  100% {
+    color: white;
+  }
+}
+
+@keyframes wrongCounter {
+  0% {
+    color: white;
+  }
+  50% {
+    color: #b71c1c;
+  }
+  100% {
+    color: white;
+  }
+}
+
+@keyframes rightCounter {
+  0% {
+    color: white;
+  }
+  50% {
+    color: #1b5e20;
+  }
+  100% {
+    color: white;
+  }
 }
 
 :root {
@@ -15,10 +46,6 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  margin: 20vh auto 0 auto;
 }
 
 ::-webkit-scrollbar {

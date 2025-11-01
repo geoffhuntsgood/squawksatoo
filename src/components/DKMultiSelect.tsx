@@ -1,4 +1,5 @@
 import {
+  Checkbox,
   FormControl,
   InputLabel,
   MenuItem,
@@ -6,14 +7,14 @@ import {
   type SelectChangeEvent
 } from "@mui/material";
 
-export const DKSelect = ({
+export const DKMutliSelect = ({
   label,
-  value,
+  values,
   handleChange,
   selectItems
 }: {
   label: string;
-  value: string;
+  values: string[];
   handleChange: Function;
   selectItems: string[];
 }) => {
@@ -35,19 +36,33 @@ export const DKSelect = ({
     }
   };
 
+  const handle = (event: SelectChangeEvent<typeof values>) => {
+    const {
+      target: { value }
+    } = event;
+    if (value.includes("all")) {
+      handleChange(values.length > 0 ? [] : [...selectItems]);
+    } else {
+      handleChange(typeof value === "string" ? value.split(",") : value);
+    }
+  };
+
   return (
     <FormControl fullWidth>
       <InputLabel>{label}</InputLabel>
       <Select
-        value={value}
-        label={label}
-        onChange={(event: SelectChangeEvent) =>
-          handleChange(event.target.value)
-        }
+        multiple
+        value={values}
+        onChange={handle}
         inputProps={styles.menu}
+        renderValue={(selected) => selected.join(", ")}
       >
+        <MenuItem value="all">Select/Deselect All</MenuItem>
         {selectItems.map((item: string) => (
-          <MenuItem value={item}>{item}</MenuItem>
+          <MenuItem value={item}>
+            <Checkbox checked={values.includes(item)} />
+            {item}
+          </MenuItem>
         ))}
       </Select>
     </FormControl>
