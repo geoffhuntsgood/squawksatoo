@@ -18,6 +18,9 @@ The app will start by displaying a set of settings.
 
 **Auto-refresh:** If selected, marking a banana as complete on the next page will automatically replace that banana with a new one, until all bananas have been marked as complete.
 
+**Recycle wrong bananas:** If selected, marking a banana wrong on the next page will "recycle" that banana back into the pool for re-selection later.
+This is only available when Auto-refresh is checked.
+
 **Get Button:** Displays the number of bananas you want to select out of the total number of available bananas based on the current configuration. Clicking this button starts the game!
 
 ## Navigating the Generated List

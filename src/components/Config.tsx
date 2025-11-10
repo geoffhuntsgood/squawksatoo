@@ -99,11 +99,13 @@ export const Config = ({
         checked={continuous}
         handleChange={setContinuous}
       />
-      <DKCheckbox
-        label="Recycle wrong bananas?"
-        checked={recycle}
-        handleChange={setRecycle}
-      />
+      {continuous && (
+        <DKCheckbox
+          label="Recycle wrong bananas?"
+          checked={recycle}
+          handleChange={setRecycle}
+        />
+      )}
       {layerBananas.length > 0 && (
         <DKButton
           label={`Get ${count} out of ${layerBananas.length}`}
