@@ -5,6 +5,7 @@ import {
   Select,
   type SelectChangeEvent
 } from "@mui/material";
+import type { Dispatch, SetStateAction } from "react";
 
 export const DKSelect = ({
   label,
@@ -14,7 +15,7 @@ export const DKSelect = ({
 }: {
   label: string;
   value: string;
-  handleChange: Function;
+  handleChange: Dispatch<SetStateAction<string>>;
   selectItems: string[];
 }) => {
   const styles = {
@@ -36,20 +37,24 @@ export const DKSelect = ({
   };
 
   return (
-    <FormControl fullWidth>
-      <InputLabel>{label}</InputLabel>
-      <Select
-        value={value}
-        label={label}
-        onChange={(event: SelectChangeEvent) =>
-          handleChange(event.target.value)
-        }
-        inputProps={styles.menu}
-      >
-        {selectItems.map((item: string) => (
-          <MenuItem value={item}>{item}</MenuItem>
-        ))}
-      </Select>
-    </FormControl>
+    <>
+      {selectItems.length > 0 && (
+        <FormControl fullWidth>
+          <InputLabel>{label}</InputLabel>
+          <Select
+            value={value}
+            label={label}
+            onChange={(event: SelectChangeEvent) =>
+              handleChange(event.target.value)
+            }
+            inputProps={styles.menu}
+          >
+            {selectItems.map((item: string) => (
+              <MenuItem value={item}>{item}</MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+      )}
+    </>
   );
 };

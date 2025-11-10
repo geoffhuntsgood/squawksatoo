@@ -7,13 +7,10 @@ import { theme } from "./utils/theme";
 
 const App = () => {
   const [count, setCount] = useState("1");
-  const [background, setBackground] = useState("");
   const [layerBananas, setLayerBananas] = useState<Banana[]>([]);
   const [playing, setPlaying] = useState(false);
   const [timer, setTimer] = useState(false);
   const [continuous, setContinuous] = useState(true);
-
-  console.log(background);
 
   return (
     <ThemeProvider theme={theme}>
@@ -21,7 +18,6 @@ const App = () => {
         <Config
           layerBananas={layerBananas}
           setLayerBananas={setLayerBananas}
-          setBackground={setBackground}
           setPlaying={setPlaying}
           count={count}
           setCount={setCount}

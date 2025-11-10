@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import type { Banana } from "../classes/Banana";
 import { Category, LayerName } from "../enums";
 import { getNansAndCatsForLayer, getNansByCat } from "../utils/api";
@@ -12,7 +12,6 @@ import { DKSelect } from "./DKSelect";
 export const Config = ({
   layerBananas,
   setLayerBananas,
-  setBackground,
   setPlaying,
   count,
   setCount,
@@ -22,17 +21,16 @@ export const Config = ({
   setContinuous
 }: {
   layerBananas: Banana[];
-  setLayerBananas: Function;
-  setBackground: Function;
-  setPlaying: Function;
+  setLayerBananas: Dispatch<SetStateAction<Banana[]>>;
+  setPlaying: Dispatch<SetStateAction<boolean>>;
   count: string;
-  setCount: Function;
+  setCount: Dispatch<SetStateAction<string>>;
   timer: boolean;
-  setTimer: Function;
+  setTimer: Dispatch<SetStateAction<boolean>>;
   continuous: boolean;
-  setContinuous: Function;
+  setContinuous: Dispatch<SetStateAction<boolean>>;
 }) => {
-  const [layer, setLayer] = useState(LayerName.Ingot);
+  const [layer, setLayer] = useState(LayerName.Ingot as string);
   const [includePostgame, setIncludePostgame] = useState(false);
   const [categories, setCategories] = useState<Category[]>([]);
   const [selectedCategories, setSelectedCategories] = useState<Category[]>([]);
@@ -48,19 +46,18 @@ export const Config = ({
 
   useEffect(() => {
     if (layer) {
-      const nc = getNansAndCatsForLayer(layer, includePostgame);
+      const nc = getNansAndCatsForLayer(layer as LayerName, includePostgame);
       setCategories(nc.categories);
       setSelectedCategories(nc.categories);
-      setBackground(nc.image);
       const initialNans = getNansByCat(nc.bananas, nc.categories);
       setLayerBananas(initialNans);
     }
-  }, [layer, includePostgame]);
+  }, [layer, includePostgame, setLayerBananas]);
 
   useEffect(() => {
-    const nc = getNansAndCatsForLayer(layer, includePostgame);
+    const nc = getNansAndCatsForLayer(layer as LayerName, includePostgame);
     setLayerBananas(getNansByCat(nc.bananas, selectedCategories));
-  }, [selectedCategories]);
+  }, [selectedCategories, includePostgame, layer, setLayerBananas]);
 
   return (
     <Grid container spacing={1}>

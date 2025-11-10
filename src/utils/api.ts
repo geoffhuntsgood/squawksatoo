@@ -6,7 +6,7 @@ import { allLayers } from "../layers";
 export const getNansAndCatsForLayer = (
   layerName: LayerName,
   includePostgame: boolean
-): { bananas: Banana[]; categories: Category[]; image: string } => {
+): { bananas: Banana[]; categories: Category[] } => {
   const layer = allLayers.filter((l: Layer) => l.name === layerName)[0];
 
   return {
@@ -15,8 +15,7 @@ export const getNansAndCatsForLayer = (
       : [...layer.bananas],
     categories: includePostgame
       ? [...layer.categories, ...layer.postgameCategories]
-      : [...layer.categories],
-    image: `/img/layers/${layerName.toString().toLowerCase()}.jpg`
+      : [...layer.categories]
   };
 };
 

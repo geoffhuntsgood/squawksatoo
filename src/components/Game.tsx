@@ -1,5 +1,5 @@
 import { Button, Grid, Typography } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import { useReward } from "react-rewards";
 import { useStopwatch } from "react-timer-hook";
 import { Banana } from "../classes/Banana";
@@ -16,9 +16,9 @@ export const Game = ({
   continuous
 }: {
   layerBananas: Banana[];
-  setPlaying: Function;
+  setPlaying: Dispatch<SetStateAction<boolean>>;
   count: string;
-  setCount: Function;
+  setCount: Dispatch<SetStateAction<string>>;
   timer: boolean;
   continuous: boolean;
 }) => {
@@ -121,6 +121,7 @@ export const Game = ({
 
   useEffect(() => {
     initSelection();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -140,6 +141,7 @@ export const Game = ({
         }
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [disabled]);
 
   const styles = {

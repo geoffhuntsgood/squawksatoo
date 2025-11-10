@@ -6,6 +6,8 @@ import {
   Select,
   type SelectChangeEvent
 } from "@mui/material";
+import type { Dispatch, SetStateAction } from "react";
+import type { Category } from "../enums";
 
 export const DKMutliSelect = ({
   label,
@@ -15,7 +17,7 @@ export const DKMutliSelect = ({
 }: {
   label: string;
   values: string[];
-  handleChange: Function;
+  handleChange: Dispatch<SetStateAction<Category[]>>;
   selectItems: string[];
 }) => {
   const styles = {
@@ -41,9 +43,13 @@ export const DKMutliSelect = ({
       target: { value }
     } = event;
     if (value.includes("all")) {
-      handleChange(values.length > 0 ? [] : [...selectItems]);
+      handleChange(values.length > 0 ? [] : [...(selectItems as Category[])]);
     } else {
-      handleChange(typeof value === "string" ? value.split(",") : value);
+      handleChange(
+        typeof value === "string"
+          ? (value.split(",") as Category[])
+          : (value as Category[])
+      );
     }
   };
 

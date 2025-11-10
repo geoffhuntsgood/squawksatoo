@@ -1,5 +1,5 @@
 import { Checkbox, FormControlLabel, Typography } from "@mui/material";
-import type { ChangeEvent } from "react";
+import type { ChangeEvent, Dispatch, SetStateAction } from "react";
 
 export const DKCheckbox = ({
   label,
@@ -8,7 +8,7 @@ export const DKCheckbox = ({
 }: {
   label: string;
   checked: boolean;
-  handleChange: Function;
+  handleChange: Dispatch<SetStateAction<boolean>>;
 }) => (
   <FormControlLabel
     label={
