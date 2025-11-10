@@ -11,6 +11,7 @@ const App = () => {
   const [playing, setPlaying] = useState(false);
   const [timer, setTimer] = useState(false);
   const [continuous, setContinuous] = useState(true);
+  const [recycle, setRecycle] = useState(false);
 
   return (
     <ThemeProvider theme={theme}>
@@ -25,6 +26,8 @@ const App = () => {
           setTimer={setTimer}
           continuous={continuous}
           setContinuous={setContinuous}
+          recycle={recycle}
+          setRecycle={setRecycle}
         />
       )}
       {playing && (
@@ -35,6 +38,7 @@ const App = () => {
           setCount={setCount}
           timer={timer}
           continuous={continuous}
+          recycle={recycle}
         />
       )}
     </ThemeProvider>

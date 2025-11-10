@@ -18,7 +18,9 @@ export const Config = ({
   timer,
   setTimer,
   continuous,
-  setContinuous
+  setContinuous,
+  recycle,
+  setRecycle
 }: {
   layerBananas: Banana[];
   setLayerBananas: Dispatch<SetStateAction<Banana[]>>;
@@ -29,6 +31,8 @@ export const Config = ({
   setTimer: Dispatch<SetStateAction<boolean>>;
   continuous: boolean;
   setContinuous: Dispatch<SetStateAction<boolean>>;
+  recycle: boolean;
+  setRecycle: Dispatch<SetStateAction<boolean>>;
 }) => {
   const [layer, setLayer] = useState(LayerName.Ingot as string);
   const [includePostgame, setIncludePostgame] = useState(false);
@@ -94,6 +98,11 @@ export const Config = ({
         label="Auto-refresh?"
         checked={continuous}
         handleChange={setContinuous}
+      />
+      <DKCheckbox
+        label="Recycle wrong bananas?"
+        checked={recycle}
+        handleChange={setRecycle}
       />
       {layerBananas.length > 0 && (
         <DKButton

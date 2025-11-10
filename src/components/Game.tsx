@@ -13,7 +13,8 @@ export const Game = ({
   count,
   setCount,
   timer,
-  continuous
+  continuous,
+  recycle
 }: {
   layerBananas: Banana[];
   setPlaying: Dispatch<SetStateAction<boolean>>;
@@ -21,6 +22,7 @@ export const Game = ({
   setCount: Dispatch<SetStateAction<string>>;
   timer: boolean;
   continuous: boolean;
+  recycle: boolean;
 }) => {
   const [header, setHeader] = useState("");
   const [available, setAvailable] = useState<Banana[]>([]);
@@ -75,14 +77,25 @@ export const Game = ({
     setDisabled(dis);
   };
 
-  const replaceOne = (displayIndex: number) => {
+  const replaceOne = (displayIndex: number, success: boolean) => {
     const nans = [...available];
     const shown = [...displayed];
+    const origin = shown[displayIndex];
 
     if (nans.length > 0) {
       const index = Math.floor(Math.random() * nans.length);
       shown.splice(displayIndex, 1, nans[index]);
-      nans.splice(index, 1);
+
+      if (recycle) {
+        if (success) {
+          nans.splice(index, 1);
+        } else {
+          nans.splice(index, 1, origin);
+        }
+      } else {
+        nans.splice(index, 1);
+      }
+
       markDisabled(displayIndex, "false");
       setAvailable(nans);
       setDisplayed(shown);
@@ -91,9 +104,9 @@ export const Game = ({
     }
   };
 
-  const onSuccess = (index: number) => {
+  const onComplete = (index: number, success: boolean) => {
     if (continuous) {
-      replaceOne(index);
+      replaceOne(index, success);
     } else {
       markDisabled(index, "true");
     }
@@ -101,7 +114,7 @@ export const Game = ({
 
   const onFailure = (index: number) => {
     setFailureCount(failureCount + 1);
-    onSuccess(index);
+    onComplete(index, false);
   };
 
   const refresh = () => {
@@ -180,7 +193,7 @@ export const Game = ({
             <DKItemRow
               key={index}
               name={banana.name}
-              onSuccess={() => onSuccess(index)}
+              onSuccess={() => onComplete(index, true)}
               onFailure={() => onFailure(index)}
               disabled={disabled[index] === "true"}
             />
