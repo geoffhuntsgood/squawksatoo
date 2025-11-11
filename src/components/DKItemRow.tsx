@@ -1,5 +1,4 @@
-import { Cancel, CheckCircle } from "@mui/icons-material";
-import { colors, Grid, IconButton, Typography } from "@mui/material";
+import { Button, colors, Grid, Typography } from "@mui/material";
 import type { MouseEventHandler } from "react";
 
 export const DKItemRow = ({
@@ -18,21 +17,21 @@ export const DKItemRow = ({
       textDecoration: disabled ? "line-through" : "none"
     },
     check: {
-      backgroundColor: colors.green[900],
+      color: colors.green[900],
       "&:hover": {
-        backgroundColor: "green"
+        color: "green"
       },
       "&:disabled": {
-        backgroundColor: "gray"
+        color: "gray"
       }
     },
     cancel: {
-      backgroundColor: colors.red[900],
+      color: colors.red[900],
       "&:hover": {
-        backgroundColor: "red"
+        color: "red"
       },
       "&:disabled": {
-        backgroundColor: "gray"
+        color: "gray"
       }
     }
   };
@@ -40,15 +39,25 @@ export const DKItemRow = ({
   return (
     <Grid container spacing={1}>
       <Grid size={12} display="flex" justifyContent="center">
-        <IconButton sx={styles.check} onClick={onSuccess} disabled={disabled}>
-          <CheckCircle />
-        </IconButton>
+        <Button
+          variant="text"
+          sx={styles.check}
+          onClick={onSuccess}
+          disabled={disabled}
+        >
+          ☑
+        </Button>
         <Typography color="textPrimary" variant="h3" sx={styles.text}>
           {name}
         </Typography>
-        <IconButton sx={styles.cancel} onClick={onFailure} disabled={disabled}>
-          <Cancel />
-        </IconButton>
+        <Button
+          variant="text"
+          sx={styles.cancel}
+          onClick={onFailure}
+          disabled={disabled}
+        >
+          ☒
+        </Button>
       </Grid>
     </Grid>
   );

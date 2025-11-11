@@ -17,6 +17,10 @@ export const theme = createTheme({
           color: primary,
           fontSize: "2rem",
           backgroundColor: button
+        },
+        text: {
+          padding: "0",
+          fontSize: "3rem"
         }
       }
     },
@@ -54,16 +58,6 @@ export const theme = createTheme({
         container: {
           width: "90vw",
           margin: "auto"
-        }
-      }
-    },
-    MuiIconButton: {
-      styleOverrides: {
-        root: {
-          color: primary,
-          padding: "0.75rem",
-          margin: "0 5px",
-          maxHeight: "49px"
         }
       }
     },
@@ -115,8 +109,8 @@ export const theme = createTheme({
     h3: {
       fontSize: "2rem",
       fontWeight: "bold",
-      margin: "5px auto",
-      textAlign: "center",
+      margin: "auto",
+      textAlign: "center"
     }
   },
   shape: {

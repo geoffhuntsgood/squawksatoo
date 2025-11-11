@@ -27,6 +27,7 @@ export const Game = ({
   const [header, setHeader] = useState("");
   const [available, setAvailable] = useState<Banana[]>([]);
   const [displayed, setDisplayed] = useState<Banana[]>([]);
+  const [successCount, setSuccessCount] = useState(0);
   const [failureCount, setFailureCount] = useState(0);
   const [disabled, setDisabled] = useState<string[]>([]);
 
@@ -105,6 +106,11 @@ export const Game = ({
   };
 
   const onComplete = (index: number, success: boolean) => {
+    if (success) {
+      setSuccessCount(successCount + 1);
+    } else {
+      setFailureCount(failureCount + 1);
+    }
     if (continuous) {
       replaceOne(index, success);
     } else {
@@ -113,12 +119,12 @@ export const Game = ({
   };
 
   const onFailure = (index: number) => {
-    setFailureCount(failureCount + 1);
     onComplete(index, false);
   };
 
   const refresh = () => {
     initSelection();
+    setSuccessCount(0);
     setFailureCount(0);
     reset();
   };
@@ -128,6 +134,7 @@ export const Game = ({
     setDisplayed([]);
     setDisabled([]);
     setCount("1");
+    setSuccessCount(0);
     setFailureCount(0);
     setPlaying(false);
   };
@@ -166,6 +173,9 @@ export const Game = ({
         failureCount > 0
           ? "wrongCounter 2s infinite"
           : "rightCounter 2s infinite"
+    },
+    correct: {
+      animation: "rightCounter 2s infinite"
     }
   };
 
@@ -204,16 +214,26 @@ export const Game = ({
         <hr />
       </Grid>
 
-      <Grid size={6}>
+      <Grid size={3}>
+        <Typography
+          color="textPrimary"
+          variant="h1"
+          sx={!isRunning ? styles.correct : {}}
+        >
+          ☑ {successCount}
+        </Typography>
+      </Grid>
+      <Grid size={3}>
         <Typography
           color="textPrimary"
           variant="h1"
           sx={!isRunning ? styles.wrong : {}}
         >
-          Wrong: {failureCount}
+          ☒ {failureCount}
         </Typography>
       </Grid>
-      <Grid size={6}>
+      <Grid size={1}></Grid>
+      <Grid size={4}>
         {timer && (
           <Button
             variant="text"

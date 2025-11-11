@@ -29,9 +29,7 @@ Once the list is generated and displayed, you can start finding bananas.
 
 **Header:** If auto-refresh was selected, the header will display the remaining number of bananas in the configured list.
 
-**Banana List:** Each displayed banana will have a green check button and a red X button next to it. Both will mark the banana as completed, but clicking the red X will add to the wrong counter.
-
-**Wrong Counter:** Displays the number of bananas you've marked as wrong.
+**Banana List:** Each displayed banana will have a green check button and a red X button next to it. Both will mark the banana as completed; clicking the green check will add to the "correct" counter, but clicking the red X will add to the "wrong" counter.
 
 **Start Over:** This button will completely reset the pool of bananas based on the previously-selected configuration, and will select the same number of bananas again.
 
