@@ -247,7 +247,7 @@ export const Game = ({
         {timer && (
           <Button
             variant="text"
-            sx={{ padding: "0" }}
+            sx={{ padding: "0", marginLeft: "-20px" }}
             onClick={() => (isRunning ? pause() : start())}
           >
             <Typography
