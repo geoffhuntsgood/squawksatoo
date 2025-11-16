@@ -1,5 +1,6 @@
 import type { Layer } from "../classes/Layer";
-import { Category, LayerName } from "../enums";
+import { Category } from "../enums/Category";
+import { LayerName } from "../enums/LayerName";
 
 export const freezer: Layer = {
   name: LayerName.Freezer,

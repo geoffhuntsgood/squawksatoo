@@ -1,4 +1,5 @@
-import type { Category, LayerName } from "../enums";
+import type { Category } from "../enums/Category";
+import type { LayerName } from "../enums/LayerName";
 import type { Banana } from "./Banana";
 
 export class Layer {

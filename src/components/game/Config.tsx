@@ -1,13 +1,14 @@
 import { Grid } from "@mui/material";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
-import type { Banana } from "../classes/Banana";
-import { Category, LayerName } from "../enums";
-import { getNansAndCatsForLayer, getNansByCat } from "../utils/api";
-import { DKButton } from "./DKButton";
-import { DKCheckbox } from "./DKCheckbox";
-import { DKHeader } from "./DKHeader";
-import { DKMutliSelect } from "./DKMultiSelect";
-import { DKSelect } from "./DKSelect";
+import type { Banana } from "../../classes/Banana";
+import type { Category } from "../../enums/Category";
+import { LayerName } from "../../enums/LayerName";
+import { getNansAndCatsForLayer, getNansByCat } from "../../utils/api";
+import { DKButton } from "../DKButton";
+import { DKCheckbox } from "../DKCheckbox";
+import { DKHeader } from "../DKHeader";
+import { DKMultiSelect } from "../DKMultiSelect";
+import { DKSelect } from "../DKSelect";
 
 export const Config = ({
   layerBananas,
@@ -81,7 +82,7 @@ export const Config = ({
           handleChange={setIncludePostgame}
         />
       </Grid>
-      <DKMutliSelect
+      <DKMultiSelect
         label="Categories"
         values={selectedCategories}
         handleChange={setSelectedCategories}

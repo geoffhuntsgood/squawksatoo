@@ -7,9 +7,9 @@ import {
   type SelectChangeEvent
 } from "@mui/material";
 import type { Dispatch, SetStateAction } from "react";
-import type { Category } from "../enums";
+import type { Category } from "../enums/Category";
 
-export const DKMutliSelect = ({
+export const DKMultiSelect = ({
   label,
   values,
   handleChange,
@@ -55,9 +55,10 @@ export const DKMutliSelect = ({
 
   return (
     <FormControl fullWidth>
-      <InputLabel>{label}</InputLabel>
+      <InputLabel id="form-label">{label}</InputLabel>
       <Select
         multiple
+        labelId="form-label"
         value={values}
         onChange={handle}
         inputProps={styles.menu}

@@ -1,8 +1,8 @@
 import { ThemeProvider } from "@mui/material";
 import { useState } from "react";
 import type { Banana } from "./classes/Banana";
-import { Config } from "./components/Config";
-import { Game } from "./components/Game";
+import { Config } from "./components/game/Config";
+import { Game } from "./components/game/Game";
 import { theme } from "./utils/theme";
 
 const App = () => {

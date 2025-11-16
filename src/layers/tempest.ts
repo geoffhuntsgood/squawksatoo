@@ -1,5 +1,6 @@
 import type { Layer } from "../classes/Layer";
-import { Category, LayerName } from "../enums";
+import { Category } from "../enums/Category";
+import { LayerName } from "../enums/LayerName";
 
 export const tempest: Layer = {
   name: LayerName.Tempest,
@@ -339,7 +340,7 @@ export const tempest: Layer = {
     {
       num: 23,
       name: "Elephant Elder's Forecast Cleared",
-      category: Category.Triple, 
+      category: Category.Triple,
       category2: Category.Rehearsal
     }
   ]

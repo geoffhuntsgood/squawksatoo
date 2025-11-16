@@ -1,4 +1,5 @@
-import { Cancel, CheckCircle } from "@mui/icons-material";
+import Cancel from "@mui/icons-material/Cancel";
+import CheckCircle from "@mui/icons-material/CheckCircle";
 import { Button, colors, Grid, IconButton, Typography } from "@mui/material";
 import type { MouseEventHandler } from "react";
 
@@ -40,21 +41,13 @@ export const DKItemRow = ({
   return (
     <Grid container spacing={1}>
       <Grid size={12} display="flex" justifyContent="center">
-        <IconButton
-          sx={styles.check}
-          onClick={onSuccess}
-          disabled={disabled}
-        >
+        <IconButton sx={styles.check} onClick={onSuccess} disabled={disabled}>
           <CheckCircle />
         </IconButton>
         <Typography color="textPrimary" variant="h3" sx={styles.text}>
           {name}
         </Typography>
-        <Button
-          sx={styles.cancel}
-          onClick={onFailure}
-          disabled={disabled}
-        >
+        <Button sx={styles.cancel} onClick={onFailure} disabled={disabled}>
           <Cancel />
         </Button>
       </Grid>

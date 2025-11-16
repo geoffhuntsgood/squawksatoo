@@ -1,4 +1,4 @@
-import type { Category } from "../enums";
+import type { Category } from "../enums/Category";
 
 export class Banana {
   constructor(

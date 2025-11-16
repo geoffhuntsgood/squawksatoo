@@ -1,12 +1,13 @@
-import { Cancel, CheckCircle } from "@mui/icons-material";
+import Cancel from "@mui/icons-material/Cancel";
+import CheckCircle from "@mui/icons-material/CheckCircle";
 import { Button, Grid, IconButton, Typography } from "@mui/material";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import { useReward } from "react-rewards";
 import { useStopwatch } from "react-timer-hook";
-import { Banana } from "../classes/Banana";
-import { DKButton } from "./DKButton";
-import { DKHeader } from "./DKHeader";
-import { DKItemRow } from "./DKItemRow";
+import { Banana } from "../../classes/Banana";
+import { DKButton } from "../DKButton";
+import { DKHeader } from "../DKHeader";
+import { DKItemRow } from "../DKItemRow";
 
 export const Game = ({
   layerBananas,
