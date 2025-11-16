@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { LayerName } from "../../enums";
+import { LayerName } from "../../enums/LayerName";
 import { ingot } from "../../layers/ingot";
 import { getNansAndCatsForLayer, getNansByCat } from "../../utils/api";
 

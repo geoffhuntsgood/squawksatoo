@@ -1,7 +1,7 @@
 import { describe, expect, test } from "vitest";
 import { Banana } from "../../classes/Banana";
 import { Layer } from "../../classes/Layer";
-import { LayerName } from "../../enums";
+import { LayerName } from "../../enums/LayerName";
 
 describe("Class instantiation sanity checks", () => {
   test("Banana", () => {
