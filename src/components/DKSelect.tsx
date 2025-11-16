@@ -40,10 +40,10 @@ export const DKSelect = ({
     <>
       {selectItems.length > 0 && (
         <FormControl fullWidth>
-          <InputLabel>{label}</InputLabel>
+          <InputLabel id={`select-${label}`}>{label}</InputLabel>
           <Select
             value={value}
-            label={label}
+            labelId={`select-${label}`}
             onChange={(event: SelectChangeEvent) =>
               handleChange(event.target.value)
             }

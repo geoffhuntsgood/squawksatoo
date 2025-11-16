@@ -55,10 +55,10 @@ export const DKMultiSelect = ({
 
   return (
     <FormControl fullWidth>
-      <InputLabel id="form-label">{label}</InputLabel>
+      <InputLabel id={`multi-${label}`}>{label}</InputLabel>
       <Select
         multiple
-        labelId="form-label"
+        labelId={`multi-${label}`}
         value={values}
         onChange={handle}
         inputProps={styles.menu}
