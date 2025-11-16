@@ -61,6 +61,13 @@ export const theme = createTheme({
         }
       }
     },
+    MuiSvgIcon: {
+      styleOverrides: {
+        root: {
+          fontSize: "2rem"
+        }
+      }
+    },
     MuiInputLabel: {
       styleOverrides: {
         root: {

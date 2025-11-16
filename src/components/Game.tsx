@@ -1,4 +1,5 @@
-import { Button, Grid, Typography } from "@mui/material";
+import { Cancel, CheckCircle } from "@mui/icons-material";
+import { Button, Grid, IconButton, Typography } from "@mui/material";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import { useReward } from "react-rewards";
 import { useStopwatch } from "react-timer-hook";
@@ -168,6 +169,9 @@ export const Game = ({
     timer: {
       animation: "pauseTimer 2s infinite"
     },
+    icon: {
+      color: "white"
+    },
     wrong: {
       animation:
         failureCount > 0
@@ -220,7 +224,10 @@ export const Game = ({
           variant="h1"
           sx={!isRunning ? styles.correct : {}}
         >
-          ☑ {successCount}
+          <IconButton sx={!isRunning ? styles.correct : styles.icon}>
+            <CheckCircle />
+          </IconButton>
+          {successCount}
         </Typography>
       </Grid>
       <Grid size={3}>
@@ -229,7 +236,10 @@ export const Game = ({
           variant="h1"
           sx={!isRunning ? styles.wrong : {}}
         >
-          ☒ {failureCount}
+          <IconButton sx={!isRunning ? styles.wrong : styles.icon}>
+            <Cancel />
+          </IconButton>
+          {failureCount}
         </Typography>
       </Grid>
       <Grid size={1}></Grid>
