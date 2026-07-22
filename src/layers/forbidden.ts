@@ -1,23 +1,14 @@
-import type { Layer } from "../classes/Layer";
-import { Category } from "../enums/Category";
+import type { DKBLayer } from "../classes/DKBLayer";
+import { DKBCategory } from "../enums/DKBCategory";
 import { LayerName } from "../enums/LayerName";
 
-export const forbidden: Layer = {
+export const forbidden: DKBLayer = {
   name: LayerName.Forbidden,
-  categories: [
-    Category.Quintuple,
-    Category.Battle,
-    Category.Challenge,
-    Category.Cranky,
-    Category.Chiptone,
-    Category.Smashintone
-  ],
-  postgameCategories: [],
   bananas: [
     {
       num: 1,
       name: "Scrubbed Muckety-Muck!",
-      category: Category.Quintuple
+      category: DKBCategory.Quintuple
     },
     {
       num: 2,
@@ -26,22 +17,22 @@ export const forbidden: Layer = {
     {
       num: 3,
       name: "Soggy First Steps",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 4,
       name: "Swift Sideways Shuffle",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 5,
       name: "No Swimming, No Slipping",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 6,
       name: "Battle: Nighty Night, Nemesis",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 7,
@@ -58,7 +49,7 @@ export const forbidden: Layer = {
     {
       num: 10,
       name: "Battle: Forged Path Upward",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 11,
@@ -71,22 +62,22 @@ export const forbidden: Layer = {
     {
       num: 13,
       name: "Cranky's Forbidden Rant",
-      category: Category.Cranky
+      category: DKBCategory.Cranky
     },
     {
       num: 14,
       name: "Halfway Shuffled",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 15,
       name: "Balloons in the Shuffle",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 16,
       name: "Survived the Shuffle",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 17,
@@ -95,12 +86,12 @@ export const forbidden: Layer = {
     {
       num: 18,
       name: "Battle: Shuffling Walls",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 19,
       name: "Forbidden Smashin' Stats",
-      category: Category.Smashintone
+      category: DKBCategory.Smashintone
     },
     {
       num: 20,
@@ -109,28 +100,27 @@ export const forbidden: Layer = {
     {
       num: 21,
       name: "Shuffling Ascent",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 22,
       name: "Behind the Shuffle",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 23,
       name: "Atop the Shuffle",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 25,
       name: "Forbidden Chip Exchange",
-      category: Category.Chiptone
-    }
-  ],
-  postgameBananas: [
+      category: DKBCategory.Chiptone
+    },
     {
       num: 24,
-      name: "A Gift from Grumpy"
+      name: "A Gift from Grumpy",
+      isPostgame: true
     }
   ]
 };

@@ -40,12 +40,18 @@
 }
 
 :root {
-  background-color: rgb(20, 20, 20);
-
+  background-color: #072207;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
 }
 
 ::-webkit-scrollbar {
@@ -53,9 +59,9 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0d47a1;
+  background: green;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #e3f2fd;
+  background: lightgray;
 }

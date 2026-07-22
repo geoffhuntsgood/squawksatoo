@@ -1,24 +1,16 @@
-import type { Layer } from "../classes/Layer";
-import { Category } from "../enums/Category";
+import type { DKBLayer } from "../classes/DKBLayer";
+import { DKBCategory } from "../enums/DKBCategory";
 import { LayerName } from "../enums/LayerName";
 
-export const feast: Layer = {
+export const feast: DKBLayer = {
   name: LayerName.Feast,
-  categories: [
-    Category.Triple,
-    Category.Battle,
-    Category.Challenge,
-    Category.Cranky,
-    Category.ShiftySmash,
-    Category.Chiptone,
-    Category.Fragmentone,
-    Category.Growtone,
-    Category.Quiztone,
-    Category.Seekertone,
-    Category.Smashintone
-  ],
-  postgameCategories: [Category.Glamtone],
   bananas: [
+    {
+      num: 1,
+      name: "Free Fallin' to the Feast Layer!",
+      isPostgame: true,
+      category: DKBCategory.Triple
+    },
     {
       num: 2,
       name: "A Slime-Slathered Treat"
@@ -26,22 +18,22 @@ export const feast: Layer = {
     {
       num: 3,
       name: "Wrecked by Freestyle Bananzas",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 4,
       name: "Fast-Paced Freestyle Bananzas",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 5,
       name: "Lost and Found under the Building",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 6,
       name: "Battle: Bouncy Beatings",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 7,
@@ -54,7 +46,7 @@ export const feast: Layer = {
     {
       num: 9,
       name: "Battle: Wallopoid Warfare",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 10,
@@ -63,32 +55,32 @@ export const feast: Layer = {
     {
       num: 11,
       name: "The Feast Growtone",
-      category: Category.Growtone
+      category: DKBCategory.Growtone
     },
     {
       num: 12,
       name: "The Hungry Feast Growtone",
-      category: Category.Growtone
+      category: DKBCategory.Growtone
     },
     {
       num: 13,
       name: "The Sated Feast Growtone",
-      category: Category.Growtone
+      category: DKBCategory.Growtone
     },
     {
       num: 14,
       name: "A Secret Salty Snack",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 15,
       name: "Slinging the Salt",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 16,
       name: "Melting the Muck",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 17,
@@ -101,22 +93,22 @@ export const feast: Layer = {
     {
       num: 19,
       name: "Round the Grater-Go-Round!",
-      category: Category.Triple
+      category: DKBCategory.Triple
     },
     {
       num: 20,
       name: "Through the Mauling Walls",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 21,
       name: "A Wall All Alone",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 22,
       name: "Falling Mauling Walls",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 23,
@@ -125,7 +117,7 @@ export const feast: Layer = {
     {
       num: 24,
       name: "Swingin' through Kingly Swings!",
-      category: Category.Triple
+      category: DKBCategory.Triple
     },
     {
       num: 25,
@@ -134,32 +126,32 @@ export const feast: Layer = {
     {
       num: 26,
       name: "Battle: Muck on Parade",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 27,
       name: "Shifty Smash: Over the Oil Lake",
-      category: Category.ShiftySmash
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 28,
       name: "Feast Smashin' Stats",
-      category: Category.Smashintone
+      category: DKBCategory.Smashintone
     },
     {
       num: 29,
       name: "Feast Quiz Master",
-      category: Category.Quiztone
+      category: DKBCategory.Quiztone
     },
     {
       num: 30,
       name: "Feast Fragmentone Recovery",
-      category: Category.Fragmentone
+      category: DKBCategory.Fragmentone
     },
     {
       num: 31,
       name: "Feast Fragmentone Restoration",
-      category: Category.Fragmentone
+      category: DKBCategory.Fragmentone
     },
     {
       num: 32,
@@ -172,32 +164,32 @@ export const feast: Layer = {
     {
       num: 34,
       name: "Battle: Mine-Cart Muck",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 35,
       name: "Fryin' at Ferocious Fryhouse!",
-      category: Category.Triple
+      category: DKBCategory.Triple
     },
     {
       num: 36,
       name: "Feast Hide-and-Seek",
-      category: Category.Seekertone
+      category: DKBCategory.Seekertone
     },
     {
       num: 37,
       name: "Roarcoaster Rest Stop",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 38,
       name: "Behind a Roaring Waterfall",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 39,
       name: "A Roaring Finish",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 40,
@@ -214,7 +206,7 @@ export const feast: Layer = {
     {
       num: 43,
       name: "Floating on the Royal Oil Cruise!",
-      category: Category.Triple
+      category: DKBCategory.Triple
     },
     {
       num: 44,
@@ -227,7 +219,7 @@ export const feast: Layer = {
     {
       num: 46,
       name: "Shifty Smash: Huge Monument",
-      category: Category.ShiftySmash
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 47,
@@ -236,7 +228,7 @@ export const feast: Layer = {
     {
       num: 48,
       name: "Battle: Labyrinth Lurkers",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 49,
@@ -245,7 +237,7 @@ export const feast: Layer = {
     {
       num: 50,
       name: "Shifty Smash: Out of the Box",
-      category: Category.ShiftySmash
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 51,
@@ -274,7 +266,7 @@ export const feast: Layer = {
     {
       num: 57,
       name: "Feast Chip Exchange",
-      category: Category.Chiptone
+      category: DKBCategory.Chiptone
     },
     {
       num: 58,
@@ -283,7 +275,7 @@ export const feast: Layer = {
     {
       num: 59,
       name: "Battle: Ducking the Muck Wall",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 60,
@@ -292,7 +284,7 @@ export const feast: Layer = {
     {
       num: 61,
       name: "Cranky's Feast Rant",
-      category: Category.Cranky
+      category: DKBCategory.Cranky
     },
     {
       num: 62,
@@ -305,17 +297,17 @@ export const feast: Layer = {
     {
       num: 64,
       name: "Resist the Tide of Walls",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 65,
       name: "Bouncing Tall off a Wall",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 66,
       name: "Strike Back against the Walls",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 67,
@@ -324,18 +316,12 @@ export const feast: Layer = {
     {
       num: 68,
       name: "Stuck in the Muck"
-    }
-  ],
-  postgameBananas: [
-    {
-      num: 1,
-      name: "Free Fallin' to the Feast Layer!",
-      category: Category.Triple
     },
     {
       num: 69,
       name: "Decked Out in Matching Clothes",
-      category: Category.Glamtone
+      isPostgame: true,
+      category: DKBCategory.Glamtone
     }
   ]
 };

@@ -1,31 +1,24 @@
-import type { Layer } from "../classes/Layer";
-import { Category } from "../enums/Category";
+import type { DKBLayer } from "../classes/DKBLayer";
+import { DKBCategory } from "../enums/DKBCategory";
 import { LayerName } from "../enums/LayerName";
 
-export const lagoon: Layer = {
+export const lagoon: DKBLayer = {
   name: LayerName.Lagoon,
-  categories: [
-    Category.Triple,
-    Category.Battle,
-    Category.Challenge,
-    Category.Cranky,
-    Category.ShiftySmash
-  ],
-  postgameCategories: [
-    Category.Rehearsal,
-    Category.Chiptone,
-    Category.Seekertone,
-    Category.Smashintone
-  ],
   bananas: [
     {
       num: 1,
       name: "First Crockoid Cracked!",
-      category: Category.Triple
+      category: DKBCategory.Triple
     },
     {
       num: 2,
       name: "Cave by the Cape"
+    },
+    {
+      num: 3,
+      name: "Lagoon Smashin' Stats",
+      isPostgame: true,
+      category: DKBCategory.Smashintone
     },
     {
       num: 4,
@@ -34,12 +27,12 @@ export const lagoon: Layer = {
     {
       num: 5,
       name: "Shifty Smash: Beyond the Wall",
-      category: Category.ShiftySmash
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 6,
       name: "Battle: Stoney, Grassy Goons",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 7,
@@ -48,7 +41,7 @@ export const lagoon: Layer = {
     {
       num: 8,
       name: "Battle: Both Sides of the Bridge",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 9,
@@ -57,7 +50,7 @@ export const lagoon: Layer = {
     {
       num: 10,
       name: "Cranky's Lagoon Rant",
-      category: Category.Cranky
+      category: DKBCategory.Cranky
     },
     {
       num: 11,
@@ -66,17 +59,17 @@ export const lagoon: Layer = {
     {
       num: 12,
       name: "Rest Stop on Roof Road",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 13,
       name: "Hidden on Roof Road",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 14,
       name: "At the End of Roof Road",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 15,
@@ -85,7 +78,7 @@ export const lagoon: Layer = {
     {
       num: 16,
       name: "Battle: Swarms among the Pillars",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 17,
@@ -106,12 +99,12 @@ export const lagoon: Layer = {
     {
       num: 21,
       name: "Shifty Smash: Atop the Pipes",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 22,
       name: "Battle: Wings and the Wobbly Disc",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 23,
@@ -122,14 +115,20 @@ export const lagoon: Layer = {
       name: "Blasting for the Banana"
     },
     {
+      num: 25,
+      name: "Lagoon Chip Exchange",
+      isPostgame: true,
+      category: DKBCategory.Chiptone
+    },
+    {
       num: 26,
       name: "Landed in Salvager's Landing!",
-      category: Category.Triple
+      category: DKBCategory.Triple
     },
     {
       num: 27,
       name: "Shifty Smash: A Wall Hanging in Air",
-      category: Category.ShiftySmash
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 28,
@@ -138,17 +137,17 @@ export const lagoon: Layer = {
     {
       num: 29,
       name: "Over the Thorny Path",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 30,
       name: "Into the Thorny Nook",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 31,
       name: "Through the Thorny Walls",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 32,
@@ -157,7 +156,7 @@ export const lagoon: Layer = {
     {
       num: 33,
       name: "Battle: Concrete-Wall Clash",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 34,
@@ -170,7 +169,7 @@ export const lagoon: Layer = {
     {
       num: 36,
       name: "Hangin' on Orangu-Hang Highway!",
-      category: Category.Triple
+      category: DKBCategory.Triple
     },
     {
       num: 37,
@@ -189,96 +188,95 @@ export const lagoon: Layer = {
       name: "The Ship Stern's Snack"
     },
     {
-      num: 51,
-      name: "Dipped into Chimpy Channel!",
-      category: Category.Triple
-    },
-    {
-      num: 52,
-      name: "Pop and Destroy",
-      category: Category.Challenge
-    },
-    {
-      num: 53,
-      name: "Atop the Concrete Roof",
-      category: Category.Challenge
-    },
-    {
-      num: 54,
-      name: "Hung from the Ceiling",
-      category: Category.Challenge
-    },
-    {
-      num: 55,
-      name: "Shipwrecked Treasure"
-    }
-  ],
-  postgameBananas: [
-    {
-      num: 3,
-      name: "Lagoon Smashin' Stats",
-      category: Category.Smashintone
-    },
-    {
-      num: 25,
-      name: "Lagoon Chip Exchange",
-      category: Category.Chiptone
-    },
-    {
       num: 41,
       name: "Past the First Scrappin' Ground",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 42,
       name: "Lure and Destroy!",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 43,
       name: "Past the Second Scrappin' Ground",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 44,
       name: "Lift and Destroy!",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 45,
       name: "Past the Third Scrappin' Ground",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 46,
       name: "Wallop and Destroy!",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 47,
       name: "Past the Fourth Scrappin' Ground",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 48,
       name: "Launch and Destroy!",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 49,
       name: "Bounce and Destroy!",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 50,
       name: "Past the Fifth Scrappin' Ground",
-      category: Category.Triple, 
-      category2: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Triple,
+      category2: DKBCategory.Rehearsal
+    },
+    {
+      num: 51,
+      name: "Dipped into Chimpy Channel!",
+      category: DKBCategory.Triple
+    },
+    {
+      num: 52,
+      name: "Pop and Destroy",
+      category: DKBCategory.Challenge
+    },
+    {
+      num: 53,
+      name: "Atop the Concrete Roof",
+      category: DKBCategory.Challenge
+    },
+    {
+      num: 54,
+      name: "Hung from the Ceiling",
+      category: DKBCategory.Challenge
+    },
+    {
+      num: 55,
+      name: "Shipwrecked Treasure"
     },
     {
       num: 56,
       name: "Lagoon Hide-and-Seek",
-      category: Category.Seekertone
+      isPostgame: true,
+      category: DKBCategory.Seekertone
     }
   ]
 };

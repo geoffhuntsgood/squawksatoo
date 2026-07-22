@@ -1,27 +1,14 @@
-import type { Layer } from "../classes/Layer";
-import { Category } from "../enums/Category";
+import type { DKBLayer } from "../classes/DKBLayer";
+import { DKBCategory } from "../enums/DKBCategory";
 import { LayerName } from "../enums/LayerName";
 
-export const freezer: Layer = {
+export const freezer: DKBLayer = {
   name: LayerName.Freezer,
-  categories: [
-    Category.Triple,
-    Category.Battle,
-    Category.Challenge,
-    Category.Cranky,
-    Category.ShiftySmash,
-    Category.Chiptone,
-    Category.Fragmentone,
-    Category.Growtone,
-    Category.Seekertone,
-    Category.Smashintone
-  ],
-  postgameCategories: [Category.Rehearsal],
   bananas: [
     {
       num: 1,
       name: "Chillin' in the Freezer Layer!",
-      category: Category.Triple
+      category: DKBCategory.Triple
     },
     {
       num: 2,
@@ -50,7 +37,7 @@ export const freezer: Layer = {
     {
       num: 8,
       name: "Battle: Snowball Rollin'",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 9,
@@ -67,22 +54,22 @@ export const freezer: Layer = {
     {
       num: 12,
       name: "Clearing a Red-Hot Path",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 13,
       name: "Behind the Red-Hot Paths",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 14,
       name: "Climbing a Red-Hot Path",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 15,
       name: "Battle: Quick Quake Quarrel",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 16,
@@ -91,22 +78,22 @@ export const freezer: Layer = {
     {
       num: 17,
       name: "The Freezer Growtone",
-      category: Category.Growtone
+      category: DKBCategory.Growtone
     },
     {
       num: 18,
       name: "The Hungry Freezer Growtone",
-      category: Category.Growtone
+      category: DKBCategory.Growtone
     },
     {
       num: 19,
       name: "The Sated Freezer Growtone",
-      category: Category.Growtone
+      category: DKBCategory.Growtone
     },
     {
       num: 20,
       name: "Freezer Hide-and-Seek",
-      category: Category.Seekertone
+      category: DKBCategory.Seekertone
     },
     {
       num: 21,
@@ -131,7 +118,7 @@ export const freezer: Layer = {
     {
       num: 26,
       name: "Battle: Barely Skating By",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 27,
@@ -152,7 +139,7 @@ export const freezer: Layer = {
     {
       num: 31,
       name: "Shifty Smash: Above the Caverns",
-      category: Category.ShiftySmash
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 32,
@@ -161,22 +148,22 @@ export const freezer: Layer = {
     {
       num: 33,
       name: "Shifty Smash: Ice-Cold Lakeside",
-      category: Category.ShiftySmash
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 34,
       name: "U-Turn on a Crumbly Road",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 35,
       name: "Crumbly-Road Run",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 36,
       name: "A Crusty Trust Fall",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 37,
@@ -185,17 +172,17 @@ export const freezer: Layer = {
     {
       num: 38,
       name: "Cranky's Freezer Rant",
-      category: Category.Cranky
+      category: DKBCategory.Cranky
     },
     {
       num: 39,
       name: "Freezer Chip Exchange",
-      category: Category.Chiptone
+      category: DKBCategory.Chiptone
     },
     {
       num: 40,
       name: "Through Coolstripe Cavern",
-      category: Category.Triple
+      category: DKBCategory.Triple
     },
     {
       num: 41,
@@ -204,7 +191,7 @@ export const freezer: Layer = {
     {
       num: 42,
       name: "Battle: Broiling Bowling Brawl",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 43,
@@ -213,22 +200,22 @@ export const freezer: Layer = {
     {
       num: 44,
       name: "Battle: Magma Mayhem",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 45,
       name: "Traversing the Massive Iceberg",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 46,
       name: "Edge of the Massive Iceberg",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 47,
       name: "Mastering the Massive Iceberg",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 48,
@@ -237,12 +224,12 @@ export const freezer: Layer = {
     {
       num: 49,
       name: "Shifty Smash: Over Ice and Lava",
-      category: Category.ShiftySmash
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 50,
       name: "Freezer Smashin' Stats",
-      category: Category.Smashintone
+      category: DKBCategory.Smashintone
     },
     {
       num: 51,
@@ -255,17 +242,17 @@ export const freezer: Layer = {
     {
       num: 53,
       name: "Trembling Steps through Powder",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 54,
       name: "Treacherous Steps through Powder",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 55,
       name: "Extra Steps through Powder",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 56,
@@ -294,7 +281,7 @@ export const freezer: Layer = {
     {
       num: 76,
       name: "Hoofin' it to Hot-Hoof Heater!",
-      category: Category.Triple
+      category: DKBCategory.Triple
     },
     {
       num: 77,
@@ -303,22 +290,22 @@ export const freezer: Layer = {
     {
       num: 78,
       name: "Battle: Fighting on the Run",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 79,
       name: "Scraping the Slope",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 80,
       name: "A Sneaky Second Serving",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 81,
       name: "Over the Slope",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 82,
@@ -327,12 +314,12 @@ export const freezer: Layer = {
     {
       num: 83,
       name: "Freezer Fragmentone Recovery",
-      category: Category.Fragmentone
+      category: DKBCategory.Fragmentone
     },
     {
       num: 84,
       name: "Freezer Fragmentone Restoration",
-      category: Category.Fragmentone
+      category: DKBCategory.Fragmentone
     },
     {
       num: 85,
@@ -341,86 +328,99 @@ export const freezer: Layer = {
     {
       num: 86,
       name: "Looking over Chocolava"
-    }
-  ],
-  postgameBananas: [
+    },
     {
       num: 62,
       name: "Amuse-Boost Finish Line",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 63,
       name: "Amuse-Boost Fast Finish",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 64,
       name: "Shifty Smash: Trot up the Tower",
-      category: Category.Rehearsal,
-      category2: Category.ShiftySmash
+      isPostgame: true,
+      category: DKBCategory.Rehearsal,
+      category2: DKBCategory.ShiftySmash
     },
     {
       num: 65,
       name: "Hurl d'Oeuvres Finish Line",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 66,
       name: "Hurl d'Oeuvres Fast Finish",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 67,
       name: "Shifty Smash: Damp Dodge 'n' Dash",
-      category: Category.Rehearsal,
-      category2: Category.ShiftySmash
+      isPostgame: true,
+      category: DKBCategory.Rehearsal,
+      category2: DKBCategory.ShiftySmash
     },
     {
       num: 68,
       name: "Shocking Cioppino Finish Line",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 69,
       name: "Shocking Cioppino Fast Finish",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 70,
       name: "Shifty Smash: Splashy Ascent",
-      category: Category.Rehearsal,
-      category2: Category.ShiftySmash
+      isPostgame: true,
+      category: DKBCategory.Rehearsal,
+      category2: DKBCategory.ShiftySmash
     },
     {
       num: 71,
       name: "Switcheroo Entrée Finish Line",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 72,
       name: "Switcheroo Entrée Fast Finish",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 73,
       name: "Shifty Smash: Swift Switcheroo",
-      category: Category.Rehearsal,
-      category2: Category.ShiftySmash
+      isPostgame: true,
+      category: DKBCategory.Rehearsal,
+      category2: DKBCategory.ShiftySmash
     },
     {
       num: 74,
       name: "Dangerous Dessert Finish Line",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 75,
       name: "Dangerous Dessert Fast Finish",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 87,
-      name: "Stuck among the Pipes"
+      name: "Stuck among the Pipes",
+      isPostgame: true
     }
   ]
 };

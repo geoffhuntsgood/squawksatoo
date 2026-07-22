@@ -1,27 +1,14 @@
-import type { Layer } from "../classes/Layer";
-import { Category } from "../enums/Category";
+import type { DKBLayer } from "../classes/DKBLayer";
+import { DKBCategory } from "../enums/DKBCategory";
 import { LayerName } from "../enums/LayerName";
 
-export const tempest: Layer = {
+export const tempest: DKBLayer = {
   name: LayerName.Tempest,
-  categories: [
-    Category.Triple,
-    Category.Battle,
-    Category.Challenge,
-    Category.Cranky,
-    Category.ShiftySmash,
-    Category.Chiptone,
-    Category.Fragmentone,
-    Category.Growtone,
-    Category.Seekertone,
-    Category.Smashintone
-  ],
-  postgameCategories: [Category.Rehearsal],
   bananas: [
     {
       num: 1,
       name: "Stormed into the Tempest!",
-      category: Category.Triple
+      category: DKBCategory.Triple
     },
     {
       num: 2,
@@ -38,17 +25,17 @@ export const tempest: Layer = {
     {
       num: 5,
       name: "Rocketing over Lava",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 6,
       name: "Lurking beyond Lava",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 7,
       name: "Rocketing through Lava",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 8,
@@ -57,17 +44,17 @@ export const tempest: Layer = {
     {
       num: 9,
       name: "The Tempest Growtone",
-      category: Category.Growtone
+      category: DKBCategory.Growtone
     },
     {
       num: 10,
       name: "The Hungry Tempest Growtone",
-      category: Category.Growtone
+      category: DKBCategory.Growtone
     },
     {
       num: 11,
       name: "The Sated Tempest Growtone",
-      category: Category.Growtone
+      category: DKBCategory.Growtone
     },
     {
       num: 12,
@@ -86,18 +73,67 @@ export const tempest: Layer = {
       name: "The Secret Lava Pocket"
     },
     {
+      num: 16,
+      name: "Salty Forecast Cleared",
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
+    },
+    {
+      num: 17,
+      name: "Smart Suction to Skip the Slip",
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
+    },
+    {
+      num: 18,
+      name: "Glowing Forecast Cleared",
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
+    },
+    {
+      num: 19,
+      name: "Smart Suction to Light the Way",
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
+    },
+    {
+      num: 20,
+      name: "Golden Forecast Cleared",
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
+    },
+    {
+      num: 21,
+      name: "Smart Suction to Build a Bridge",
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
+    },
+    {
+      num: 22,
+      name: "Smart Suction to Guide the Ice",
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
+    },
+    {
+      num: 23,
+      name: "Elephant Elder's Forecast Cleared",
+      isPostgame: true,
+      category: DKBCategory.Triple,
+      category2: DKBCategory.Rehearsal
+    },
+    {
       num: 24,
       name: "Tempest Chip Exchange"
     },
     {
       num: 25,
       name: "Beat Sinister Blusterwing!",
-      category: Category.Triple
+      category: DKBCategory.Triple
     },
     {
       num: 26,
       name: "Battle: Revolving-Ring Rumble",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 27,
@@ -118,22 +154,22 @@ export const tempest: Layer = {
     {
       num: 31,
       name: "Piping-Hot Platforms",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 32,
       name: "A Scalding Secret",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 33,
       name: "Roasting while Rotating",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 34,
       name: "Beat Sinister Blusterwing! Again!",
-      category: Category.Triple
+      category: DKBCategory.Triple
     },
     {
       num: 35,
@@ -142,22 +178,22 @@ export const tempest: Layer = {
     {
       num: 36,
       name: "A View of Zip-Line Valley",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 37,
       name: "Zipping through the Valley",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 38,
       name: "Zips, Hops, and Swaps",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 39,
       name: "Tempest Smashin' Stats",
-      category: Category.Smashintone
+      category: DKBCategory.Smashintone
     },
     {
       num: 40,
@@ -166,17 +202,17 @@ export const tempest: Layer = {
     {
       num: 41,
       name: "Tempest Hide-and-Seek",
-      category: Category.Seekertone
+      category: DKBCategory.Seekertone
     },
     {
       num: 42,
       name: "Cranky's Tempest Rant",
-      category: Category.Cranky
+      category: DKBCategory.Cranky
     },
     {
       num: 43,
       name: "Shifty Smash: Scorching Sauna",
-      category: Category.ShiftySmash
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 44,
@@ -185,7 +221,7 @@ export const tempest: Layer = {
     {
       num: 45,
       name: "Battle: Elevator Encounter",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 46,
@@ -198,22 +234,22 @@ export const tempest: Layer = {
     {
       num: 48,
       name: "Shifty Smash: Stairs in the Storm",
-      category: Category.ShiftySmash
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 49,
       name: "Crossing the Lava Road",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 50,
       name: "Atop the Lava Road",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 51,
       name: "End of the Lava Road",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 52,
@@ -234,17 +270,17 @@ export const tempest: Layer = {
     {
       num: 56,
       name: "Battle: Ground-Gulping Glory",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 57,
       name: "Tempest Fragmentone Recovery",
-      category: Category.Fragmentone
+      category: DKBCategory.Fragmentone
     },
     {
       num: 58,
       name: "Tempest Fragmentone Restoration",
-      category: Category.Fragmentone
+      category: DKBCategory.Fragmentone
     },
     {
       num: 59,
@@ -253,7 +289,7 @@ export const tempest: Layer = {
     {
       num: 60,
       name: "Battle: Strike like Lightning",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 61,
@@ -262,7 +298,7 @@ export const tempest: Layer = {
     {
       num: 62,
       name: "Battle: Zip-Line Zones",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 63,
@@ -271,17 +307,17 @@ export const tempest: Layer = {
     {
       num: 64,
       name: "Slip by the Snipers",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 65,
       name: "Sniper-Free Safe Spot",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 66,
       name: "Scramble through the Snipers",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 67,
@@ -290,7 +326,7 @@ export const tempest: Layer = {
     {
       num: 68,
       name: "Shifty Smash: Stormy Skies",
-      category: Category.ShiftySmash
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 69,
@@ -299,49 +335,6 @@ export const tempest: Layer = {
     {
       num: 70,
       name: "Atop Stormy Station"
-    }
-  ],
-  postgameBananas: [
-    {
-      num: 16,
-      name: "Salty Forecast Cleared",
-      category: Category.Rehearsal
-    },
-    {
-      num: 17,
-      name: "Smart Suction to Skip the Slip",
-      category: Category.Rehearsal
-    },
-    {
-      num: 18,
-      name: "Glowing Forecast Cleared",
-      category: Category.Rehearsal
-    },
-    {
-      num: 19,
-      name: "Smart Suction to Light the Way",
-      category: Category.Rehearsal
-    },
-    {
-      num: 20,
-      name: "Golden Forecast Cleared",
-      category: Category.Rehearsal
-    },
-    {
-      num: 21,
-      name: "Smart Suction to Build a Bridge",
-      category: Category.Rehearsal
-    },
-    {
-      num: 22,
-      name: "Smart Suction to Guide the Ice",
-      category: Category.Rehearsal
-    },
-    {
-      num: 23,
-      name: "Elephant Elder's Forecast Cleared",
-      category: Category.Triple,
-      category2: Category.Rehearsal
     }
   ]
 };

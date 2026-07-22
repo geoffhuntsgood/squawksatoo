@@ -1,27 +1,14 @@
-import type { Layer } from "../classes/Layer";
-import { Category } from "../enums/Category";
+import type { DKBLayer } from "../classes/DKBLayer";
+import { DKBCategory } from "../enums/DKBCategory";
 import { LayerName } from "../enums/LayerName";
 
-export const canyon: Layer = {
+export const canyon: DKBLayer = {
   name: LayerName.Canyon,
-  categories: [
-    Category.Triple,
-    Category.Battle,
-    Category.Challenge,
-    Category.Cranky,
-    Category.ShiftySmash,
-    Category.Chiptone,
-    Category.Fragmentone,
-    Category.Growtone,
-    Category.Seekertone,
-    Category.Smashintone
-  ],
-  postgameCategories: [Category.Glamtone],
   bananas: [
     {
       num: 1,
       name: "Tumbled into the Canyon Layer!",
-      category: Category.Triple
+      category: DKBCategory.Triple
     },
     {
       num: 2,
@@ -38,7 +25,7 @@ export const canyon: Layer = {
     {
       num: 5,
       name: "Shifty Smash: Cliff Valley",
-      category: Category.ShiftySmash
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 6,
@@ -63,7 +50,7 @@ export const canyon: Layer = {
     {
       num: 11,
       name: "Battle: Exploding Pork Platoon",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 12,
@@ -84,17 +71,17 @@ export const canyon: Layer = {
     {
       num: 16,
       name: "Mine Your Step",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 17,
       name: "Kaboom the Hidden Room",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 18,
       name: "Mine the Gaps",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 19,
@@ -103,12 +90,12 @@ export const canyon: Layer = {
     {
       num: 20,
       name: "Canyon Fragmentone Recovery",
-      category: Category.Fragmentone
+      category: DKBCategory.Fragmentone
     },
     {
       num: 21,
       name: "Canyon Fragmentone Restoration",
-      category: Category.Fragmentone
+      category: DKBCategory.Fragmentone
     },
     {
       num: 22,
@@ -121,17 +108,17 @@ export const canyon: Layer = {
     {
       num: 24,
       name: "Wrecked by Kong Bananza",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 25,
       name: "Quickly with Kong Bananza",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 26,
       name: "Beneath the Central Pillar",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 27,
@@ -148,22 +135,22 @@ export const canyon: Layer = {
     {
       num: 30,
       name: "Big-Wheel Balloons",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 31,
       name: "Big-Wheel Basement",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 32,
       name: "Big-Wheel Back Room",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 33,
       name: "Shifty Smash: Cliff's Edge",
-      category: Category.ShiftySmash
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 34,
@@ -172,7 +159,7 @@ export const canyon: Layer = {
     {
       num: 35,
       name: "Canyon Smashin' Stats",
-      category: Category.Smashintone
+      category: DKBCategory.Smashintone
     },
     {
       num: 36,
@@ -193,7 +180,7 @@ export const canyon: Layer = {
     {
       num: 40,
       name: "Battle: Sturdy Pork Platoon",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 41,
@@ -202,47 +189,47 @@ export const canyon: Layer = {
     {
       num: 42,
       name: "Battle: Explosive Laps",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 43,
       name: "The Canyon Growtone",
-      category: Category.Growtone
+      category: DKBCategory.Growtone
     },
     {
       num: 44,
       name: "The Hungry Canyon Growtone",
-      category: Category.Growtone
+      category: DKBCategory.Growtone
     },
     {
       num: 45,
       name: "The Sated Canyon Growtone",
-      category: Category.Growtone
+      category: DKBCategory.Growtone
     },
     {
       num: 46,
       name: "The Lift's Secret Stop",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 47,
       name: "Going Up!",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 48,
       name: "Going Way, Way Up!",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 49,
       name: "Cranky's Canyon Rant",
-      category: Category.Cranky
+      category: DKBCategory.Cranky
     },
     {
       num: 50,
       name: "Canyon Hide-and-Seek",
-      category: Category.Seekertone
+      category: DKBCategory.Seekertone
     },
     {
       num: 51,
@@ -275,7 +262,7 @@ export const canyon: Layer = {
     {
       num: 58,
       name: "Battle: Knotted-Thorn Knockout",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 59,
@@ -284,17 +271,17 @@ export const canyon: Layer = {
     {
       num: 60,
       name: "Canyon Chip Exchange",
-      category: Category.Chiptone
+      category: DKBCategory.Chiptone
     },
     {
       num: 61,
       name: "Beat Grumpy Kong!",
-      category: Category.Triple
+      category: DKBCategory.Triple
     },
     {
       num: 62,
       name: "Battle: Laser-Wall Brawl",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 63,
@@ -319,22 +306,22 @@ export const canyon: Layer = {
     {
       num: 68,
       name: "Battle: Leaps over the Laser",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 69,
       name: "Laser-Zone Crossing",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 70,
       name: "Laying Low in the Laser Zone",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 71,
       name: "Laser-Zone End Point",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 72,
@@ -343,7 +330,7 @@ export const canyon: Layer = {
     {
       num: 73,
       name: "Beat the Mad Mixer!",
-      category: Category.Triple
+      category: DKBCategory.Triple
     },
     {
       num: 74,
@@ -352,12 +339,12 @@ export const canyon: Layer = {
     {
       num: 75,
       name: "Dropped into the Refinery Depths!",
-      category: Category.Triple
+      category: DKBCategory.Triple
     },
     {
       num: 76,
       name: "Shifty Smash: Moving Targets",
-      category: Category.ShiftySmash
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 77,
@@ -370,13 +357,12 @@ export const canyon: Layer = {
     {
       num: 79,
       name: "Hanging Hallway over the Refinery"
-    }
-  ],
-  postgameBananas: [
+    },
     {
       num: 80,
       name: "Decked Out in Helmets",
-      category: Category.Glamtone
+      isPostgame: true,
+      category: DKBCategory.Glamtone
     }
   ]
 };

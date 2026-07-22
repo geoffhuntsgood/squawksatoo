@@ -1,4 +1,9 @@
-import { Checkbox, FormControlLabel, Typography } from "@mui/material";
+import {
+  Checkbox,
+  FormControl,
+  FormControlLabel,
+  Typography
+} from "@mui/material";
 import type { ChangeEvent, Dispatch, SetStateAction } from "react";
 
 export const DKCheckbox = ({
@@ -10,19 +15,21 @@ export const DKCheckbox = ({
   checked: boolean;
   handleChange: Dispatch<SetStateAction<boolean>>;
 }) => (
-  <FormControlLabel
-    label={
-      <Typography color="textPrimary" variant="h2">
-        {label}
-      </Typography>
-    }
-    control={
-      <Checkbox
-        checked={checked}
-        onChange={(event: ChangeEvent<HTMLInputElement>) =>
-          handleChange(event.target.checked)
-        }
-      />
-    }
-  />
+  <FormControl fullWidth>
+    <FormControlLabel
+      label={
+        <Typography color="textPrimary" variant="h2">
+          {label}
+        </Typography>
+      }
+      control={
+        <Checkbox
+          checked={checked}
+          onChange={(event: ChangeEvent<HTMLInputElement>) =>
+            handleChange(event.target.checked)
+          }
+        />
+      }
+    />
+  </FormControl>
 );

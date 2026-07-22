@@ -1,23 +1,14 @@
-import type { Layer } from "../classes/Layer";
-import { Category } from "../enums/Category";
+import type { DKBLayer } from "../classes/DKBLayer";
+import { DKBCategory } from "../enums/DKBCategory";
 import { LayerName } from "../enums/LayerName";
 
-export const core: Layer = {
+export const core: DKBLayer = {
   name: LayerName.Core,
-  categories: [
-    Category.Quintuple,
-    Category.Cranky,
-    Category.ShiftySmash,
-    Category.Chiptone,
-    Category.Quiztone,
-    Category.Smashintone
-  ],
-  postgameCategories: [Category.Triple],
   bananas: [
     {
       num: 1,
       name: "Victory over Void Kong!",
-      category: Category.Quintuple
+      category: DKBCategory.Quintuple
     },
     {
       num: 2,
@@ -34,17 +25,17 @@ export const core: Layer = {
     {
       num: 5,
       name: "Shifty Smash: Inhale and Destroy",
-      category: Category.ShiftySmash
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 6,
       name: "Planet Core Smashin' Stats",
-      category: Category.Smashintone
+      category: DKBCategory.Smashintone
     },
     {
       num: 7,
       name: "Planet Core Chip Exchange",
-      category: Category.Chiptone
+      category: DKBCategory.Chiptone
     },
     {
       num: 8,
@@ -73,12 +64,12 @@ export const core: Layer = {
     {
       num: 15,
       name: "Planet Core Quiz Master",
-      category: Category.Quiztone
+      category: DKBCategory.Quiztone
     },
     {
       num: 16,
       name: "Shifty Smash: Skyward Smashing",
-      category: Category.ShiftySmash
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 17,
@@ -95,28 +86,29 @@ export const core: Layer = {
     {
       num: 20,
       name: "Cranky's Planet Core Rant",
-      category: Category.Cranky
+      category: DKBCategory.Cranky
     },
     {
       num: 21,
       name: "Rocked King K. Rool!",
-      category: Category.Quintuple
-    }
-  ],
-  postgameBananas: [
+      category: DKBCategory.Quintuple
+    },
     {
       num: 13,
-      name: "The Kremling Krew's Last Stand"
+      name: "The Kremling Krew's Last Stand",
+      isPostgame: true
     },
     {
       num: 22,
       name: "Halfway through the Harmoneel",
-      category: Category.Triple
+      isPostgame: true,
+      category: DKBCategory.Triple
     },
     {
       num: 23,
       name: "End of Harmoneel",
-      category: Category.Quintuple
+      isPostgame: true,
+      category: DKBCategory.Quintuple
     }
   ]
 };

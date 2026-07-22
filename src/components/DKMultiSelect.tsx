@@ -7,7 +7,6 @@ import {
   type SelectChangeEvent
 } from "@mui/material";
 import type { Dispatch, SetStateAction } from "react";
-import type { Category } from "../enums/Category";
 
 export const DKMultiSelect = ({
   label,
@@ -17,22 +16,23 @@ export const DKMultiSelect = ({
 }: {
   label: string;
   values: string[];
-  handleChange: Dispatch<SetStateAction<Category[]>>;
+  handleChange: Dispatch<SetStateAction<string[]>>;
   selectItems: string[];
 }) => {
   const styles = {
-    menu: {
-      MenuProps: {
-        MenuListProps: {
-          sx: {
-            color: "#fff",
-            backgroundColor: "#212121"
+    MenuProps: {
+      MenuListProps: {
+        sx: {
+          padding: "0",
+          backgroundColor: "#003500",
+          "& .MuiMenuItem-root": {
+            fontSize: "1.5rem"
           }
-        },
-        PaperProps: {
-          style: {
-            maxHeight: 200
-          }
+        }
+      },
+      PaperProps: {
+        style: {
+          maxHeight: "20rem"
         }
       }
     }
@@ -43,13 +43,9 @@ export const DKMultiSelect = ({
       target: { value }
     } = event;
     if (value.includes("all")) {
-      handleChange(values.length > 0 ? [] : [...(selectItems as Category[])]);
+      handleChange(values.length > 0 ? [] : selectItems);
     } else {
-      handleChange(
-        typeof value === "string"
-          ? (value.split(",") as Category[])
-          : (value as Category[])
-      );
+      handleChange(typeof value === "string" ? value.split(",") : value);
     }
   };
 
@@ -58,13 +54,14 @@ export const DKMultiSelect = ({
       <InputLabel id={`multi-${label}`}>{label}</InputLabel>
       <Select
         multiple
-        labelId={`multi-${label}`}
         value={values}
+        label={label}
+        labelId={`multi-${label}`}
         onChange={handle}
-        inputProps={styles.menu}
+        inputProps={styles}
         renderValue={(selected) => selected.join(", ")}
       >
-        <MenuItem value="all">Select/Deselect All</MenuItem>
+        <MenuItem value="all">Select/Unselect All</MenuItem>
         {selectItems.map((item: string) => (
           <MenuItem value={item}>
             <Checkbox checked={values.includes(item)} />

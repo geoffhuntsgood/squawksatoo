@@ -1,42 +1,34 @@
-import type { Layer } from "../classes/Layer";
-import { Category } from "../enums/Category";
+import type { DKBLayer } from "../classes/DKBLayer";
+import { DKBCategory } from "../enums/DKBCategory";
 import { LayerName } from "../enums/LayerName";
 
-export const divide: Layer = {
+export const divide: DKBLayer = {
   name: LayerName.Divide,
-  categories: [
-    Category.Quintuple,
-    Category.Battle,
-    Category.Challenge,
-    Category.Cranky,
-    Category.Quiztone
-  ],
-  postgameCategories: [Category.Glamtone],
   bananas: [
     {
       num: 1,
       name: "Stomped Stompenclomper!",
-      category: Category.Quintuple
+      category: DKBCategory.Quintuple
     },
     {
       num: 2,
       name: "A Switcheroo Boost",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 3,
       name: "A Switcheroo Breakthrough",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 4,
       name: "A Masterful Switcheroo Maneuver",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 5,
       name: "Divide Quiz Master",
-      category: Category.Quiztone
+      category: DKBCategory.Quiztone
     },
     {
       num: 6,
@@ -49,19 +41,18 @@ export const divide: Layer = {
     {
       num: 8,
       name: "Battle: Uproot to the Brute",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 9,
       name: "Cranky's Divide Rant",
-      category: Category.Cranky
-    }
-  ],
-  postgameBananas: [
+      category: DKBCategory.Cranky
+    },
     {
       num: 10,
       name: "Decked Out in Animal Print",
-      category: Category.Glamtone
+      isPostgame: true,
+      category: DKBCategory.Glamtone
     }
   ]
 };

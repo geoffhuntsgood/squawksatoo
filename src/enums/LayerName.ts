@@ -15,5 +15,6 @@ export enum LayerName {
   Groove = "Groove",
   Feast = "Feast",
   Forbidden = "Forbidden",
-  Core = "Core"
+  Core = "Core",
+  All = "All of them!"
 }

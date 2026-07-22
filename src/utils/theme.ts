@@ -1,92 +1,104 @@
 import { colors } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 
-const primary = "#fff";
-const background = "#141414";
-const inputBackground = colors.grey[900];
-const border = colors.grey[700];
-const button = colors.blue[900];
+const outlined = "darkorange";
+const focused = "orange";
 
 export const theme = createTheme({
   components: {
     MuiButton: {
       styleOverrides: {
         contained: {
-          width: "100%",
-          height: "4rem",
-          color: primary,
-          fontSize: "2rem",
-          backgroundColor: button
-        },
-        text: {
-          padding: "0",
-          fontSize: "3rem"
+          margin: "0 auto",
+          padding: "0 1rem",
+          fontSize: "3rem",
+          color: "black",
+          backgroundColor: outlined,
+          borderRadius: "10px",
+          "&:hover": {
+            backgroundColor: focused
+          }
         }
       }
     },
     MuiCard: {
       styleOverrides: {
         root: {
+          padding: "10px",
+          marginBottom: "20px",
           display: "flex",
           alignItems: "center",
-          backgroundColor: background
+          backgroundColor: "#003500"
         }
       }
     },
     MuiCheckbox: {
       styleOverrides: {
         root: {
-          color: primary,
+          color: "white",
           "&.Mui-checked": {
-            color: primary
+            color: outlined
           },
           "&.Mui-disabled": {
-            color: inputBackground
+            color: "#212121"
           }
         }
       }
     },
-    MuiFormControlLabel: {
+    MuiFormLabel: {
+      styleOverrides: {
+        root: {
+          fontSize: "2rem",
+          color: outlined,
+          "&.Mui-focused": {
+            color: focused
+          }
+        }
+      }
+    },
+    MuiGrid: {
       styleOverrides: {
         root: {
           margin: "0 auto"
         }
       }
     },
-    MuiGrid: {
-      styleOverrides: {
-        container: {
-          width: "90vw",
-          margin: "auto"
-        }
-      }
-    },
-    MuiSvgIcon: {
-      styleOverrides: {
-        root: {
-          fontSize: "2rem"
-        }
-      }
-    },
-    MuiInputLabel: {
-      styleOverrides: {
-        root: {
-          fontSize: "1.5rem",
-          color: primary
-        }
-      }
-    },
     MuiSelect: {
       styleOverrides: {
+        icon: {
+          color: "white"
+        },
         root: {
-          fontSize: "1.5rem",
-          color: primary,
-          "& fieldset": {
-            borderColor: border
+          margin: "10px 0",
+          height: "4rem",
+          fontSize: "2rem",
+          ".MuiOutlinedInput-notchedOutline": {
+            border: `2px solid ${outlined}`
           },
-          "& .MuiSvgIcon-root": {
-            color: primary
+          "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            borderColor: focused
+          },
+          "&:hover .MuiOutlinedInput-notchedOutline": {
+            borderColor: focused
           }
+        }
+      }
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          fontSize: "3rem",
+          color: outlined,
+          "&:hover, &.Mui-selected": {
+            color: "yellow"
+          }
+        }
+      }
+    },
+    MuiTabs: {
+      styleOverrides: {
+        indicator: {
+          backgroundColor: "yellow"
         }
       }
     }
@@ -96,7 +108,7 @@ export const theme = createTheme({
       main: colors.blue[900]
     },
     text: {
-      primary: primary
+      primary: "#fff"
     }
   },
   typography: {
@@ -105,13 +117,11 @@ export const theme = createTheme({
       fontSize: "3rem",
       fontWeight: "bold",
       margin: "0 auto",
-      textAlign: "center",
+      textAlign: "center"
     },
     h2: {
       fontSize: "2rem",
-      fontWeight: "bold",
-      margin: "0 auto",
-      textAlign: "center",
+      fontWeight: "bold"
     },
     h3: {
       fontSize: "2rem",
@@ -122,6 +132,5 @@ export const theme = createTheme({
   },
   shape: {
     borderRadius: 4
-  },
-  spacing: 8
+  }
 });

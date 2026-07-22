@@ -1,208 +1,225 @@
-import type { Layer } from "../classes/Layer";
-import { Category } from "../enums/Category";
+import type { DKBLayer } from "../classes/DKBLayer";
+import { DKBCategory } from "../enums/DKBCategory";
 import { LayerName } from "../enums/LayerName";
 
-export const ingot: Layer = {
+export const ingot: DKBLayer = {
   name: LayerName.Ingot,
-  categories: [Category.Tutorial],
-  postgameCategories: [
-    Category.Triple,
-    Category.Battle,
-    Category.Chiptone,
-    Category.Cranky,
-    Category.ShiftySmash,
-    Category.Fragmentone,
-    Category.Glamtone,
-    Category.Growtone,
-    Category.Quiztone,
-    Category.Seekertone,
-    Category.Smashintone
-  ],
   bananas: [
     {
       num: 1,
       name: "The First Banandium Gem",
-      category: Category.Tutorial
+      category: DKBCategory.Tutorial
     },
     {
       num: 2,
       name: "Through the Banana-Mining Belt",
-      category: Category.Tutorial
+      category: DKBCategory.Tutorial
     },
     {
       num: 3,
       name: "Digging Up a Snack",
-      category: Category.Tutorial
-    }
-  ],
-  postgameBananas: [
+      category: DKBCategory.Tutorial
+    },
     {
       num: 4,
-      name: "Secret by the Start"
+      name: "Secret by the Start",
+      isPostgame: true
     },
     {
       num: 5,
       name: "Gold Rush!",
-      category: Category.Triple
+      isPostgame: true,
+      category: DKBCategory.Triple
     },
     {
       num: 6,
       name: "Shifty Smash: Rising Tower",
-      category: Category.ShiftySmash
+      isPostgame: true,
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 7,
       name: "Shifty Smash: Break Up the Ring",
-      category: Category.ShiftySmash
+      isPostgame: true,
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 8,
-      name: "Thwarting the Thorns"
+      name: "Thwarting the Thorns",
+      isPostgame: true
     },
     {
       num: 9,
       name: "Ingot Isle Fragmentone Recovery",
-      category: Category.Fragmentone
+      isPostgame: true,
+      category: DKBCategory.Fragmentone
     },
     {
       num: 10,
       name: "Ingot Isle Fragmentone Restoration",
-      category: Category.Fragmentone
+      isPostgame: true,
+      category: DKBCategory.Fragmentone
     },
     {
       num: 11,
       name: "Shifty Smash: Checkerboard Crush",
-      category: Category.ShiftySmash
+      isPostgame: true,
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 12,
       name: "The Ingot Isle Growtone",
-      category: Category.Growtone
+      isPostgame: true,
+      category: DKBCategory.Growtone
     },
     {
       num: 13,
       name: "The Hungry Ingot Isle Growtone",
-      category: Category.Growtone
+      isPostgame: true,
+      category: DKBCategory.Growtone
     },
     {
       num: 14,
       name: "The Sated Ingot Isle Growtone",
-      category: Category.Growtone
+      isPostgame: true,
+      category: DKBCategory.Growtone
     },
     {
       num: 15,
-      name: "Post-Sprint Treat"
+      name: "Post-Sprint Treat",
+      isPostgame: true
     },
     {
       num: 16,
-      name: "Snack in a Sunken Slab"
+      name: "Snack in a Sunken Slab",
+      isPostgame: true
     },
     {
       num: 17,
       name: "Ingot Isle Hide-and-Seek",
-      category: Category.Seekertone
+      isPostgame: true,
+      category: DKBCategory.Seekertone
     },
     {
       num: 18,
       name: "Ingot Isle Smashin' Stats",
-      category: Category.Smashintone
+      isPostgame: true,
+      category: DKBCategory.Smashintone
     },
     {
       num: 19,
       name: "Ingot Isle Quiz Master",
-      category: Category.Quiztone
+      isPostgame: true,
+      category: DKBCategory.Quiztone
     },
     {
       num: 20,
       name: "Decked Out in Gold",
-      category: Category.Glamtone
+      isPostgame: true,
+      category: DKBCategory.Glamtone
     },
     {
       num: 21,
       name: "Cranky's Ingot Isle Rant",
-      category: Category.Cranky
+      isPostgame: true,
+      category: DKBCategory.Cranky
     },
     {
       num: 22,
       name: "Finished Four Fights!",
-      category: Category.Quintuple,
-      category2: Category.Battle
+      isPostgame: true,
+      category: DKBCategory.Quintuple,
+      category2: DKBCategory.Battle
     },
     {
       num: 23,
       name: "Beat Eight Bouts!",
-      category: Category.Quintuple,
-      category2: Category.Battle
+      isPostgame: true,
+      category: DKBCategory.Quintuple,
+      category2: DKBCategory.Battle
     },
     {
       num: 24,
       name: "Won Thirteen Throwdowns!",
-      category: Category.Quintuple,
-      category2: Category.Battle
+      isPostgame: true,
+      category: DKBCategory.Quintuple,
+      category2: DKBCategory.Battle
     },
     {
       num: 25,
       name: "Battle Rush Cleared!",
-      category: Category.Quintuple,
-      category2: Category.Battle
+      isPostgame: true,
+      category: DKBCategory.Quintuple,
+      category2: DKBCategory.Battle
     },
     {
       num: 26,
       name: "Kong-quered Inflammonite!",
-      category: Category.Quintuple,
-      category2: Category.Battle
+      isPostgame: true,
+      category: DKBCategory.Quintuple,
+      category2: DKBCategory.Battle
     },
     {
       num: 27,
       name: "Kong-quered Abracajabya!",
-      category: Category.Quintuple,
-      category2: Category.Battle
+      isPostgame: true,
+      category: DKBCategory.Quintuple,
+      category2: DKBCategory.Battle
     },
     {
       num: 28,
       name: "Kong-quered Sinister Blusterwing!",
-      category: Category.Quintuple,
-      category2: Category.Battle
+      isPostgame: true,
+      category: DKBCategory.Quintuple,
+      category2: DKBCategory.Battle
     },
     {
       num: 29,
       name: "Kong-quered Muckety-Muck!",
-      category: Category.Quintuple,
-      category2: Category.Battle
+      isPostgame: true,
+      category: DKBCategory.Quintuple,
+      category2: DKBCategory.Battle
     },
     {
       num: 30,
       name: "Kong-quered Stompenclomper!",
-      category: Category.Quintuple,
-      category2: Category.Battle
+      isPostgame: true,
+      category: DKBCategory.Quintuple,
+      category2: DKBCategory.Battle
     },
     {
       num: 31,
       name: "Kong-quered the Boss Rush!",
-      category: Category.Quintuple,
-      category2: Category.Battle
+      isPostgame: true,
+      category: DKBCategory.Quintuple,
+      category2: DKBCategory.Battle
     },
     {
       num: 32,
-      name: "Snack on the Outskirts of Town"
+      name: "Snack on the Outskirts of Town",
+      isPostgame: true
     },
     {
       num: 33,
       name: "Shifty Smash: Quick & Nimble",
-      category: Category.ShiftySmash
+      isPostgame: true,
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 34,
-      name: "Claimed on the Crane"
+      name: "Claimed on the Crane",
+      isPostgame: true
     },
     {
       num: 35,
-      name: "The Best of the Bunch"
+      name: "The Best of the Bunch",
+      isPostgame: true
     },
     {
       num: 36,
       name: "Ingot Isle Chip Exchange",
-      category: Category.Chiptone
+      isPostgame: true,
+      category: DKBCategory.Chiptone
     }
   ]
 };

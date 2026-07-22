@@ -1,4 +1,4 @@
-export enum Category {
+export enum DKBCategory {
   Tutorial = "Tutorial",
   Triple = "Triple",
   Quintuple = "Quintuple",

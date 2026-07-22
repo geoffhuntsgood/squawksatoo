@@ -1,45 +1,59 @@
-import { ThemeProvider } from "@mui/material";
+import { Box, Card, Tab, Tabs, ThemeProvider, Typography } from "@mui/material";
 import { useState } from "react";
-import type { Banana } from "./classes/Banana";
-import { Config } from "./components/game/Config";
-import { Game } from "./components/game/Game";
+import { Options } from "./classes/Options";
+import { DK64Config } from "./components/DK64Config";
+import { DKBConfig } from "./components/DKBConfig";
+import { DKButton } from "./components/DKButton";
+import { Game } from "./components/Game";
 import { theme } from "./utils/theme";
 
 const App = () => {
-  const [count, setCount] = useState("1");
-  const [layerBananas, setLayerBananas] = useState<Banana[]>([]);
-  const [playing, setPlaying] = useState(false);
-  const [timer, setTimer] = useState(false);
-  const [continuous, setContinuous] = useState(true);
-  const [recycle, setRecycle] = useState(false);
+  const [game, setGame] = useState<"DKB" | "DK64">("DKB");
+  const [options, setOptions] = useState<Options | null>(null);
+
+  const [goLabel, setGoLabel] = useState<string>("");
+  const [start, setStart] = useState<boolean>(false);
 
   return (
     <ThemeProvider theme={theme}>
-      {!playing && (
-        <Config
-          layerBananas={layerBananas}
-          setLayerBananas={setLayerBananas}
-          setPlaying={setPlaying}
-          count={count}
-          setCount={setCount}
-          timer={timer}
-          setTimer={setTimer}
-          continuous={continuous}
-          setContinuous={setContinuous}
-          recycle={recycle}
-          setRecycle={setRecycle}
+      <Card>
+        <img src="./img/squawks.png" height={50} width={50} />
+        <Typography color="textPrimary" variant="h1">
+          Squawksatoo
+        </Typography>
+        <img
+          src="./img/squawks.png"
+          height={50}
+          width={50}
+          style={{ transform: "scaleX(-1)" }}
         />
+      </Card>
+
+      {!start && (
+        <>
+          <Tabs
+            centered
+            value={game}
+            onChange={(_, newValue) => setGame(newValue)}
+          >
+            <Tab label="DKB" value="DKB" />
+            <Tab label="DK64" value="DK64" />
+          </Tabs>
+
+          {game === "DKB" && (
+            <DKBConfig setOptions={setOptions} setGoLabel={setGoLabel} />
+          )}
+          {game === "DK64" && (
+            <DK64Config setOptions={setOptions} setGoLabel={setGoLabel} />
+          )}
+
+          <Box sx={{ textAlign: "center" }}>
+            <DKButton label={goLabel} handleClick={() => setStart(true)} />
+          </Box>
+        </>
       )}
-      {playing && (
-        <Game
-          layerBananas={layerBananas}
-          setPlaying={setPlaying}
-          count={count}
-          setCount={setCount}
-          timer={timer}
-          continuous={continuous}
-          recycle={recycle}
-        />
+      {start && options && (
+        <Game options={options} setOptions={setOptions} setStart={setStart} />
       )}
     </ThemeProvider>
   );

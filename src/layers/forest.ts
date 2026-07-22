@@ -1,31 +1,19 @@
-import type { Layer } from "../classes/Layer";
-import { Category } from "../enums/Category";
+import type { DKBLayer } from "../classes/DKBLayer";
+import { DKBCategory } from "../enums/DKBCategory";
 import { LayerName } from "../enums/LayerName";
 
-export const forest: Layer = {
+export const forest: DKBLayer = {
   name: LayerName.Forest,
-  categories: [
-    Category.Triple,
-    Category.Battle,
-    Category.Challenge,
-    Category.Cranky,
-    Category.ShiftySmash,
-    Category.Chiptone,
-    Category.Growtone,
-    Category.Seekertone,
-    Category.Smashintone
-  ],
-  postgameCategories: [Category.Rehearsal],
   bananas: [
     {
       num: 1,
       name: "Branched into the Forest Layer!",
-      category: Category.Triple
+      category: DKBCategory.Triple
     },
     {
       num: 2,
       name: "Battle: Thorn-Forest Throwdown",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 3,
@@ -62,17 +50,17 @@ export const forest: Layer = {
     {
       num: 11,
       name: "Blasting through Brambles",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 12,
       name: "Back of the Brambles",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 13,
       name: "Beat the Brambles",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 14,
@@ -81,7 +69,7 @@ export const forest: Layer = {
     {
       num: 15,
       name: "Forest Smashin' Stats",
-      category: Category.Smashintone
+      category: DKBCategory.Smashintone
     },
     {
       num: 16,
@@ -94,7 +82,7 @@ export const forest: Layer = {
     {
       num: 18,
       name: "Battle: Yucky Yard",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 19,
@@ -107,12 +95,12 @@ export const forest: Layer = {
     {
       num: 21,
       name: "Shifty Smash: Crossing the Branch",
-      category: Category.ShiftySmash
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 22,
       name: "Cranky's Forest Rant",
-      category: Category.Cranky
+      category: DKBCategory.Cranky
     },
     {
       num: 23,
@@ -149,17 +137,17 @@ export const forest: Layer = {
     {
       num: 31,
       name: "Secret Room Service",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 32,
       name: "Scarfing the Scenery",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 33,
       name: "Wall You Can Eat",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 34,
@@ -184,7 +172,7 @@ export const forest: Layer = {
     {
       num: 48,
       name: "Forest Chip Exchange",
-      category: Category.Chiptone
+      category: DKBCategory.Chiptone
     },
     {
       num: 49,
@@ -193,7 +181,7 @@ export const forest: Layer = {
     {
       num: 50,
       name: "Plummeted to Mossplume Marsh!",
-      category: Category.Triple
+      category: DKBCategory.Triple
     },
     {
       num: 51,
@@ -202,7 +190,7 @@ export const forest: Layer = {
     {
       num: 52,
       name: "Shifty Smash: Thwart the Thorns",
-      category: Category.ShiftySmash
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 53,
@@ -211,17 +199,17 @@ export const forest: Layer = {
     {
       num: 54,
       name: "Flying through the Sky",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 55,
       name: "Soaring through Space",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 56,
       name: "Gliding through the Heavens",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 57,
@@ -230,7 +218,7 @@ export const forest: Layer = {
     {
       num: 58,
       name: "Battle: Bouncing Bites",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 59,
@@ -243,12 +231,12 @@ export const forest: Layer = {
     {
       num: 61,
       name: "Forest Hide-and-Seek",
-      category: Category.Seekertone
+      category: DKBCategory.Seekertone
     },
     {
       num: 62,
       name: "Shifty Smash: Rubbery Roost",
-      category: Category.ShiftySmash
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 63,
@@ -261,17 +249,17 @@ export const forest: Layer = {
     {
       num: 65,
       name: "Bouncy Ballet",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 66,
       name: "Bouncy Bravado",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 67,
       name: "Bouncy Barriers",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 68,
@@ -284,52 +272,52 @@ export const forest: Layer = {
     {
       num: 70,
       name: "Battle: Three across the Chasm",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 71,
       name: "Forest Fragmentone Recovery",
-      category: Category.Fragmentone
+      category: DKBCategory.Fragmentone
     },
     {
       num: 72,
       name: "Forest Fragmentone Restoration",
-      category: Category.Fragmentone
+      category: DKBCategory.Fragmentone
     },
     {
       num: 73,
       name: "Waded into Bramblenest Bog!",
-      category: Category.Triple
+      category: DKBCategory.Triple
     },
     {
       num: 74,
       name: "Top-Shelf Treasure",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 75,
       name: "Tree-Pit Banana Balloons",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 76,
       name: "Tucked behind the Tree",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 77,
       name: "The Forest Growtone",
-      category: Category.Growtone
+      category: DKBCategory.Growtone
     },
     {
       num: 78,
       name: "The Hungry Forest Growtone",
-      category: Category.Growtone
+      category: DKBCategory.Growtone
     },
     {
       num: 79,
       name: "The Sated Forest Growtone",
-      category: Category.Growtone
+      category: DKBCategory.Growtone
     },
     {
       num: 80,
@@ -338,7 +326,7 @@ export const forest: Layer = {
     {
       num: 81,
       name: "Battle: Updraft Uproar",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 82,
@@ -347,54 +335,61 @@ export const forest: Layer = {
     {
       num: 83,
       name: "Roosted in a Thorny Nest"
-    }
-  ],
-  postgameBananas: [
+    },
     {
       num: 39,
       name: "Off to a Flying Start!",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 40,
       name: "Pretty Thing Preening in a Birdcage",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 41,
       name: "Survived Sizzle-Wing Circus!",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 42,
       name: "Faced the Fire and Lasers",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 43,
       name: "Taking the Low Road",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 44,
       name: "Bounded by Bouncy-Bounce Park!",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 45,
       name: "A Peek at the Peak",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 46,
       name: "Simmering in the Lava Pond",
-      category: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
     },
     {
       num: 47,
       name: "Topped the Tower of Turbulence!",
-      category: Category.Triple,
-      category2: Category.Rehearsal
+      isPostgame: true,
+      category: DKBCategory.Triple,
+      category2: DKBCategory.Rehearsal
     }
   ]
 };

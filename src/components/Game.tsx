@@ -4,31 +4,24 @@ import { Button, Grid, IconButton, Typography } from "@mui/material";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import { useReward } from "react-rewards";
 import { useStopwatch } from "react-timer-hook";
-import { Banana } from "../../classes/Banana";
-import { DKButton } from "../DKButton";
-import { DKHeader } from "../DKHeader";
-import { DKItemRow } from "../DKItemRow";
+import type { DK64Item } from "../classes/DK64Item";
+import { DKBBanana } from "../classes/DKBBanana";
+import type { Options } from "../classes/Options";
+import { DKButton } from "./DKButton";
+import { DKItemRow } from "./DKItemRow";
 
 export const Game = ({
-  layerBananas,
-  setPlaying,
-  count,
-  setCount,
-  timer,
-  continuous,
-  recycle
+  options,
+  setOptions,
+  setStart
 }: {
-  layerBananas: Banana[];
-  setPlaying: Dispatch<SetStateAction<boolean>>;
-  count: string;
-  setCount: Dispatch<SetStateAction<string>>;
-  timer: boolean;
-  continuous: boolean;
-  recycle: boolean;
+  options: Options;
+  setOptions: Dispatch<SetStateAction<Options | null>>;
+  setStart: Dispatch<SetStateAction<boolean>>;
 }) => {
   const [header, setHeader] = useState("");
-  const [available, setAvailable] = useState<Banana[]>([]);
-  const [displayed, setDisplayed] = useState<Banana[]>([]);
+  const [available, setAvailable] = useState<(DKBBanana | DK64Item)[]>([]);
+  const [displayed, setDisplayed] = useState<(DKBBanana | DK64Item)[]>([]);
   const [successCount, setSuccessCount] = useState(0);
   const [failureCount, setFailureCount] = useState(0);
   const [disabled, setDisabled] = useState<string[]>([]);
@@ -62,14 +55,15 @@ export const Game = ({
   };
 
   const initSelection = () => {
-    const nans = [...layerBananas];
+    const nans = [...options.initialItems];
+
     const shown = [];
     const dis = [];
     if (disabled.length > 0) {
       setDisabled([]);
     }
 
-    for (let i = 0; i < Number(count); i++) {
+    for (let i = 0; i < Number(options.count); i++) {
       const index = Math.floor(Math.random() * nans.length);
       shown.push(nans[index]);
       nans.splice(index, 1);
@@ -89,7 +83,7 @@ export const Game = ({
       const index = Math.floor(Math.random() * nans.length);
       shown.splice(displayIndex, 1, nans[index]);
 
-      if (recycle) {
+      if (options.recycleWrong) {
         if (success) {
           nans.splice(index, 1);
         } else {
@@ -113,7 +107,7 @@ export const Game = ({
     } else {
       setFailureCount(failureCount + 1);
     }
-    if (continuous) {
+    if (options.autoRefresh) {
       replaceOne(index, success);
     } else {
       markDisabled(index, "true");
@@ -131,16 +125,6 @@ export const Game = ({
     reset();
   };
 
-  const reconfig = () => {
-    setAvailable([]);
-    setDisplayed([]);
-    setDisabled([]);
-    setCount("1");
-    setSuccessCount(0);
-    setFailureCount(0);
-    setPlaying(false);
-  };
-
   useEffect(() => {
     initSelection();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -154,7 +138,7 @@ export const Game = ({
         reward1();
         reward2();
       } else {
-        if (continuous) {
+        if (options.autoRefresh) {
           setHeader(
             `${available.length === 0 ? "None" : available.length} left!`
           );
@@ -187,10 +171,6 @@ export const Game = ({
   return (
     <Grid container spacing={1}>
       <Grid size={12}>
-        <DKHeader />
-      </Grid>
-
-      <Grid size={12}>
         <Typography color="textPrimary" variant="h1">
           {header}
         </Typography>
@@ -203,11 +183,11 @@ export const Game = ({
       </Grid>
 
       {displayed.length > 0 &&
-        displayed.map((banana: Banana, index: number) => {
+        displayed.map((item: DKBBanana | DK64Item, index: number) => {
           return (
             <DKItemRow
               key={index}
-              name={banana.name}
+              name={item.name}
               onSuccess={() => onComplete(index, true)}
               onFailure={() => onFailure(index)}
               disabled={disabled[index] === "true"}
@@ -245,7 +225,7 @@ export const Game = ({
       </Grid>
       <Grid size={1}></Grid>
       <Grid size={4}>
-        {timer && (
+        {options.timer && (
           <Button
             variant="text"
             sx={{ padding: "0", marginLeft: "-20px" }}
@@ -266,7 +246,13 @@ export const Game = ({
       </Grid>
 
       <DKButton label="Start over" handleClick={refresh} />
-      <DKButton label="Reconfigure" handleClick={reconfig} />
+      <DKButton
+        label="Reconfigure"
+        handleClick={() => {
+          setOptions(null);
+          setStart(false);
+        }}
+      />
     </Grid>
   );
 };

@@ -1,29 +1,14 @@
-import type { Layer } from "../classes/Layer";
-import { Category } from "../enums/Category";
+import type { DKBLayer } from "../classes/DKBLayer";
+import { DKBCategory } from "../enums/DKBCategory";
 import { LayerName } from "../enums/LayerName";
 
-export const resort: Layer = {
+export const resort: DKBLayer = {
   name: LayerName.Resort,
-  categories: [
-    Category.Quintuple,
-    Category.Battle,
-    Category.Challenge,
-    Category.Cranky,
-    Category.ShiftySmash,
-    Category.Bloomintone,
-    Category.Chiptone,
-    Category.Fragmentone,
-    Category.Growtone,
-    Category.Quiztone,
-    Category.Seekertone,
-    Category.Smashintone
-  ],
-  postgameCategories: [Category.Glamtone],
   bananas: [
     {
       num: 1,
       name: "Drove Off Void Kong!",
-      category: Category.Quintuple
+      category: DKBCategory.Quintuple
     },
     {
       num: 2,
@@ -40,7 +25,7 @@ export const resort: Layer = {
     {
       num: 5,
       name: "Resort Quiz Master",
-      category: Category.Quiztone
+      category: DKBCategory.Quiztone
     },
     {
       num: 6,
@@ -57,7 +42,7 @@ export const resort: Layer = {
     {
       num: 9,
       name: "A Daring Drop",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 10,
@@ -70,47 +55,47 @@ export const resort: Layer = {
     {
       num: 12,
       name: "Battle: Pulverizer's Path",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 13,
       name: "The Resort Growtone",
-      category: Category.Growtone
+      category: DKBCategory.Growtone
     },
     {
       num: 14,
       name: "The Hungry Resort Growtone",
-      category: Category.Growtone
+      category: DKBCategory.Growtone
     },
     {
       num: 15,
       name: "The Sated Resort Growtone",
-      category: Category.Growtone
+      category: DKBCategory.Growtone
     },
     {
       num: 16,
       name: "Resort Fragmentone Recovery",
-      category: Category.Fragmentone
+      category: DKBCategory.Fragmentone
     },
     {
       num: 17,
       name: "Resort Fragmentone Restoration",
-      category: Category.Fragmentone
+      category: DKBCategory.Fragmentone
     },
     {
       num: 18,
       name: "Resort Smashin' Stats",
-      category: Category.Smashintone
+      category: DKBCategory.Smashintone
     },
     {
       num: 19,
       name: "Shifty Smash: Liftoff to the Sky",
-      category: Category.ShiftySmash
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 20,
       name: "Cranky's Resort Rant",
-      category: Category.Cranky
+      category: DKBCategory.Cranky
     },
     {
       num: 21,
@@ -119,37 +104,37 @@ export const resort: Layer = {
     {
       num: 22,
       name: "Battle: Baited to a Bruising",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 23,
       name: "Shifty Smash: Seaside Smashing",
-      category: Category.ShiftySmash
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 24,
       name: "Bloomed in the Resort Layer",
-      category: Category.Bloomintone
+      category: DKBCategory.Bloomintone
     },
     {
       num: 25,
       name: "Resort Hide-and-Seek",
-      category: Category.Seekertone
+      category: DKBCategory.Seekertone
     },
     {
       num: 26,
       name: "Shaved-Ice Trainee",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 27,
       name: "Shaved-Ice Artisan",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 28,
       name: "Shaved-Ice Master",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 29,
@@ -158,17 +143,17 @@ export const resort: Layer = {
     {
       num: 30,
       name: "Changing Lanes",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 31,
       name: "Clearing the Lanes",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 32,
       name: "Pause for the Underpass",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 33,
@@ -193,7 +178,7 @@ export const resort: Layer = {
     {
       num: 38,
       name: "Battle: Aerial Aiming",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 39,
@@ -204,16 +189,15 @@ export const resort: Layer = {
       name: "Above the Big Watermelon"
     },
     {
-      num: 42,
-      name: "Resort Chip Exchange",
-      category: Category.Chiptone
-    }
-  ],
-  postgameBananas: [
-    {
       num: 41,
       name: "Decked Out in Dampness",
-      category: Category.Glamtone
+      isPostgame: true,
+      category: DKBCategory.Glamtone
+    },
+    {
+      num: 42,
+      name: "Resort Chip Exchange",
+      category: DKBCategory.Chiptone
     }
   ]
 };

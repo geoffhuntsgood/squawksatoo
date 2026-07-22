@@ -1,16 +1,9 @@
-import type { Layer } from "../classes/Layer";
-import { Category } from "../enums/Category";
+import type { DKBLayer } from "../classes/DKBLayer";
+import { DKBCategory } from "../enums/DKBCategory";
 import { LayerName } from "../enums/LayerName";
 
-export const junction: Layer = {
+export const junction: DKBLayer = {
   name: LayerName.Junction,
-  categories: [
-    Category.Quintuple,
-    Category.Battle,
-    Category.Challenge,
-    Category.Cranky
-  ],
-  postgameCategories: [Category.ShiftySmash],
   bananas: [
     {
       num: 1,
@@ -19,7 +12,7 @@ export const junction: Layer = {
     {
       num: 2,
       name: "Cooled Off Inflammonite!",
-      category: Category.Quintuple
+      category: DKBCategory.Quintuple
     },
     {
       num: 3,
@@ -32,7 +25,7 @@ export const junction: Layer = {
     {
       num: 6,
       name: "Uprooted Abracajabya!",
-      category: Category.Quintuple
+      category: DKBCategory.Quintuple
     },
     {
       num: 7,
@@ -49,39 +42,39 @@ export const junction: Layer = {
     {
       num: 11,
       name: "Battle: A Fiery Fracas",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 12,
       name: "Target on the Run",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 13,
       name: "Out-of-Range Perch",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 14,
       name: "Target Escaped",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 15,
       name: "Cranky's Junction Rant",
-      category: Category.Cranky
-    }
-  ],
-  postgameBananas: [
+      category: DKBCategory.Cranky
+    },
     {
       num: 4,
       name: "Shifty Smash: Freezer Path",
-      category: Category.ShiftySmash
+      isPostgame: true,
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 8,
       name: "Shifty Smash: Forest Path",
-      category: Category.ShiftySmash
+      isPostgame: true,
+      category: DKBCategory.ShiftySmash
     }
   ]
 };

@@ -1,22 +1,9 @@
-import type { Layer } from "../classes/Layer";
-import { Category } from "../enums/Category";
+import type { DKBLayer } from "../classes/DKBLayer";
+import { DKBCategory } from "../enums/DKBCategory";
 import { LayerName } from "../enums/LayerName";
 
-export const radiance: Layer = {
+export const radiance: DKBLayer = {
   name: LayerName.Radiance,
-  categories: [
-    Category.Triple,
-    Category.Battle,
-    Category.Challenge,
-    Category.Cranky,
-    Category.ShiftySmash,
-    Category.Bloomintone,
-    Category.Chiptone,
-    Category.Fragmentone,
-    Category.Growtone,
-    Category.Smashintone
-  ],
-  postgameCategories: [Category.Rehearsal],
   bananas: [
     {
       num: 1,
@@ -25,7 +12,7 @@ export const radiance: Layer = {
     {
       num: 2,
       name: "Alighted in the Radiance Layer!",
-      category: Category.Triple
+      category: DKBCategory.Triple
     },
     {
       num: 3,
@@ -34,12 +21,12 @@ export const radiance: Layer = {
     {
       num: 4,
       name: "Ssslithered Past Shedlight Cave!",
-      category: Category.Triple
+      category: DKBCategory.Triple
     },
     {
       num: 5,
       name: "Shifty Smash: A Thorny Situation",
-      category: Category.ShiftySmash
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 6,
@@ -52,17 +39,17 @@ export const radiance: Layer = {
     {
       num: 8,
       name: "Glowing Fruit in the Darkness",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 9,
       name: "Sharp Eye for a Banana",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 10,
       name: "Guided by Glowing Fruit",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 11,
@@ -71,7 +58,7 @@ export const radiance: Layer = {
     {
       num: 12,
       name: "Battle: Some Light Smashing",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 13,
@@ -92,36 +79,91 @@ export const radiance: Layer = {
     {
       num: 17,
       name: "Sneaky Room Under Sand",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 18,
       name: "Springing off Sandy Steps",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 19,
       name: "Swift and Shocking Ascent",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 20,
       name: "The View Beyond Glowboa Grotto"
     },
     {
+      num: 21,
+      name: "Ran the First Scale!",
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
+    },
+    {
+      num: 22,
+      name: "Summited the Snaking Path",
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
+    },
+    {
+      num: 23,
+      name: "Ran the Second Scale!",
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
+    },
+    {
+      num: 24,
+      name: "Floated Aloft with Laser Precision",
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
+    },
+    {
+      num: 25,
+      name: "Ran the Third Scale!",
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
+    },
+    {
+      num: 26,
+      name: "Snaked by without Going Boom",
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
+    },
+    {
+      num: 27,
+      name: "Ran the Fourth Scale!",
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
+    },
+    {
+      num: 28,
+      name: "Sink like a Crock",
+      isPostgame: true,
+      category: DKBCategory.Rehearsal
+    },
+    {
+      num: 29,
+      name: "Ran the Final Scale!",
+      isPostgame: true,
+      category: DKBCategory.Triple,
+      category2: DKBCategory.Rehearsal
+    },
+    {
       num: 30,
       name: "Radiance Chip Exchange",
-      category: Category.Chiptone
+      category: DKBCategory.Chiptone
     },
     {
       num: 31,
       name: "Unveiled in the Sculptors' Studio!",
-      category: Category.Triple
+      category: DKBCategory.Triple
     },
     {
       num: 32,
       name: "Battle: Shining Through",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 33,
@@ -134,7 +176,7 @@ export const radiance: Layer = {
     {
       num: 35,
       name: "Battle: Dive-Bombing Run",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 36,
@@ -143,7 +185,7 @@ export const radiance: Layer = {
     {
       num: 37,
       name: "Shifty Smash: A Dark Climb",
-      category: Category.ShiftySmash
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 38,
@@ -164,17 +206,17 @@ export const radiance: Layer = {
     {
       num: 42,
       name: "Hidden in the Girders",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 43,
       name: "Jumpin' like Jumpman",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 44,
       name: "Climbing to a High Score",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 45,
@@ -183,7 +225,7 @@ export const radiance: Layer = {
     {
       num: 46,
       name: "Settled Upon Serpent Sands!",
-      category: Category.Triple
+      category: DKBCategory.Triple
     },
     {
       num: 47,
@@ -200,52 +242,52 @@ export const radiance: Layer = {
     {
       num: 50,
       name: "Bloomed in the Radiance Layer",
-      category: Category.Bloomintone
+      category: DKBCategory.Bloomintone
     },
     {
       num: 51,
       name: "Battle: Shadows and Sunlight",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 52,
       name: "Shifty Smash: Timing is Everything",
-      category: Category.ShiftySmash
+      category: DKBCategory.ShiftySmash
     },
     {
       num: 53,
       name: "Radiance Fragmentone Recovery",
-      category: Category.Fragmentone
+      category: DKBCategory.Fragmentone
     },
     {
       num: 54,
       name: "Radiance Fragmentone Restoration",
-      category: Category.Fragmentone
+      category: DKBCategory.Fragmentone
     },
     {
       num: 55,
       name: "Battle: Vaulting Virtuoso",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 56,
       name: "Radiance Smashin' Stats",
-      category: Category.Smashintone
+      category: DKBCategory.Smashintone
     },
     {
       num: 57,
       name: "Lit-Path Switchback",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 58,
       name: "Shadow-Path Rest Stop",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 59,
       name: "Shadow-Path Finish Line",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 60,
@@ -258,17 +300,17 @@ export const radiance: Layer = {
     {
       num: 62,
       name: "The Radiance Growtone",
-      category: Category.Growtone
+      category: DKBCategory.Growtone
     },
     {
       num: 63,
       name: "The Hungry Radiance Growtone",
-      category: Category.Growtone
+      category: DKBCategory.Growtone
     },
     {
       num: 64,
       name: "The Sated Radiance Growtone",
-      category: Category.Growtone
+      category: DKBCategory.Growtone
     },
     {
       num: 65,
@@ -277,7 +319,7 @@ export const radiance: Layer = {
     {
       num: 66,
       name: "Cranky's Radiance Rant",
-      category: Category.Cranky
+      category: DKBCategory.Cranky
     },
     {
       num: 67,
@@ -286,7 +328,7 @@ export const radiance: Layer = {
     {
       num: 68,
       name: "Battle: Open the Window",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 69,
@@ -303,74 +345,26 @@ export const radiance: Layer = {
     {
       num: 72,
       name: "Crashed the Crystal-Cobra Den!",
-      category: Category.Triple
+      category: DKBCategory.Triple
     },
     {
       num: 73,
       name: "Hidden in the Moving Wall",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 74,
       name: "Sticking to the Shadows",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 75,
       name: "Through Shadows and Thorns",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 76,
       name: "Swallowed by the Snake"
-    }
-  ],
-  postgameBananas: [
-    {
-      num: 21,
-      name: "Ran the First Scale!",
-      category: Category.Rehearsal
-    },
-    {
-      num: 22,
-      name: "Summited the Snaking Path",
-      category: Category.Rehearsal
-    },
-    {
-      num: 23,
-      name: "Ran the Second Scale!",
-      category: Category.Rehearsal
-    },
-    {
-      num: 24,
-      name: "Floated Aloft with Laser Precision",
-      category: Category.Rehearsal
-    },
-    {
-      num: 25,
-      name: "Ran the Third Scale!",
-      category: Category.Rehearsal
-    },
-    {
-      num: 26,
-      name: "Snaked by without Going Boom",
-      category: Category.Rehearsal
-    },
-    {
-      num: 27,
-      name: "Ran the Fourth Scale!",
-      category: Category.Rehearsal
-    },
-    {
-      num: 28,
-      name: "Sink like a Crock",
-      category: Category.Rehearsal
-    },
-    {
-      num: 29,
-      name: "Ran the Final Scale!",
-      category: Category.Triple, 
-      category2: Category.Rehearsal
     }
   ]
 };

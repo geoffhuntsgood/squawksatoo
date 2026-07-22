@@ -1,17 +1,9 @@
-import type { Layer } from "../classes/Layer";
-import { Category } from "../enums/Category";
+import type { DKBLayer } from "../classes/DKBLayer";
+import { DKBCategory } from "../enums/DKBCategory";
 import { LayerName } from "../enums/LayerName";
 
-export const groove: Layer = {
+export const groove: DKBLayer = {
   name: LayerName.Groove,
-  categories: [
-    Category.Battle,
-    Category.Challenge,
-    Category.Cranky,
-    Category.Chiptone,
-    Category.Smashintone
-  ],
-  postgameCategories: [Category.Seekertone],
   bananas: [
     {
       num: 1,
@@ -48,22 +40,22 @@ export const groove: Layer = {
     {
       num: 10,
       name: "Destined for the Top",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 11,
       name: "Liftoff to the Top",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 12,
       name: "A Groovy Disco-very",
-      category: Category.Challenge
+      category: DKBCategory.Challenge
     },
     {
       num: 13,
       name: "Cranky's Groove Rant",
-      category: Category.Cranky
+      category: DKBCategory.Cranky
     },
     {
       num: 14,
@@ -72,7 +64,7 @@ export const groove: Layer = {
     {
       num: 15,
       name: "Groove Smashin' Stats",
-      category: Category.Smashintone
+      category: DKBCategory.Smashintone
     },
     {
       num: 17,
@@ -113,36 +105,39 @@ export const groove: Layer = {
     {
       num: 26,
       name: "Battle: Opposite Obliteration",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 27,
       name: "Battle: Cliff-Wall Ambush",
-      category: Category.Battle
+      category: DKBCategory.Battle
     },
     {
       num: 30,
       name: "Groove Chip Exchange",
-      category: Category.Chiptone
-    }
-  ],
-  postgameBananas: [
+      category: DKBCategory.Chiptone
+    },
     {
       num: 9,
-      name: "A Complete Fossil Collection"
+      name: "A Complete Fossil Collection",
+      isPostgame: true,
+      iHateMyself: true
     },
     {
       num: 16,
-      name: "Groovin' Once Again"
+      name: "Groovin' Once Again",
+      isPostgame: true
     },
     {
       num: 28,
-      name: "A Gift from Poppy"
+      name: "A Gift from Poppy",
+      isPostgame: true
     },
     {
       num: 29,
       name: "Dig the Groovy Nightlife",
-      category: Category.Seekertone
+      isPostgame: true,
+      category: DKBCategory.Seekertone
     }
   ]
 };

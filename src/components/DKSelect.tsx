@@ -19,18 +19,19 @@ export const DKSelect = ({
   selectItems: string[];
 }) => {
   const styles = {
-    menu: {
-      MenuProps: {
-        MenuListProps: {
-          sx: {
-            color: "#fff",
-            backgroundColor: "#212121"
+    MenuProps: {
+      MenuListProps: {
+        sx: {
+          padding: "0",
+          backgroundColor: "#003500",
+          "& .MuiMenuItem-root": {
+            fontSize: "1.5rem"
           }
-        },
-        PaperProps: {
-          style: {
-            maxHeight: 200
-          }
+        }
+      },
+      PaperProps: {
+        style: {
+          maxHeight: "20rem"
         }
       }
     }
@@ -43,11 +44,12 @@ export const DKSelect = ({
           <InputLabel id={`select-${label}`}>{label}</InputLabel>
           <Select
             value={value}
+            label={label}
             labelId={`select-${label}`}
             onChange={(event: SelectChangeEvent) =>
               handleChange(event.target.value)
             }
-            inputProps={styles.menu}
+            inputProps={styles}
           >
             {selectItems.map((item: string) => (
               <MenuItem value={item}>{item}</MenuItem>
