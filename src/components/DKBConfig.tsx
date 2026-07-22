@@ -28,6 +28,7 @@ export const DKBConfig = ({
   const [timer, setTimer] = useState(false);
   const [autoRefresh, setAutoRefresh] = useState(true);
   const [recycleWrong, setRecycleWrong] = useState(false);
+  const [iHateMyself, setIHateMyself] = useState(false);
 
   const [initialItems, setInitialItems] = useState<DKBBanana[]>([]);
 
@@ -41,7 +42,11 @@ export const DKBConfig = ({
   };
 
   useEffect(() => {
-    const layerNans = getLayerBananas(layer as LayerName, includePostgame);
+    const layerNans = getLayerBananas(
+      layer as LayerName,
+      includePostgame,
+      iHateMyself
+    );
     const cats: DKBCategory[] = [];
     layerNans.forEach((nan: DKBBanana) => {
       if (nan.category && !cats.includes(nan.category)) {
@@ -55,20 +60,22 @@ export const DKBConfig = ({
     const initialNans = getAllBananasForCategories(
       layer as LayerName,
       [],
-      includePostgame
+      includePostgame,
+      iHateMyself
     );
     setInitialItems(initialNans);
-  }, [layer, includePostgame]);
+  }, [layer, includePostgame, iHateMyself]);
 
   useEffect(() => {
     setInitialItems(
       getAllBananasForCategories(
         layer as LayerName,
         selectedCategories as DKBCategory[],
-        includePostgame
+        includePostgame,
+        iHateMyself
       )
     );
-  }, [selectedCategories]);
+  }, [selectedCategories, includePostgame, iHateMyself]);
 
   useEffect(() => {
     if (initialItems.length > 0) {
@@ -79,13 +86,23 @@ export const DKBConfig = ({
         includePostgame,
         timer,
         autoRefresh,
-        recycleWrong
+        recycleWrong,
+        iHateMyself
       });
     }
-  }, [initialItems, count]);
+  }, [
+    initialItems,
+    count,
+    includePostgame,
+    timer,
+    autoRefresh,
+    recycleWrong,
+    iHateMyself
+  ]);
 
   return (
     <Grid container spacing={1}>
+      <Grid size={1} />
       <Grid size={5}>
         <Box sx={{ margin: "10px" }}>
           <DKSelect
@@ -128,8 +145,14 @@ export const DKBConfig = ({
               handleChange={setRecycleWrong}
             />
           )}
+          <DKCheckbox
+            label="I Hate Myself"
+            checked={iHateMyself}
+            handleChange={setIHateMyself}
+          />
         </Box>
       </Grid>
+      <Grid size={1} />
     </Grid>
   );
 };

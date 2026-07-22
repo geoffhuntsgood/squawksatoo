@@ -1,16 +1,16 @@
 import Cancel from "@mui/icons-material/Cancel";
 import CheckCircle from "@mui/icons-material/CheckCircle";
-import { Button, Grid, IconButton, Typography } from "@mui/material";
+import { Grid, IconButton, Typography } from "@mui/material";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import { useReward } from "react-rewards";
 import { useStopwatch } from "react-timer-hook";
-import type { DK64Item } from "../classes/DK64Item";
 import { DKBBanana } from "../classes/DKBBanana";
 import type { Options } from "../classes/Options";
 import { DKButton } from "./DKButton";
 import { DKItemRow } from "./DKItemRow";
+import { DKTimer } from "./DKTimer";
 
-export const Game = ({
+export const DKBGame = ({
   options,
   setOptions,
   setStart
@@ -20,11 +20,13 @@ export const Game = ({
   setStart: Dispatch<SetStateAction<boolean>>;
 }) => {
   const [header, setHeader] = useState("");
-  const [available, setAvailable] = useState<(DKBBanana | DK64Item)[]>([]);
-  const [displayed, setDisplayed] = useState<(DKBBanana | DK64Item)[]>([]);
+  const [available, setAvailable] = useState<DKBBanana[]>([]);
+  const [displayed, setDisplayed] = useState<DKBBanana[]>([]);
   const [successCount, setSuccessCount] = useState(0);
   const [failureCount, setFailureCount] = useState(0);
   const [disabled, setDisabled] = useState<string[]>([]);
+
+  const stopwatch = useStopwatch({ autoStart: true, interval: 20 });
 
   const rewardOptions = {
     lifetime: 5000,
@@ -37,17 +39,6 @@ export const Game = ({
   const { reward: reward1 } = useReward("finished", "emoji", rewardOptions);
   const { reward: reward2 } = useReward("done", "emoji", rewardOptions);
 
-  const {
-    milliseconds,
-    seconds,
-    minutes,
-    hours,
-    isRunning,
-    start,
-    pause,
-    reset
-  } = useStopwatch({ autoStart: true, interval: 20 });
-
   const markDisabled = (displayIndex: number, set: string) => {
     const dis = [...disabled];
     dis[displayIndex] = set;
@@ -55,7 +46,7 @@ export const Game = ({
   };
 
   const initSelection = () => {
-    const nans = [...options.initialItems];
+    const items = [...options.initialItems] as DKBBanana[];
 
     const shown = [];
     const dis = [];
@@ -64,37 +55,37 @@ export const Game = ({
     }
 
     for (let i = 0; i < Number(options.count); i++) {
-      const index = Math.floor(Math.random() * nans.length);
-      shown.push(nans[index]);
-      nans.splice(index, 1);
+      const index = Math.floor(Math.random() * items.length);
+      shown.push(items[index]);
+      items.splice(index, 1);
       dis.push("false");
     }
-    setAvailable(nans);
+    setAvailable(items);
     setDisplayed(shown);
     setDisabled(dis);
   };
 
   const replaceOne = (displayIndex: number, success: boolean) => {
-    const nans = [...available];
+    const items = [...available];
     const shown = [...displayed];
     const origin = shown[displayIndex];
 
-    if (nans.length > 0) {
-      const index = Math.floor(Math.random() * nans.length);
-      shown.splice(displayIndex, 1, nans[index]);
+    if (items.length > 0) {
+      const index = Math.floor(Math.random() * items.length);
+      shown.splice(displayIndex, 1, items[index]);
 
       if (options.recycleWrong) {
         if (success) {
-          nans.splice(index, 1);
+          items.splice(index, 1);
         } else {
-          nans.splice(index, 1, origin);
+          items.splice(index, 1, origin);
         }
       } else {
-        nans.splice(index, 1);
+        items.splice(index, 1);
       }
 
       markDisabled(displayIndex, "false");
-      setAvailable(nans);
+      setAvailable(items);
       setDisplayed(shown);
     } else {
       markDisabled(displayIndex, "true");
@@ -118,12 +109,11 @@ export const Game = ({
     onComplete(index, false);
   };
 
-  const refresh = () => {
-    initSelection();
-    setSuccessCount(0);
-    setFailureCount(0);
-    reset();
-  };
+  const getHR = () => (
+    <Grid size={12}>
+      <hr style={{ border: "2px solid darkgreen" }} />
+    </Grid>
+  );
 
   useEffect(() => {
     initSelection();
@@ -134,13 +124,13 @@ export const Game = ({
     if (disabled.length > 0) {
       if (disabled.every((item) => item === "true")) {
         setHeader("GG!");
-        pause();
+        stopwatch.pause();
         reward1();
         reward2();
       } else {
         if (options.autoRefresh) {
           setHeader(
-            `${available.length === 0 ? "None" : available.length} left!`
+            `${available.length === 0 ? "None" : available.length} left`
           );
         } else {
           setHeader("Go get 'em!");
@@ -151,9 +141,6 @@ export const Game = ({
   }, [disabled]);
 
   const styles = {
-    timer: {
-      animation: "pauseTimer 2s infinite"
-    },
     icon: {
       color: "white"
     },
@@ -170,20 +157,45 @@ export const Game = ({
 
   return (
     <Grid container spacing={1}>
-      <Grid size={12}>
+      <Grid size={4}>
         <Typography color="textPrimary" variant="h1">
           {header}
         </Typography>
         <div id="finished"></div>
+      </Grid>
+      <Grid size={2}>
+        <Typography
+          color="textPrimary"
+          variant="h1"
+          sx={!stopwatch.isRunning ? styles.correct : {}}
+        >
+          <IconButton sx={!stopwatch.isRunning ? styles.correct : styles.icon}>
+            <CheckCircle />
+          </IconButton>
+          {successCount}
+        </Typography>
+      </Grid>
+      <Grid size={2}>
+        <Typography
+          color="textPrimary"
+          variant="h1"
+          sx={!stopwatch.isRunning ? styles.wrong : {}}
+        >
+          <IconButton sx={!stopwatch.isRunning ? styles.wrong : styles.icon}>
+            <Cancel />
+          </IconButton>
+          {failureCount}
+        </Typography>
+      </Grid>
+      <Grid size={4}>
+        {options.timer && <DKTimer stopwatch={stopwatch} />}
         <div id="done" style={{ float: "right" }}></div>
       </Grid>
 
-      <Grid size={12}>
-        <hr />
-      </Grid>
+      {getHR()}
 
       {displayed.length > 0 &&
-        displayed.map((item: DKBBanana | DK64Item, index: number) => {
+        displayed.map((item: DKBBanana, index: number) => {
           return (
             <DKItemRow
               key={index}
@@ -195,62 +207,23 @@ export const Game = ({
           );
         })}
 
-      <Grid size={12}>
-        <hr />
-      </Grid>
+      {getHR()}
 
-      <Grid size={3}>
-        <Typography
-          color="textPrimary"
-          variant="h1"
-          sx={!isRunning ? styles.correct : {}}
-        >
-          <IconButton sx={!isRunning ? styles.correct : styles.icon}>
-            <CheckCircle />
-          </IconButton>
-          {successCount}
-        </Typography>
-      </Grid>
-      <Grid size={3}>
-        <Typography
-          color="textPrimary"
-          variant="h1"
-          sx={!isRunning ? styles.wrong : {}}
-        >
-          <IconButton sx={!isRunning ? styles.wrong : styles.icon}>
-            <Cancel />
-          </IconButton>
-          {failureCount}
-        </Typography>
-      </Grid>
-      <Grid size={1}></Grid>
-      <Grid size={4}>
-        {options.timer && (
-          <Button
-            variant="text"
-            sx={{ padding: "0", marginLeft: "-20px" }}
-            onClick={() => (isRunning ? pause() : start())}
-          >
-            <Typography
-              color="textPrimary"
-              variant="h1"
-              sx={!isRunning ? styles.timer : {}}
-            >
-              {String(hours).padStart(2, "0")}:
-              {String(minutes).padStart(2, "0")}:
-              {String(seconds).padStart(2, "0")}.
-              {String(milliseconds).slice(0, 2)}
-            </Typography>
-          </Button>
-        )}
-      </Grid>
-
-      <DKButton label="Start over" handleClick={refresh} />
+      <DKButton
+        label="Start over"
+        handleClick={() => {
+          initSelection();
+          setSuccessCount(0);
+          setFailureCount(0);
+          stopwatch.reset();
+        }}
+      />
       <DKButton
         label="Reconfigure"
         handleClick={() => {
           setOptions(null);
           setStart(false);
+          stopwatch.reset();
         }}
       />
     </Grid>

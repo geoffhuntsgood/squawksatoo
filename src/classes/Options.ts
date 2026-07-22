@@ -8,6 +8,7 @@ export class Options {
     public readonly timer: boolean,
     public readonly autoRefresh: boolean,
     public readonly initialItems: DKBBanana[] | DK64Item[],
+    public readonly iHateMyself: boolean,
 
     // DKB-specific
     public readonly includePostgame?: boolean,

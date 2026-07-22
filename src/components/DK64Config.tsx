@@ -1,13 +1,13 @@
 import { Box, Grid } from "@mui/material";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import type { DK64Item } from "../classes/DK64Item";
+import type { Options } from "../classes/Options";
 import type { DK64Category } from "../enums/DK64Category";
 import { LevelName } from "../enums/LevelName";
 import { getAllCollectablesForCategories } from "../levels/levelApi";
 import { DKCheckbox } from "./DKCheckbox";
 import { DKMultiSelect } from "./DKMultiSelect";
 import { DKSelect } from "./DKSelect";
-import type { Options } from "../classes/Options";
 
 export const DK64Config = ({
   setOptions,
@@ -22,7 +22,8 @@ export const DK64Config = ({
   const [count, setCount] = useState("1");
 
   const [timer, setTimer] = useState(false);
-  const [autoRefresh, setAutoRefresh] = useState(true);
+  const [autoRefresh, setAutoRefresh] = useState(false);
+  const [iHateMyself, setIHateMyself] = useState(false);
 
   const [initialItems, setInitialItems] = useState<DK64Item[]>([]);
 
@@ -36,7 +37,11 @@ export const DK64Config = ({
   };
 
   useEffect(() => {
-    const levelItems = getAllCollectablesForCategories([], level as LevelName);
+    const levelItems = getAllCollectablesForCategories(
+      [],
+      level as LevelName,
+      iHateMyself
+    );
     const cats: DK64Category[] = [];
     levelItems.forEach((item: DK64Item) => {
       if (!cats.includes(item.category)) {
@@ -51,10 +56,11 @@ export const DK64Config = ({
     setInitialItems(
       getAllCollectablesForCategories(
         selectedCategories as DK64Category[],
-        level as LevelName
+        level as LevelName,
+        iHateMyself
       )
     );
-  }, [selectedCategories]);
+  }, [selectedCategories, iHateMyself]);
 
   useEffect(() => {
     if (initialItems.length > 0) {
@@ -63,13 +69,15 @@ export const DK64Config = ({
         initialItems,
         count,
         timer,
-        autoRefresh
+        autoRefresh,
+        iHateMyself
       });
     }
-  }, [initialItems, count]);
+  }, [initialItems, count, timer, autoRefresh, iHateMyself]);
 
   return (
     <Grid container spacing={1}>
+      <Grid size={1} />
       <Grid size={5}>
         <Box sx={{ margin: "10px" }}>
           <DKSelect
@@ -100,8 +108,14 @@ export const DK64Config = ({
             checked={autoRefresh}
             handleChange={setAutoRefresh}
           />
+          <DKCheckbox
+            label="I Hate Myself"
+            checked={iHateMyself}
+            handleChange={setIHateMyself}
+          />
         </Box>
       </Grid>
+      <Grid size={1} />
     </Grid>
   );
 };

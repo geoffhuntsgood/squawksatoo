@@ -26,13 +26,18 @@ const allLevels: DK64Level[] = [
 
 export const getAllCollectablesForCategories = (
   categories: DK64Category[],
-  levelName: LevelName
+  levelName: LevelName,
+  iHateMyself: boolean
 ): DK64Item[] => {
-  const collectables: DK64Item[] =
+  let collectables: DK64Item[] =
     levelName !== LevelName.All
       ? allLevels.filter((level: DK64Level) => level.name === levelName)[0]
           .collectables
       : allLevels.flatMap((level: DK64Level) => level.collectables);
+
+  if (!iHateMyself) {
+    collectables = collectables.filter((item: DK64Item) => !item.iHateMyself);
+  }
 
   if (categories.length === 0) return collectables;
 

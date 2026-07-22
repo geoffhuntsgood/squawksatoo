@@ -42,7 +42,8 @@ const allLayers: DKBLayer[] = [
 
 export const getLayerBananas = (
   layerName: LayerName,
-  includePostgame?: boolean
+  includePostgame: boolean,
+  iHateMyself: boolean
 ): DKBBanana[] => {
   let bananas: DKBBanana[];
   if (layerName === LayerName.All) {
@@ -50,6 +51,10 @@ export const getLayerBananas = (
   } else {
     bananas = allLayers.filter((layer: DKBLayer) => layer.name === layerName)[0]
       .bananas;
+  }
+
+  if (!iHateMyself) {
+    bananas = bananas.filter((banana: DKBBanana) => !banana.iHateMyself);
   }
 
   return includePostgame
@@ -60,9 +65,10 @@ export const getLayerBananas = (
 export const getAllBananasForCategories = (
   layerName: LayerName,
   categories: DKBCategory[],
-  includePostgame?: boolean
+  includePostgame: boolean,
+  iHateMyself: boolean
 ) => {
-  const layerBananas: DKBBanana[] = getLayerBananas(layerName, includePostgame);
+  const layerBananas: DKBBanana[] = getLayerBananas(layerName, includePostgame, iHateMyself);
 
   if (categories.length === 0) return layerBananas;
 

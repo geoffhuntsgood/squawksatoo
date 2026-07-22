@@ -2,9 +2,10 @@ import { Box, Card, Tab, Tabs, ThemeProvider, Typography } from "@mui/material";
 import { useState } from "react";
 import { Options } from "./classes/Options";
 import { DK64Config } from "./components/DK64Config";
+import { DK64Game } from "./components/DK64Game";
 import { DKBConfig } from "./components/DKBConfig";
+import { DKBGame } from "./components/DKBGame";
 import { DKButton } from "./components/DKButton";
-import { Game } from "./components/Game";
 import { theme } from "./utils/theme";
 
 const App = () => {
@@ -53,7 +54,22 @@ const App = () => {
         </>
       )}
       {start && options && (
-        <Game options={options} setOptions={setOptions} setStart={setStart} />
+        <>
+          {game === "DKB" && (
+            <DKBGame
+              options={options}
+              setOptions={setOptions}
+              setStart={setStart}
+            />
+          )}
+          {game === "DK64" && (
+            <DK64Game
+              options={options}
+              setOptions={setOptions}
+              setStart={setStart}
+            />
+          )}
+        </>
       )}
     </ThemeProvider>
   );

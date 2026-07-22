@@ -56,10 +56,12 @@ export const theme = createTheme({
         }
       }
     },
-    MuiGrid: {
+    MuiIconButton: {
       styleOverrides: {
         root: {
-          margin: "0 auto"
+          "&:disabled": {
+            color: "gray"
+          }
         }
       }
     },
@@ -81,6 +83,13 @@ export const theme = createTheme({
           "&:hover .MuiOutlinedInput-notchedOutline": {
             borderColor: focused
           }
+        }
+      }
+    },
+    MuiSvgIcon: {
+      styleOverrides: {
+        root: {
+          fontSize: "2rem"
         }
       }
     },
