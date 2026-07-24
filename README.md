@@ -1,36 +1,45 @@
 # Squawksatoo
 
-A fun little app that randomly selects specific bananas for you to go and find while playing Donkey Kong Bananza. Hosted at https://geoffhuntsgood.com/squawksatoo.
+Inspired by Talkatoo% runs in Super Mario Odyssey, this app randomly selects bananas to find in Donkey Kong Bananza, or items in Donkey Kong 64.
+
+Hosted at https://geoffhuntsgood.com/squawksatoo.
 
 ## Configuration
 
-The app will start by displaying a set of settings.
+The app will start by displaying configuration settings, depending on which base game you are playing.
 
-**Layer:** Allows for selection of any layer in the game.
+### DK Bananza
 
-**Include postgame:** Check to include bananas that are only available after completing the story.
+Selecting a layer will generate categories based on the available bananas in that layer. These can be individually selected, or left blank to include them all. The count display allows for 1-5 bananas to show at once.
 
-**Categories:** This section shows several categories of banana, all of which are enabled by default. Click any of them to exclude them from the banana pool. For example, deselecting "Battle" will mean that no Battle Stages will be considered for the random selection.
+**Include Postgame:** Adds bananas that are only available after defeating K. Rool.
 
-**How many:** The number of bananas to generate, with a maximum of 5. If there are fewer than 5 bananas available for the current configuration, the maximum will be that number instead.
+**Timer:** Adds a timer on the game page that automatically stops when the game finishes.
 
-**Timer:** Adds an optional, pausable timer that automatically stops when the game finishes.
+**Auto-Refresh:** If selected, marking a banana as complete will automatically replace that banana with a new one, until all bananas have been collected.
 
-**Auto-refresh:** If selected, marking a banana as complete on the next page will automatically replace that banana with a new one, until all bananas have been marked as complete.
+**Recycle Wrong Bananas:** If selected, marking a banana wrong will "recycle" that banana back into the pool for re-selection later. Only available when Auto-refresh is checked.
 
-**Recycle wrong bananas:** If selected, marking a banana wrong on the next page will "recycle" that banana back into the pool for re-selection later.
-This is only available when Auto-refresh is checked.
+**I Hate Myself:** Adds particularly long goals into the pool. Currently, this only adds the "A Complete Fossil Collection" banana.
 
-**Get Button:** Displays the number of bananas you want to select out of the total number of available bananas based on the current configuration. Clicking this button starts the game!
+### DK64
 
-## Navigating the Generated List
+Selecting a level will generate categories based on the available items in that level. All levels are selected by default, and categories can be individually selected, or left blank to include them all. The count display allows for 1-5 items to show at once.
 
-Once the list is generated and displayed, you can start finding bananas.
+**Timer:** Adds a timer on the game page that automatically stops when the game finishes.
+
+**Auto-Refresh:** If selected, marking an item as complete will automatically replace that item with a new one, until all items have been collected.
+
+**I Hate Myself:** Adds particularly long goals into the pool. Currently, this adds the Rareware and Nintendo Coins and the Rareware GB.
+
+**Enable CBSanity:** Adds the option to include balloons, bunches, and groups of single colored bananas to the pool. Removes Banana Medals from the pool to reduce softlocking.
+
+## Playing the Game
 
 **Header:** If auto-refresh was selected, the header will display the remaining number of bananas in the configured list.
 
-**Banana List:** Each displayed banana will have a green check button and a red X button next to it. Both will mark the banana as completed; clicking the green check will add to the "correct" counter, but clicking the red X will add to the "wrong" counter.
+**Item List:** Clicking the check next to a displayed item will add it to the "correct" counter. If playing for Bananza, clicking the X will add that item to the "wrong" counter. Both will mark the item as completed (unless recycling in Bananza).
 
-**Start Over:** This button will completely reset the pool of bananas based on the previously-selected configuration, and will select the same number of bananas again.
+**Start Over:** Restarts the game with the same configuration.
 
-**Reconfigure:** Returns to the settings page to reselect configuration options.
+**Reconfigure:** Returns to the settings page.
