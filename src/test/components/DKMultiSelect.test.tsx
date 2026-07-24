@@ -1,6 +1,6 @@
 import { describe, expect, test, vi } from "vitest";
 import { render } from "vitest-browser-react";
-import { DKMultiSelect } from "../../components/DKMultiSelect";
+import { DKMultiSelect } from "../../inputs";
 
 describe("DKMultiSelect tests", () => {
   const selectMock = vi.fn();

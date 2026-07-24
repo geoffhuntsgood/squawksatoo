@@ -1,6 +1,5 @@
 import type { DKBLayer } from "../classes/DKBLayer";
-import { DKBCategory } from "../enums/DKBCategory";
-import { LayerName } from "../enums/LayerName";
+import { DKBCategory, LayerName } from "../enums";
 
 export const resort: DKBLayer = {
   name: LayerName.Resort,

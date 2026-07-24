@@ -1,9 +1,8 @@
 import { describe, expect, test } from "vitest";
-import type { DKBBanana } from "../../classes/DKBBanana";
-import { DKBCategory } from "../../enums/DKBCategory";
-import { LayerName } from "../../enums/LayerName";
+import type { DKBBanana } from "../../classes";
+import { DKBCategory, LayerName } from "../../enums";
 import {
-  getAllBananasForCategories,
+  getAllForCategories,
   getLayerBananas
 } from "../../layers/layerApi";
 
@@ -140,7 +139,7 @@ describe("layerApi tests", () => {
 
   describe("getAllBananasForCategories tests", () => {
     test("No categories, no postgame", () => {
-      const feast = getAllBananasForCategories(
+      const feast = getAllForCategories(
         LayerName.Feast,
         [],
         false,
@@ -150,7 +149,7 @@ describe("layerApi tests", () => {
     });
 
     test("One category, no postgame", () => {
-      const canyon = getAllBananasForCategories(
+      const canyon = getAllForCategories(
         LayerName.Canyon,
         [DKBCategory.Fragmentone],
         false,
@@ -160,7 +159,7 @@ describe("layerApi tests", () => {
     });
 
     test("Multiple categories with postgame", () => {
-      const radiance = getAllBananasForCategories(
+      const radiance = getAllForCategories(
         LayerName.Radiance,
         [DKBCategory.Battle, DKBCategory.Rehearsal],
         true,

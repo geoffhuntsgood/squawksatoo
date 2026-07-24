@@ -1,4 +1,4 @@
-import type { DKBCategory } from "../enums/DKBCategory";
+import type { DKBCategory } from "../enums";
 
 export class DKBBanana {
   constructor(

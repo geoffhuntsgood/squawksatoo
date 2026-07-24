@@ -1,4 +1,4 @@
-import type { LayerName } from "../enums/LayerName";
+import type { LayerName } from "../enums";
 import type { DKBBanana } from "./DKBBanana";
 
 export class DKBLayer {

@@ -5,9 +5,5 @@ export enum DK64Category {
   Key = "Boss Key",
   Fairy = "Banana Fairy",
   CompanyCoin = "Company Coin",
-
-  Kong = "Kong Freedom",
-  RainbowCoin = "Rainbow Coin",
-  Move = "Move Purchase",
-  Balloon = "Banana Balloon"
+  RainbowCoin = "Rainbow Coin"
 }

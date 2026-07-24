@@ -1,22 +1,17 @@
 import { describe, expect, test } from "vitest";
-import type { DK64Item } from "../../classes/DK64Item";
-import { DK64Category } from "../../enums/DK64Category";
-import { LevelName } from "../../enums/LevelName";
-import { getAllCollectablesForCategories } from "../../levels/levelApi";
+import type { DK64Item } from "../../classes";
+import { DK64Category, LevelName } from "../../enums";
+import { getAllForCategories } from "../../levels/levelApi";
 
 describe("levelApi tests", () => {
   describe("getAllCollectablesForCategories tests", () => {
     test("No category, all levels, I don't hate myself", () => {
-      const allCollectables = getAllCollectablesForCategories(
-        [],
-        LevelName.All,
-        false
-      );
+      const allCollectables = getAllForCategories([], LevelName.All, false);
       expect(allCollectables.length).toBe(410);
     });
 
     test("One category, all levels, I do hate myself", () => {
-      const allGBs = getAllCollectablesForCategories(
+      const allGBs = getAllForCategories(
         [DK64Category.GB],
         LevelName.All,
         true
@@ -25,7 +20,7 @@ describe("levelApi tests", () => {
     });
 
     test("Multiple categories with level", () => {
-      const factory = getAllCollectablesForCategories(
+      const factory = getAllForCategories(
         [DK64Category.GB, DK64Category.Medal],
         LevelName.Factory,
         false

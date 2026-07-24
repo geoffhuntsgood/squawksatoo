@@ -1,7 +1,5 @@
-import type { DK64Item } from "../classes/DK64Item";
-import type { DK64Level } from "../classes/DK64Level";
-import type { DK64Category } from "../enums/DK64Category";
-import { LevelName } from "../enums/LevelName";
+import type { CBSanitySettings, DK64Item, DK64Level } from "../classes";
+import { DK64Category, LevelName } from "../enums";
 import { aztec } from "./aztec";
 import { castle } from "./castle";
 import { caves } from "./caves";
@@ -24,24 +22,70 @@ const allLevels: DK64Level[] = [
   helm
 ];
 
-export const getAllCollectablesForCategories = (
-  categories: DK64Category[],
-  levelName: LevelName,
-  iHateMyself: boolean
+export const getCBSanityForLevel = (
+  level: DK64Level,
+  cbSanitySettings: CBSanitySettings
 ): DK64Item[] => {
-  let collectables: DK64Item[] =
-    levelName !== LevelName.All
-      ? allLevels.filter((level: DK64Level) => level.name === levelName)[0]
-          .collectables
-      : allLevels.flatMap((level: DK64Level) => level.collectables);
+  let allItems = level.items;
+  if (level.cbSanity) {
+    if (cbSanitySettings.balloons) {
+      allItems = allItems.concat(level.cbSanity.balloons);
+    }
+    if (cbSanitySettings.bunches) {
+      allItems = allItems.concat(level.cbSanity.bunches);
+    }
+    if (cbSanitySettings.singles) {
+      allItems = allItems.concat(level.cbSanity.singles);
+    }
+  }
+  return allItems;
+};
 
-  if (!iHateMyself) {
-    collectables = collectables.filter((item: DK64Item) => !item.iHateMyself);
+export const getLevelItems = (
+  levelName: LevelName,
+  iHateMyself: boolean,
+  cbSanitySettings: CBSanitySettings
+): DK64Item[] => {
+  let items: DK64Item[];
+
+  if (levelName === LevelName.All) {
+    items = allLevels.flatMap((level: DK64Level) => {
+      return getCBSanityForLevel(level, cbSanitySettings);
+    });
+  } else {
+    items = getCBSanityForLevel(
+      allLevels.filter((level: DK64Level) => level.name === levelName)[0],
+      cbSanitySettings
+    );
   }
 
-  if (categories.length === 0) return collectables;
+  if (!iHateMyself) {
+    items = items.filter((item: DK64Item) => !item.iHateMyself);
+  }
 
-  return collectables.filter((collectable: DK64Item) =>
-    categories.includes(collectable.category)
+  return items;
+};
+
+export const getAllForCategories = (
+  categories: DK64Category[],
+  levelName: LevelName,
+  iHateMyself: boolean,
+  cbSanitySettings: CBSanitySettings
+): DK64Item[] => {
+  const itemList = getLevelItems(levelName, iHateMyself, cbSanitySettings);
+  let cats = categories;
+
+  if (
+    cbSanitySettings.balloons ||
+    cbSanitySettings.bunches ||
+    cbSanitySettings.singles
+  ) {
+    cats = cats.filter((cat: DK64Category) => cat !== DK64Category.Medal);
+  }
+
+  if (cats.length === 0) return itemList;
+
+  return itemList.filter((item: DK64Item) =>
+    cats.includes(item.category as DK64Category)
   );
 };

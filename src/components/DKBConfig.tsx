@@ -1,16 +1,12 @@
 import { Box, Grid } from "@mui/material";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
-import { DKBBanana } from "../classes/DKBBanana";
-import type { Options } from "../classes/Options";
-import type { DKBCategory } from "../enums/DKBCategory";
-import { LayerName } from "../enums/LayerName";
+import type { DKBBanana, Options } from "../classes";
+import { DKBCategory, LayerName } from "../enums";
 import {
-  getAllBananasForCategories,
+  getAllForCategories,
   getLayerBananas
 } from "../layers/layerApi";
-import { DKCheckbox } from "./DKCheckbox";
-import { DKMultiSelect } from "./DKMultiSelect";
-import { DKSelect } from "./DKSelect";
+import { DKCheckbox, DKMultiSelect, DKSelect } from "../inputs";
 
 export const DKBConfig = ({
   setOptions,
@@ -19,7 +15,7 @@ export const DKBConfig = ({
   setOptions: Dispatch<SetStateAction<Options | null>>;
   setGoLabel: Dispatch<SetStateAction<string>>;
 }) => {
-  const [layer, setLayer] = useState<string>(LayerName.Ingot);
+  const [layer, setLayer] = useState<string>(LayerName.Lagoon);
   const [categories, setCategories] = useState<DKBCategory[]>([]);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [count, setCount] = useState("1");
@@ -30,11 +26,11 @@ export const DKBConfig = ({
   const [recycleWrong, setRecycleWrong] = useState(false);
   const [iHateMyself, setIHateMyself] = useState(false);
 
-  const [initialItems, setInitialItems] = useState<DKBBanana[]>([]);
+  const [initialBananas, setInitialBananas] = useState<DKBBanana[]>([]);
 
   const getCount = () => {
     const range = [];
-    const countToUse = initialItems.length > 5 ? 5 : initialItems.length;
+    const countToUse = initialBananas.length > 5 ? 5 : initialBananas.length;
     for (let i = 1; i <= countToUse; i++) {
       range.push(`${i}`);
     }
@@ -57,31 +53,31 @@ export const DKBConfig = ({
       }
     });
     setCategories(cats);
-    const initialNans = getAllBananasForCategories(
+    const initialNans = getAllForCategories(
       layer as LayerName,
       [],
       includePostgame,
       iHateMyself
     );
-    setInitialItems(initialNans);
+    setInitialBananas(initialNans);
   }, [layer, includePostgame, iHateMyself]);
 
   useEffect(() => {
-    setInitialItems(
-      getAllBananasForCategories(
+    setInitialBananas(
+      getAllForCategories(
         layer as LayerName,
         selectedCategories as DKBCategory[],
         includePostgame,
         iHateMyself
       )
     );
-  }, [selectedCategories, includePostgame, iHateMyself]);
+  }, [layer, selectedCategories, includePostgame, iHateMyself]);
 
   useEffect(() => {
-    if (initialItems.length > 0) {
-      setGoLabel(`Get ${count} out of ${initialItems.length}`);
+    if (initialBananas.length > 0) {
+      setGoLabel(`Get ${count} out of ${initialBananas.length}`);
       setOptions({
-        initialItems,
+        initialBananas,
         count,
         includePostgame,
         timer,
@@ -91,13 +87,15 @@ export const DKBConfig = ({
       });
     }
   }, [
-    initialItems,
+    initialBananas,
     count,
     includePostgame,
     timer,
     autoRefresh,
     recycleWrong,
-    iHateMyself
+    iHateMyself,
+    setGoLabel,
+    setOptions
   ]);
 
   return (
@@ -118,7 +116,7 @@ export const DKBConfig = ({
             selectItems={categories}
           />
           <DKSelect
-            label="Count"
+            label="How many at a time?"
             value={count}
             handleChange={setCount}
             selectItems={getCount()}

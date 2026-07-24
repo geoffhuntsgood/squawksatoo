@@ -1,6 +1,6 @@
 import { describe, expect, test, vi } from "vitest";
 import { render } from "vitest-browser-react";
-import { DKButton } from "../../components/DKButton";
+import { DKButton } from "../../inputs";
 
 describe("DKButton tests", () => {
   const clickMock = vi.fn();

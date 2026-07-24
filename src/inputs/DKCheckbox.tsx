@@ -9,11 +9,13 @@ import type { ChangeEvent, Dispatch, SetStateAction } from "react";
 export const DKCheckbox = ({
   label,
   checked,
-  handleChange
+  handleChange,
+  secondary
 }: {
   label: string;
   checked: boolean;
   handleChange: Dispatch<SetStateAction<boolean>>;
+  secondary?: boolean;
 }) => (
   <FormControl fullWidth>
     <FormControlLabel
@@ -24,6 +26,7 @@ export const DKCheckbox = ({
       }
       control={
         <Checkbox
+          sx={secondary ? { paddingLeft: "2rem" } : {}}
           checked={checked}
           onChange={(event: ChangeEvent<HTMLInputElement>) =>
             handleChange(event.target.checked)

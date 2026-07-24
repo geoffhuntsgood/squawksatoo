@@ -1,10 +1,9 @@
 import type { DK64Level } from "../classes/DK64Level";
-import { DK64Category } from "../enums/DK64Category";
-import { LevelName } from "../enums/LevelName";
+import { DK64Category, LevelName } from "../enums";
 
 export const isles: DK64Level = {
   name: LevelName.Isles,
-  collectables: [
+  items: [
     {
       name: "Isles Donkey Japes Entry GB",
       category: DK64Category.GB
@@ -22,7 +21,7 @@ export const isles: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Isles Donkey Blueprint Turn-in GB",
+      name: "Isles Donkey BP Turn-in GB",
       category: DK64Category.GB
     },
     {
@@ -42,7 +41,7 @@ export const isles: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Isles Diddy Blueprint Turn-in GB",
+      name: "Isles Diddy BP Turn-in GB",
       category: DK64Category.GB
     },
     {
@@ -62,7 +61,7 @@ export const isles: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Isles Lanky Blueprint Turn-in GB",
+      name: "Isles Lanky BP Turn-in GB",
       category: DK64Category.GB
     },
     {
@@ -82,7 +81,7 @@ export const isles: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Isles Tiny Blueprint Turn-in GB",
+      name: "Isles Tiny BP Turn-in GB",
       category: DK64Category.GB
     },
     {
@@ -102,7 +101,7 @@ export const isles: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Isles Chunky Blueprint Turn-in GB",
+      name: "Isles Chunky BP Turn-in GB",
       category: DK64Category.GB
     },
     {

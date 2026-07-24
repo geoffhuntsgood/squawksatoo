@@ -1,15 +1,13 @@
 import { Box, Card, Tab, Tabs, ThemeProvider, Typography } from "@mui/material";
 import { useState } from "react";
-import { Options } from "./classes/Options";
-import { DK64Config } from "./components/DK64Config";
-import { DK64Game } from "./components/DK64Game";
-import { DKBConfig } from "./components/DKBConfig";
-import { DKBGame } from "./components/DKBGame";
-import { DKButton } from "./components/DKButton";
+import { Options } from "./classes";
+import { DK64Config, DK64Game, DKBConfig, DKBGame } from "./components";
+import { DKButton } from "./inputs";
 import { theme } from "./utils/theme";
+import type { GameType } from "./utils/types";
 
 const App = () => {
-  const [game, setGame] = useState<"DKB" | "DK64">("DKB");
+  const [game, setGame] = useState<GameType>("DKB");
   const [options, setOptions] = useState<Options | null>(null);
 
   const [goLabel, setGoLabel] = useState<string>("");

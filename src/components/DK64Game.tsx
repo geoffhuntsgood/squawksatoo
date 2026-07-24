@@ -1,13 +1,10 @@
-import CheckCircle from "@mui/icons-material/CheckCircle";
+import { CheckCircle } from "@mui/icons-material";
 import { Grid, IconButton, Typography } from "@mui/material";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import { useReward } from "react-rewards";
 import { useStopwatch } from "react-timer-hook";
-import type { DK64Item } from "../classes/DK64Item";
-import type { Options } from "../classes/Options";
-import { DKButton } from "./DKButton";
-import { DKItemRow } from "./DKItemRow";
-import { DKTimer } from "./DKTimer";
+import type { DK64Item, Options } from "../classes";
+import { DKButton, DKItemRow, DKTimer } from "../inputs";
 
 export const DK64Game = ({
   options,
@@ -44,7 +41,7 @@ export const DK64Game = ({
   };
 
   const initSelection = () => {
-    const items = [...options.initialItems] as DK64Item[];
+    const items = [...(options.initialItems || [])] as DK64Item[];
 
     const shown = [];
     const dis = [];

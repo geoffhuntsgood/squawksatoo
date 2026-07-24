@@ -1,10 +1,9 @@
 import type { DK64Level } from "../classes/DK64Level";
-import { DK64Category } from "../enums/DK64Category";
-import { LevelName } from "../enums/LevelName";
+import { DK64Category, LevelName } from "../enums";
 
 export const helm: DK64Level = {
   name: LevelName.Helm,
-  collectables: [
+  items: [
     {
       name: "Donkey Helm Medal",
       category: DK64Category.Medal

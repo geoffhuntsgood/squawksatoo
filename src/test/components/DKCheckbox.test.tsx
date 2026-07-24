@@ -1,6 +1,6 @@
 import { describe, expect, test, vi } from "vitest";
 import { render } from "vitest-browser-react";
-import { DKCheckbox } from "../../components/DKCheckbox";
+import { DKCheckbox } from "../../inputs";
 
 describe("DKCheckbox tests", () => {
   const checkMock = vi.fn();

@@ -1,13 +1,9 @@
 import { Box, Grid } from "@mui/material";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
-import type { DK64Item } from "../classes/DK64Item";
-import type { Options } from "../classes/Options";
-import type { DK64Category } from "../enums/DK64Category";
-import { LevelName } from "../enums/LevelName";
-import { getAllCollectablesForCategories } from "../levels/levelApi";
-import { DKCheckbox } from "./DKCheckbox";
-import { DKMultiSelect } from "./DKMultiSelect";
-import { DKSelect } from "./DKSelect";
+import type { DK64Item, Options } from "../classes";
+import { DK64Category, LevelName } from "../enums";
+import { getAllForCategories } from "../levels/levelApi";
+import { DKCheckbox, DKMultiSelect, DKSelect } from "../inputs";
 
 export const DK64Config = ({
   setOptions,
@@ -25,6 +21,11 @@ export const DK64Config = ({
   const [autoRefresh, setAutoRefresh] = useState(false);
   const [iHateMyself, setIHateMyself] = useState(false);
 
+  const [enableCBSanity, setEnableCBSanity] = useState(false);
+  const [balloons, setBalloons] = useState(false);
+  const [bunches, setBunches] = useState(false);
+  const [singles, setSingles] = useState(false);
+
   const [initialItems, setInitialItems] = useState<DK64Item[]>([]);
 
   const getCount = () => {
@@ -37,30 +38,40 @@ export const DK64Config = ({
   };
 
   useEffect(() => {
-    const levelItems = getAllCollectablesForCategories(
+    const levelItems = getAllForCategories(
       [],
       level as LevelName,
-      iHateMyself
+      iHateMyself,
+      {
+        balloons,
+        bunches,
+        singles
+      }
     );
     const cats: DK64Category[] = [];
     levelItems.forEach((item: DK64Item) => {
-      if (!cats.includes(item.category)) {
-        cats.push(item.category);
+      if (!cats.includes(item.category as DK64Category)) {
+        cats.push(item.category as DK64Category);
       }
     });
     setCategories(cats);
     setInitialItems(levelItems);
-  }, [level]);
+  }, [level, iHateMyself, balloons, bunches, singles]);
 
   useEffect(() => {
     setInitialItems(
-      getAllCollectablesForCategories(
+      getAllForCategories(
         selectedCategories as DK64Category[],
         level as LevelName,
-        iHateMyself
+        iHateMyself,
+        {
+          balloons,
+          bunches,
+          singles
+        }
       )
     );
-  }, [selectedCategories, iHateMyself]);
+  }, [selectedCategories, iHateMyself, balloons, bunches, singles]);
 
   useEffect(() => {
     if (initialItems.length > 0) {
@@ -73,7 +84,15 @@ export const DK64Config = ({
         iHateMyself
       });
     }
-  }, [initialItems, count, timer, autoRefresh, iHateMyself]);
+  }, [
+    initialItems,
+    count,
+    timer,
+    autoRefresh,
+    iHateMyself,
+    setGoLabel,
+    setOptions
+  ]);
 
   return (
     <Grid container spacing={1}>
@@ -93,7 +112,7 @@ export const DK64Config = ({
             selectItems={categories}
           />
           <DKSelect
-            label="Count"
+            label="How many at a time?"
             value={count}
             handleChange={setCount}
             selectItems={getCount()}
@@ -113,6 +132,35 @@ export const DK64Config = ({
             checked={iHateMyself}
             handleChange={setIHateMyself}
           />
+          {level !== LevelName.Helm && level !== LevelName.Isles && (
+            <DKCheckbox
+              label="Enable CBSanity"
+              checked={enableCBSanity}
+              handleChange={setEnableCBSanity}
+            />
+          )}
+          {enableCBSanity && (
+            <>
+              <DKCheckbox
+                secondary
+                label="Balloons"
+                checked={balloons}
+                handleChange={setBalloons}
+              />
+              <DKCheckbox
+                secondary
+                label="Bunches"
+                checked={bunches}
+                handleChange={setBunches}
+              />
+              <DKCheckbox
+                secondary
+                label="Singles"
+                checked={singles}
+                handleChange={setSingles}
+              />
+            </>
+          )}
         </Box>
       </Grid>
       <Grid size={1} />

@@ -1,7 +1,5 @@
-import type { DKBBanana } from "../classes/DKBBanana";
-import type { DKBLayer } from "../classes/DKBLayer";
-import type { DKBCategory } from "../enums/DKBCategory";
-import { LayerName } from "../enums/LayerName";
+import type { DKBBanana, DKBLayer } from "../classes";
+import { DKBCategory, LayerName } from "../enums";
 import { canyon } from "./canyon";
 import { core } from "./core";
 import { divide } from "./divide";
@@ -62,13 +60,17 @@ export const getLayerBananas = (
     : bananas.filter((banana: DKBBanana) => !banana.isPostgame);
 };
 
-export const getAllBananasForCategories = (
+export const getAllForCategories = (
   layerName: LayerName,
   categories: DKBCategory[],
   includePostgame: boolean,
   iHateMyself: boolean
 ) => {
-  const layerBananas: DKBBanana[] = getLayerBananas(layerName, includePostgame, iHateMyself);
+  const layerBananas: DKBBanana[] = getLayerBananas(
+    layerName,
+    includePostgame,
+    iHateMyself
+  );
 
   if (categories.length === 0) return layerBananas;
 

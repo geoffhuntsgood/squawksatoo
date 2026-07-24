@@ -1,6 +1,5 @@
 import type { DKBLayer } from "../classes/DKBLayer";
-import { DKBCategory } from "../enums/DKBCategory";
-import { LayerName } from "../enums/LayerName";
+import { DKBCategory, LayerName } from "../enums";
 
 export const tempest: DKBLayer = {
   name: LayerName.Tempest,

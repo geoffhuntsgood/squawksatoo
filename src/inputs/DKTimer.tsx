@@ -1,6 +1,11 @@
 import { Typography } from "@mui/material";
+import type { useStopwatchResultType } from "react-timer-hook/dist/types/src/useStopwatch";
 
-export const DKTimer = ({ stopwatch }: { stopwatch: any }) => {
+export const DKTimer = ({
+  stopwatch
+}: {
+  stopwatch: useStopwatchResultType;
+}) => {
   const { seconds, minutes, hours, isRunning } = stopwatch;
 
   return (

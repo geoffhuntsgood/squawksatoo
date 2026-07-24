@@ -1,9 +1,11 @@
-import type { LevelName } from "../enums/LevelName";
+import type { LevelName } from "../enums";
+import type { CBSanity } from "./CBSanity";
 import type { DK64Item } from "./DK64Item";
 
 export class DK64Level {
   constructor(
     public readonly name: LevelName,
-    public readonly collectables: DK64Item[]
+    public readonly items: DK64Item[],
+    public readonly cbSanity?: CBSanity
   ) {}
 }
