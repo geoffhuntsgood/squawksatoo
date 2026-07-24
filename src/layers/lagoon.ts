@@ -11,7 +11,8 @@ export const lagoon: DKBLayer = {
     },
     {
       num: 2,
-      name: "Cave by the Cape"
+      name: "Cave by the Cape",
+      category: DKBCategory.Regular
     },
     {
       num: 3,
@@ -21,7 +22,8 @@ export const lagoon: DKBLayer = {
     },
     {
       num: 4,
-      name: "Bathing Banana"
+      name: "Bathing Banana",
+      category: DKBCategory.Regular
     },
     {
       num: 5,
@@ -35,7 +37,8 @@ export const lagoon: DKBLayer = {
     },
     {
       num: 7,
-      name: "A Nook behind Concrete"
+      name: "A Nook behind Concrete",
+      category: DKBCategory.Regular
     },
     {
       num: 8,
@@ -44,7 +47,8 @@ export const lagoon: DKBLayer = {
     },
     {
       num: 9,
-      name: "Smash through the Floor"
+      name: "Smash through the Floor",
+      category: DKBCategory.Regular
     },
     {
       num: 10,
@@ -53,7 +57,8 @@ export const lagoon: DKBLayer = {
     },
     {
       num: 11,
-      name: "A Real Mouthful"
+      name: "A Real Mouthful",
+      category: DKBCategory.Regular
     },
     {
       num: 12,
@@ -72,7 +77,8 @@ export const lagoon: DKBLayer = {
     },
     {
       num: 15,
-      name: "Lakeside Low Road"
+      name: "Lakeside Low Road",
+      category: DKBCategory.Regular
     },
     {
       num: 16,
@@ -81,19 +87,23 @@ export const lagoon: DKBLayer = {
     },
     {
       num: 17,
-      name: "Follow the Voided Terrain"
+      name: "Follow the Voided Terrain",
+      category: DKBCategory.Regular
     },
     {
       num: 18,
-      name: "Fishin' for Bananas"
+      name: "Fishin' for Bananas",
+      category: DKBCategory.Regular
     },
     {
       num: 19,
-      name: "Rise and Rinse"
+      name: "Rise and Rinse",
+      category: DKBCategory.Regular
     },
     {
       num: 20,
-      name: "Placed in a Pipe"
+      name: "Placed in a Pipe",
+      category: DKBCategory.Regular
     },
     {
       num: 21,
@@ -107,11 +117,13 @@ export const lagoon: DKBLayer = {
     },
     {
       num: 23,
-      name: "Beyond the Cloudy Platforms"
+      name: "Beyond the Cloudy Platforms",
+      category: DKBCategory.Regular
     },
     {
       num: 24,
-      name: "Blasting for the Banana"
+      name: "Blasting for the Banana",
+      category: DKBCategory.Regular
     },
     {
       num: 25,
@@ -131,7 +143,8 @@ export const lagoon: DKBLayer = {
     },
     {
       num: 28,
-      name: "On the Ceiling of the Floor"
+      name: "On the Ceiling of the Floor",
+      category: DKBCategory.Regular
     },
     {
       num: 29,
@@ -150,7 +163,8 @@ export const lagoon: DKBLayer = {
     },
     {
       num: 32,
-      name: "The Salvager's Stash"
+      name: "The Salvager's Stash",
+      category: DKBCategory.Regular
     },
     {
       num: 33,
@@ -159,11 +173,13 @@ export const lagoon: DKBLayer = {
     },
     {
       num: 34,
-      name: "Up, Over and Across"
+      name: "Up, Over and Across",
+      category: DKBCategory.Regular
     },
     {
       num: 35,
-      name: "Within the Fast-Growing Grass"
+      name: "Within the Fast-Growing Grass",
+      category: DKBCategory.Regular
     },
     {
       num: 36,
@@ -172,19 +188,23 @@ export const lagoon: DKBLayer = {
     },
     {
       num: 37,
-      name: "Concrete Wall on the Moving Floor"
+      name: "Concrete Wall on the Moving Floor",
+      category: DKBCategory.Regular
     },
     {
       num: 38,
-      name: "Outskirts of the Fishing Village"
+      name: "Outskirts of the Fishing Village",
+      category: DKBCategory.Regular
     },
     {
       num: 39,
-      name: "Crossed to the Kong Elder's Court!"
+      name: "Crossed to the Kong Elder's Court!",
+      category: DKBCategory.Regular
     },
     {
       num: 40,
-      name: "The Ship Stern's Snack"
+      name: "The Ship Stern's Snack",
+      category: DKBCategory.Regular
     },
     {
       num: 41,
@@ -269,7 +289,8 @@ export const lagoon: DKBLayer = {
     },
     {
       num: 55,
-      name: "Shipwrecked Treasure"
+      name: "Shipwrecked Treasure",
+      category: DKBCategory.Regular
     },
     {
       num: 56,

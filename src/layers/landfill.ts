@@ -6,7 +6,8 @@ export const landfill: DKBLayer = {
   bananas: [
     {
       num: 1,
-      name: "Top of the Heap"
+      name: "Top of the Heap",
+      category: DKBCategory.Regular
     },
     {
       num: 2,
@@ -36,11 +37,13 @@ export const landfill: DKBLayer = {
     },
     {
       num: 7,
-      name: "Buried in Rubble"
+      name: "Buried in Rubble",
+      category: DKBCategory.Regular
     },
     {
       num: 8,
-      name: "Up and Down, Underground"
+      name: "Up and Down, Underground",
+      category: DKBCategory.Regular
     },
     {
       num: 9,
@@ -69,7 +72,8 @@ export const landfill: DKBLayer = {
     },
     {
       num: 14,
-      name: "Caged by a Hungry Guard"
+      name: "Caged by a Hungry Guard",
+      category: DKBCategory.Regular
     },
     {
       num: 15,
@@ -83,7 +87,8 @@ export const landfill: DKBLayer = {
     },
     {
       num: 17,
-      name: "Nestled within the Debris"
+      name: "Nestled within the Debris",
+      category: DKBCategory.Regular
     },
     {
       num: 18,
@@ -97,7 +102,8 @@ export const landfill: DKBLayer = {
     },
     {
       num: 20,
-      name: "A Rare Treasure"
+      name: "A Rare Treasure",
+      category: DKBCategory.Regular
     },
     {
       num: 21,
@@ -126,7 +132,8 @@ export const landfill: DKBLayer = {
     },
     {
       num: 26,
-      name: "Follow the Crystal Vein"
+      name: "Follow the Crystal Vein",
+      category: DKBCategory.Regular
     },
     {
       num: 27,

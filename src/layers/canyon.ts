@@ -11,15 +11,18 @@ export const canyon: DKBLayer = {
     },
     {
       num: 2,
-      name: "Behind Tallfall Cliffs"
+      name: "Behind Tallfall Cliffs",
+      category: DKBCategory.Regular
     },
     {
       num: 3,
-      name: "Hanging in the Cliffs"
+      name: "Hanging in the Cliffs",
+      category: DKBCategory.Regular
     },
     {
       num: 4,
-      name: "Scenic Smokestack View"
+      name: "Scenic Smokestack View",
+      category: DKBCategory.Regular
     },
     {
       num: 5,
@@ -28,23 +31,28 @@ export const canyon: DKBLayer = {
     },
     {
       num: 6,
-      name: "Growing from the Stone Wall"
+      name: "Growing from the Stone Wall",
+      category: DKBCategory.Regular
     },
     {
       num: 7,
-      name: "Buried in Tallfall Cliffs"
+      name: "Buried in Tallfall Cliffs",
+      category: DKBCategory.Regular
     },
     {
       num: 8,
-      name: "Unpilfered Potassium"
+      name: "Unpilfered Potassium",
+      category: DKBCategory.Regular
     },
     {
       num: 9,
-      name: "Stuck in a Side Cave"
+      name: "Stuck in a Side Cave",
+      category: DKBCategory.Regular
     },
     {
       num: 10,
-      name: "Pay Dirt under the Plateau"
+      name: "Pay Dirt under the Plateau",
+      category: DKBCategory.Regular
     },
     {
       num: 11,
@@ -53,19 +61,23 @@ export const canyon: DKBLayer = {
     },
     {
       num: 12,
-      name: "Spinning in the Stone Pillar"
+      name: "Spinning in the Stone Pillar",
+      category: DKBCategory.Regular
     },
     {
       num: 13,
-      name: "Moseyed into the Village!"
+      name: "Moseyed into the Village!",
+      category: DKBCategory.Regular
     },
     {
       num: 14,
-      name: "High Shelf Down Below"
+      name: "High Shelf Down Below",
+      category: DKBCategory.Regular
     },
     {
       num: 15,
-      name: "Sunken and Soaking"
+      name: "Sunken and Soaking",
+      category: DKBCategory.Regular
     },
     {
       num: 16,
@@ -84,7 +96,8 @@ export const canyon: DKBLayer = {
     },
     {
       num: 19,
-      name: "An Underground Guide"
+      name: "An Underground Guide",
+      category: DKBCategory.Regular
     },
     {
       num: 20,
@@ -98,11 +111,13 @@ export const canyon: DKBLayer = {
     },
     {
       num: 22,
-      name: "Traversing the Cliff"
+      name: "Traversing the Cliff",
+      category: DKBCategory.Regular
     },
     {
       num: 23,
-      name: "Unplundered Produce"
+      name: "Unplundered Produce",
+      category: DKBCategory.Regular
     },
     {
       num: 24,
@@ -121,15 +136,18 @@ export const canyon: DKBLayer = {
     },
     {
       num: 27,
-      name: "Sparkling in the Secret Storeroom"
+      name: "Sparkling in the Secret Storeroom",
+      category: DKBCategory.Regular
     },
     {
       num: 28,
-      name: "Banandium Gem in the House"
+      name: "Banandium Gem in the House",
+      category: DKBCategory.Regular
     },
     {
       num: 29,
-      name: "Unstuck the Mine Cart"
+      name: "Unstuck the Mine Cart",
+      category: DKBCategory.Regular
     },
     {
       num: 30,
@@ -153,7 +171,8 @@ export const canyon: DKBLayer = {
     },
     {
       num: 34,
-      name: "Sleeping by the Smokestack"
+      name: "Sleeping by the Smokestack",
+      category: DKBCategory.Regular
     },
     {
       num: 35,
@@ -162,19 +181,23 @@ export const canyon: DKBLayer = {
     },
     {
       num: 36,
-      name: "An Edible Earring"
+      name: "An Edible Earring",
+      category: DKBCategory.Regular
     },
     {
       num: 37,
-      name: "Banana up the Nose"
+      name: "Banana up the Nose",
+      category: DKBCategory.Regular
     },
     {
       num: 38,
-      name: "Hidden beneath Scoundrels"
+      name: "Hidden beneath Scoundrels",
+      category: DKBCategory.Regular
     },
     {
       num: 39,
-      name: "Circling in the Concrete Pillar"
+      name: "Circling in the Concrete Pillar",
+      category: DKBCategory.Regular
     },
     {
       num: 40,
@@ -183,7 +206,8 @@ export const canyon: DKBLayer = {
     },
     {
       num: 41,
-      name: "Finally within Reach"
+      name: "Finally within Reach",
+      category: DKBCategory.Regular
     },
     {
       num: 42,
@@ -232,31 +256,38 @@ export const canyon: DKBLayer = {
     },
     {
       num: 51,
-      name: "Proximity Punching"
+      name: "Proximity Punching",
+      category: DKBCategory.Regular
     },
     {
       num: 52,
-      name: "Bust through the Giraffee's Spot"
+      name: "Bust through the Giraffee's Spot",
+      category: DKBCategory.Regular
     },
     {
       num: 53,
-      name: "Behind the Moving Walls"
+      name: "Behind the Moving Walls",
+      category: DKBCategory.Regular
     },
     {
       num: 54,
-      name: "Above the Moving Walls"
+      name: "Above the Moving Walls",
+      category: DKBCategory.Regular
     },
     {
       num: 55,
-      name: "Slip into the Secret Room"
+      name: "Slip into the Secret Room",
+      category: DKBCategory.Regular
     },
     {
       num: 56,
-      name: "Hanging from the Crane"
+      name: "Hanging from the Crane",
+      category: DKBCategory.Regular
     },
     {
       num: 57,
-      name: "The Crane's Precious Cargo"
+      name: "The Crane's Precious Cargo",
+      category: DKBCategory.Regular
     },
     {
       num: 58,
@@ -265,7 +296,8 @@ export const canyon: DKBLayer = {
     },
     {
       num: 59,
-      name: "Foreman's Secret Stash"
+      name: "Foreman's Secret Stash",
+      category: DKBCategory.Regular
     },
     {
       num: 60,
@@ -284,23 +316,28 @@ export const canyon: DKBLayer = {
     },
     {
       num: 63,
-      name: "The Refinery's Hidden Hallway"
+      name: "The Refinery's Hidden Hallway",
+      category: DKBCategory.Regular
     },
     {
       num: 64,
-      name: "Peak's Peek at the Refinery"
+      name: "Peak's Peek at the Refinery",
+      category: DKBCategory.Regular
     },
     {
       num: 65,
-      name: "Asleep in a Dormitory"
+      name: "Asleep in a Dormitory",
+      category: DKBCategory.Regular
     },
     {
       num: 66,
-      name: "Surveying the Staff Dorms"
+      name: "Surveying the Staff Dorms",
+      category: DKBCategory.Regular
     },
     {
       num: 67,
-      name: "Tucked Away in a Dormitory"
+      name: "Tucked Away in a Dormitory",
+      category: DKBCategory.Regular
     },
     {
       num: 68,
@@ -324,7 +361,8 @@ export const canyon: DKBLayer = {
     },
     {
       num: 72,
-      name: "De-Voiding the Dorms"
+      name: "De-Voiding the Dorms",
+      category: DKBCategory.Regular
     },
     {
       num: 73,
@@ -333,7 +371,8 @@ export const canyon: DKBLayer = {
     },
     {
       num: 74,
-      name: "Mad Mixer's Parting Gift"
+      name: "Mad Mixer's Parting Gift",
+      category: DKBCategory.Regular
     },
     {
       num: 75,
@@ -347,15 +386,18 @@ export const canyon: DKBLayer = {
     },
     {
       num: 77,
-      name: "Treasure by the Triceratops"
+      name: "Treasure by the Triceratops",
+      category: DKBCategory.Regular
     },
     {
       num: 78,
-      name: "Under Twin-Horn Smokestacks"
+      name: "Under Twin-Horn Smokestacks",
+      category: DKBCategory.Regular
     },
     {
       num: 79,
-      name: "Hanging Hallway over the Refinery"
+      name: "Hanging Hallway over the Refinery",
+      category: DKBCategory.Regular
     },
     {
       num: 80,

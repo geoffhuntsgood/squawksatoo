@@ -11,7 +11,8 @@ export const hilltop: DKBLayer = {
     },
     {
       num: 2,
-      name: "Cave-Dwelling Treasure"
+      name: "Cave-Dwelling Treasure",
+      category: DKBCategory.Regular
     },
     {
       num: 6,
@@ -20,7 +21,8 @@ export const hilltop: DKBLayer = {
     },
     {
       num: 7,
-      name: "The Shifty Path under the Village"
+      name: "The Shifty Path under the Village",
+      category: DKBCategory.Regular
     },
     {
       num: 8,
@@ -94,15 +96,18 @@ export const hilltop: DKBLayer = {
     },
     {
       num: 22,
-      name: "Peeled from Peel Peak"
+      name: "Peeled from Peel Peak",
+      category: DKBCategory.Regular
     },
     {
       num: 23,
-      name: "The Skies over Peel Peak"
+      name: "The Skies over Peel Peak",
+      category: DKBCategory.Regular
     },
     {
       num: 24,
-      name: "Bananas All the Way Down"
+      name: "Bananas All the Way Down",
+      category: DKBCategory.Regular
     },
     {
       num: 25,
@@ -126,11 +131,13 @@ export const hilltop: DKBLayer = {
     },
     {
       num: 29,
-      name: "The Flying Banana"
+      name: "The Flying Banana",
+      category: DKBCategory.Regular
     },
     {
       num: 30,
-      name: "Gold-Dipped Banana"
+      name: "Gold-Dipped Banana",
+      category: DKBCategory.Regular
     },
     {
       num: 31,
@@ -149,7 +156,8 @@ export const hilltop: DKBLayer = {
     },
     {
       num: 34,
-      name: "Tunneling through the Pit"
+      name: "Tunneling through the Pit",
+      category: DKBCategory.Regular
     },
     {
       num: 35,

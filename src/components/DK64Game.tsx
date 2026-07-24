@@ -3,7 +3,7 @@ import { Grid, IconButton, Typography } from "@mui/material";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import { useReward } from "react-rewards";
 import { useStopwatch } from "react-timer-hook";
-import type { DK64Item, Options } from "../classes";
+import type { DK64Item, DK64Options } from "../classes";
 import { DKButton, DKItemRow, DKTimer } from "../inputs";
 
 export const DK64Game = ({
@@ -11,8 +11,8 @@ export const DK64Game = ({
   setOptions,
   setStart
 }: {
-  options: Options;
-  setOptions: Dispatch<SetStateAction<Options | null>>;
+  options: DK64Options;
+  setOptions: Dispatch<SetStateAction<DK64Options | null>>;
   setStart: Dispatch<SetStateAction<boolean>>;
 }) => {
   const [header, setHeader] = useState("");
@@ -128,13 +128,13 @@ export const DK64Game = ({
 
   return (
     <Grid container spacing={1}>
-      <Grid size={4}>
+      <Grid size={options.timer ? 4 : 6}>
         <Typography color="textPrimary" variant="h1">
           {header}
         </Typography>
         <div id="finished" />
       </Grid>
-      <Grid size={4}>
+      <Grid size={options.timer ? 4 : 6}>
         <Typography
           color="textPrimary"
           variant="h1"
@@ -175,6 +175,14 @@ export const DK64Game = ({
           stopwatch.reset();
         }}
       />
+      {options.timer && (
+        <DKButton
+          label={stopwatch.isRunning ? "Pause" : "Resume"}
+          handleClick={() =>
+            stopwatch.isRunning ? stopwatch.pause() : stopwatch.start()
+          }
+        />
+      )}
       <DKButton
         label="Reconfigure"
         handleClick={() => {

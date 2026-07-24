@@ -61,7 +61,7 @@ export const DKMultiSelect = ({
         inputProps={styles}
         renderValue={(selected) => selected.join(", ")}
       >
-        <MenuItem value="all">Select/Unselect All</MenuItem>
+        <MenuItem value="all">Select/Unselect All (default: all)</MenuItem>
         {selectItems.map((item: string) => (
           <MenuItem value={item}>
             <Checkbox checked={values.includes(item)} />

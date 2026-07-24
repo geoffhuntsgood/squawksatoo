@@ -1,6 +1,6 @@
 import { Box, Card, Tab, Tabs, ThemeProvider, Typography } from "@mui/material";
 import { useState } from "react";
-import { Options } from "./classes";
+import { DK64Options, DKBOptions } from "./classes";
 import { DK64Config, DK64Game, DKBConfig, DKBGame } from "./components";
 import { DKButton } from "./inputs";
 import { theme } from "./utils/theme";
@@ -8,7 +8,8 @@ import type { GameType } from "./utils/types";
 
 const App = () => {
   const [game, setGame] = useState<GameType>("DKB");
-  const [options, setOptions] = useState<Options | null>(null);
+  const [dkbOptions, setDKBOptions] = useState<DKBOptions | null>(null);
+  const [dk64Options, setDK64Options] = useState<DK64Options | null>(null);
 
   const [goLabel, setGoLabel] = useState<string>("");
   const [start, setStart] = useState<boolean>(false);
@@ -35,15 +36,15 @@ const App = () => {
             value={game}
             onChange={(_, newValue) => setGame(newValue)}
           >
-            <Tab label="DKB" value="DKB" />
+            <Tab label="DK BANANZA" value="DKB" />
             <Tab label="DK64" value="DK64" />
           </Tabs>
 
           {game === "DKB" && (
-            <DKBConfig setOptions={setOptions} setGoLabel={setGoLabel} />
+            <DKBConfig setOptions={setDKBOptions} setGoLabel={setGoLabel} />
           )}
           {game === "DK64" && (
-            <DK64Config setOptions={setOptions} setGoLabel={setGoLabel} />
+            <DK64Config setOptions={setDK64Options} setGoLabel={setGoLabel} />
           )}
 
           <Box sx={{ textAlign: "center" }}>
@@ -51,19 +52,19 @@ const App = () => {
           </Box>
         </>
       )}
-      {start && options && (
+      {start && (
         <>
-          {game === "DKB" && (
+          {game === "DKB" && dkbOptions && (
             <DKBGame
-              options={options}
-              setOptions={setOptions}
+              options={dkbOptions}
+              setOptions={setDKBOptions}
               setStart={setStart}
             />
           )}
-          {game === "DK64" && (
+          {game === "DK64" && dk64Options && (
             <DK64Game
-              options={options}
-              setOptions={setOptions}
+              options={dk64Options}
+              setOptions={setDK64Options}
               setStart={setStart}
             />
           )}

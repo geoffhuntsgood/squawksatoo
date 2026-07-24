@@ -6,35 +6,43 @@ export const groove: DKBLayer = {
   bananas: [
     {
       num: 1,
-      name: "The Secret in Solitary"
+      name: "The Secret in Solitary",
+      category: DKBCategory.Regular
     },
     {
       num: 2,
-      name: "Deep under Detention"
+      name: "Deep under Detention",
+      category: DKBCategory.Regular
     },
     {
       num: 3,
-      name: "Banana behind Bars"
+      name: "Banana behind Bars",
+      category: DKBCategory.Regular
     },
     {
       num: 4,
-      name: "A Square-Shaped Secret"
+      name: "A Square-Shaped Secret",
+      category: DKBCategory.Regular
     },
     {
       num: 5,
-      name: "Smash and Receive"
+      name: "Smash and Receive",
+      category: DKBCategory.Regular
     },
     {
       num: 6,
-      name: "Gettin' Down in the Groove Layer!"
+      name: "Gettin' Down in the Groove Layer!",
+      category: DKBCategory.Regular
     },
     {
       num: 7,
-      name: "Over the Disco"
+      name: "Over the Disco",
+      category: DKBCategory.Regular
     },
     {
       num: 8,
-      name: "Bouncy Brainteaser"
+      name: "Bouncy Brainteaser",
+      category: DKBCategory.Regular
     },
     {
       num: 10,
@@ -58,7 +66,8 @@ export const groove: DKBLayer = {
     },
     {
       num: 14,
-      name: "Banana Chandelier"
+      name: "Banana Chandelier",
+      category: DKBCategory.Regular
     },
     {
       num: 15,
@@ -67,39 +76,48 @@ export const groove: DKBLayer = {
     },
     {
       num: 17,
-      name: "Disco-Ball Destruction"
+      name: "Disco-Ball Destruction",
+      category: DKBCategory.Regular
     },
     {
       num: 18,
-      name: "Behind the Disco's Wall"
+      name: "Behind the Disco's Wall",
+      category: DKBCategory.Regular
     },
     {
       num: 19,
-      name: "The Funky Beat is Back"
+      name: "The Funky Beat is Back",
+      category: DKBCategory.Regular
     },
     {
       num: 20,
-      name: "Rising Bass Line"
+      name: "Rising Bass Line",
+      category: DKBCategory.Regular
     },
     {
       num: 21,
-      name: "Beat the Concrete"
+      name: "Beat the Concrete",
+      category: DKBCategory.Regular
     },
     {
       num: 22,
-      name: "The Groovy Bass is Back"
+      name: "The Groovy Bass is Back",
+      category: DKBCategory.Regular
     },
     {
       num: 23,
-      name: "Lofty Melody"
+      name: "Lofty Melody",
+      category: DKBCategory.Regular
     },
     {
       num: 24,
-      name: "A Gift from a Fan"
+      name: "A Gift from a Fan",
+      category: DKBCategory.Regular
     },
     {
       num: 25,
-      name: "The Catchy Melody is Back"
+      name: "The Catchy Melody is Back",
+      category: DKBCategory.Regular
     },
     {
       num: 26,
@@ -119,17 +137,20 @@ export const groove: DKBLayer = {
     {
       num: 9,
       name: "A Complete Fossil Collection",
+      category: DKBCategory.Regular,
       isPostgame: true,
       iHateMyself: true
     },
     {
       num: 16,
       name: "Groovin' Once Again",
+      category: DKBCategory.Regular,
       isPostgame: true
     },
     {
       num: 28,
       name: "A Gift from Poppy",
+      category: DKBCategory.Regular,
       isPostgame: true
     },
     {

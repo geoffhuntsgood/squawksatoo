@@ -6,7 +6,8 @@ export const junction: DKBLayer = {
   bananas: [
     {
       num: 1,
-      name: "Freezer Path's Special Scoop"
+      name: "Freezer Path's Special Scoop",
+      category: DKBCategory.Regular
     },
     {
       num: 2,
@@ -15,11 +16,13 @@ export const junction: DKBLayer = {
     },
     {
       num: 3,
-      name: "Freezer Path's Hidden Snack"
+      name: "Freezer Path's Hidden Snack",
+      category: DKBCategory.Regular
     },
     {
       num: 5,
-      name: "Forest Path's Birdbrain"
+      name: "Forest Path's Birdbrain",
+      category: DKBCategory.Regular
     },
     {
       num: 6,
@@ -28,15 +31,18 @@ export const junction: DKBLayer = {
     },
     {
       num: 7,
-      name: "Forest Path's Hidden Snack"
+      name: "Forest Path's Hidden Snack",
+      category: DKBCategory.Regular
     },
     {
       num: 9,
-      name: "Cleared the Way to Clash Point!"
+      name: "Cleared the Way to Clash Point!",
+      category: DKBCategory.Regular
     },
     {
       num: 10,
-      name: "Clash Point's Hidden Snack"
+      name: "Clash Point's Hidden Snack",
+      category: DKBCategory.Regular
     },
     {
       num: 11,

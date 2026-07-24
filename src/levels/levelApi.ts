@@ -1,5 +1,5 @@
 import type { CBSanitySettings, DK64Item, DK64Level } from "../classes";
-import { DK64Category, LevelName } from "../enums";
+import { CBCategory, DK64Category, LevelName } from "../enums";
 import { aztec } from "./aztec";
 import { castle } from "./castle";
 import { caves } from "./caves";
@@ -22,7 +22,7 @@ const allLevels: DK64Level[] = [
   helm
 ];
 
-export const getCBSanityForLevel = (
+const getCBSanityForLevel = (
   level: DK64Level,
   cbSanitySettings: CBSanitySettings
 ): DK64Item[] => {
@@ -70,22 +70,26 @@ export const getAllForCategories = (
   categories: DK64Category[],
   levelName: LevelName,
   iHateMyself: boolean,
-  cbSanitySettings: CBSanitySettings
+  cbSanity: CBSanitySettings
 ): DK64Item[] => {
-  const itemList = getLevelItems(levelName, iHateMyself, cbSanitySettings);
-  let cats = categories;
-
-  if (
-    cbSanitySettings.balloons ||
-    cbSanitySettings.bunches ||
-    cbSanitySettings.singles
-  ) {
-    cats = cats.filter((cat: DK64Category) => cat !== DK64Category.Medal);
-  }
-
+  const itemList = getLevelItems(levelName, iHateMyself, cbSanity);
+  let cats: (DK64Category | CBCategory)[] = categories;
   if (cats.length === 0) return itemList;
 
-  return itemList.filter((item: DK64Item) =>
-    cats.includes(item.category as DK64Category)
-  );
+  if (cbSanity.balloons || cbSanity.bunches || cbSanity.singles) {
+    cats = cats.filter(
+      (cat: DK64Category | CBCategory) => cat !== DK64Category.Medal
+    );
+    if (cats.length > 0) {
+      if (cbSanity.balloons) cats.push(CBCategory.Balloon);
+      if (cbSanity.bunches) cats.push(CBCategory.Bunch);
+      if (cbSanity.singles) cats.push(CBCategory.Single);
+    } else {
+      return itemList.filter(
+        (item: DK64Item) => item.category !== DK64Category.Medal
+      );
+    }
+  }
+
+  return itemList.filter((item: DK64Item) => cats.includes(item.category));
 };

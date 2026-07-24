@@ -4,3 +4,4 @@ export * from "./DKItemRow";
 export * from "./DKMultiSelect";
 export * from "./DKSelect";
 export * from "./DKTimer";
+export * from "./DKTooltip";

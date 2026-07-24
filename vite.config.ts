@@ -16,7 +16,8 @@ export default defineConfig({
       include: ["src/**/*.{ts,tsx}"],
       exclude: [
         ...configDefaults.exclude,
-        "src/main.tsx"
+        "src/main.tsx",
+        "src/**/index.ts"
       ]
     }
   }

@@ -1,4 +1,3 @@
-import { colors } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 
 const outlined = "darkorange";
@@ -110,12 +109,16 @@ export const theme = createTheme({
           backgroundColor: "yellow"
         }
       }
+    },
+    MuiTooltip: {
+      styleOverrides: {
+        tooltip: {
+          fontSize: "1.5rem"
+        }
+      }
     }
   },
   palette: {
-    primary: {
-      main: colors.blue[900]
-    },
     text: {
       primary: "#fff"
     }

@@ -11,7 +11,8 @@ export const forbidden: DKBLayer = {
     },
     {
       num: 2,
-      name: "Secret in the Shaft"
+      name: "Secret in the Shaft",
+      category: DKBCategory.Regular
     },
     {
       num: 3,
@@ -35,15 +36,18 @@ export const forbidden: DKBLayer = {
     },
     {
       num: 7,
-      name: "Pitching for Passage"
+      name: "Pitching for Passage",
+      category: DKBCategory.Regular
     },
     {
       num: 8,
-      name: "Past the Shuffling Ceiling"
+      name: "Past the Shuffling Ceiling",
+      category: DKBCategory.Regular
     },
     {
       num: 9,
-      name: "Under, Up, and Inside"
+      name: "Under, Up, and Inside",
+      category: DKBCategory.Regular
     },
     {
       num: 10,
@@ -52,11 +56,13 @@ export const forbidden: DKBLayer = {
     },
     {
       num: 11,
-      name: "Passage to the Lonely Island"
+      name: "Passage to the Lonely Island",
+      category: DKBCategory.Regular
     },
     {
       num: 12,
-      name: "Perilous Passage"
+      name: "Perilous Passage",
+      category: DKBCategory.Regular
     },
     {
       num: 13,
@@ -80,7 +86,8 @@ export const forbidden: DKBLayer = {
     },
     {
       num: 17,
-      name: "Unwelcome at Go-No-Further Gate!"
+      name: "Unwelcome at Go-No-Further Gate!",
+      category: DKBCategory.Regular
     },
     {
       num: 18,
@@ -94,7 +101,8 @@ export const forbidden: DKBLayer = {
     },
     {
       num: 20,
-      name: "Passage through Lava"
+      name: "Passage through Lava",
+      category: DKBCategory.Regular
     },
     {
       num: 21,
@@ -119,6 +127,7 @@ export const forbidden: DKBLayer = {
     {
       num: 24,
       name: "A Gift from Grumpy",
+      category: DKBCategory.Regular,
       isPostgame: true
     }
   ]

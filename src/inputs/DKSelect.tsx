@@ -5,7 +5,6 @@ import {
   Select,
   type SelectChangeEvent
 } from "@mui/material";
-import type { Dispatch, SetStateAction } from "react";
 
 export const DKSelect = ({
   label,
@@ -15,7 +14,7 @@ export const DKSelect = ({
 }: {
   label: string;
   value: string;
-  handleChange: Dispatch<SetStateAction<string>>;
+  handleChange: Function;
   selectItems: string[];
 }) => {
   const styles = {

@@ -11,15 +11,18 @@ export const resort: DKBLayer = {
     },
     {
       num: 2,
-      name: "Buried in the Beach"
+      name: "Buried in the Beach",
+      category: DKBCategory.Regular
     },
     {
       num: 3,
-      name: "Strawberry and Banana"
+      name: "Strawberry and Banana",
+      category: DKBCategory.Regular
     },
     {
       num: 4,
-      name: "Checking into the Tropical Retreat"
+      name: "Checking into the Tropical Retreat",
+      category: DKBCategory.Regular
     },
     {
       num: 5,
@@ -28,15 +31,18 @@ export const resort: DKBLayer = {
     },
     {
       num: 6,
-      name: "Underground Runaround"
+      name: "Underground Runaround",
+      category: DKBCategory.Regular
     },
     {
       num: 7,
-      name: "Up Means Down"
+      name: "Up Means Down",
+      category: DKBCategory.Regular
     },
     {
       num: 8,
-      name: "Secret Beachside Grotto"
+      name: "Secret Beachside Grotto",
+      category: DKBCategory.Regular
     },
     {
       num: 9,
@@ -45,11 +51,13 @@ export const resort: DKBLayer = {
     },
     {
       num: 10,
-      name: "Rail-Ride Rest Stop"
+      name: "Rail-Ride Rest Stop",
+      category: DKBCategory.Regular
     },
     {
       num: 11,
-      name: "End of the Line"
+      name: "End of the Line",
+      category: DKBCategory.Regular
     },
     {
       num: 12,
@@ -98,7 +106,8 @@ export const resort: DKBLayer = {
     },
     {
       num: 21,
-      name: "At the Cannon Crossroads"
+      name: "At the Cannon Crossroads",
+      category: DKBCategory.Regular
     },
     {
       num: 22,
@@ -137,7 +146,8 @@ export const resort: DKBLayer = {
     },
     {
       num: 29,
-      name: "Rising Seafloor Ruins"
+      name: "Rising Seafloor Ruins",
+      category: DKBCategory.Regular
     },
     {
       num: 30,
@@ -156,23 +166,28 @@ export const resort: DKBLayer = {
     },
     {
       num: 33,
-      name: "Adrift at Sea"
+      name: "Adrift at Sea",
+      category: DKBCategory.Regular
     },
     {
       num: 34,
-      name: "Floating Freebie"
+      name: "Floating Freebie",
+      category: DKBCategory.Regular
     },
     {
       num: 35,
-      name: "Quick Snack on Skydive Isle"
+      name: "Quick Snack on Skydive Isle",
+      category: DKBCategory.Regular
     },
     {
       num: 36,
-      name: "Skydive Isle's Side Pocket"
+      name: "Skydive Isle's Side Pocket",
+      category: DKBCategory.Regular
     },
     {
       num: 37,
-      name: "Shifty Smash: Floating Rotation"
+      name: "Shifty Smash: Floating Rotation",
+      category: DKBCategory.Regular
     },
     {
       num: 38,
@@ -181,11 +196,13 @@ export const resort: DKBLayer = {
     },
     {
       num: 39,
-      name: "Down from Skydive Isle"
+      name: "Down from Skydive Isle",
+      category: DKBCategory.Regular
     },
     {
       num: 40,
-      name: "Above the Big Watermelon"
+      name: "Above the Big Watermelon",
+      category: DKBCategory.Regular
     },
     {
       num: 41,

@@ -1,36 +1,35 @@
 import { Box, Grid } from "@mui/material";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
-import type { DKBBanana, Options } from "../classes";
+import { DKBOptions, type DKBBanana } from "../classes";
 import { DKBCategory, LayerName } from "../enums";
-import {
-  getAllForCategories,
-  getLayerBananas
-} from "../layers/layerApi";
 import { DKCheckbox, DKMultiSelect, DKSelect } from "../inputs";
+import { getAllForCategories, getLayerBananas } from "../layers/layerApi";
 
 export const DKBConfig = ({
   setOptions,
   setGoLabel
 }: {
-  setOptions: Dispatch<SetStateAction<Options | null>>;
+  setOptions: Dispatch<SetStateAction<DKBOptions | null>>;
   setGoLabel: Dispatch<SetStateAction<string>>;
 }) => {
   const [layer, setLayer] = useState<string>(LayerName.Lagoon);
   const [categories, setCategories] = useState<DKBCategory[]>([]);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const [count, setCount] = useState("1");
 
-  const [includePostgame, setIncludePostgame] = useState(false);
-  const [timer, setTimer] = useState(false);
-  const [autoRefresh, setAutoRefresh] = useState(true);
-  const [recycleWrong, setRecycleWrong] = useState(false);
-  const [iHateMyself, setIHateMyself] = useState(false);
-
-  const [initialBananas, setInitialBananas] = useState<DKBBanana[]>([]);
+  const [config, setConfig] = useState<DKBOptions>({
+    count: "1",
+    timer: false,
+    autoRefresh: true,
+    iHateMyself: false,
+    includePostgame: false,
+    recycleWrong: false,
+    initialBananas: []
+  });
 
   const getCount = () => {
     const range = [];
-    const countToUse = initialBananas.length > 5 ? 5 : initialBananas.length;
+    const countToUse =
+      config.initialBananas.length > 5 ? 5 : config.initialBananas.length;
     for (let i = 1; i <= countToUse; i++) {
       range.push(`${i}`);
     }
@@ -40,8 +39,8 @@ export const DKBConfig = ({
   useEffect(() => {
     const layerNans = getLayerBananas(
       layer as LayerName,
-      includePostgame,
-      iHateMyself
+      config.includePostgame,
+      config.iHateMyself
     );
     const cats: DKBCategory[] = [];
     layerNans.forEach((nan: DKBBanana) => {
@@ -53,55 +52,42 @@ export const DKBConfig = ({
       }
     });
     setCategories(cats);
-    const initialNans = getAllForCategories(
+    const initialBananas = getAllForCategories(
       layer as LayerName,
       [],
-      includePostgame,
-      iHateMyself
+      config.includePostgame,
+      config.iHateMyself
     );
-    setInitialBananas(initialNans);
-  }, [layer, includePostgame, iHateMyself]);
+    setConfig({
+      ...config,
+      initialBananas
+    });
+  }, [layer, config.includePostgame, config.iHateMyself]);
 
   useEffect(() => {
-    setInitialBananas(
-      getAllForCategories(
-        layer as LayerName,
-        selectedCategories as DKBCategory[],
-        includePostgame,
-        iHateMyself
-      )
+    const updatedNans = getAllForCategories(
+      layer as LayerName,
+      selectedCategories as DKBCategory[],
+      config.includePostgame,
+      config.iHateMyself
     );
-  }, [layer, selectedCategories, includePostgame, iHateMyself]);
+    setConfig({
+      ...config,
+      initialBananas: updatedNans
+    });
+  }, [layer, selectedCategories, config.includePostgame, config.iHateMyself]);
 
   useEffect(() => {
-    if (initialBananas.length > 0) {
-      setGoLabel(`Get ${count} out of ${initialBananas.length}`);
-      setOptions({
-        initialBananas,
-        count,
-        includePostgame,
-        timer,
-        autoRefresh,
-        recycleWrong,
-        iHateMyself
-      });
+    if (config.initialBananas.length > 0) {
+      setGoLabel(`Get ${config.count} out of ${config.initialBananas.length}`);
+      setOptions(config);
     }
-  }, [
-    initialBananas,
-    count,
-    includePostgame,
-    timer,
-    autoRefresh,
-    recycleWrong,
-    iHateMyself,
-    setGoLabel,
-    setOptions
-  ]);
+  }, [config, setGoLabel, setOptions]);
 
   return (
     <Grid container spacing={1}>
-      <Grid size={1} />
-      <Grid size={5}>
+      <Grid size={2} />
+      <Grid size={4}>
         <Box sx={{ margin: "10px" }}>
           <DKSelect
             label="Layer"
@@ -110,15 +96,15 @@ export const DKBConfig = ({
             selectItems={Object.values(LayerName)}
           />
           <DKMultiSelect
-            label="Categories (All by default)"
+            label="Categories"
             values={selectedCategories}
             handleChange={setSelectedCategories}
             selectItems={categories}
           />
           <DKSelect
             label="How many at a time?"
-            value={count}
-            handleChange={setCount}
+            value={config.count}
+            handleChange={(val: any) => setConfig({ ...config, count: val })}
             selectItems={getCount()}
           />
         </Box>
@@ -127,26 +113,42 @@ export const DKBConfig = ({
         <Box sx={{ margin: "10px" }}>
           <DKCheckbox
             label="Include Postgame"
-            checked={includePostgame}
-            handleChange={setIncludePostgame}
+            checked={config.includePostgame}
+            handleChange={(val: any) =>
+              setConfig({ ...config, includePostgame: val })
+            }
+            helpText="Adds all bananas that only appear after defeating K. Rool."
           />
-          <DKCheckbox label="Timer" checked={timer} handleChange={setTimer} />
+          <DKCheckbox
+            label="Timer"
+            checked={config.timer}
+            handleChange={(val: any) => setConfig({ ...config, timer: val })}
+          />
           <DKCheckbox
             label="Auto-refresh"
-            checked={autoRefresh}
-            handleChange={setAutoRefresh}
+            checked={config.autoRefresh}
+            handleChange={(val: any) =>
+              setConfig({ ...config, autoRefresh: val })
+            }
+            helpText={`Continuously adds new goals until you run out (currently ${config.initialBananas.length}).`}
           />
-          {autoRefresh && (
+          {config.autoRefresh && (
             <DKCheckbox
               label="Recycle wrong bananas"
-              checked={recycleWrong}
-              handleChange={setRecycleWrong}
+              checked={config.recycleWrong}
+              handleChange={(val: any) =>
+                setConfig({ ...config, recycleWrong: val })
+              }
+              helpText="Adds a wrong-marked banana back to the pool so that the correct one can be obtained later."
             />
           )}
           <DKCheckbox
             label="I Hate Myself"
-            checked={iHateMyself}
-            handleChange={setIHateMyself}
+            checked={config.iHateMyself}
+            handleChange={(val: any) =>
+              setConfig({ ...config, iHateMyself: val })
+            }
+            helpText='Adds long goals like "A Complete Fossil Collection" to the pool.'
           />
         </Box>
       </Grid>

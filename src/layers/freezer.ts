@@ -11,27 +11,33 @@ export const freezer: DKBLayer = {
     },
     {
       num: 2,
-      name: "A View of Crumbly Bridge"
+      name: "A View of Crumbly Bridge",
+      category: DKBCategory.Regular
     },
     {
       num: 3,
-      name: "A Snowy-Cliffside Secret"
+      name: "A Snowy-Cliffside Secret",
+      category: DKBCategory.Regular
     },
     {
       num: 4,
-      name: "Turned Up under Turnips"
+      name: "Turned Up under Turnips",
+      category: DKBCategory.Regular
     },
     {
       num: 5,
-      name: "Slumbering in the Snow"
+      name: "Slumbering in the Snow",
+      category: DKBCategory.Regular
     },
     {
       num: 6,
-      name: "Under the Cliff-Edge Scoop Hut"
+      name: "Under the Cliff-Edge Scoop Hut",
+      category: DKBCategory.Regular
     },
     {
       num: 7,
-      name: "Enshrined atop the Pillar"
+      name: "Enshrined atop the Pillar",
+      category: DKBCategory.Regular
     },
     {
       num: 8,
@@ -40,15 +46,18 @@ export const freezer: DKBLayer = {
     },
     {
       num: 9,
-      name: "Over the Freezing River"
+      name: "Over the Freezing River",
+      category: DKBCategory.Regular
     },
     {
       num: 10,
-      name: "Hidden behind the Waterfall"
+      name: "Hidden behind the Waterfall",
+      category: DKBCategory.Regular
     },
     {
       num: 11,
-      name: "Across Crumbly Bridge"
+      name: "Across Crumbly Bridge",
+      category: DKBCategory.Regular
     },
     {
       num: 12,
@@ -72,7 +81,8 @@ export const freezer: DKBLayer = {
     },
     {
       num: 16,
-      name: "Un-Voiding the Scoop Hut"
+      name: "Un-Voiding the Scoop Hut",
+      category: DKBCategory.Regular
     },
     {
       num: 17,
@@ -96,23 +106,28 @@ export const freezer: DKBLayer = {
     },
     {
       num: 21,
-      name: "Heavily Protected Produce"
+      name: "Heavily Protected Produce",
+      category: DKBCategory.Regular
     },
     {
       num: 22,
-      name: "Scoop Hut in the Sky"
+      name: "Scoop Hut in the Sky",
+      category: DKBCategory.Regular
     },
     {
       num: 23,
-      name: "Cracking Open Coolstripe Cavern"
+      name: "Cracking Open Coolstripe Cavern",
+      category: DKBCategory.Regular
     },
     {
       num: 24,
-      name: "Edge of a Cool Pool"
+      name: "Edge of a Cool Pool",
+      category: DKBCategory.Regular
     },
     {
       num: 25,
-      name: "Beware Falling Icicles"
+      name: "Beware Falling Icicles",
+      category: DKBCategory.Regular
     },
     {
       num: 26,
@@ -121,19 +136,23 @@ export const freezer: DKBLayer = {
     },
     {
       num: 27,
-      name: "Deep in the Cavern"
+      name: "Deep in the Cavern",
+      category: DKBCategory.Regular
     },
     {
       num: 28,
-      name: "Sitting on the Snow"
+      name: "Sitting on the Snow",
+      category: DKBCategory.Regular
     },
     {
       num: 29,
-      name: "Gazing at the Cooling Tower"
+      name: "Gazing at the Cooling Tower",
+      category: DKBCategory.Regular
     },
     {
       num: 30,
-      name: "Kept in a Coolstripe Cubby"
+      name: "Kept in a Coolstripe Cubby",
+      category: DKBCategory.Regular
     },
     {
       num: 31,
@@ -142,7 +161,8 @@ export const freezer: DKBLayer = {
     },
     {
       num: 32,
-      name: "Coolstripe Cavern's Lost Treasure"
+      name: "Coolstripe Cavern's Lost Treasure",
+      category: DKBCategory.Regular
     },
     {
       num: 33,
@@ -166,7 +186,8 @@ export const freezer: DKBLayer = {
     },
     {
       num: 37,
-      name: "Behind the Cooling Tower's Eyes"
+      name: "Behind the Cooling Tower's Eyes",
+      category: DKBCategory.Regular
     },
     {
       num: 38,
@@ -185,7 +206,8 @@ export const freezer: DKBLayer = {
     },
     {
       num: 41,
-      name: "Molten-Hot Choco Banana"
+      name: "Molten-Hot Choco Banana",
+      category: DKBCategory.Regular
     },
     {
       num: 42,
@@ -194,7 +216,8 @@ export const freezer: DKBLayer = {
     },
     {
       num: 43,
-      name: "Coolin' Down in Canter Creamery!"
+      name: "Coolin' Down in Canter Creamery!",
+      category: DKBCategory.Regular
     },
     {
       num: 44,
@@ -218,7 +241,8 @@ export const freezer: DKBLayer = {
     },
     {
       num: 48,
-      name: "Smothered in Chocolava"
+      name: "Smothered in Chocolava",
+      category: DKBCategory.Regular
     },
     {
       num: 49,
@@ -232,11 +256,13 @@ export const freezer: DKBLayer = {
     },
     {
       num: 51,
-      name: "Found above the Fan"
+      name: "Found above the Fan",
+      category: DKBCategory.Regular
     },
     {
       num: 52,
-      name: "Kept Warm in the Field"
+      name: "Kept Warm in the Field",
+      category: DKBCategory.Regular
     },
     {
       num: 53,
@@ -255,27 +281,33 @@ export const freezer: DKBLayer = {
     },
     {
       num: 56,
-      name: "Through a Too-Hot Tunnel"
+      name: "Through a Too-Hot Tunnel",
+      category: DKBCategory.Regular
     },
     {
       num: 57,
-      name: "A View of Canter Creamery"
+      name: "A View of Canter Creamery",
+      category: DKBCategory.Regular
     },
     {
       num: 58,
-      name: "Beneath the Zig-Zag Bridges"
+      name: "Beneath the Zig-Zag Bridges",
+      category: DKBCategory.Regular
     },
     {
       num: 59,
-      name: "Stake-Hidden Snack"
+      name: "Stake-Hidden Snack",
+      category: DKBCategory.Regular
     },
     {
       num: 60,
-      name: "Buried in the Cooling Tower"
+      name: "Buried in the Cooling Tower",
+      category: DKBCategory.Regular
     },
     {
       num: 61,
-      name: "Behind the Cooling Tower"
+      name: "Behind the Cooling Tower",
+      category: DKBCategory.Regular
     },
     {
       num: 76,
@@ -284,7 +316,8 @@ export const freezer: DKBLayer = {
     },
     {
       num: 77,
-      name: "Hidden in Chocolava Cave"
+      name: "Hidden in Chocolava Cave",
+      category: DKBCategory.Regular
     },
     {
       num: 78,
@@ -308,7 +341,8 @@ export const freezer: DKBLayer = {
     },
     {
       num: 82,
-      name: "Treat on a Tiny Island"
+      name: "Treat on a Tiny Island",
+      category: DKBCategory.Regular
     },
     {
       num: 83,
@@ -322,11 +356,13 @@ export const freezer: DKBLayer = {
     },
     {
       num: 85,
-      name: "Tricky Trot to the Ice Maker"
+      name: "Tricky Trot to the Ice Maker",
+      category: DKBCategory.Regular
     },
     {
       num: 86,
-      name: "Looking over Chocolava"
+      name: "Looking over Chocolava",
+      category: DKBCategory.Regular
     },
     {
       num: 62,
@@ -419,6 +455,7 @@ export const freezer: DKBLayer = {
     {
       num: 87,
       name: "Stuck among the Pipes",
+      category: DKBCategory.Regular,
       isPostgame: true
     }
   ]

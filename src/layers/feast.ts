@@ -12,7 +12,8 @@ export const feast: DKBLayer = {
     },
     {
       num: 2,
-      name: "A Slime-Slathered Treat"
+      name: "A Slime-Slathered Treat",
+      category: DKBCategory.Regular
     },
     {
       num: 3,
@@ -36,11 +37,13 @@ export const feast: DKBLayer = {
     },
     {
       num: 7,
-      name: "Snacking from the Storeroom"
+      name: "Snacking from the Storeroom",
+      category: DKBCategory.Regular
     },
     {
       num: 8,
-      name: "A Banana among Friends"
+      name: "A Banana among Friends",
+      category: DKBCategory.Regular
     },
     {
       num: 9,
@@ -49,7 +52,8 @@ export const feast: DKBLayer = {
     },
     {
       num: 10,
-      name: "A Soda-Infused Banana"
+      name: "A Soda-Infused Banana",
+      category: DKBCategory.Regular
     },
     {
       num: 11,
@@ -83,11 +87,13 @@ export const feast: DKBLayer = {
     },
     {
       num: 17,
-      name: "Steamed-and-Salted Banana"
+      name: "Steamed-and-Salted Banana",
+      category: DKBCategory.Regular
     },
     {
       num: 18,
-      name: "At a Grate Height"
+      name: "At a Grate Height",
+      category: DKBCategory.Regular
     },
     {
       num: 19,
@@ -111,7 +117,8 @@ export const feast: DKBLayer = {
     },
     {
       num: 23,
-      name: "Up High in a Sky Container"
+      name: "Up High in a Sky Container",
+      category: DKBCategory.Regular
     },
     {
       num: 24,
@@ -120,7 +127,8 @@ export const feast: DKBLayer = {
     },
     {
       num: 25,
-      name: "Soda-Spout Clean Out"
+      name: "Soda-Spout Clean Out",
+      category: DKBCategory.Regular
     },
     {
       num: 26,
@@ -154,11 +162,13 @@ export const feast: DKBLayer = {
     },
     {
       num: 32,
-      name: "Banana by a Greasy River"
+      name: "Banana by a Greasy River",
+      category: DKBCategory.Regular
     },
     {
       num: 33,
-      name: "Center of the Oil Stream"
+      name: "Center of the Oil Stream",
+      category: DKBCategory.Regular
     },
     {
       num: 34,
@@ -192,15 +202,18 @@ export const feast: DKBLayer = {
     },
     {
       num: 40,
-      name: "Unmucking the Works"
+      name: "Unmucking the Works",
+      category: DKBCategory.Regular
     },
     {
       num: 41,
-      name: "Fries on the Side"
+      name: "Fries on the Side",
+      category: DKBCategory.Regular
     },
     {
       num: 42,
-      name: "The Duct Inspector's Reward"
+      name: "The Duct Inspector's Reward",
+      category: DKBCategory.Regular
     },
     {
       num: 43,
@@ -209,11 +222,13 @@ export const feast: DKBLayer = {
     },
     {
       num: 44,
-      name: "The Salt's Last Stop"
+      name: "The Salt's Last Stop",
+      category: DKBCategory.Regular
     },
     {
       num: 45,
-      name: "Eating the Lion's Share"
+      name: "Eating the Lion's Share",
+      category: DKBCategory.Regular
     },
     {
       num: 46,
@@ -222,7 +237,8 @@ export const feast: DKBLayer = {
     },
     {
       num: 47,
-      name: "Danger Doubling Back"
+      name: "Danger Doubling Back",
+      category: DKBCategory.Regular
     },
     {
       num: 48,
@@ -231,7 +247,8 @@ export const feast: DKBLayer = {
     },
     {
       num: 49,
-      name: "Triple-Gated Banana"
+      name: "Triple-Gated Banana",
+      category: DKBCategory.Regular
     },
     {
       num: 50,
@@ -240,27 +257,33 @@ export const feast: DKBLayer = {
     },
     {
       num: 51,
-      name: "Up through the Layer of Muck"
+      name: "Up through the Layer of Muck",
+      category: DKBCategory.Regular
     },
     {
       num: 52,
-      name: "Folded into the Patty"
+      name: "Folded into the Patty",
+      category: DKBCategory.Regular
     },
     {
       num: 53,
-      name: "Order Up at the Banana Burger!"
+      name: "Order Up at the Banana Burger!",
+      category: DKBCategory.Regular
     },
     {
       num: 54,
-      name: "Under the Lion's Mane"
+      name: "Under the Lion's Mane",
+      category: DKBCategory.Regular
     },
     {
       num: 55,
-      name: "Snack with a View"
+      name: "Snack with a View",
+      category: DKBCategory.Regular
     },
     {
       num: 56,
-      name: "Crowning the Monarch"
+      name: "Crowning the Monarch",
+      category: DKBCategory.Regular
     },
     {
       num: 57,
@@ -269,7 +292,8 @@ export const feast: DKBLayer = {
     },
     {
       num: 58,
-      name: "Muckin' Up Cat-Scratch Kitchen"
+      name: "Muckin' Up Cat-Scratch Kitchen",
+      category: DKBCategory.Regular
     },
     {
       num: 59,
@@ -278,7 +302,8 @@ export const feast: DKBLayer = {
     },
     {
       num: 60,
-      name: "Stuck in the Gutter"
+      name: "Stuck in the Gutter",
+      category: DKBCategory.Regular
     },
     {
       num: 61,
@@ -287,11 +312,13 @@ export const feast: DKBLayer = {
     },
     {
       num: 62,
-      name: "As Seen through the Grate"
+      name: "As Seen through the Grate",
+      category: DKBCategory.Regular
     },
     {
       num: 63,
-      name: "The Muck's Private Stash"
+      name: "The Muck's Private Stash",
+      category: DKBCategory.Regular
     },
     {
       num: 64,
@@ -310,11 +337,13 @@ export const feast: DKBLayer = {
     },
     {
       num: 67,
-      name: "Melt through the Metal Bridge"
+      name: "Melt through the Metal Bridge",
+      category: DKBCategory.Regular
     },
     {
       num: 68,
-      name: "Stuck in the Muck"
+      name: "Stuck in the Muck",
+      category: DKBCategory.Regular
     },
     {
       num: 69,

@@ -16,35 +16,43 @@ export const forest: DKBLayer = {
     },
     {
       num: 3,
-      name: "View from Featherfall Isle"
+      name: "View from Featherfall Isle",
+      category: DKBCategory.Regular
     },
     {
       num: 4,
-      name: "Perched Where Branches Cross"
+      name: "Perched Where Branches Cross",
+      category: DKBCategory.Regular
     },
     {
       num: 5,
-      name: "Shifting above the Forest"
+      name: "Shifting above the Forest",
+      category: DKBCategory.Regular
     },
     {
       num: 6,
-      name: "Under Featherfall Isle"
+      name: "Under Featherfall Isle",
+      category: DKBCategory.Regular
     },
     {
       num: 7,
-      name: "Battle: Seed to Succeed"
+      name: "Battle: Seed to Succeed",
+      category: DKBCategory.Regular
     },
     {
       num: 8,
-      name: "The Ostrich's Back Snack"
+      name: "The Ostrich's Back Snack",
+      category: DKBCategory.Regular
     },
     {
       num: 9,
-      name: "Branching over the Plains"
+      name: "Branching over the Plains",
+      category: DKBCategory.Regular
     },
     {
       num: 10,
-      name: "Hopped into Bellhop Burb!"
+      name: "Hopped into Bellhop Burb!",
+      category: DKBCategory.Regular
     },
     {
       num: 11,
@@ -63,7 +71,8 @@ export const forest: DKBLayer = {
     },
     {
       num: 14,
-      name: "Bird's-Eye View on Bellhop Burb"
+      name: "Bird's-Eye View on Bellhop Burb",
+      category: DKBCategory.Regular
     },
     {
       num: 15,
@@ -72,11 +81,13 @@ export const forest: DKBLayer = {
     },
     {
       num: 16,
-      name: "Found in the Ostrich Flock"
+      name: "Found in the Ostrich Flock",
+      category: DKBCategory.Regular
     },
     {
       num: 17,
-      name: "Beneath Bellhop Burb"
+      name: "Beneath Bellhop Burb",
+      category: DKBCategory.Regular
     },
     {
       num: 18,
@@ -85,11 +96,13 @@ export const forest: DKBLayer = {
     },
     {
       num: 19,
-      name: "Mired in Mud"
+      name: "Mired in Mud",
+      category: DKBCategory.Regular
     },
     {
       num: 20,
-      name: "Tiny Isle in the Wetlands"
+      name: "Tiny Isle in the Wetlands",
+      category: DKBCategory.Regular
     },
     {
       num: 21,
@@ -103,35 +116,43 @@ export const forest: DKBLayer = {
     },
     {
       num: 23,
-      name: "Behind the Big Tree"
+      name: "Behind the Big Tree",
+      category: DKBCategory.Regular
     },
     {
       num: 24,
-      name: "Sleeping in the Big Tree"
+      name: "Sleeping in the Big Tree",
+      category: DKBCategory.Regular
     },
     {
       num: 25,
-      name: "Glimmering Overhead"
+      name: "Glimmering Overhead",
+      category: DKBCategory.Regular
     },
     {
       num: 26,
-      name: "Checked in at the Eggshell Hotel"
+      name: "Checked in at the Eggshell Hotel",
+      category: DKBCategory.Regular
     },
     {
       num: 27,
-      name: "Atop the Eggshell Hotel"
+      name: "Atop the Eggshell Hotel",
+      category: DKBCategory.Regular
     },
     {
       num: 28,
-      name: "Lounge Loft and Found"
+      name: "Lounge Loft and Found",
+      category: DKBCategory.Regular
     },
     {
       num: 29,
-      name: "Hangin' in the Lounge"
+      name: "Hangin' in the Lounge",
+      category: DKBCategory.Regular
     },
     {
       num: 30,
-      name: "Present by the Pool"
+      name: "Present by the Pool",
+      category: DKBCategory.Regular
     },
     {
       num: 31,
@@ -150,23 +171,28 @@ export const forest: DKBLayer = {
     },
     {
       num: 34,
-      name: "Egg-Bottom Basement"
+      name: "Egg-Bottom Basement",
+      category: DKBCategory.Regular
     },
     {
       num: 35,
-      name: "Egg-Bottom Break-in"
+      name: "Egg-Bottom Break-in",
+      category: DKBCategory.Regular
     },
     {
       num: 36,
-      name: "A Pain in the Neck"
+      name: "A Pain in the Neck",
+      category: DKBCategory.Regular
     },
     {
       num: 37,
-      name: "Tucked in Thorn Hollow"
+      name: "Tucked in Thorn Hollow",
+      category: DKBCategory.Regular
     },
     {
       num: 38,
-      name: "Sealed in Thorn Hollow"
+      name: "Sealed in Thorn Hollow",
+      category: DKBCategory.Regular
     },
     {
       num: 48,
@@ -175,7 +201,8 @@ export const forest: DKBLayer = {
     },
     {
       num: 49,
-      name: "Stuck in the Stump"
+      name: "Stuck in the Stump",
+      category: DKBCategory.Regular
     },
     {
       num: 50,
@@ -184,7 +211,8 @@ export const forest: DKBLayer = {
     },
     {
       num: 51,
-      name: "Secret in the Marsh"
+      name: "Secret in the Marsh",
+      category: DKBCategory.Regular
     },
     {
       num: 52,
@@ -193,7 +221,8 @@ export const forest: DKBLayer = {
     },
     {
       num: 53,
-      name: "Beneath the Moving Platform"
+      name: "Beneath the Moving Platform",
+      category: DKBCategory.Regular
     },
     {
       num: 54,
@@ -212,7 +241,8 @@ export const forest: DKBLayer = {
     },
     {
       num: 57,
-      name: "Bounced into Rubbery Roost!"
+      name: "Bounced into Rubbery Roost!",
+      category: DKBCategory.Regular
     },
     {
       num: 58,
@@ -221,11 +251,13 @@ export const forest: DKBLayer = {
     },
     {
       num: 59,
-      name: "Beneath the Bounce"
+      name: "Beneath the Bounce",
+      category: DKBCategory.Regular
     },
     {
       num: 60,
-      name: "Bouncing to the Top"
+      name: "Bouncing to the Top",
+      category: DKBCategory.Regular
     },
     {
       num: 61,
@@ -239,11 +271,13 @@ export const forest: DKBLayer = {
     },
     {
       num: 63,
-      name: "A View of Mossplume Marsh"
+      name: "A View of Mossplume Marsh",
+      category: DKBCategory.Regular
     },
     {
       num: 64,
-      name: "Hangin' in the Annex"
+      name: "Hangin' in the Annex",
+      category: DKBCategory.Regular
     },
     {
       num: 65,
@@ -262,11 +296,13 @@ export const forest: DKBLayer = {
     },
     {
       num: 68,
-      name: "Under the Rubber Pillar"
+      name: "Under the Rubber Pillar",
+      category: DKBCategory.Regular
     },
     {
       num: 69,
-      name: "Beyond Rubbery Roost"
+      name: "Beyond Rubbery Roost",
+      category: DKBCategory.Regular
     },
     {
       num: 70,
@@ -320,7 +356,8 @@ export const forest: DKBLayer = {
     },
     {
       num: 80,
-      name: "Dazzling Ostrict Headwear"
+      name: "Dazzling Ostrich Headwear",
+      category: DKBCategory.Regular
     },
     {
       num: 81,
@@ -329,11 +366,13 @@ export const forest: DKBLayer = {
     },
     {
       num: 82,
-      name: "Nested inside the Roots"
+      name: "Nested inside the Roots",
+      category: DKBCategory.Regular
     },
     {
       num: 83,
-      name: "Roosted in a Thorny Nest"
+      name: "Roosted in a Thorny Nest",
+      category: DKBCategory.Regular
     },
     {
       num: 39,

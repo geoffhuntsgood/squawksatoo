@@ -11,15 +11,18 @@ export const core: DKBLayer = {
     },
     {
       num: 2,
-      name: "A View of the King"
+      name: "A View of the King",
+      category: DKBCategory.Regular
     },
     {
       num: 3,
-      name: "In the Belly of K. Rool"
+      name: "In the Belly of K. Rool",
+      category: DKBCategory.Regular
     },
     {
       num: 4,
-      name: "Floating over Fractone Fort"
+      name: "Floating over Fractone Fort",
+      category: DKBCategory.Regular
     },
     {
       num: 5,
@@ -38,27 +41,33 @@ export const core: DKBLayer = {
     },
     {
       num: 8,
-      name: "Survived the Gravel Gauntlet"
+      name: "Survived the Gravel Gauntlet",
+      category: DKBCategory.Regular
     },
     {
       num: 9,
-      name: "Klaptrapped behind the Goo"
+      name: "Klaptrapped behind the Goo",
+      category: DKBCategory.Regular
     },
     {
       num: 10,
-      name: "The Switcheroo Chase"
+      name: "The Switcheroo Chase",
+      category: DKBCategory.Regular
     },
     {
       num: 11,
-      name: "Korner of the Krevasse"
+      name: "Korner of the Krevasse",
+      category: DKBCategory.Regular
     },
     {
       num: 12,
-      name: "Cracking Open the Way"
+      name: "Cracking Open the Way",
+      category: DKBCategory.Regular
     },
     {
       num: 14,
-      name: "Stomped Stompenclomper! Again!"
+      name: "Stomped Stompenclomper! Again!",
+      category: DKBCategory.Regular
     },
     {
       num: 15,
@@ -72,15 +81,18 @@ export const core: DKBLayer = {
     },
     {
       num: 17,
-      name: "Fractone Cradle Climb"
+      name: "Fractone Cradle Climb",
+      category: DKBCategory.Regular
     },
     {
       num: 18,
-      name: "Turf Surf Pit Stop"
+      name: "Turf Surf Pit Stop",
+      category: DKBCategory.Regular
     },
     {
       num: 19,
-      name: "Turf Surf Finish Line"
+      name: "Turf Surf Finish Line",
+      category: DKBCategory.Regular
     },
     {
       num: 20,
@@ -95,6 +107,7 @@ export const core: DKBLayer = {
     {
       num: 13,
       name: "The Kremling Krew's Last Stand",
+      category: DKBCategory.Regular,
       isPostgame: true
     },
     {

@@ -1,4 +1,5 @@
 export enum DKBCategory {
+  Regular = "Regular",
   Tutorial = "Tutorial",
   Triple = "Triple",
   Quintuple = "Quintuple",

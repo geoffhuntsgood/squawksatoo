@@ -22,6 +22,7 @@ export const racing: DKBLayer = {
     {
       num: 4,
       name: "Rumbling with Rambi",
+      category: DKBCategory.Regular,
       isPostgame: true
     },
     {
@@ -51,7 +52,8 @@ export const racing: DKBLayer = {
     },
     {
       num: 10,
-      name: "Viewing the Track from the Back"
+      name: "Viewing the Track from the Back",
+      category: DKBCategory.Regular
     }
   ]
 };

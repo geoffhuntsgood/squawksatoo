@@ -31,11 +31,13 @@ export const divide: DKBLayer = {
     },
     {
       num: 6,
-      name: "Switcheroo through the Wall"
+      name: "Switcheroo through the Wall",
+      category: DKBCategory.Regular
     },
     {
       num: 7,
-      name: "Safe-Landing Switcheroo"
+      name: "Safe-Landing Switcheroo",
+      category: DKBCategory.Regular
     },
     {
       num: 8,

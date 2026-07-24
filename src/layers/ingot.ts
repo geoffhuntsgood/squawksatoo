@@ -22,6 +22,7 @@ export const ingot: DKBLayer = {
     {
       num: 4,
       name: "Secret by the Start",
+      category: DKBCategory.Regular,
       isPostgame: true
     },
     {
@@ -45,6 +46,7 @@ export const ingot: DKBLayer = {
     {
       num: 8,
       name: "Thwarting the Thorns",
+      category: DKBCategory.Regular,
       isPostgame: true
     },
     {
@@ -86,11 +88,13 @@ export const ingot: DKBLayer = {
     {
       num: 15,
       name: "Post-Sprint Treat",
+      category: DKBCategory.Regular,
       isPostgame: true
     },
     {
       num: 16,
       name: "Snack in a Sunken Slab",
+      category: DKBCategory.Regular,
       isPostgame: true
     },
     {
@@ -196,6 +200,7 @@ export const ingot: DKBLayer = {
     {
       num: 32,
       name: "Snack on the Outskirts of Town",
+      category: DKBCategory.Regular,
       isPostgame: true
     },
     {
@@ -207,11 +212,13 @@ export const ingot: DKBLayer = {
     {
       num: 34,
       name: "Claimed on the Crane",
+      category: DKBCategory.Regular,
       isPostgame: true
     },
     {
       num: 35,
       name: "The Best of the Bunch",
+      category: DKBCategory.Regular,
       isPostgame: true
     },
     {

@@ -3,7 +3,7 @@ import { Grid, IconButton, Typography } from "@mui/material";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import { useReward } from "react-rewards";
 import { useStopwatch } from "react-timer-hook";
-import type { DKBBanana, Options } from "../classes";
+import type { DKBBanana, DKBOptions } from "../classes";
 import { DKButton, DKItemRow, DKTimer } from "../inputs";
 
 export const DKBGame = ({
@@ -11,8 +11,8 @@ export const DKBGame = ({
   setOptions,
   setStart
 }: {
-  options: Options;
-  setOptions: Dispatch<SetStateAction<Options | null>>;
+  options: DKBOptions;
+  setOptions: Dispatch<SetStateAction<DKBOptions | null>>;
   setStart: Dispatch<SetStateAction<boolean>>;
 }) => {
   const [header, setHeader] = useState("");
@@ -153,13 +153,13 @@ export const DKBGame = ({
 
   return (
     <Grid container spacing={1}>
-      <Grid size={4}>
+      <Grid size={options.timer ? 4 : 6}>
         <Typography color="textPrimary" variant="h1">
           {header}
         </Typography>
         <div id="finished"></div>
       </Grid>
-      <Grid size={2}>
+      <Grid size={options.timer ? 2 : 3}>
         <Typography
           color="textPrimary"
           variant="h1"
@@ -171,7 +171,7 @@ export const DKBGame = ({
           {successCount}
         </Typography>
       </Grid>
-      <Grid size={2}>
+      <Grid size={options.timer ? 2 : 3}>
         <Typography
           color="textPrimary"
           variant="h1"
@@ -214,6 +214,14 @@ export const DKBGame = ({
           stopwatch.reset();
         }}
       />
+      {options.timer && (
+        <DKButton
+          label={stopwatch.isRunning ? "Pause" : "Resume"}
+          handleClick={() =>
+            stopwatch.isRunning ? stopwatch.pause() : stopwatch.start()
+          }
+        />
+      )}
       <DKButton
         label="Reconfigure"
         handleClick={() => {

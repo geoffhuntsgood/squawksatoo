@@ -11,15 +11,18 @@ export const tempest: DKBLayer = {
     },
     {
       num: 2,
-      name: "Lifted to the Skies"
+      name: "Lifted to the Skies",
+      category: DKBCategory.Regular
     },
     {
       num: 3,
-      name: "Tucked by the Tornado"
+      name: "Tucked by the Tornado",
+      category: DKBCategory.Regular
     },
     {
       num: 4,
-      name: "Hiding Up High"
+      name: "Hiding Up High",
+      category: DKBCategory.Regular
     },
     {
       num: 5,
@@ -38,7 +41,8 @@ export const tempest: DKBLayer = {
     },
     {
       num: 8,
-      name: "Elephant Elder's Secret Snack"
+      name: "Elephant Elder's Secret Snack",
+      category: DKBCategory.Regular
     },
     {
       num: 9,
@@ -57,19 +61,23 @@ export const tempest: DKBLayer = {
     },
     {
       num: 12,
-      name: "Rain-Soaked Roughhousing"
+      name: "Rain-Soaked Roughhousing",
+      category: DKBCategory.Regular
     },
     {
       num: 13,
-      name: "Cavernous Corridors"
+      name: "Cavernous Corridors",
+      category: DKBCategory.Regular
     },
     {
       num: 14,
-      name: "Tour through the Tunnels"
+      name: "Tour through the Tunnels",
+      category: DKBCategory.Regular
     },
     {
       num: 15,
-      name: "The Secret Lava Pocket"
+      name: "The Secret Lava Pocket",
+      category: DKBCategory.Regular
     },
     {
       num: 16,
@@ -122,7 +130,8 @@ export const tempest: DKBLayer = {
     },
     {
       num: 24,
-      name: "Tempest Chip Exchange"
+      name: "Tempest Chip Exchange",
+      category: DKBCategory.Regular
     },
     {
       num: 25,
@@ -136,19 +145,23 @@ export const tempest: DKBLayer = {
     },
     {
       num: 27,
-      name: "Unbothered by Burrowers"
+      name: "Unbothered by Burrowers",
+      category: DKBCategory.Regular
     },
     {
       num: 28,
-      name: "Battle: Iron-Inferno Imbroglio"
+      name: "Battle: Iron-Inferno Imbroglio",
+      category: DKBCategory.Regular
     },
     {
       num: 29,
-      name: "Safe from Scalding Showers"
+      name: "Safe from Scalding Showers",
+      category: DKBCategory.Regular
     },
     {
       num: 30,
-      name: "Lava Bath in the Hot Shower"
+      name: "Lava Bath in the Hot Shower",
+      category: DKBCategory.Regular
     },
     {
       num: 31,
@@ -172,7 +185,8 @@ export const tempest: DKBLayer = {
     },
     {
       num: 35,
-      name: "Taunting behind the Tap"
+      name: "Taunting behind the Tap",
+      category: DKBCategory.Regular
     },
     {
       num: 36,
@@ -196,7 +210,8 @@ export const tempest: DKBLayer = {
     },
     {
       num: 40,
-      name: "Sitting above the Sauna"
+      name: "Sitting above the Sauna",
+      category: DKBCategory.Regular
     },
     {
       num: 41,
@@ -215,7 +230,8 @@ export const tempest: DKBLayer = {
     },
     {
       num: 44,
-      name: "Taking in the Stormy Scenery"
+      name: "Taking in the Stormy Scenery",
+      category: DKBCategory.Regular
     },
     {
       num: 45,
@@ -224,11 +240,13 @@ export const tempest: DKBLayer = {
     },
     {
       num: 46,
-      name: "Stuck in the Elephant Snout"
+      name: "Stuck in the Elephant Snout",
+      category: DKBCategory.Regular
     },
     {
       num: 47,
-      name: "Inhaling Hot Lava"
+      name: "Inhaling Hot Lava",
+      category: DKBCategory.Regular
     },
     {
       num: 48,
@@ -252,19 +270,23 @@ export const tempest: DKBLayer = {
     },
     {
       num: 52,
-      name: "Scorching, Shocking Scaffolds"
+      name: "Scorching, Shocking Scaffolds",
+      category: DKBCategory.Regular
     },
     {
       num: 53,
-      name: "Safe under Shelter"
+      name: "Safe under Shelter",
+      category: DKBCategory.Regular
     },
     {
       num: 54,
-      name: "Banana in the Mud Bath"
+      name: "Banana in the Mud Bath",
+      category: DKBCategory.Regular
     },
     {
       num: 55,
-      name: "Among the Rocky Elephants"
+      name: "Among the Rocky Elephants",
+      category: DKBCategory.Regular
     },
     {
       num: 56,
@@ -283,7 +305,8 @@ export const tempest: DKBLayer = {
     },
     {
       num: 59,
-      name: "Secret by the Shelter"
+      name: "Secret by the Shelter",
+      category: DKBCategory.Regular
     },
     {
       num: 60,
@@ -292,7 +315,8 @@ export const tempest: DKBLayer = {
     },
     {
       num: 61,
-      name: "Halfway to the Station"
+      name: "Halfway to the Station",
+      category: DKBCategory.Regular
     },
     {
       num: 62,
@@ -301,7 +325,8 @@ export const tempest: DKBLayer = {
     },
     {
       num: 63,
-      name: "Concealed in the Sky"
+      name: "Concealed in the Sky",
+      category: DKBCategory.Regular
     },
     {
       num: 64,
@@ -320,7 +345,8 @@ export const tempest: DKBLayer = {
     },
     {
       num: 67,
-      name: "Sunk in the Pool"
+      name: "Sunk in the Pool",
+      category: DKBCategory.Regular
     },
     {
       num: 68,
@@ -329,11 +355,13 @@ export const tempest: DKBLayer = {
     },
     {
       num: 69,
-      name: "In a Floating Puddle"
+      name: "In a Floating Puddle",
+      category: DKBCategory.Regular
     },
     {
       num: 70,
-      name: "Atop Stormy Station"
+      name: "Atop Stormy Station",
+      category: DKBCategory.Regular
     }
   ]
 };

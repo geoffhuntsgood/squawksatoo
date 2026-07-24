@@ -6,7 +6,8 @@ export const radiance: DKBLayer = {
   bananas: [
     {
       num: 1,
-      name: "Beneath the White-Sand Landing"
+      name: "Beneath the White-Sand Landing",
+      category: DKBCategory.Regular
     },
     {
       num: 2,
@@ -15,7 +16,8 @@ export const radiance: DKBLayer = {
     },
     {
       num: 3,
-      name: "Deep Down in Shedlight Cave"
+      name: "Deep Down in Shedlight Cave",
+      category: DKBCategory.Regular
     },
     {
       num: 4,
@@ -29,11 +31,13 @@ export const radiance: DKBLayer = {
     },
     {
       num: 6,
-      name: "A Light Snack"
+      name: "A Light Snack",
+      category: DKBCategory.Regular
     },
     {
       num: 7,
-      name: "Revealed by the Light"
+      name: "Revealed by the Light",
+      category: DKBCategory.Regular
     },
     {
       num: 8,
@@ -52,7 +56,8 @@ export const radiance: DKBLayer = {
     },
     {
       num: 11,
-      name: "Adrift in Glowboa Grotto"
+      name: "Adrift in Glowboa Grotto",
+      category: DKBCategory.Regular
     },
     {
       num: 12,
@@ -61,19 +66,23 @@ export const radiance: DKBLayer = {
     },
     {
       num: 13,
-      name: "Sitting on a Snake's Head"
+      name: "Sitting on a Snake's Head",
+      category: DKBCategory.Regular
     },
     {
       num: 14,
-      name: "Over the Elder's Head"
+      name: "Over the Elder's Head",
+      category: DKBCategory.Regular
     },
     {
       num: 15,
-      name: "Bathing in the Essence of the Sun"
+      name: "Bathing in the Essence of the Sun",
+      category: DKBCategory.Regular
     },
     {
       num: 16,
-      name: "Atop an Unlit Landing"
+      name: "Atop an Unlit Landing",
+      category: DKBCategory.Regular
     },
     {
       num: 17,
@@ -92,7 +101,8 @@ export const radiance: DKBLayer = {
     },
     {
       num: 20,
-      name: "The View Beyond Glowboa Grotto"
+      name: "The View Beyond Glowboa Grotto",
+      category: DKBCategory.Regular
     },
     {
       num: 21,
@@ -166,11 +176,13 @@ export const radiance: DKBLayer = {
     },
     {
       num: 33,
-      name: "Ceiling Swingin' Snack"
+      name: "Ceiling Swingin' Snack",
+      category: DKBCategory.Regular
     },
     {
       num: 34,
-      name: "Staying Fresh in the Storeroom"
+      name: "Staying Fresh in the Storeroom",
+      category: DKBCategory.Regular
     },
     {
       num: 35,
@@ -179,7 +191,8 @@ export const radiance: DKBLayer = {
     },
     {
       num: 36,
-      name: "Perfectly Preserved in Crystal"
+      name: "Perfectly Preserved in Crystal",
+      category: DKBCategory.Regular
     },
     {
       num: 37,
@@ -188,19 +201,23 @@ export const radiance: DKBLayer = {
     },
     {
       num: 38,
-      name: "Soaking in the Essence of the Sun"
+      name: "Soaking in the Essence of the Sun",
+      category: DKBCategory.Regular
     },
     {
       num: 39,
-      name: "Warmed by Flaming Barrels"
+      name: "Warmed by Flaming Barrels",
+      category: DKBCategory.Regular
     },
     {
       num: 40,
-      name: "Safe in the Barrel-Free Zone"
+      name: "Safe in the Barrel-Free Zone",
+      category: DKBCategory.Regular
     },
     {
       num: 41,
-      name: "Summitted the Solar Control Tower!"
+      name: "Summitted the Solar Control Tower!",
+      category: DKBCategory.Regular
     },
     {
       num: 42,
@@ -219,7 +236,8 @@ export const radiance: DKBLayer = {
     },
     {
       num: 45,
-      name: "Wishing on a Synthetic Sun"
+      name: "Wishing on a Synthetic Sun",
+      category: DKBCategory.Regular
     },
     {
       num: 46,
@@ -228,15 +246,18 @@ export const radiance: DKBLayer = {
     },
     {
       num: 47,
-      name: "Balloons under the Dunes"
+      name: "Balloons under the Dunes",
+      category: DKBCategory.Regular
     },
     {
       num: 48,
-      name: "Obssscured in a Dune Cave Nook"
+      name: "Obssscured in a Dune Cave Nook",
+      category: DKBCategory.Regular
     },
     {
       num: 49,
-      name: "Deep in a Dune Cave Hallway"
+      name: "Deep in a Dune Cave Hallway",
+      category: DKBCategory.Regular
     },
     {
       num: 50,
@@ -290,11 +311,13 @@ export const radiance: DKBLayer = {
     },
     {
       num: 60,
-      name: "Tip o' the Stone Snake's Tongue"
+      name: "Tip o' the Stone Snake's Tongue",
+      category: DKBCategory.Regular
     },
     {
       num: 61,
-      name: "Hanging Out beneath the Oasis"
+      name: "Hanging Out beneath the Oasis",
+      category: DKBCategory.Regular
     },
     {
       num: 62,
@@ -313,7 +336,8 @@ export const radiance: DKBLayer = {
     },
     {
       num: 65,
-      name: "Grown beneath the Growtone"
+      name: "Grown beneath the Growtone",
+      category: DKBCategory.Regular
     },
     {
       num: 66,
@@ -322,7 +346,8 @@ export const radiance: DKBLayer = {
     },
     {
       num: 67,
-      name: "Under the Viper's Chinny-Chin-Chin"
+      name: "Under the Viper's Chinny-Chin-Chin",
+      category: DKBCategory.Regular
     },
     {
       num: 68,
@@ -331,15 +356,18 @@ export const radiance: DKBLayer = {
     },
     {
       num: 69,
-      name: "Head in the Shade Clouds"
+      name: "Head in the Shade Clouds",
+      category: DKBCategory.Regular
     },
     {
       num: 70,
-      name: "Pillaged from a Shade-Cloud Pillar"
+      name: "Pillaged from a Shade-Cloud Pillar",
+      category: DKBCategory.Regular
     },
     {
       num: 71,
-      name: "Walkin' on Shade Clouds"
+      name: "Walkin' on Shade Clouds",
+      category: DKBCategory.Regular
     },
     {
       num: 72,
@@ -363,7 +391,8 @@ export const radiance: DKBLayer = {
     },
     {
       num: 76,
-      name: "Swallowed by the Snake"
+      name: "Swallowed by the Snake",
+      category: DKBCategory.Regular
     }
   ]
 };
