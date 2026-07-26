@@ -2,6 +2,8 @@ import { createTheme } from "@mui/material/styles";
 
 const outlined = "darkorange";
 const focused = "orange";
+const menuBG = "#003500";
+const menuFocus = "#005000";
 
 export const theme = createTheme({
   components: {
@@ -27,7 +29,7 @@ export const theme = createTheme({
           marginBottom: "20px",
           display: "flex",
           alignItems: "center",
-          backgroundColor: "#003500"
+          backgroundColor: menuBG
         }
       }
     },
@@ -60,6 +62,33 @@ export const theme = createTheme({
         root: {
           "&:disabled": {
             color: "gray"
+          }
+        }
+      }
+    },
+    MuiMenu: {
+      styleOverrides: {
+        list: {
+          padding: "0"
+        },
+        paper: {
+          maxHeight: "20rem"
+        }
+      }
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          backgroundColor: menuBG,
+          fontSize: "1.5rem",
+          "&.Mui-selected": {
+            backgroundColor: menuFocus,
+            "&:hover": {
+              backgroundColor: menuFocus
+            }
+          },
+          "&:hover": {
+            backgroundColor: menuFocus
           }
         }
       }

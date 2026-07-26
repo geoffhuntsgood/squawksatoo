@@ -3,7 +3,10 @@ import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import { DK64Options, type DK64Item } from "../classes";
 import { DK64Category, LevelName } from "../enums";
 import { DKCheckbox, DKMultiSelect, DKSelect } from "../inputs";
-import { getAllForCategories } from "../levels/levelApi";
+import {
+  getCategoriesForLevel,
+  getItemsForCategories
+} from "../levels/levelApi";
 
 export const DK64Config = ({
   setOptions,
@@ -12,75 +15,58 @@ export const DK64Config = ({
   setOptions: Dispatch<SetStateAction<DK64Options | null>>;
   setGoLabel: Dispatch<SetStateAction<string>>;
 }) => {
-  const [level, setLevel] = useState<string>(LevelName.All);
-  const [categories, setCategories] = useState<DK64Category[]>([]);
-  const [selectedCats, setSelectedCats] = useState<string[]>([]);
-
-  const [config, setConfig] = useState<DK64Options>({
+  const [config, setConfig] = useState({
     count: "1",
     timer: false,
-    autoRefresh: false,
-    iHateMyself: false,
-    enableCBSanity: false,
-    cbSanitySettings: {
-      balloons: false,
-      bunches: false,
-      singles: false
-    },
-    initialItems: []
+    autoRefresh: false
   });
+
+  const [cbSanity, setCBSanity] = useState({
+    balloons: false,
+    bunches: false,
+    singles: false
+  });
+
+  const [level, setLevel] = useState<string>(LevelName.All);
+  const [cats, setCats] = useState<DK64Category[]>([]);
+  const [selectedCats, setSelectedCats] = useState<string[]>([]);
+  const [hellMode, setHellMode] = useState(false);
+  const [enableCBSanity, setEnableCBSanity] = useState(false);
+
+  const [items, setItems] = useState<DK64Item[]>(
+    getItemsForCategories(level as LevelName, [], hellMode, cbSanity)
+  );
 
   const getCount = () => {
     const range = [];
-    if (config.initialItems) {
-      const countToUse =
-        config.initialItems.length > 5 ? 5 : config.initialItems.length;
-      for (let i = 1; i <= countToUse; i++) {
-        range.push(`${i}`);
-      }
+    const countToUse = items.length > 5 ? 5 : items.length;
+    for (let i = 1; i <= countToUse; i++) {
+      range.push(`${i}`);
     }
     return range;
   };
 
   useEffect(() => {
-    const levelItems = getAllForCategories(
-      [],
-      level as LevelName,
-      config.iHateMyself,
-      config.cbSanitySettings
+    setCats(getCategoriesForLevel(level as LevelName, cbSanity));
+    setItems(
+      getItemsForCategories(
+        level as LevelName,
+        selectedCats as DK64Category[],
+        hellMode,
+        cbSanity
+      )
     );
-    const cats: DK64Category[] = [];
-    levelItems.forEach((item: DK64Item) => {
-      if (!cats.includes(item.category as DK64Category)) {
-        cats.push(item.category as DK64Category);
-      }
-    });
-    setCategories(cats);
-    setConfig({
-      ...config,
-      initialItems: levelItems
-    });
-  }, [level, config.iHateMyself, config.cbSanitySettings]);
+  }, [level, selectedCats, hellMode, cbSanity]);
 
   useEffect(() => {
-    const updatedItems = getAllForCategories(
-      selectedCats as DK64Category[],
-      level as LevelName,
-      config.iHateMyself,
-      config.cbSanitySettings
-    );
-    setConfig({
-      ...config,
-      initialItems: updatedItems
-    });
-  }, [selectedCats, level, config.iHateMyself, config.cbSanitySettings]);
-
-  useEffect(() => {
-    if (config.initialItems.length > 0) {
-      setGoLabel(`Get ${config.count} out of ${config.initialItems.length}`);
-      setOptions(config);
+    if (items.length > 0) {
+      setGoLabel(`Get ${config.count} out of ${items.length}`);
+      setOptions({
+        ...config,
+        items
+      });
     }
-  }, [config, setGoLabel, setOptions]);
+  }, [items, config, setGoLabel, setOptions]);
 
   return (
     <Grid container spacing={1}>
@@ -97,12 +83,14 @@ export const DK64Config = ({
             label="Categories"
             values={selectedCats}
             handleChange={setSelectedCats}
-            selectItems={categories}
+            selectItems={cats}
           />
           <DKSelect
             label="How many at a time?"
             value={config.count}
-            handleChange={(val: any) => setConfig({ ...config, count: val })}
+            handleChange={(val) =>
+              setConfig({ ...config, count: val as string })
+            }
             selectItems={getCount()}
           />
         </Box>
@@ -112,75 +100,64 @@ export const DK64Config = ({
           <DKCheckbox
             label="Timer"
             checked={config.timer}
-            handleChange={(val: any) => setConfig({ ...config, timer: val })}
+            handleChange={(val) =>
+              setConfig({ ...config, timer: val as boolean })
+            }
           />
           <DKCheckbox
             label="Auto-refresh"
             checked={config.autoRefresh}
-            handleChange={(val: any) =>
-              setConfig({ ...config, autoRefresh: val })
+            handleChange={(val) =>
+              setConfig({ ...config, autoRefresh: val as boolean })
             }
-            helpText={`Continuously adds new goals until you run out (currently ${config.initialItems.length}).`}
+            helpText={`Continuously adds new goals until you run out (currently ${items.length}).`}
           />
           <DKCheckbox
-            label="I Hate Myself"
-            checked={config.iHateMyself}
-            handleChange={(val: any) =>
-              setConfig({ ...config, iHateMyself: val })
-            }
+            label="Hell Mode"
+            checked={hellMode}
+            handleChange={setHellMode}
             helpText="Adds long goals like Company Coins to the pool."
           />
           {level !== LevelName.Helm && level !== LevelName.Isles && (
             <DKCheckbox
               label="Enable CBSanity"
-              checked={config.enableCBSanity}
-              handleChange={(val: any) =>
-                setConfig({ ...config, enableCBSanity: val })
-              }
+              checked={enableCBSanity}
+              handleChange={setEnableCBSanity}
               helpText="Allows for balloon, bunch, and single colored banana goals. Removes Medals from the pool."
             />
           )}
-          {config.enableCBSanity && (
+          {enableCBSanity && (
             <>
               <DKCheckbox
                 secondary
                 label="Balloons"
-                checked={config.cbSanitySettings.balloons}
-                handleChange={(val: any) =>
-                  setConfig({
-                    ...config,
-                    cbSanitySettings: {
-                      ...config.cbSanitySettings,
-                      balloons: val
-                    }
+                checked={cbSanity.balloons}
+                handleChange={(val) =>
+                  setCBSanity({
+                    ...cbSanity,
+                    balloons: val as boolean
                   })
                 }
               />
               <DKCheckbox
                 secondary
                 label="Bunches"
-                checked={config.cbSanitySettings.bunches}
-                handleChange={(val: any) =>
-                  setConfig({
-                    ...config,
-                    cbSanitySettings: {
-                      ...config.cbSanitySettings,
-                      bunches: val
-                    }
+                checked={cbSanity.bunches}
+                handleChange={(val) =>
+                  setCBSanity({
+                    ...cbSanity,
+                    bunches: val as boolean
                   })
                 }
               />
               <DKCheckbox
                 secondary
                 label="Singles"
-                checked={config.cbSanitySettings.singles}
-                handleChange={(val: any) =>
-                  setConfig({
-                    ...config,
-                    cbSanitySettings: {
-                      ...config.cbSanitySettings,
-                      singles: val
-                    }
+                checked={cbSanity.singles}
+                handleChange={(val) =>
+                  setCBSanity({
+                    ...cbSanity,
+                    singles: val as boolean
                   })
                 }
               />

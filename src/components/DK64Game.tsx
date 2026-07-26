@@ -23,7 +23,7 @@ export const DK64Game = ({
 
   const stopwatch = useStopwatch({ autoStart: true, interval: 20 });
 
-  const rewardOptions = {
+  const rewardSettings = {
     lifetime: 5000,
     spread: 180,
     elementCount: 50,
@@ -31,20 +31,20 @@ export const DK64Game = ({
     emoji: ["🍌"]
   };
 
-  const { reward: reward1 } = useReward("finished", "emoji", rewardOptions);
-  const { reward: reward2 } = useReward("done", "emoji", rewardOptions);
+  const { reward: reward1 } = useReward("finished", "emoji", rewardSettings);
+  const { reward: reward2 } = useReward("done", "emoji", rewardSettings);
 
   const markDisabled = (displayIndex: number, set: string) => {
-    const dis = [...disabled];
-    dis[displayIndex] = set;
-    setDisabled(dis);
+    const struck = [...disabled];
+    struck[displayIndex] = set;
+    setDisabled(struck);
   };
 
   const initSelection = () => {
-    const items = [...(options.initialItems || [])] as DK64Item[];
+    const items: DK64Item[] = options.items;
+    const shown: DK64Item[] = [];
+    const struck: string[] = [];
 
-    const shown = [];
-    const dis = [];
     if (disabled.length > 0) {
       setDisabled([]);
     }
@@ -53,11 +53,11 @@ export const DK64Game = ({
       const index = Math.floor(Math.random() * items.length);
       shown.push(items[index]);
       items.splice(index, 1);
-      dis.push("false");
+      struck.push("false");
     }
     setAvailable(items);
     setDisplayed(shown);
-    setDisabled(dis);
+    setDisabled(struck);
   };
 
   const replaceOne = (displayIndex: number) => {
@@ -65,6 +65,7 @@ export const DK64Game = ({
     const shown = [...displayed];
 
     if (items.length > 0) {
+      // eslint-disable-next-line react-hooks/purity
       const index = Math.floor(Math.random() * items.length);
       shown.splice(displayIndex, 1, items[index]);
       items.splice(index, 1);

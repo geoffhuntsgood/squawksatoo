@@ -131,12 +131,12 @@ export const isles: DK64Level = {
     {
       name: "Rareware GB",
       category: DK64Category.GB,
-      iHateMyself: true
+      hellMode: true
     },
     {
       name: "Rareware Coin",
       category: DK64Category.CompanyCoin,
-      iHateMyself: true
+      hellMode: true
     },
     {
       name: "Training Grounds Tunnel RC",

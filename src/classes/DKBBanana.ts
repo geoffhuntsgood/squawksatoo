@@ -7,6 +7,6 @@ export class DKBBanana {
     public readonly category: DKBCategory,
     public readonly category2?: DKBCategory,
     public readonly isPostgame?: boolean,
-    public readonly iHateMyself?: boolean
+    public readonly hellMode?: boolean
   ) {}
 }

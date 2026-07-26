@@ -19,25 +19,6 @@ export const DKMultiSelect = ({
   handleChange: Dispatch<SetStateAction<string[]>>;
   selectItems: string[];
 }) => {
-  const styles = {
-    MenuProps: {
-      MenuListProps: {
-        sx: {
-          padding: "0",
-          backgroundColor: "#003500",
-          "& .MuiMenuItem-root": {
-            fontSize: "1.5rem"
-          }
-        }
-      },
-      PaperProps: {
-        style: {
-          maxHeight: "20rem"
-        }
-      }
-    }
-  };
-
   const handle = (event: SelectChangeEvent<typeof values>) => {
     const {
       target: { value }
@@ -58,7 +39,6 @@ export const DKMultiSelect = ({
         label={label}
         labelId={`multi-${label}`}
         onChange={handle}
-        inputProps={styles}
         renderValue={(selected) => selected.join(", ")}
       >
         <MenuItem value="all">Select/Unselect All (default: all)</MenuItem>

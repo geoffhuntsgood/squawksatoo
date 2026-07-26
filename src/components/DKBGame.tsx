@@ -24,7 +24,7 @@ export const DKBGame = ({
 
   const stopwatch = useStopwatch({ autoStart: true, interval: 20 });
 
-  const rewardOptions = {
+  const rewardSettings = {
     lifetime: 5000,
     spread: 180,
     elementCount: 50,
@@ -32,20 +32,20 @@ export const DKBGame = ({
     emoji: ["🍌"]
   };
 
-  const { reward: reward1 } = useReward("finished", "emoji", rewardOptions);
-  const { reward: reward2 } = useReward("done", "emoji", rewardOptions);
+  const { reward: reward1 } = useReward("finished", "emoji", rewardSettings);
+  const { reward: reward2 } = useReward("done", "emoji", rewardSettings);
 
   const markDisabled = (displayIndex: number, set: string) => {
-    const dis = [...disabled];
-    dis[displayIndex] = set;
-    setDisabled(dis);
+    const struck = [...disabled];
+    struck[displayIndex] = set;
+    setDisabled(struck);
   };
 
   const initSelection = () => {
-    const items = [...(options.initialBananas || [])] as DKBBanana[];
-
+    const items = options.bananas;
     const shown = [];
-    const dis = [];
+    const struck = [];
+
     if (disabled.length > 0) {
       setDisabled([]);
     }
@@ -54,11 +54,11 @@ export const DKBGame = ({
       const index = Math.floor(Math.random() * items.length);
       shown.push(items[index]);
       items.splice(index, 1);
-      dis.push("false");
+      struck.push("false");
     }
     setAvailable(items);
     setDisplayed(shown);
-    setDisabled(dis);
+    setDisabled(struck);
   };
 
   const replaceOne = (displayIndex: number, success: boolean) => {
@@ -67,10 +67,11 @@ export const DKBGame = ({
     const origin = shown[displayIndex];
 
     if (items.length > 0) {
+      // eslint-disable-next-line react-hooks/purity
       const index = Math.floor(Math.random() * items.length);
       shown.splice(displayIndex, 1, items[index]);
 
-      if (options.recycleWrong) {
+      if (options.recycle) {
         if (success) {
           items.splice(index, 1);
         } else {
@@ -214,7 +215,7 @@ export const DKBGame = ({
           stopwatch.reset();
         }}
       />
-      {options.timer && (
+      {options.timer && !disabled.every((item) => item === "true") && (
         <DKButton
           label={stopwatch.isRunning ? "Pause" : "Resume"}
           handleClick={() =>

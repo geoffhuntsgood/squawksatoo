@@ -5,9 +5,7 @@ export class DKBOptions {
     public readonly count: string,
     public readonly timer: boolean,
     public readonly autoRefresh: boolean,
-    public readonly iHateMyself: boolean,
-    public readonly includePostgame: boolean,
-    public readonly recycleWrong: boolean,
-    public readonly initialBananas: DKBBanana[]
+    public readonly recycle: boolean,
+    public readonly bananas: DKBBanana[]
   ) {}
 }

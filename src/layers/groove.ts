@@ -139,7 +139,7 @@ export const groove: DKBLayer = {
       name: "A Complete Fossil Collection",
       category: DKBCategory.Regular,
       isPostgame: true,
-      iHateMyself: true
+      hellMode: true
     },
     {
       num: 16,

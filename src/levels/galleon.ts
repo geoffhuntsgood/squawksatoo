@@ -1,5 +1,5 @@
 import type { DK64Level } from "../classes/DK64Level";
-import { CBCategory, DK64Category, LevelName } from "../enums";
+import { DK64Category, LevelName } from "../enums";
 
 export const galleon: DK64Level = {
   name: LevelName.Galleon,
@@ -143,218 +143,210 @@ export const galleon: DK64Level = {
     {
       name: "Lighthouse Back RC",
       category: DK64Category.RainbowCoin
+    },
+    {
+      name: "Galleon Donkey Chests Balloon",
+      category: DK64Category.Balloon
+    },
+    {
+      name: "Galleon Donkey Outside Lighthouse Balloon",
+      category: DK64Category.Balloon
+    },
+    {
+      name: "Galleon Donkey Inside Lighthouse Balloon",
+      category: DK64Category.Balloon
+    },
+    {
+      name: "Galleon Diddy Seal Balloon",
+      category: DK64Category.Balloon
+    },
+    {
+      name: "Galleon Diddy Treasure Room Balloon",
+      category: DK64Category.Balloon
+    },
+    {
+      name: "Galleon Diddy Cactus Balloon",
+      category: DK64Category.Balloon
+    },
+    {
+      name: "Galleon Lanky 5DS Balloon",
+      category: DK64Category.Balloon
+    },
+    {
+      name: "Galleon Lanky Crown Balloons x2",
+      category: DK64Category.Balloon
+    },
+    {
+      name: "Galleon Tiny Snide Balloon",
+      category: DK64Category.Balloon
+    },
+    {
+      name: "Galleon Tiny Lighthouse Alcove Balloon",
+      category: DK64Category.Balloon
+    },
+    {
+      name: "Galleon Tiny Treasure Room Balloon",
+      category: DK64Category.Balloon
+    },
+    {
+      name: "Galleon Chunky Cannon Game Balloon",
+      category: DK64Category.Balloon
+    },
+    {
+      name: "Galleon Chunky 2DS Balloon",
+      category: DK64Category.Balloon
+    },
+    {
+      name: "Galleon Chunky Cactus Balloon",
+      category: DK64Category.Balloon
+    },
+    {
+      name: "Galleon Donkey Blast Course Bunches x3",
+      category: DK64Category.Bunch
+    },
+    {
+      name: "Galleon Donkey Lighthouse Bunches x4",
+      category: DK64Category.Bunch
+    },
+    {
+      name: "Galleon Donkey Shipyard Tunnel Bunches x3",
+      category: DK64Category.Bunch
+    },
+    {
+      name: "Galleon Diddy Cranky Cannon Bunches x2",
+      category: DK64Category.Bunch
+    },
+    {
+      name: "Galleon Diddy Lighthouse Top Bunches x2",
+      category: DK64Category.Bunch
+    },
+    {
+      name: "Galleon Diddy Mech Fish Cage Bunches x4",
+      category: DK64Category.Bunch
+    },
+    {
+      name: "Galleon Diddy 5DS Bunches x2",
+      category: DK64Category.Bunch
+    },
+    {
+      name: "Galleon Lanky Enguarde Chest Bunches x4",
+      category: DK64Category.Bunch
+    },
+    {
+      name: "Galleon Lanky 5DS Enguarde Bunch",
+      category: DK64Category.Bunch
+    },
+    {
+      name: "Galleon Lanky Cactus Bunch",
+      category: DK64Category.Bunch
+    },
+    {
+      name: "Galleon Lanky 2DS Bunch",
+      category: DK64Category.Bunch
+    },
+    {
+      name: "Galleon Lanky 5DS Bunches x3",
+      category: DK64Category.Bunch
+    },
+    {
+      name: "Galleon Tiny Cannon Game Bunches x3",
+      category: DK64Category.Bunch
+    },
+    {
+      name: "Galleon Tiny Cannon Warp 3 Bunch",
+      category: DK64Category.Bunch
+    },
+    {
+      name: "Galleon Tiny Snide Warp 3 Bunch",
+      category: DK64Category.Bunch
+    },
+    {
+      name: "Galleon Tiny 2DS Bunches x2",
+      category: DK64Category.Bunch
+    },
+    {
+      name: "Galleon Tiny 5DS Bunches x2",
+      category: DK64Category.Bunch
+    },
+    {
+      name: "Galleon Tiny Treasure Chest Bunch",
+      category: DK64Category.Bunch
+    },
+    {
+      name: "Galleon Chunky Cannon Warp 2 Bunch",
+      category: DK64Category.Bunch
+    },
+    {
+      name: "Galleon Chunky Seasick Ship Bunches x5",
+      category: DK64Category.Bunch
+    },
+    {
+      name: "Galleon Chunky Shipyard Warp 2 Bunch",
+      category: DK64Category.Bunch
+    },
+    {
+      name: "Galleon Chunky Shipyard Tunnel Bunches x3",
+      category: DK64Category.Bunch
+    },
+    {
+      name: "Galleon Donkey Enguarde Alcove Singles x10",
+      category: DK64Category.Single
+    },
+    {
+      name: "Galleon Donkey 5DS Singles x10",
+      category: DK64Category.Single
+    },
+    {
+      name: "Galleon Diddy Outside 2DS Singles x10",
+      category: DK64Category.Single
+    },
+    {
+      name: "Galleon Diddy 5DS Singles x4",
+      category: DK64Category.Single
+    },
+    {
+      name: "Galleon Diddy Treasure Room Tunnel Singles x6",
+      category: DK64Category.Single
+    },
+    {
+      name: "Galleon Lanky Entry Tunnel Singles x5",
+      category: DK64Category.Single
+    },
+    {
+      name: "Galleon Lanky Lighthouse Enguarde Singles x5",
+      category: DK64Category.Single
+    },
+    {
+      name: "Galleon Lanky 2DS Singles x5",
+      category: DK64Category.Single
+    },
+    {
+      name: "Galleon Lanky Gold Tower Singles x5",
+      category: DK64Category.Single
+    },
+    {
+      name: "Galleon Tiny Entrance Tunnel Singles x9",
+      category: DK64Category.Single
+    },
+    {
+      name: "Galleon Tiny BP Plank Singles x3",
+      category: DK64Category.Single
+    },
+    {
+      name: "Galleon Tiny 5DS Singles x8",
+      category: DK64Category.Single
+    },
+    {
+      name: "Galleon Chunky Chests Hallway Singles x7",
+      category: DK64Category.Single
+    },
+    {
+      name: "Galleon Chunky T&S Plank Singles x3",
+      category: DK64Category.Single
+    },
+    {
+      name: "Galleon Chunky Lighthouse Base Singles x10",
+      category: DK64Category.Single
     }
-  ],
-  cbSanity: {
-    balloons: [
-      {
-        name: "Galleon Donkey Chests Balloon",
-        category: CBCategory.Balloon
-      },
-      {
-        name: "Galleon Donkey Outside Lighthouse Balloon",
-        category: CBCategory.Balloon
-      },
-      {
-        name: "Galleon Donkey Inside Lighthouse Balloon",
-        category: CBCategory.Balloon
-      },
-      {
-        name: "Galleon Diddy Seal Balloon",
-        category: CBCategory.Balloon
-      },
-      {
-        name: "Galleon Diddy Treasure Room Balloon",
-        category: CBCategory.Balloon
-      },
-      {
-        name: "Galleon Diddy Cactus Balloon",
-        category: CBCategory.Balloon
-      },
-      {
-        name: "Galleon Lanky 5DS Balloon",
-        category: CBCategory.Balloon
-      },
-      {
-        name: "Galleon Lanky Crown Balloons x2",
-        category: CBCategory.Balloon
-      },
-      {
-        name: "Galleon Tiny Snide Balloon",
-        category: CBCategory.Balloon
-      },
-      {
-        name: "Galleon Tiny Lighthouse Alcove Balloon",
-        category: CBCategory.Balloon
-      },
-      {
-        name: "Galleon Tiny Treasure Room Balloon",
-        category: CBCategory.Balloon
-      },
-      {
-        name: "Galleon Chunky Cannon Game Balloon",
-        category: CBCategory.Balloon
-      },
-      {
-        name: "Galleon Chunky 2DS Balloon",
-        category: CBCategory.Balloon
-      },
-      {
-        name: "Galleon Chunky Cactus Balloon",
-        category: CBCategory.Balloon
-      }
-    ],
-    bunches: [
-      {
-        name: "Galleon Donkey Blast Course Bunches x3",
-        category: CBCategory.Bunch
-      },
-      {
-        name: "Galleon Donkey Lighthouse Bunches x4",
-        category: CBCategory.Bunch
-      },
-      {
-        name: "Galleon Donkey Shipyard Tunnel Bunches x3",
-        category: CBCategory.Bunch
-      },
-      {
-        name: "Galleon Diddy Cranky Cannon Bunches x2",
-        category: CBCategory.Bunch
-      },
-      {
-        name: "Galleon Diddy Lighthouse Top Bunches x2",
-        category: CBCategory.Bunch
-      },
-      {
-        name: "Galleon Diddy Mech Fish Cage Bunches x4",
-        category: CBCategory.Bunch
-      },
-      {
-        name: "Galleon Diddy 5DS Bunches x2",
-        category: CBCategory.Bunch
-      },
-      {
-        name: "Galleon Lanky Enguarde Chest Bunches x4",
-        category: CBCategory.Bunch
-      },
-      {
-        name: "Galleon Lanky 5DS Enguarde Bunch",
-        category: CBCategory.Bunch
-      },
-      {
-        name: "Galleon Lanky Cactus Bunch",
-        category: CBCategory.Bunch
-      },
-      {
-        name: "Galleon Lanky 2DS Bunch",
-        category: CBCategory.Bunch
-      },
-      {
-        name: "Galleon Lanky 5DS Bunches x3",
-        category: CBCategory.Bunch
-      },
-      {
-        name: "Galleon Tiny Cannon Game Bunches x3",
-        category: CBCategory.Bunch
-      },
-      {
-        name: "Galleon Tiny Cannon Warp 3 Bunch",
-        category: CBCategory.Bunch
-      },
-      {
-        name: "Galleon Tiny Snide Warp 3 Bunch",
-        category: CBCategory.Bunch
-      },
-      {
-        name: "Galleon Tiny 2DS Bunches x2",
-        category: CBCategory.Bunch
-      },
-      {
-        name: "Galleon Tiny 5DS Bunches x2",
-        category: CBCategory.Bunch
-      },
-      {
-        name: "Galleon Tiny Treasure Chest Bunch",
-        category: CBCategory.Bunch
-      },
-      {
-        name: "Galleon Chunky Cannon Warp 2 Bunch",
-        category: CBCategory.Bunch
-      },
-      {
-        name: "Galleon Chunky Seasick Ship Bunches x5",
-        category: CBCategory.Bunch
-      },
-      {
-        name: "Galleon Chunky Shipyard Warp 2 Bunch",
-        category: CBCategory.Bunch
-      },
-      {
-        name: "Galleon Chunky Shipyard Tunnel Bunches x3",
-        category: CBCategory.Bunch
-      }
-    ],
-    singles: [
-      {
-        name: "Galleon Donkey Enguarde Alcove Singles x10",
-        category: CBCategory.Single
-      },
-      {
-        name: "Galleon Donkey 5DS Singles x10",
-        category: CBCategory.Single
-      },
-      {
-        name: "Galleon Diddy Outside 2DS Singles x10",
-        category: CBCategory.Single
-      },
-      {
-        name: "Galleon Diddy 5DS Singles x4",
-        category: CBCategory.Single
-      },
-      {
-        name: "Galleon Diddy Treasure Room Tunnel Singles x6",
-        category: CBCategory.Single
-      },
-      {
-        name: "Galleon Lanky Entry Tunnel Singles x5",
-        category: CBCategory.Single
-      },
-      {
-        name: "Galleon Lanky Lighthouse Enguarde Singles x5",
-        category: CBCategory.Single
-      },
-      {
-        name: "Galleon Lanky 2DS Singles x5",
-        category: CBCategory.Single
-      },
-      {
-        name: "Galleon Lanky Gold Tower Singles x5",
-        category: CBCategory.Single
-      },
-      {
-        name: "Galleon Tiny Entrance Tunnel Singles x9",
-        category: CBCategory.Single
-      },
-      {
-        name: "Galleon Tiny BP Plank Singles x3",
-        category: CBCategory.Single
-      },
-      {
-        name: "Galleon Tiny 5DS Singles x8",
-        category: CBCategory.Single
-      },
-      {
-        name: "Galleon Chunky Chests Hallway Singles x7",
-        category: CBCategory.Single
-      },
-      {
-        name: "Galleon Chunky T&S Plank Singles x3",
-        category: CBCategory.Single
-      },
-      {
-        name: "Galleon Chunky Lighthouse Base Singles x10",
-        category: CBCategory.Single
-      }
-    ]
-  }
+  ]
 };

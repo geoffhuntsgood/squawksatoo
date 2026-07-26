@@ -6,23 +6,23 @@ export const helm: DK64Level = {
   items: [
     {
       name: "Donkey Helm Medal",
-      category: DK64Category.Medal
+      category: DK64Category.HelmMedal
     },
     {
       name: "Chunky Helm Medal",
-      category: DK64Category.Medal
+      category: DK64Category.HelmMedal
     },
     {
       name: "Tiny Helm Medal",
-      category: DK64Category.Medal
+      category: DK64Category.HelmMedal
     },
     {
       name: "Lanky Helm Medal",
-      category: DK64Category.Medal
+      category: DK64Category.HelmMedal
     },
     {
       name: "Diddy Helm Medal",
-      category: DK64Category.Medal
+      category: DK64Category.HelmMedal
     },
     {
       name: "Helm Battle Crown",

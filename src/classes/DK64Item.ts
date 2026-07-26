@@ -1,9 +1,9 @@
-import type { CBCategory, DK64Category } from "../enums";
+import type { DK64Category } from "../enums";
 
 export class DK64Item {
   constructor(
     public readonly name: string,
-    public readonly category: DK64Category | CBCategory,
-    public readonly iHateMyself?: boolean
+    public readonly category: DK64Category,
+    public readonly hellMode?: boolean
   ) {}
 }

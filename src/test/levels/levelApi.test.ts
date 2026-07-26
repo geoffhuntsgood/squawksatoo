@@ -1,7 +1,7 @@
 import { describe, expect, test } from "vitest";
 import { DK64Item } from "../../classes";
-import { CBCategory, DK64Category, LevelName } from "../../enums";
-import { getAllForCategories } from "../../levels/levelApi";
+import { DK64Category, LevelName } from "../../enums";
+import { getItemsForCategories } from "../../levels/levelApi";
 
 describe("levelApi tests", () => {
   const getCBSanity = (sanity: boolean[]) => {
@@ -14,9 +14,9 @@ describe("levelApi tests", () => {
 
   describe("getAllForCategories tests", () => {
     test("No category, all levels, I don't hate myself, no CBSanity", () => {
-      const allItems = getAllForCategories(
-        [],
+      const allItems = getItemsForCategories(
         LevelName.All,
+        [],
         false,
         getCBSanity([false, false, false])
       );
@@ -24,9 +24,9 @@ describe("levelApi tests", () => {
     });
 
     test("One category, all levels, I do hate myself, no CBSanity", () => {
-      const allGBs = getAllForCategories(
-        [DK64Category.GB],
+      const allGBs = getItemsForCategories(
         LevelName.All,
+        [DK64Category.GB],
         true,
         getCBSanity([false, false, false])
       );
@@ -34,9 +34,9 @@ describe("levelApi tests", () => {
     });
 
     test("Multiple categories with level, no CBSanity", () => {
-      const factory = getAllForCategories(
-        [DK64Category.GB, DK64Category.Medal],
+      const factory = getItemsForCategories(
         LevelName.Factory,
+        [DK64Category.GB, DK64Category.Medal],
         false,
         getCBSanity([false, false, false])
       );
@@ -52,73 +52,89 @@ describe("levelApi tests", () => {
     });
 
     test("CBSanity: Balloons", () => {
-      const japes = getAllForCategories(
-        [],
+      const japes = getItemsForCategories(
         LevelName.Japes,
+        [],
         false,
         getCBSanity([true, false, false])
       );
-      expect(japes.length).toBe(48);
+      expect(japes.length).toBe(43);
       expect(
-        japes.filter((item: DK64Item) => item.category === CBCategory.Balloon)
+        japes.filter((item: DK64Item) => item.category === DK64Category.Balloon)
           .length
       ).toBe(13);
+      expect(
+        japes.filter((item: DK64Item) => item.category === DK64Category.Medal)
+          .length
+      ).toBe(0);
     });
 
     test("CBSanity: Bunches", () => {
-      const japes = getAllForCategories(
-        [],
+      const japes = getItemsForCategories(
         LevelName.Japes,
+        [],
         false,
         getCBSanity([false, true, false])
       );
-      expect(japes.length).toBe(68);
+      expect(japes.length).toBe(63);
       expect(
-        japes.filter((item: DK64Item) => item.category === CBCategory.Bunch)
+        japes.filter((item: DK64Item) => item.category === DK64Category.Bunch)
           .length
       ).toBe(33);
+      expect(
+        japes.filter((item: DK64Item) => item.category === DK64Category.Medal)
+          .length
+      ).toBe(0);
     });
 
     test("CBSanity: Singles", () => {
-      const japes = getAllForCategories(
-        [],
+      const japes = getItemsForCategories(
         LevelName.Japes,
+        [],
         false,
         getCBSanity([false, false, true])
       );
-      expect(japes.length).toBe(52);
+      expect(japes.length).toBe(47);
       expect(
-        japes.filter((item: DK64Item) => item.category === CBCategory.Single)
+        japes.filter((item: DK64Item) => item.category === DK64Category.Single)
           .length
       ).toBe(17);
+      expect(
+        japes.filter((item: DK64Item) => item.category === DK64Category.Medal)
+          .length
+      ).toBe(0);
     });
 
     test("CBSanity: All", () => {
-      const japes = getAllForCategories(
-        [],
+      const japes = getItemsForCategories(
         LevelName.Japes,
+        [],
         false,
         getCBSanity([true, true, true])
       );
-      expect(japes.length).toBe(98);
+      expect(japes.length).toBe(93);
       expect(
-        japes.filter((item: DK64Item) => item.category === CBCategory.Balloon)
+        japes.filter((item: DK64Item) => item.category === DK64Category.Balloon)
           .length
       ).toBe(13);
       expect(
-        japes.filter((item: DK64Item) => item.category === CBCategory.Bunch)
+        japes.filter((item: DK64Item) => item.category === DK64Category.Bunch)
           .length
       ).toBe(33);
       expect(
-        japes.filter((item: DK64Item) => item.category === CBCategory.Single)
+        japes.filter((item: DK64Item) => item.category === DK64Category.Single)
           .length
       ).toBe(17);
+      expect(
+        japes.filter((item: DK64Item) => item.category === DK64Category.Medal)
+          .length
+      ).toBe(0);
     });
 
     test("Check CBSanity removes Medal category: Balloon", () => {
-      const galleon = getAllForCategories(
-        [DK64Category.GB, DK64Category.Medal],
+      const galleon = getItemsForCategories(
         LevelName.Galleon,
+        [DK64Category.GB, DK64Category.Medal],
         false,
         getCBSanity([true, false, false])
       );
@@ -132,15 +148,16 @@ describe("levelApi tests", () => {
           .length
       ).toBe(0);
       expect(
-        galleon.filter((item: DK64Item) => item.category === CBCategory.Balloon)
-          .length
+        galleon.filter(
+          (item: DK64Item) => item.category === DK64Category.Balloon
+        ).length
       ).toBe(14);
     });
 
     test("Check CBSanity removes Medal category: Bunch", () => {
-      const galleon = getAllForCategories(
-        [DK64Category.GB, DK64Category.Medal],
+      const galleon = getItemsForCategories(
         LevelName.Galleon,
+        [DK64Category.GB, DK64Category.Medal],
         false,
         getCBSanity([false, true, false])
       );
@@ -154,15 +171,15 @@ describe("levelApi tests", () => {
           .length
       ).toBe(0);
       expect(
-        galleon.filter((item: DK64Item) => item.category === CBCategory.Bunch)
+        galleon.filter((item: DK64Item) => item.category === DK64Category.Bunch)
           .length
       ).toBe(22);
     });
 
     test("Check CBSanity removes Medal category: Single", () => {
-      const galleon = getAllForCategories(
-        [DK64Category.GB, DK64Category.Medal],
+      const galleon = getItemsForCategories(
         LevelName.Galleon,
+        [DK64Category.GB, DK64Category.Medal],
         false,
         getCBSanity([false, false, true])
       );
@@ -176,15 +193,16 @@ describe("levelApi tests", () => {
           .length
       ).toBe(0);
       expect(
-        galleon.filter((item: DK64Item) => item.category === CBCategory.Single)
-          .length
+        galleon.filter(
+          (item: DK64Item) => item.category === DK64Category.Single
+        ).length
       ).toBe(15);
     });
 
     test("Check CBSanity returns all when Medal was only category", () => {
-      const galleon = getAllForCategories(
-        [DK64Category.Medal],
+      const galleon = getItemsForCategories(
         LevelName.Galleon,
+        [DK64Category.Medal],
         false,
         getCBSanity([false, true, false])
       );
@@ -193,7 +211,7 @@ describe("levelApi tests", () => {
           .length
       ).toBe(0);
       expect(
-        galleon.filter((item: DK64Item) => item.category === CBCategory.Bunch)
+        galleon.filter((item: DK64Item) => item.category === DK64Category.Bunch)
           .length
       ).toBe(22);
     });

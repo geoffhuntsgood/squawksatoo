@@ -23,5 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
-# Coverage
-coverage/*
+# Test files
+coverage
+__screenshots__
+.vitest-attachments

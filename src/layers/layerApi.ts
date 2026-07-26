@@ -38,49 +38,51 @@ const allLayers: DKBLayer[] = [
   core
 ];
 
-export const getLayerBananas = (
-  layerName: LayerName,
-  includePostgame: boolean,
-  iHateMyself: boolean
-): DKBBanana[] => {
-  let bananas: DKBBanana[];
-  if (layerName === LayerName.All) {
-    bananas = allLayers.flatMap((layer: DKBLayer) => layer.bananas);
-  } else {
-    bananas = allLayers.filter((layer: DKBLayer) => layer.name === layerName)[0]
-      .bananas;
-  }
-
-  if (!iHateMyself) {
-    bananas = bananas.filter((banana: DKBBanana) => !banana.iHateMyself);
-  }
-
-  return includePostgame
-    ? bananas
-    : bananas.filter((banana: DKBBanana) => !banana.isPostgame);
+export const getBananasForLayer = (layerName: LayerName): DKBBanana[] => {
+  return layerName === LayerName.All
+    ? allLayers.flatMap((layer: DKBLayer) => layer.bananas)
+    : allLayers.filter((layer: DKBLayer) => layer.name === layerName)[0]
+        .bananas;
 };
 
-export const getAllForCategories = (
+export const getCategoriesForLayer = (layerName: LayerName): DKBCategory[] => {
+  const layerBananas = getBananasForLayer(layerName);
+  const cats: DKBCategory[] = [];
+  layerBananas.forEach((banana: DKBBanana) => {
+    if (!cats.includes(banana.category)) {
+      cats.push(banana.category);
+    }
+    if (banana.category2 && !cats.includes(banana.category2)) {
+      cats.push(banana.category2);
+    }
+  });
+  return cats;
+};
+
+export const getBananasForCategories = (
   layerName: LayerName,
   categories: DKBCategory[],
   includePostgame: boolean,
-  iHateMyself: boolean
-) => {
-  const layerBananas: DKBBanana[] = getLayerBananas(
-    layerName,
-    includePostgame,
-    iHateMyself
-  );
+  hellMode: boolean
+): DKBBanana[] => {
+  let bananas = getBananasForLayer(layerName);
 
-  if (categories.length === 0) return layerBananas;
+  if (!hellMode) {
+    bananas = bananas.filter((banana: DKBBanana) => !banana.hellMode);
+  }
 
-  return layerBananas.filter((banana: DKBBanana) => {
-    if (banana.category) {
+  if (!includePostgame) {
+    bananas = bananas.filter((banana: DKBBanana) => !banana.isPostgame);
+  }
+
+  if (categories.length === 0) {
+    return bananas;
+  } else {
+    return bananas.filter((banana: DKBBanana) => {
       return banana.category2
         ? categories.includes(banana.category) ||
             categories.includes(banana.category2)
         : categories.includes(banana.category);
-    }
-    return false;
-  });
+    });
+  }
 };
