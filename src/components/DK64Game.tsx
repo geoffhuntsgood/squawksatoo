@@ -176,7 +176,7 @@ export const DK64Game = ({
           stopwatch.reset();
         }}
       />
-      {options.timer && (
+      {options.timer && !disabled.every((item) => item === "true") && (
         <DKButton
           label={stopwatch.isRunning ? "Pause" : "Resume"}
           handleClick={() =>
