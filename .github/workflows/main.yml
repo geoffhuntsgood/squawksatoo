@@ -4,9 +4,10 @@ jobs:
   unit_test-lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v7
       - run: |
-              npm ci
-              npm run build
-              npm run lint
-              npm run coverage
+          npm ci
+          npx playwright install
+          npm run build
+          npm run lint
+          npm run coverage
