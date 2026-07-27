@@ -6,7 +6,7 @@ import { DKCheckbox, DKMultiSelect, DKSelect } from "../inputs";
 import {
   getBananasForCategories,
   getCategoriesForLayer
-} from "../layers/layerApi";
+} from "../utils/layerApi";
 
 export const DKBConfig = ({
   setOptions,

@@ -1,14 +1,14 @@
 import type { DK64CBSanity, DK64Item, DK64Level } from "../classes";
 import { DK64Category, LevelName } from "../enums";
-import { aztec } from "./aztec";
-import { castle } from "./castle";
-import { caves } from "./caves";
-import { factory } from "./factory";
-import { forest } from "./forest";
-import { galleon } from "./galleon";
-import { helm } from "./helm";
-import { isles } from "./isles";
-import { japes } from "./japes";
+import { aztec } from "../levels/aztec";
+import { castle } from "../levels/castle";
+import { caves } from "../levels/caves";
+import { factory } from "../levels/factory";
+import { forest } from "../levels/forest";
+import { galleon } from "../levels/galleon";
+import { helm } from "../levels/helm";
+import { isles } from "../levels/isles";
+import { japes } from "../levels/japes";
 
 const allLevels: DK64Level[] = [
   isles,

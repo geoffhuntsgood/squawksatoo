@@ -11,8 +11,8 @@ const App = () => {
   const [dkbOptions, setDKBOptions] = useState<DKBOptions | null>(null);
   const [dk64Options, setDK64Options] = useState<DK64Options | null>(null);
 
-  const [goLabel, setGoLabel] = useState<string>("");
-  const [start, setStart] = useState<boolean>(false);
+  const [goLabel, setGoLabel] = useState("");
+  const [start, setStart] = useState(false);
 
   return (
     <ThemeProvider theme={theme}>

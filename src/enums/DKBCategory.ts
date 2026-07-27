@@ -8,7 +8,7 @@ export enum DKBCategory {
   Challenge = "Challenge",
   Cranky = "Cranky",
   Rehearsal = "Rehearsal",
-  ShiftySmash = "ShiftySmash",
+  ShiftySmash = "Shifty Smash",
 
   Bloomintone = "Bloomintone",
   Chiptone = "Chiptone",

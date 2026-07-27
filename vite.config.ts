@@ -8,7 +8,8 @@ export default defineConfig({
     browser: {
       enabled: true,
       provider: playwright(),
-      instances: [{ browser: "chromium" }]
+      instances: [{ browser: "chromium" }],
+      screenshotFailures: false
     },
     globals: true,
     environment: "jsdom",
@@ -17,7 +18,10 @@ export default defineConfig({
       exclude: [
         ...configDefaults.exclude,
         "src/main.tsx",
-        "src/**/index.ts"
+        "src/declarations.d.ts",
+        "src/**/index.ts",
+        "src/utils/theme.ts",
+        "src/utils/types.ts"
       ]
     }
   }

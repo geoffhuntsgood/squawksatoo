@@ -6,7 +6,7 @@ import { DKCheckbox, DKMultiSelect, DKSelect } from "../inputs";
 import {
   getCategoriesForLevel,
   getItemsForCategories
-} from "../levels/levelApi";
+} from "../utils/levelApi";
 
 export const DK64Config = ({
   setOptions,

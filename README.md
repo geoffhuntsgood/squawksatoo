@@ -20,7 +20,7 @@ Selecting a layer will generate categories based on the available bananas in tha
 
 **Recycle Wrong Bananas:** If selected, marking a banana wrong will "recycle" that banana back into the pool for re-selection later. Only available when Auto-refresh is checked.
 
-**I Hate Myself:** Adds particularly long goals into the pool. Currently, this only adds the "A Complete Fossil Collection" banana.
+**Hell Mode:** Adds particularly long goals into the pool, such as the "A Complete Fossil Collection" banana.
 
 ### DK64
 
@@ -30,7 +30,7 @@ Selecting a level will generate categories based on the available items in that 
 
 **Auto-Refresh:** If selected, marking an item as complete will automatically replace that item with a new one, until all items have been collected.
 
-**I Hate Myself:** Adds particularly long goals into the pool. Currently, this adds the Rareware and Nintendo Coins and the Rareware GB.
+**Hell Mode:** Adds particularly long goals into the pool, such as the Rareware and Nintendo Coins and the Rareware GB.
 
 **Enable CBSanity:** Adds the option to include balloons, bunches, and groups of single colored bananas to the pool. Removes Banana Medals from the pool to reduce softlocking.
 

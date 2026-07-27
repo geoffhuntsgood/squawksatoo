@@ -1,22 +1,22 @@
 import type { DKBBanana, DKBLayer } from "../classes";
 import { DKBCategory, LayerName } from "../enums";
-import { canyon } from "./canyon";
-import { core } from "./core";
-import { divide } from "./divide";
-import { feast } from "./feast";
-import { forbidden } from "./forbidden";
-import { forest } from "./forest";
-import { freezer } from "./freezer";
-import { groove } from "./groove";
-import { hilltop } from "./hilltop";
-import { ingot } from "./ingot";
-import { junction } from "./junction";
-import { lagoon } from "./lagoon";
-import { landfill } from "./landfill";
-import { racing } from "./racing";
-import { radiance } from "./radiance";
-import { resort } from "./resort";
-import { tempest } from "./tempest";
+import { canyon } from "../layers/canyon";
+import { core } from "../layers/core";
+import { divide } from "../layers/divide";
+import { feast } from "../layers/feast";
+import { forbidden } from "../layers/forbidden";
+import { forest } from "../layers/forest";
+import { freezer } from "../layers/freezer";
+import { groove } from "../layers/groove";
+import { hilltop } from "../layers/hilltop";
+import { ingot } from "../layers/ingot";
+import { junction } from "../layers/junction";
+import { lagoon } from "../layers/lagoon";
+import { landfill } from "../layers/landfill";
+import { racing } from "../layers/racing";
+import { radiance } from "../layers/radiance";
+import { resort } from "../layers/resort";
+import { tempest } from "../layers/tempest";
 
 const allLayers: DKBLayer[] = [
   ingot,
