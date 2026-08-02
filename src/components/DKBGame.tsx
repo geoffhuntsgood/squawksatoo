@@ -197,6 +197,7 @@ export const DKBGame = ({
             <DKItemRow
               key={index}
               name={item.name}
+              bgColor="#072207"
               onSuccess={() => onComplete(index, true)}
               onFailure={() => onFailure(index)}
               disabled={disabled[index] === "true"}
@@ -206,15 +207,6 @@ export const DKBGame = ({
 
       {getHR()}
 
-      <DKButton
-        label="Start over"
-        handleClick={() => {
-          initSelection();
-          setSuccessCount(0);
-          setFailureCount(0);
-          stopwatch.reset();
-        }}
-      />
       {options.timer && !disabled.every((item) => item === "true") && (
         <DKButton
           label={stopwatch.isRunning ? "Pause" : "Resume"}

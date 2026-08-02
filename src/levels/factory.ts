@@ -147,204 +147,28 @@ export const factory: DK64Level = {
       hellMode: true
     },
     {
-      name: "Factory Dark Room RC",
+      name: "Factory Dark Room Rainbow Coin",
       category: DK64Category.RainbowCoin
     },
     {
-      name: "Factory Donkey Shops Balloon",
-      category: DK64Category.Balloon
+      name: "Factory Donkey {{X}} Colored Bananas",
+      category: DK64Category.ColoredBanana
     },
     {
-      name: "Factory Donkey Number Game Balloon",
-      category: DK64Category.Balloon
+      name: "Factory Diddy {{X}} Colored Bananas",
+      category: DK64Category.ColoredBanana
     },
     {
-      name: "Factory Donkey R&D Hallway Balloon",
-      category: DK64Category.Balloon
+      name: "Factory Lanky {{X}} Colored Bananas",
+      category: DK64Category.ColoredBanana
     },
     {
-      name: "Factory Diddy R&D Room Balloons x3",
-      category: DK64Category.Balloon
+      name: "Factory Tiny {{X}} Colored Bananas",
+      category: DK64Category.ColoredBanana
     },
     {
-      name: "Factory Lanky R&D Room Balloon",
-      category: DK64Category.Balloon
-    },
-    {
-      name: "Factory Lanky Crusher Room Balloon",
-      category: DK64Category.Balloon
-    },
-    {
-      name: "Factory Lanky Production Balloon",
-      category: DK64Category.Balloon
-    },
-    {
-      name: "Factory Tiny Production Balloon",
-      category: DK64Category.Balloon
-    },
-    {
-      name: "Factory Tiny Snide Balloon",
-      category: DK64Category.Balloon
-    },
-    {
-      name: "Factory Tiny Funky Balloon",
-      category: DK64Category.Balloon
-    },
-    {
-      name: "Factory Chunky Hatch Balloon",
-      category: DK64Category.Balloon
-    },
-    {
-      name: "Factory Chunky Snide Balloon",
-      category: DK64Category.Balloon
-    },
-    {
-      name: "Factory Chunky R&D Balloon",
-      category: DK64Category.Balloon
-    },
-    {
-      name: "Factory Donkey Blast Course Bunches x4",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Factory Donkey Power Shed Bunches x3",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Factory Donkey Crusher Room Bunches x3",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Factory Diddy Arcade Warp 5 Bunch",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Factory Diddy Funky Warp 5 Bunch",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Factory Diddy Block Tower Bunches x5",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Factory Diddy Production Bunches x3",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Factory Lanky Entry Warp 2 Bunch",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Factory Lanky Production Steps Bunches x3",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Factory Lanky Production Pipe Bunches x5",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Factory Lanky R&D Warp 2 Bunch",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Factory Tiny Hatch Window Bunches x2",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Factory Tiny Arcade Bunch",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Factory Tiny Conveyor Bunches x4",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Factory Tiny Production Twirl Bunch",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Factory Tiny Dartboard Tunnel Bunches x2",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Factory Chunky Upper W1 Bunch",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Factory Chunky Lower W1 Bunch",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Factory Chunky Dark Room Bunches x3",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Factory Chunky Production Tower Bunches x4",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Factory Chunky Snide Warp 3 Bunch",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Factory Donkey Upper Hatch Tunnel Singles x5",
-      category: DK64Category.Single
-    },
-    {
-      name: "Factory Donkey Lower Hatch Tunnel Singles x6",
-      category: DK64Category.Single
-    },
-    {
-      name: "Factory Donkey Storage Tunnel Singles x4",
-      category: DK64Category.Single
-    },
-    {
-      name: "Factory Donkey Number Game Singles x5",
-      category: DK64Category.Single
-    },
-    {
-      name: "Factory Diddy Production Singles x12",
-      category: DK64Category.Single
-    },
-    {
-      name: "Factory Diddy Arcade Tunnel Singles x5",
-      category: DK64Category.Single
-    },
-    {
-      name: "Factory Diddy Funky Tunnel Singles x3",
-      category: DK64Category.Single
-    },
-    {
-      name: "Factory Lanky Storage Pipe Singles x5",
-      category: DK64Category.Single
-    },
-    {
-      name: "Factory Lanky Shops Tunnel Singles x5",
-      category: DK64Category.Single
-    },
-    {
-      name: "Factory Lanky R&D Singles x10",
-      category: DK64Category.Single
-    },
-    {
-      name: "Factory Tiny Lower Testing Hallway Singles x3",
-      category: DK64Category.Single
-    },
-    {
-      name: "Factory Tiny Upper Testing Hallway Singles x7",
-      category: DK64Category.Single
-    },
-    {
-      name: "Factory Tiny Car Race Hallway Singles x10",
-      category: DK64Category.Single
-    },
-    {
-      name: "Factory Chunky Hatch Pole Singles x10",
-      category: DK64Category.Single
-    },
-    {
-      name: "Factory Chunky R&D Room Singles x10",
-      category: DK64Category.Single
+      name: "Factory Chunky {{X}} Colored Bananas",
+      category: DK64Category.ColoredBanana
     }
   ]
 };

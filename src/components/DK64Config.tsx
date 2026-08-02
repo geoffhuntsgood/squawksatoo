@@ -18,23 +18,17 @@ export const DK64Config = ({
   const [config, setConfig] = useState({
     count: "1",
     timer: false,
-    autoRefresh: false
-  });
-
-  const [cbSanity, setCBSanity] = useState({
-    balloons: false,
-    bunches: false,
-    singles: false
+    autoRefresh: false,
+    useKongColors: false
   });
 
   const [level, setLevel] = useState<string>(LevelName.All);
   const [cats, setCats] = useState<DK64Category[]>([]);
   const [selectedCats, setSelectedCats] = useState<string[]>([]);
   const [hellMode, setHellMode] = useState(false);
-  const [enableCBSanity, setEnableCBSanity] = useState(false);
 
   const [items, setItems] = useState<DK64Item[]>(
-    getItemsForCategories(level as LevelName, [], hellMode, cbSanity)
+    getItemsForCategories(level as LevelName, [], hellMode)
   );
 
   const getCount = () => {
@@ -47,20 +41,19 @@ export const DK64Config = ({
   };
 
   useEffect(() => {
-    setCats(getCategoriesForLevel(level as LevelName, cbSanity));
+    setCats(getCategoriesForLevel(level as LevelName));
     setItems(
       getItemsForCategories(
         level as LevelName,
         selectedCats as DK64Category[],
-        hellMode,
-        cbSanity
+        hellMode
       )
     );
-  }, [level, selectedCats, hellMode, cbSanity]);
+  }, [level, selectedCats, hellMode]);
 
   useEffect(() => {
     if (items.length > 0) {
-      setGoLabel(`Get ${config.count} out of ${items.length}`);
+      setGoLabel(`Get ${config.count}/${items.length}`);
       setOptions({
         ...config,
         items
@@ -118,51 +111,14 @@ export const DK64Config = ({
             handleChange={setHellMode}
             helpText="Adds long goals like Company Coins to the pool."
           />
-          {level !== LevelName.Helm && level !== LevelName.Isles && (
-            <DKCheckbox
-              label="Enable CBSanity"
-              checked={enableCBSanity}
-              handleChange={setEnableCBSanity}
-              helpText="Allows for balloon, bunch, and single colored banana goals. Removes Medals from the pool."
-            />
-          )}
-          {enableCBSanity && (
-            <>
-              <DKCheckbox
-                secondary
-                label="Balloons"
-                checked={cbSanity.balloons}
-                handleChange={(val) =>
-                  setCBSanity({
-                    ...cbSanity,
-                    balloons: val as boolean
-                  })
-                }
-              />
-              <DKCheckbox
-                secondary
-                label="Bunches"
-                checked={cbSanity.bunches}
-                handleChange={(val) =>
-                  setCBSanity({
-                    ...cbSanity,
-                    bunches: val as boolean
-                  })
-                }
-              />
-              <DKCheckbox
-                secondary
-                label="Singles"
-                checked={cbSanity.singles}
-                handleChange={(val) =>
-                  setCBSanity({
-                    ...cbSanity,
-                    singles: val as boolean
-                  })
-                }
-              />
-            </>
-          )}
+          <DKCheckbox
+            label="Use Kong colors"
+            checked={config.useKongColors}
+            handleChange={(val) =>
+              setConfig({ ...config, useKongColors: val as boolean })
+            }
+            helpText="Shows Kong colors instead of their names."
+          />
         </Box>
       </Grid>
       <Grid size={1} />

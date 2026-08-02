@@ -32,14 +32,10 @@ Selecting a level will generate categories based on the available items in that 
 
 **Hell Mode:** Adds particularly long goals into the pool, such as the Rareware and Nintendo Coins and the Rareware GB.
 
-**Enable CBSanity:** Adds the option to include balloons, bunches, and groups of single colored bananas to the pool. Removes Banana Medals from the pool to reduce softlocking.
-
 ## Playing the Game
 
 **Header:** If auto-refresh was selected, the header will display the remaining number of bananas in the configured list.
 
 **Item List:** Clicking the check next to a displayed item will add it to the "correct" counter. If playing for Bananza, clicking the X will add that item to the "wrong" counter. Both will mark the item as completed (unless recycling in Bananza).
-
-**Start Over:** Restarts the game with the same configuration.
 
 **Reconfigure:** Returns to the settings page.

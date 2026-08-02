@@ -1,4 +1,4 @@
-import type { DK64CBSanity, DK64Item, DK64Level } from "../classes";
+import type { DK64Item, DK64Level } from "../classes";
 import { DK64Category, LevelName } from "../enums";
 import { aztec } from "../levels/aztec";
 import { castle } from "../levels/castle";
@@ -9,6 +9,7 @@ import { galleon } from "../levels/galleon";
 import { helm } from "../levels/helm";
 import { isles } from "../levels/isles";
 import { japes } from "../levels/japes";
+import { kongColors } from "./theme";
 
 const allLevels: DK64Level[] = [
   isles,
@@ -22,43 +23,14 @@ const allLevels: DK64Level[] = [
   helm
 ];
 
-export const getItemsForLevel = (
-  levelName: LevelName,
-  cbSanity: DK64CBSanity
-): DK64Item[] => {
-  let levelItems: DK64Item[] =
-    levelName === LevelName.All
-      ? allLevels.flatMap((level: DK64Level) => level.items)
-      : allLevels.filter((level: DK64Level) => level.name === levelName)[0]
-          .items;
-
-  if (!cbSanity.balloons)
-    levelItems = levelItems.filter(
-      (item: DK64Item) => item.category !== DK64Category.Balloon
-    );
-  if (!cbSanity.bunches)
-    levelItems = levelItems.filter(
-      (item: DK64Item) => item.category !== DK64Category.Bunch
-    );
-  if (!cbSanity.singles)
-    levelItems = levelItems.filter(
-      (item: DK64Item) => item.category !== DK64Category.Single
-    );
-
-  if (cbSanity.balloons || cbSanity.bunches || cbSanity.singles) {
-    levelItems = levelItems.filter(
-      (item: DK64Item) => item.category !== DK64Category.Medal
-    );
-  }
-
-  return levelItems;
+export const getItemsForLevel = (levelName: LevelName): DK64Item[] => {
+  return levelName === LevelName.All
+    ? allLevels.flatMap((level: DK64Level) => level.items)
+    : allLevels.filter((level: DK64Level) => level.name === levelName)[0].items;
 };
 
-export const getCategoriesForLevel = (
-  levelName: LevelName,
-  cbSanity: DK64CBSanity
-): DK64Category[] => {
-  const levelItems = getItemsForLevel(levelName, cbSanity);
+export const getCategoriesForLevel = (levelName: LevelName): DK64Category[] => {
+  const levelItems = getItemsForLevel(levelName);
   const cats: DK64Category[] = [];
   levelItems.forEach((item: DK64Item) => {
     const cat = item.category;
@@ -70,18 +42,112 @@ export const getCategoriesForLevel = (
 export const getItemsForCategories = (
   levelName: LevelName,
   categories: DK64Category[],
-  hellMode: boolean,
-  cbSanity: DK64CBSanity
+  hellMode: boolean
 ): DK64Item[] => {
-  let items = getItemsForLevel(levelName, cbSanity);
+  let items = getItemsForLevel(levelName);
 
   if (!hellMode) {
     items = items.filter((item: DK64Item) => !item.hellMode);
   }
 
+  items = items.map((item: DK64Item) => {
+    if (item.category === DK64Category.ColoredBanana) {
+      return {
+        ...item,
+        name: item.name.replace(
+          "{{X}}",
+          Math.ceil(Math.random() * 80 + 20).toString()
+        )
+      };
+    } else {
+      return item;
+    }
+  });
+
   if (categories.length === 0) {
     return items;
   } else {
     return items.filter((item: DK64Item) => categories.includes(item.category));
+  }
+};
+
+export const getKongColorInfo = (name: string, useKongColors: boolean) => {
+  if (!useKongColors) {
+    return {
+      label: name,
+      color: "black"
+    };
+  }
+
+  if (
+    name.startsWith("Japes Donkey") ||
+    name.startsWith("Aztec Donkey") ||
+    name.startsWith("Factory Donkey") ||
+    name.startsWith("Galleon Donkey") ||
+    name.startsWith("Forest Donkey") ||
+    name.startsWith("Caves Donkey") ||
+    name.startsWith("Castle Donkey")
+  ) {
+    return {
+      label: name.replace(" Donkey", ""),
+      color: kongColors.Donkey
+    };
+  } else if (
+    name.startsWith("Japes Diddy") ||
+    name.startsWith("Aztec Diddy") ||
+    name.startsWith("Factory Diddy") ||
+    name.startsWith("Galleon Diddy") ||
+    name.startsWith("Forest Diddy") ||
+    name.startsWith("Caves Diddy") ||
+    name.startsWith("Castle Diddy")
+  ) {
+    return {
+      label: name.replace(" Diddy", ""),
+      color: kongColors.Diddy
+    };
+  } else if (
+    name.startsWith("Japes Lanky") ||
+    name.startsWith("Aztec Lanky") ||
+    name.startsWith("Factory Lanky") ||
+    name.startsWith("Galleon Lanky") ||
+    name.startsWith("Forest Lanky") ||
+    name.startsWith("Caves Lanky") ||
+    name.startsWith("Castle Lanky")
+  ) {
+    return {
+      label: name.replace(" Lanky", ""),
+      color: kongColors.Lanky
+    };
+  } else if (
+    name.startsWith("Japes Tiny") ||
+    name.startsWith("Aztec Tiny") ||
+    name.startsWith("Factory Tiny") ||
+    name.startsWith("Galleon Tiny") ||
+    name.startsWith("Forest Tiny") ||
+    name.startsWith("Caves Tiny") ||
+    name.startsWith("Castle Tiny")
+  ) {
+    return {
+      label: name.replace(" Tiny", ""),
+      color: kongColors.Tiny
+    };
+  } else if (
+    name.startsWith("Japes Chunky") ||
+    name.startsWith("Aztec Chunky") ||
+    name.startsWith("Factory Chunky") ||
+    name.startsWith("Galleon Chunky") ||
+    name.startsWith("Forest Chunky") ||
+    name.startsWith("Caves Chunky") ||
+    name.startsWith("Castle Chunky")
+  ) {
+    return {
+      label: name.replace(" Chunky", ""),
+      color: kongColors.Chunky
+    };
+  } else {
+    return {
+      label: name,
+      color: "black"
+    };
   }
 };

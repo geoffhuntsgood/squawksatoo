@@ -7,8 +7,5 @@ export enum DK64Category {
   Fairy = "Banana Fairy",
   CompanyCoin = "Company Coin",
   RainbowCoin = "Rainbow Coin",
-
-  Balloon = "Balloon",
-  Bunch = "Bunch",
-  Single = "Single"
+  ColoredBanana = "Colored Banana"
 }

@@ -11,13 +11,11 @@ export const DKCheckbox = ({
   label,
   checked,
   handleChange,
-  secondary,
   helpText
 }: {
   label: string;
   checked: boolean;
   handleChange: Dispatch<SetStateAction<boolean>>;
-  secondary?: boolean;
   helpText?: string;
 }) => (
   <FormControl fullWidth>
@@ -30,7 +28,6 @@ export const DKCheckbox = ({
       }
       control={
         <Checkbox
-          sx={secondary ? { paddingLeft: "3rem" } : {}}
           checked={checked}
           onChange={(event: ChangeEvent<HTMLInputElement>) =>
             handleChange(event.target.checked)

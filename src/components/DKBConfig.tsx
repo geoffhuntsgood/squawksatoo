@@ -55,7 +55,7 @@ export const DKBConfig = ({
 
   useEffect(() => {
     if (bananas.length > 0) {
-      setGoLabel(`Get ${config.count} out of ${bananas.length}`);
+      setGoLabel(`Get ${config.count}/${bananas.length}`);
       setOptions({
         ...config,
         bananas

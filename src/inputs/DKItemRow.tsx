@@ -6,11 +6,13 @@ import type { MouseEventHandler } from "react";
 export const DKItemRow = ({
   name,
   disabled,
+  bgColor,
   onSuccess,
   onFailure
 }: {
   name: string;
   disabled: boolean;
+  bgColor: string;
   onSuccess: MouseEventHandler;
   onFailure?: MouseEventHandler;
 }) => {
@@ -19,9 +21,9 @@ export const DKItemRow = ({
       textDecoration: disabled ? "line-through" : "none"
     },
     check: {
-      color: colors.green[900],
+      color: bgColor && bgColor !== "#072207" ? "white" : colors.green[900],
       "&:hover": {
-        color: "green"
+        color: bgColor && bgColor !== "#072207" ? "lightgreen" : "green"
       }
     },
     cancel: {
@@ -33,7 +35,7 @@ export const DKItemRow = ({
   };
 
   return (
-    <Grid size={12}>
+    <Grid size={12} sx={{ backgroundColor: bgColor }}>
       <Typography color="textPrimary" variant="h3" sx={styles.text}>
         <IconButton sx={styles.check} onClick={onSuccess} disabled={disabled}>
           <CheckCircle />

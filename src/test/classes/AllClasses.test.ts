@@ -1,6 +1,5 @@
 import { describe, expect, test } from "vitest";
 import {
-  DK64CBSanity,
   DK64Item,
   DK64Level,
   DK64Options,
@@ -10,11 +9,7 @@ import {
 } from "../../classes";
 import { DK64Category, DKBCategory, LayerName, LevelName } from "../../enums";
 
-describe("Class instantiation sanity tests", () => {
-  test("DK64CBSanity check", () => {
-    expect(new DK64CBSanity(true, true, true).balloons).toBe(true);
-  });
-
+describe("Class instantiation sanity checks", () => {
   test("DK64Item check", () => {
     expect(new DK64Item("Banana", DK64Category.GB).category).toBe(
       DK64Category.GB
@@ -30,7 +25,9 @@ describe("Class instantiation sanity tests", () => {
   });
 
   test("DK64Options check", () => {
-    expect(new DK64Options("2", false, false, []).autoRefresh).toBe(false);
+    expect(new DK64Options("2", "10", false, false, []).autoRefresh).toBe(
+      false
+    );
   });
 
   test("DKBBanana check", () => {

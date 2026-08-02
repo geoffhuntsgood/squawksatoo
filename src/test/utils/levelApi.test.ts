@@ -1,5 +1,4 @@
 import { describe, expect, test } from "vitest";
-import { DK64CBSanity, DK64Item } from "../../classes";
 import { DK64Category, LevelName } from "../../enums";
 import {
   getCategoriesForLevel,
@@ -8,186 +7,75 @@ import {
 } from "../../utils/levelApi";
 
 describe("levelApi tests", () => {
-  const cbSanity = (
-    balloons = false,
-    bunches = false,
-    singles = false
-  ): DK64CBSanity => {
-    return {
-      balloons,
-      bunches,
-      singles
-    };
-  };
-
   describe("getItemsForLevel tests", () => {
     const expected = {
-      [LevelName.All]: 296,
+      [LevelName.All]: 331,
       [LevelName.Isles]: 40,
-      [LevelName.Japes]: 35,
-      [LevelName.Aztec]: 36,
-      [LevelName.Factory]: 36,
-      [LevelName.Galleon]: 35,
-      [LevelName.Forest]: 36,
-      [LevelName.Caves]: 35,
-      [LevelName.Castle]: 35,
+      [LevelName.Japes]: 40,
+      [LevelName.Aztec]: 41,
+      [LevelName.Factory]: 41,
+      [LevelName.Galleon]: 40,
+      [LevelName.Forest]: 41,
+      [LevelName.Caves]: 40,
+      [LevelName.Castle]: 40,
       [LevelName.Helm]: 8
     };
 
     Object.values(LevelName).forEach((level: LevelName) => {
       test(`${level}`, () => {
-        expect(getItemsForLevel(level, cbSanity())).toHaveLength(
-          expected[level]
-        );
-      });
-    });
-
-    describe("CBSanity checks", () => {
-      const noMedals = (list: DK64Item[]) => {
-        expect(
-          list.filter((item) => item.category === DK64Category.Medal)
-        ).toHaveLength(0);
-      };
-
-      test("Balloons", () => {
-        const japes = getItemsForLevel(LevelName.Japes, cbSanity(true));
-        expect(
-          japes.filter((item) => item.category === DK64Category.Balloon)
-        ).toHaveLength(13);
-        noMedals(japes);
-      });
-
-      test("Bunches", () => {
-        const japes = getItemsForLevel(LevelName.Japes, cbSanity(false, true));
-        expect(
-          japes.filter((item) => item.category === DK64Category.Bunch)
-        ).toHaveLength(33);
-        noMedals(japes);
-      });
-
-      test("Singles", () => {
-        const japes = getItemsForLevel(
-          LevelName.Japes,
-          cbSanity(false, false, true)
-        );
-        expect(
-          japes.filter((item) => item.category === DK64Category.Single)
-        ).toHaveLength(17);
-        noMedals(japes);
-      });
-
-      test("Medals not removed when CBSanity does not apply", () => {
-        const helm = getItemsForLevel(
-          LevelName.Helm,
-          cbSanity(true, true, true)
-        );
-        expect(
-          helm.filter((item) => item.category === DK64Category.HelmMedal)
-        ).toHaveLength(5);
+        expect(getItemsForLevel(level)).toHaveLength(expected[level]);
       });
     });
   });
 
   describe("getCategoriesForLevel tests", () => {
     const expected = {
-      [LevelName.All]: 8,
+      [LevelName.All]: 9,
       [LevelName.Isles]: 5,
-      [LevelName.Japes]: 6,
-      [LevelName.Aztec]: 6,
-      [LevelName.Factory]: 7,
-      [LevelName.Galleon]: 6,
-      [LevelName.Forest]: 6,
-      [LevelName.Caves]: 6,
-      [LevelName.Castle]: 6,
+      [LevelName.Japes]: 7,
+      [LevelName.Aztec]: 7,
+      [LevelName.Factory]: 8,
+      [LevelName.Galleon]: 7,
+      [LevelName.Forest]: 7,
+      [LevelName.Caves]: 7,
+      [LevelName.Castle]: 7,
       [LevelName.Helm]: 4
     };
 
     Object.values(LevelName).forEach((level: LevelName) => {
       test(`${level}`, () => {
-        expect(getCategoriesForLevel(level, cbSanity())).toHaveLength(
-          expected[level]
-        );
-      });
-    });
-
-    describe("CBSanity checks", () => {
-      const noMedals = (list: DK64Category[]) => {
-        expect(list.filter((item) => item === DK64Category.Medal)).toHaveLength(
-          0
-        );
-      };
-
-      test("Balloons", () => {
-        const galleon = getCategoriesForLevel(
-          LevelName.Galleon,
-          cbSanity(true)
-        );
-        expect(galleon).toHaveLength(6);
-        noMedals(galleon);
-      });
-
-      test("Bunches", () => {
-        const galleon = getCategoriesForLevel(
-          LevelName.Galleon,
-          cbSanity(false, true)
-        );
-        expect(galleon).toHaveLength(6);
-        noMedals(galleon);
-      });
-
-      test("Singles", () => {
-        const galleon = getCategoriesForLevel(
-          LevelName.Galleon,
-          cbSanity(false, false, true)
-        );
-        expect(galleon).toHaveLength(6);
-        noMedals(galleon);
-      });
-
-      test("All", () => {
-        const galleon = getCategoriesForLevel(
-          LevelName.Galleon,
-          cbSanity(true, true, true)
-        );
-        expect(galleon).toHaveLength(8);
-        noMedals(galleon);
+        expect(getCategoriesForLevel(level)).toHaveLength(expected[level]);
       });
     });
   });
 
   describe("getItemsForCategories tests", () => {
-    test("Categories: 0, Hell Mode: No, CBSanity: None", () => {
-      expect(
-        getItemsForCategories(LevelName.Factory, [], false, cbSanity())
-      ).toHaveLength(34);
+    test("Categories: 0, Hell Mode: No", () => {
+      expect(getItemsForCategories(LevelName.Factory, [], false)).toHaveLength(
+        39
+      );
     });
 
-    test("Categories: 0, Hell Mode: Yes, CBSanity: Balloons", () => {
-      expect(
-        getItemsForCategories(LevelName.Factory, [], true, cbSanity(true))
-      ).toHaveLength(44);
+    test("Categories: 0, Hell Mode: Yes", () => {
+      expect(getItemsForCategories(LevelName.Factory, [], true)).toHaveLength(
+        41
+      );
     });
 
-    test("Categories: 1, Hell Mode: No, CBSanity: Bunches", () => {
+    test("Categories: 1, Hell Mode: No", () => {
       expect(
-        getItemsForCategories(
-          LevelName.Factory,
-          [DK64Category.GB],
-          false,
-          cbSanity(false, true)
-        )
+        getItemsForCategories(LevelName.Factory, [DK64Category.GB], false)
       ).toHaveLength(24);
     });
 
-    test("Categories: 2, Hell Mode: No, CBSanity: All", () => {
+    test("Categories: 2, Hell Mode: No", () => {
       expect(
         getItemsForCategories(
           LevelName.Factory,
-          [DK64Category.Fairy, DK64Category.Crown, DK64Category.Single],
-          false,
-          cbSanity(true, true, true)
+          [DK64Category.Fairy, DK64Category.Crown],
+          false
         )
-      ).toHaveLength(18);
+      ).toHaveLength(3);
     });
   });
 });

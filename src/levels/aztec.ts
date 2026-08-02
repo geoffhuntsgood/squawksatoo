@@ -141,224 +141,32 @@ export const aztec: DK64Level = {
       category: DK64Category.Key
     },
     {
-      name: "Aztec Oasis RC",
+      name: "Aztec Oasis Rainbow Coin",
       category: DK64Category.RainbowCoin
     },
     {
-      name: "Chunky 5DT RC",
+      name: "Chunky 5DT Rainbow Coin",
       category: DK64Category.RainbowCoin
     },
     {
-      name: "Aztec Donkey Cranky Balloons x2",
-      category: DK64Category.Balloon
+      name: "Aztec Donkey {{X}} Colored Bananas",
+      category: DK64Category.ColoredBanana
     },
     {
-      name: "Aztec Donkey Behind Llama Temple Balloon",
-      category: DK64Category.Balloon
+      name: "Aztec Diddy {{X}} Colored Bananas",
+      category: DK64Category.ColoredBanana
     },
     {
-      name: "Aztec Diddy Tiny Temple Balloon",
-      category: DK64Category.Balloon
+      name: "Aztec Lanky {{X}} Colored Bananas",
+      category: DK64Category.ColoredBanana
     },
     {
-      name: "Aztec Diddy 5DT Balloon",
-      category: DK64Category.Balloon
+      name: "Aztec Tiny {{X}} Colored Bananas",
+      category: DK64Category.ColoredBanana
     },
     {
-      name: "Aztec Diddy Sand Tunnel Balloon",
-      category: DK64Category.Balloon
-    },
-    {
-      name: "Aztec Lanky Llama Temple Balloons x2",
-      category: DK64Category.Balloon
-    },
-    {
-      name: "Aztec Lanky 5DT Balloon",
-      category: DK64Category.Balloon
-    },
-    {
-      name: "Aztec Tiny Tiny Temple Balloons x2",
-      category: DK64Category.Balloon
-    },
-    {
-      name: "Aztec Tiny Llama Temple Balloon",
-      category: DK64Category.Balloon
-    },
-    {
-      name: "Aztec Chunky Tiny Temple Balloon",
-      category: DK64Category.Balloon
-    },
-    {
-      name: "Aztec Chunky 5DT Balloons x2",
-      category: DK64Category.Balloon
-    },
-    {
-      name: "Aztec Donkey BP Alcove Bunch x2",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Aztec Donkey Oasis Tree Bunches x3",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Aztec Donkey Sand Tunnel Bunches x4",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Aztec Diddy Warp 2 Bunch",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Aztec Diddy Tiny Temple Tongue Bunches x3",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Aztec Diddy Gong Tower Tree Bunches x3",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Aztec Diddy Llama Temple Bunch",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Aztec Diddy Totem Sun Bunch",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Aztec Lanky Vulture Bunch",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Aztec Lanky Cranky Bunch",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Aztec Lanky Llama Temple Warp 1 Bunch",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Aztec Lanky Matching Game Bunch",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Aztec Lanky Tree Bunches x5",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Aztec Tiny Mini Barrel Bunch",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Aztec Tiny Warp 5 Bunch",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Aztec Tiny Llama Temple Lava Bunches x2",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Aztec Tiny 5DT Tree Bunches x5",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Aztec Chunky Vase Room Bunches x4",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Aztec Chunky Tiny Temple Bunches x5",
-      category: DK64Category.Bunch
-    },
-    {
-      name: "Aztec Donkey Llama Cage Stair Singles x3",
-      category: DK64Category.Single
-    },
-    {
-      name: "Aztec Donkey Snide Stair Singles x3",
-      category: DK64Category.Single
-    },
-    {
-      name: "Aztec Donkey Outside Llama Temple Singles x4",
-      category: DK64Category.Single
-    },
-    {
-      name: "Aztec Donkey Llama Temple Small Stair Singles x9",
-      category: DK64Category.Single
-    },
-    {
-      name: "Aztec Donkey Llama Temple Tall Stair Singles x6",
-      category: DK64Category.Single
-    },
-    {
-      name: "Aztec Diddy Tiny Temple Tongue Singles x3",
-      category: DK64Category.Single
-    },
-    {
-      name: "Aztec Diddy Tiny Temple Water Singles x7",
-      category: DK64Category.Single
-    },
-    {
-      name: "Aztec Diddy Tunnel Singles x5",
-      category: DK64Category.Single
-    },
-    {
-      name: "Aztec Diddy Rocketbarrel Singles x3",
-      category: DK64Category.Single
-    },
-    {
-      name: "Aztec Diddy Gong Tower Singles x3",
-      category: DK64Category.Single
-    },
-    {
-      name: "Aztec Diddy 5DT Singles x4",
-      category: DK64Category.Single
-    },
-    {
-      name: "Aztec Lanky Tiny Temple Water Singles x9",
-      category: DK64Category.Single
-    },
-    {
-      name: "Aztec Lanky Entry Tunnel Singles x5",
-      category: DK64Category.Single
-    },
-    {
-      name: "Aztec Lanky Snake Road Singles x5",
-      category: DK64Category.Single
-    },
-    {
-      name: "Aztec Lanky Llama Temple Stair Singles x6",
-      category: DK64Category.Single
-    },
-    {
-      name: "Aztec Tiny Tiny Temple Water Singles x5",
-      category: DK64Category.Single
-    },
-    {
-      name: "Aztec Tiny Tunnel Singles x10",
-      category: DK64Category.Single
-    },
-    {
-      name: "Aztec Tiny Llama Temple Bottle Singles x5",
-      category: DK64Category.Single
-    },
-    {
-      name: "Aztec Tiny 5DT Path Singles x5",
-      category: DK64Category.Single
-    },
-    {
-      name: "Aztec Chunky Entry Tunnel Singles x5",
-      category: DK64Category.Single
-    },
-    {
-      name: "Aztec Chunky Tiny Temple Singles x4",
-      category: DK64Category.Single
-    },
-    {
-      name: "Aztec Chunky Snide Stair Singles x6",
-      category: DK64Category.Single
-    },
-    {
-      name: "Aztec Chunky Totem Singles x10",
-      category: DK64Category.Single
+      name: "Aztec Chunky {{X}} Colored Bananas",
+      category: DK64Category.ColoredBanana
     }
   ]
 };

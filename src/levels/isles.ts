@@ -139,31 +139,31 @@ export const isles: DK64Level = {
       hellMode: true
     },
     {
-      name: "Training Grounds Tunnel RC",
+      name: "Training Grounds Tunnel Rainbow Coin",
       category: DK64Category.RainbowCoin
     },
     {
-      name: "Training Grounds Hoard RC",
+      name: "Training Grounds Hoard Rainbow Coin",
       category: DK64Category.RainbowCoin
     },
     {
-      name: "Behind K. Lumsy RC",
+      name: "Behind K. Lumsy Rainbow Coin",
       category: DK64Category.RainbowCoin
     },
     {
-      name: "Under Caves Lobby RC",
+      name: "Under Caves Lobby Rainbow Coin",
       category: DK64Category.RainbowCoin
     },
     {
-      name: "Aztec Roof RC",
+      name: "Aztec Roof Rainbow Coin",
       category: DK64Category.RainbowCoin
     },
     {
-      name: "Floating Isle RC",
+      name: "Forest Lobby Door Rainbow Coin",
       category: DK64Category.RainbowCoin
     },
     {
-      name: "Castle Lobby RC",
+      name: "Castle Lobby Rainbow Coin",
       category: DK64Category.RainbowCoin
     }
   ]

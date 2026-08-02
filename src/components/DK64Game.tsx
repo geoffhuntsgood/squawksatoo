@@ -5,6 +5,7 @@ import { useReward } from "react-rewards";
 import { useStopwatch } from "react-timer-hook";
 import type { DK64Item, DK64Options } from "../classes";
 import { DKButton, DKItemRow, DKTimer } from "../inputs";
+import { getKongColorInfo } from "../utils/levelApi";
 
 export const DK64Game = ({
   options,
@@ -37,26 +38,6 @@ export const DK64Game = ({
   const markDisabled = (displayIndex: number, set: string) => {
     const struck = [...disabled];
     struck[displayIndex] = set;
-    setDisabled(struck);
-  };
-
-  const initSelection = () => {
-    const items: DK64Item[] = options.items;
-    const shown: DK64Item[] = [];
-    const struck: string[] = [];
-
-    if (disabled.length > 0) {
-      setDisabled([]);
-    }
-
-    for (let i = 0; i < Number(options.count); i++) {
-      const index = Math.floor(Math.random() * items.length);
-      shown.push(items[index]);
-      items.splice(index, 1);
-      struck.push("false");
-    }
-    setAvailable(items);
-    setDisplayed(shown);
     setDisabled(struck);
   };
 
@@ -94,7 +75,23 @@ export const DK64Game = ({
   );
 
   useEffect(() => {
-    initSelection();
+    const items: DK64Item[] = options.items;
+    const shown: DK64Item[] = [];
+    const struck: string[] = [];
+
+    if (disabled.length > 0) {
+      setDisabled([]);
+    }
+
+    for (let i = 0; i < Number(options.count); i++) {
+      const index = Math.floor(Math.random() * items.length);
+      shown.push(items[index]);
+      items.splice(index, 1);
+      struck.push("false");
+    }
+    setAvailable(items);
+    setDisplayed(shown);
+    setDisabled(struck);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -156,10 +153,13 @@ export const DK64Game = ({
 
       {displayed.length > 0 &&
         displayed.map((item: DK64Item, index: number) => {
+          const kongInfo = getKongColorInfo(item.name, options.useKongColors);
+
           return (
             <DKItemRow
               key={index}
-              name={item.name}
+              name={kongInfo.label}
+              bgColor={kongInfo.color}
               disabled={disabled[index] === "true"}
               onSuccess={() => onComplete(index)}
             />
@@ -168,14 +168,6 @@ export const DK64Game = ({
 
       {getHR()}
 
-      <DKButton
-        label="Start over"
-        handleClick={() => {
-          initSelection();
-          setDoneCount(0);
-          stopwatch.reset();
-        }}
-      />
       {options.timer && !disabled.every((item) => item === "true") && (
         <DKButton
           label={stopwatch.isRunning ? "Pause" : "Resume"}
