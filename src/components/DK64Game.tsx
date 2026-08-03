@@ -159,7 +159,7 @@ export const DK64Game = ({
             <DKItemRow
               key={index}
               name={kongInfo.label}
-              bgColor={kongInfo.color}
+              bgColor={options.useKongColors ? kongInfo.color : "#072207"}
               disabled={disabled[index] === "true"}
               onSuccess={() => onComplete(index)}
             />
