@@ -86,7 +86,9 @@ export const getKongColorInfo = (name: string, useKongColors: boolean) => {
     name.startsWith("Galleon Donkey") ||
     name.startsWith("Forest Donkey") ||
     name.startsWith("Caves Donkey") ||
-    name.startsWith("Castle Donkey")
+    name.startsWith("Castle Donkey") ||
+    name.startsWith("Helm Donkey") ||
+    name.startsWith("Isles Donkey")
   ) {
     return {
       label: name.replace(" Donkey", ""),
@@ -99,7 +101,9 @@ export const getKongColorInfo = (name: string, useKongColors: boolean) => {
     name.startsWith("Galleon Diddy") ||
     name.startsWith("Forest Diddy") ||
     name.startsWith("Caves Diddy") ||
-    name.startsWith("Castle Diddy")
+    name.startsWith("Castle Diddy") ||
+    name.startsWith("Helm Diddy") ||
+    name.startsWith("Isles Diddy")
   ) {
     return {
       label: name.replace(" Diddy", ""),
@@ -112,7 +116,9 @@ export const getKongColorInfo = (name: string, useKongColors: boolean) => {
     name.startsWith("Galleon Lanky") ||
     name.startsWith("Forest Lanky") ||
     name.startsWith("Caves Lanky") ||
-    name.startsWith("Castle Lanky")
+    name.startsWith("Castle Lanky") ||
+    name.startsWith("Helm Lanky") ||
+    name.startsWith("Isles Lanky")
   ) {
     return {
       label: name.replace(" Lanky", ""),
@@ -125,7 +131,9 @@ export const getKongColorInfo = (name: string, useKongColors: boolean) => {
     name.startsWith("Galleon Tiny") ||
     name.startsWith("Forest Tiny") ||
     name.startsWith("Caves Tiny") ||
-    name.startsWith("Castle Tiny")
+    name.startsWith("Castle Tiny") ||
+    name.startsWith("Helm Tiny") ||
+    name.startsWith("Isles Tiny")
   ) {
     return {
       label: name.replace(" Tiny", ""),
@@ -138,7 +146,9 @@ export const getKongColorInfo = (name: string, useKongColors: boolean) => {
     name.startsWith("Galleon Chunky") ||
     name.startsWith("Forest Chunky") ||
     name.startsWith("Caves Chunky") ||
-    name.startsWith("Castle Chunky")
+    name.startsWith("Castle Chunky") ||
+    name.startsWith("Helm Chunky") ||
+    name.startsWith("Isles Chunky")
   ) {
     return {
       label: name.replace(" Chunky", ""),

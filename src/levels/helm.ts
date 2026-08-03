@@ -5,23 +5,23 @@ export const helm: DK64Level = {
   name: LevelName.Helm,
   items: [
     {
-      name: "Donkey Helm Medal",
+      name: "Helm Donkey Medal",
       category: DK64Category.HelmMedal
     },
     {
-      name: "Chunky Helm Medal",
+      name: "Helm Chunky Medal",
       category: DK64Category.HelmMedal
     },
     {
-      name: "Tiny Helm Medal",
+      name: "Helm Tiny Medal",
       category: DK64Category.HelmMedal
     },
     {
-      name: "Lanky Helm Medal",
+      name: "Helm Lanky Medal",
       category: DK64Category.HelmMedal
     },
     {
-      name: "Diddy Helm Medal",
+      name: "Helm Diddy Medal",
       category: DK64Category.HelmMedal
     },
     {
