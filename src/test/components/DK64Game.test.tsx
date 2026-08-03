@@ -13,6 +13,7 @@ describe("DK64Game tests", () => {
     count: string,
     timer: boolean,
     autoRefresh: boolean,
+    useKongColors: boolean,
     items: DK64Item[]
   ) => {
     return await render(
@@ -21,6 +22,7 @@ describe("DK64Game tests", () => {
           count,
           timer,
           autoRefresh,
+          useKongColors,
           items
         }}
         setOptions={setOptionsMock}
@@ -31,7 +33,9 @@ describe("DK64Game tests", () => {
 
   test("Check initial render", async () => {
     expect(
-      (await getScreen("1", true, false, japes.items)).getByText("Go get 'em!")
+      (await getScreen("1", true, false, false, japes.items)).getByText(
+        "Go get 'em!"
+      )
     ).toBeVisible();
   });
 });

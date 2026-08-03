@@ -11,6 +11,7 @@ describe("DKItemRow tests", () => {
       <DKItemRow
         name="Test Row"
         disabled={disabled}
+        bgColor="blue"
         onSuccess={successMock}
         onFailure={failure ? failureMock : undefined}
       />

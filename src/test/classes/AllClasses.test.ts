@@ -25,7 +25,7 @@ describe("Class instantiation sanity checks", () => {
   });
 
   test("DK64Options check", () => {
-    expect(new DK64Options("2", "10", false, false, []).autoRefresh).toBe(
+    expect(new DK64Options("2", false, false, false, []).autoRefresh).toBe(
       false
     );
   });
