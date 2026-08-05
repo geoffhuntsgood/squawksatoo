@@ -21,10 +21,6 @@ export const galleon: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Galleon Donkey BP Turn-in GB",
-      category: DK64Category.GB
-    },
-    {
       name: "Galleon Diddy Ship Switch GB",
       category: DK64Category.GB
     },
@@ -38,10 +34,6 @@ export const galleon: DK64Level = {
     },
     {
       name: "Galleon Diddy 5DS Bonus GB",
-      category: DK64Category.GB
-    },
-    {
-      name: "Galleon Diddy BP Turn-in GB",
       category: DK64Category.GB
     },
     {
@@ -61,10 +53,6 @@ export const galleon: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Galleon Lanky BP Turn-in GB",
-      category: DK64Category.GB
-    },
-    {
       name: "Galleon Tiny Mermaid GB",
       category: DK64Category.GB
     },
@@ -78,10 +66,6 @@ export const galleon: DK64Level = {
     },
     {
       name: "Galleon Tiny 5DS GB",
-      category: DK64Category.GB
-    },
-    {
-      name: "Galleon Tiny BP Turn-in GB",
       category: DK64Category.GB
     },
     {
@@ -101,8 +85,24 @@ export const galleon: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Galleon Chunky BP Turn-in GB",
-      category: DK64Category.GB
+      name: "Galleon Donkey BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Galleon Diddy BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Galleon Lanky BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Galleon Tiny BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Galleon Chunky BP",
+      category: DK64Category.Blueprint
     },
     {
       name: "Galleon Donkey Medal",

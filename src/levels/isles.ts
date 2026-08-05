@@ -21,10 +21,6 @@ export const isles: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Isles Donkey BP Turn-in GB",
-      category: DK64Category.GB
-    },
-    {
       name: "Isles Diddy Spring Bonus GB",
       category: DK64Category.GB
     },
@@ -38,10 +34,6 @@ export const isles: DK64Level = {
     },
     {
       name: "Isles Diddy Guitar GB",
-      category: DK64Category.GB
-    },
-    {
-      name: "Isles Diddy BP Turn-in GB",
       category: DK64Category.GB
     },
     {
@@ -61,10 +53,6 @@ export const isles: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Isles Lanky BP Turn-in GB",
-      category: DK64Category.GB
-    },
-    {
       name: "Isles Tiny Gong Bonus GB",
       category: DK64Category.GB
     },
@@ -78,10 +66,6 @@ export const isles: DK64Level = {
     },
     {
       name: "Isles Tiny Saxophone GB",
-      category: DK64Category.GB
-    },
-    {
-      name: "Isles Tiny BP Turn-in GB",
       category: DK64Category.GB
     },
     {
@@ -101,8 +85,24 @@ export const isles: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Isles Chunky BP Turn-in GB",
-      category: DK64Category.GB
+      name: "Isles Donkey BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Isles Diddy BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Isles Lanky BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Isles Tiny BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Isles Chunky BP",
+      category: DK64Category.Blueprint
     },
     {
       name: "Isles Snide Battle Crown",

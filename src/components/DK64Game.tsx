@@ -1,5 +1,6 @@
 import { CheckCircle } from "@mui/icons-material";
 import { Grid, IconButton, Typography } from "@mui/material";
+import random from "random";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import { useReward } from "react-rewards";
 import { useStopwatch } from "react-timer-hook";
@@ -16,6 +17,10 @@ export const DK64Game = ({
   setOptions: Dispatch<SetStateAction<DK64Options | null>>;
   setStart: Dispatch<SetStateAction<boolean>>;
 }) => {
+  if (options.seed.length > 0) {
+    random.use(options.seed);
+  }
+
   const [header, setHeader] = useState("");
   const [available, setAvailable] = useState<DK64Item[]>([]);
   const [displayed, setDisplayed] = useState<DK64Item[]>([]);
@@ -46,8 +51,7 @@ export const DK64Game = ({
     const shown = [...displayed];
 
     if (items.length > 0) {
-      // eslint-disable-next-line react-hooks/purity
-      const index = Math.floor(Math.random() * items.length);
+      const index = random.int(0, items.length);
       shown.splice(displayIndex, 1, items[index]);
       items.splice(index, 1);
 
@@ -84,7 +88,7 @@ export const DK64Game = ({
     }
 
     for (let i = 0; i < Number(options.count); i++) {
-      const index = Math.floor(Math.random() * items.length);
+      const index = random.int(0, items.length);
       shown.push(items[index]);
       items.splice(index, 1);
       struck.push("false");
@@ -176,6 +180,7 @@ export const DK64Game = ({
           }
         />
       )}
+
       <DKButton
         label="Reconfigure"
         handleClick={() => {

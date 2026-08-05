@@ -1,5 +1,6 @@
 import { Cancel, CheckCircle } from "@mui/icons-material";
 import { Grid, IconButton, Typography } from "@mui/material";
+import random from "random";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import { useReward } from "react-rewards";
 import { useStopwatch } from "react-timer-hook";
@@ -15,6 +16,10 @@ export const DKBGame = ({
   setOptions: Dispatch<SetStateAction<DKBOptions | null>>;
   setStart: Dispatch<SetStateAction<boolean>>;
 }) => {
+  if (options.seed.length > 0) {
+    random.use(options.seed);
+  }
+
   const [header, setHeader] = useState("");
   const [available, setAvailable] = useState<DKBBanana[]>([]);
   const [displayed, setDisplayed] = useState<DKBBanana[]>([]);
@@ -41,34 +46,13 @@ export const DKBGame = ({
     setDisabled(struck);
   };
 
-  const initSelection = () => {
-    const items = options.bananas;
-    const shown = [];
-    const struck = [];
-
-    if (disabled.length > 0) {
-      setDisabled([]);
-    }
-
-    for (let i = 0; i < Number(options.count); i++) {
-      const index = Math.floor(Math.random() * items.length);
-      shown.push(items[index]);
-      items.splice(index, 1);
-      struck.push("false");
-    }
-    setAvailable(items);
-    setDisplayed(shown);
-    setDisabled(struck);
-  };
-
   const replaceOne = (displayIndex: number, success: boolean) => {
     const items = [...available];
     const shown = [...displayed];
     const origin = shown[displayIndex];
 
     if (items.length > 0) {
-      // eslint-disable-next-line react-hooks/purity
-      const index = Math.floor(Math.random() * items.length);
+      const index = random.int(0, items.length);
       shown.splice(displayIndex, 1, items[index]);
 
       if (options.recycle) {
@@ -113,7 +97,23 @@ export const DKBGame = ({
   );
 
   useEffect(() => {
-    initSelection();
+    const items = options.bananas;
+    const shown = [];
+    const struck = [];
+
+    if (disabled.length > 0) {
+      setDisabled([]);
+    }
+
+    for (let i = 0; i < Number(options.count); i++) {
+      const index = random.int(0, items.length);
+      shown.push(items[index]);
+      items.splice(index, 1);
+      struck.push("false");
+    }
+    setAvailable(items);
+    setDisplayed(shown);
+    setDisabled(struck);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

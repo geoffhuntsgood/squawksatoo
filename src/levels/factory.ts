@@ -22,10 +22,6 @@ export const factory: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Factory Donkey BP Turn-in GB",
-      category: DK64Category.GB
-    },
-    {
       name: "Factory Diddy Block Tower Bonus GB",
       category: DK64Category.GB
     },
@@ -39,10 +35,6 @@ export const factory: DK64Level = {
     },
     {
       name: "Factory Diddy Production Spring GB",
-      category: DK64Category.GB
-    },
-    {
-      name: "Factory Diddy BP Turn-in GB",
       category: DK64Category.GB
     },
     {
@@ -62,10 +54,6 @@ export const factory: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Factory Lanky BP Turn-in GB",
-      category: DK64Category.GB
-    },
-    {
       name: "Factory Tiny Arcade Cage GB",
       category: DK64Category.GB
     },
@@ -79,10 +67,6 @@ export const factory: DK64Level = {
     },
     {
       name: "Factory Tiny Production Bonus GB",
-      category: DK64Category.GB
-    },
-    {
-      name: "Factory Tiny BP Turn-in GB",
       category: DK64Category.GB
     },
     {
@@ -102,8 +86,24 @@ export const factory: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Factory Chunky BP Turn-in GB",
-      category: DK64Category.GB
+      name: "Factory Donkey BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Factory Diddy BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Factory Lanky BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Factory Tiny BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Factory Chunky BP",
+      category: DK64Category.Blueprint
     },
     {
       name: "Factory Donkey Medal",

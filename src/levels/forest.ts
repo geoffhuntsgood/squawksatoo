@@ -21,10 +21,6 @@ export const forest: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Forest Donkey BP Turn-in GB",
-      category: DK64Category.GB
-    },
-    {
       name: "Forest Diddy Mushroom Top Bonus GB",
       category: DK64Category.GB
     },
@@ -38,10 +34,6 @@ export const forest: DK64Level = {
     },
     {
       name: "Forest Diddy Owl Race GB",
-      category: DK64Category.GB
-    },
-    {
-      name: "Forest Diddy BP Turn-in GB",
       category: DK64Category.GB
     },
     {
@@ -61,10 +53,6 @@ export const forest: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Forest Lanky BP Turn-in GB",
-      category: DK64Category.GB
-    },
-    {
       name: "Forest Tiny Mushroom Bonus GB",
       category: DK64Category.GB
     },
@@ -78,10 +66,6 @@ export const forest: DK64Level = {
     },
     {
       name: "Forest Tiny Spider Mini-boss GB",
-      category: DK64Category.GB
-    },
-    {
-      name: "Forest Tiny BP Turn-in GB",
       category: DK64Category.GB
     },
     {
@@ -101,8 +85,24 @@ export const forest: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Forest Chunky BP Turn-in GB",
-      category: DK64Category.GB
+      name: "Forest Donkey BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Forest Diddy BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Forest Lanky BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Forest Tiny BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Forest Chunky BP",
+      category: DK64Category.Blueprint
     },
     {
       name: "Forest Donkey Medal",

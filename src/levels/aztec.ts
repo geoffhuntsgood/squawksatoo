@@ -21,10 +21,6 @@ export const aztec: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Aztec Donkey BP Turn-in GB",
-      category: DK64Category.GB
-    },
-    {
       name: "Aztec Diddy Free Tiny GB",
       category: DK64Category.GB
     },
@@ -38,10 +34,6 @@ export const aztec: DK64Level = {
     },
     {
       name: "Aztec Diddy 5DT GB",
-      category: DK64Category.GB
-    },
-    {
-      name: "Aztec Diddy BP Turn-in GB",
       category: DK64Category.GB
     },
     {
@@ -61,10 +53,6 @@ export const aztec: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Aztec Lanky BP Turn-in GB",
-      category: DK64Category.GB
-    },
-    {
       name: "Aztec Tiny Klaptraps GB",
       category: DK64Category.GB
     },
@@ -78,10 +66,6 @@ export const aztec: DK64Level = {
     },
     {
       name: "Aztec Tiny 5DT GB",
-      category: DK64Category.GB
-    },
-    {
-      name: "Aztec Tiny BP Turn-in GB",
       category: DK64Category.GB
     },
     {
@@ -101,8 +85,24 @@ export const aztec: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Aztec Chunky BP Turn-in GB",
-      category: DK64Category.GB
+      name: "Aztec Donkey BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Aztec Diddy BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Aztec Lanky BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Aztec Tiny BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Aztec Chunky BP",
+      category: DK64Category.Blueprint
     },
     {
       name: "Aztec Donkey Medal",

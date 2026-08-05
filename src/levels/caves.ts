@@ -21,10 +21,6 @@ export const caves: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Caves Donkey BP Turn-in GB",
-      category: DK64Category.GB
-    },
-    {
       name: "Caves Diddy Waterfall Bonus GB",
       category: DK64Category.GB
     },
@@ -38,10 +34,6 @@ export const caves: DK64Level = {
     },
     {
       name: "Caves Diddy 5DI GB",
-      category: DK64Category.GB
-    },
-    {
-      name: "Caves Diddy BP Turn-in GB",
       category: DK64Category.GB
     },
     {
@@ -61,10 +53,6 @@ export const caves: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Caves Lanky BP Turn-in GB",
-      category: DK64Category.GB
-    },
-    {
       name: "Caves Tiny Mini Cave Bonus GB",
       category: DK64Category.GB
     },
@@ -78,10 +66,6 @@ export const caves: DK64Level = {
     },
     {
       name: "Caves Tiny 5DI GB",
-      category: DK64Category.GB
-    },
-    {
-      name: "Caves Tiny BP Turn-in GB",
       category: DK64Category.GB
     },
     {
@@ -101,8 +85,24 @@ export const caves: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Caves Chunky BP Turn-in GB",
-      category: DK64Category.GB
+      name: "Caves Donkey BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Caves Diddy BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Caves Lanky BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Caves Tiny BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Caves Chunky BP",
+      category: DK64Category.Blueprint
     },
     {
       name: "Caves Donkey Medal",

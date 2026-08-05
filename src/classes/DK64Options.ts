@@ -6,6 +6,7 @@ export class DK64Options {
     public readonly timer: boolean,
     public readonly autoRefresh: boolean,
     public readonly useKongColors: boolean,
-    public readonly items: DK64Item[]
+    public readonly items: DK64Item[],
+    public readonly seed: string
   ) {}
 }

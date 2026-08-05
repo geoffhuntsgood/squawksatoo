@@ -3,5 +3,6 @@ export * from "./DKCheckbox";
 export * from "./DKItemRow";
 export * from "./DKMultiSelect";
 export * from "./DKSelect";
+export * from "./DKTextBox";
 export * from "./DKTimer";
 export * from "./DKTooltip";

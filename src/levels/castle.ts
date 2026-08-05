@@ -21,10 +21,6 @@ export const castle: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Castle Donkey BP Turn-in GB",
-      category: DK64Category.GB
-    },
-    {
       name: "Castle Diddy Vine Sniping GB",
       category: DK64Category.GB
     },
@@ -38,10 +34,6 @@ export const castle: DK64Level = {
     },
     {
       name: "Castle Diddy Tower Bonus GB",
-      category: DK64Category.GB
-    },
-    {
-      name: "Castle Diddy BP Turn-in GB",
       category: DK64Category.GB
     },
     {
@@ -61,10 +53,6 @@ export const castle: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Castle Lanky BP Turn-in GB",
-      category: DK64Category.GB
-    },
-    {
       name: "Castle Tiny Twirl Bonus GB",
       category: DK64Category.GB
     },
@@ -78,10 +66,6 @@ export const castle: DK64Level = {
     },
     {
       name: "Castle Tiny Car Race GB",
-      category: DK64Category.GB
-    },
-    {
-      name: "Castle Tiny BP Turn-in GB",
       category: DK64Category.GB
     },
     {
@@ -101,8 +85,24 @@ export const castle: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Castle Chunky BP Turn-in GB",
-      category: DK64Category.GB
+      name: "Castle Donkey BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Castle Diddy BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Castle Lanky BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Castle Tiny BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Castle Chunky BP",
+      category: DK64Category.Blueprint
     },
     {
       name: "Castle Donkey Medal",

@@ -2,7 +2,7 @@ import { Box, Grid } from "@mui/material";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import { DKBBanana, DKBOptions } from "../classes";
 import { DKBCategory, LayerName } from "../enums";
-import { DKCheckbox, DKMultiSelect, DKSelect } from "../inputs";
+import { DKCheckbox, DKMultiSelect, DKSelect, DKTextBox } from "../inputs";
 import {
   getBananasForCategories,
   getCategoriesForLayer
@@ -17,9 +17,10 @@ export const DKBConfig = ({
 }) => {
   const [config, setConfig] = useState({
     count: "1",
-    timer: false,
+    timer: true,
     autoRefresh: true,
-    recycle: false
+    recycle: false,
+    seed: ""
   });
 
   const [layer, setLayer] = useState<string>(LayerName.Lagoon);
@@ -81,12 +82,19 @@ export const DKBConfig = ({
             selectItems={cats}
           />
           <DKSelect
-            label="How many at a time?"
+            label="How many at once?"
             value={config.count}
             handleChange={(val) =>
               setConfig({ ...config, count: val as string })
             }
             selectItems={getCount()}
+          />
+          <DKTextBox
+            label="Seed"
+            value={config.seed}
+            handleChange={(val) =>
+              setConfig({ ...config, seed: val as string })
+            }
           />
         </Box>
       </Grid>

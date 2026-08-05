@@ -21,10 +21,6 @@ export const japes: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Japes Donkey BP Turn-in GB",
-      category: DK64Category.GB
-    },
-    {
       name: "Japes Diddy Caged GB",
       category: DK64Category.GB
     },
@@ -38,10 +34,6 @@ export const japes: DK64Level = {
     },
     {
       name: "Japes Diddy Minecart GB",
-      category: DK64Category.GB
-    },
-    {
-      name: "Japes Diddy BP Turn-in GB",
       category: DK64Category.GB
     },
     {
@@ -61,10 +53,6 @@ export const japes: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Japes Lanky BP Turn-in GB",
-      category: DK64Category.GB
-    },
-    {
       name: "Japes Tiny Caged GB",
       category: DK64Category.GB
     },
@@ -78,10 +66,6 @@ export const japes: DK64Level = {
     },
     {
       name: "Japes Tiny Beehive GB",
-      category: DK64Category.GB
-    },
-    {
-      name: "Japes Tiny BP Turn-in GB",
       category: DK64Category.GB
     },
     {
@@ -101,8 +85,24 @@ export const japes: DK64Level = {
       category: DK64Category.GB
     },
     {
-      name: "Japes Chunky BP Turn-in GB",
-      category: DK64Category.GB
+      name: "Japes Donkey BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Japes Diddy BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Japes Lanky BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Japes Tiny BP",
+      category: DK64Category.Blueprint
+    },
+    {
+      name: "Japes Chunky BP",
+      category: DK64Category.Blueprint
     },
     {
       name: "Japes Donkey Medal",

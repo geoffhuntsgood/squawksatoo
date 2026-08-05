@@ -147,6 +147,27 @@ export const theme = createTheme({
         }
       }
     },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          padding: "10px 0",
+          width: "100%",
+          ".MuiOutlinedInput-root": {
+            height: "4rem",
+            fontSize: "2rem",
+            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+              borderColor: focused
+            }
+          },
+          ".MuiOutlinedInput-notchedOutline": {
+            border: `2px solid ${outlined}`
+          },
+          "&:hover .MuiOutlinedInput-notchedOutline": {
+            borderColor: focused
+          }
+        }
+      }
+    },
     MuiTooltip: {
       styleOverrides: {
         tooltip: {
