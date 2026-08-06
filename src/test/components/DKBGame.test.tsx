@@ -14,6 +14,7 @@ describe("DKBGame tests", () => {
     timer: boolean,
     autoRefresh: boolean,
     recycle: boolean,
+    seed: string,
     bananas: DKBBanana[]
   ) => {
     return await render(
@@ -23,6 +24,7 @@ describe("DKBGame tests", () => {
           timer,
           autoRefresh,
           recycle,
+          seed,
           bananas
         }}
         setOptions={setOptionsMock}
@@ -33,7 +35,7 @@ describe("DKBGame tests", () => {
 
   test("Check initial render", async () => {
     expect(
-      (await getScreen("1", true, false, true, freezer.bananas)).getByText(
+      (await getScreen("1", true, false, true, "", freezer.bananas)).getByText(
         "Go get 'em!"
       )
     ).toBeVisible();

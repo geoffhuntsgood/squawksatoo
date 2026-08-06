@@ -25,7 +25,7 @@ describe("Class instantiation sanity checks", () => {
   });
 
   test("DK64Options check", () => {
-    expect(new DK64Options("2", false, false, false, []).autoRefresh).toBe(
+    expect(new DK64Options("2", false, false, false, [], "").autoRefresh).toBe(
       false
     );
   });
@@ -43,6 +43,6 @@ describe("Class instantiation sanity checks", () => {
   });
 
   test("DKBOptions check", () => {
-    expect(new DKBOptions("3", true, false, true, []).timer).toBe(true);
+    expect(new DKBOptions("3", true, false, true, [], "").timer).toBe(true);
   });
 });

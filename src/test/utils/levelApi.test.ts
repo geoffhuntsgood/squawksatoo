@@ -30,15 +30,15 @@ describe("levelApi tests", () => {
 
   describe("getCategoriesForLevel tests", () => {
     const expected = {
-      [LevelName.All]: 9,
-      [LevelName.Isles]: 5,
-      [LevelName.Japes]: 7,
-      [LevelName.Aztec]: 7,
-      [LevelName.Factory]: 8,
-      [LevelName.Galleon]: 7,
-      [LevelName.Forest]: 7,
-      [LevelName.Caves]: 7,
-      [LevelName.Castle]: 7,
+      [LevelName.All]: 10,
+      [LevelName.Isles]: 6,
+      [LevelName.Japes]: 8,
+      [LevelName.Aztec]: 8,
+      [LevelName.Factory]: 9,
+      [LevelName.Galleon]: 8,
+      [LevelName.Forest]: 8,
+      [LevelName.Caves]: 8,
+      [LevelName.Castle]: 8,
       [LevelName.Helm]: 4
     };
 
@@ -65,7 +65,7 @@ describe("levelApi tests", () => {
     test("Categories: 1, Hell Mode: No", () => {
       expect(
         getItemsForCategories(LevelName.Factory, [DK64Category.GB], false)
-      ).toHaveLength(24);
+      ).toHaveLength(19);
     });
 
     test("Categories: 2, Hell Mode: No", () => {

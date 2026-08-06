@@ -9,20 +9,22 @@ describe("DK64Game tests", () => {
   const setOptionsMock = vi.fn();
   const setStartMock = vi.fn();
 
-  const getScreen = async (
+  const getScreen = (
     count: string,
     timer: boolean,
     autoRefresh: boolean,
     useKongColors: boolean,
+    seed: string,
     items: DK64Item[]
   ) => {
-    return await render(
+    return render(
       <DK64Game
         options={{
           count,
           timer,
           autoRefresh,
           useKongColors,
+          seed,
           items
         }}
         setOptions={setOptionsMock}
@@ -33,7 +35,7 @@ describe("DK64Game tests", () => {
 
   test("Check initial render", async () => {
     expect(
-      (await getScreen("1", true, false, false, japes.items)).getByText(
+      (await getScreen("1", true, false, false, "", japes.items)).getByText(
         "Go get 'em!"
       )
     ).toBeVisible();
