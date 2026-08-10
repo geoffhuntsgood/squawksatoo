@@ -12,7 +12,9 @@ describe("DK64Game tests", () => {
     const screen = await render(
       <DK64Game
         options={{
-          count: "5",
+          count: 5,
+          dkbTotal: 10,
+          dk64Total: 10,
           seed: "Seed",
           timer: true,
           autoRefresh: false,
