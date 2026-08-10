@@ -6,8 +6,8 @@ describe("DKItemRow tests", () => {
   const successMock = vi.fn();
   const failureMock = vi.fn();
 
-  const getScreen = async (disabled: boolean, failure: boolean = false) => {
-    return await render(
+  const getScreen = (disabled: boolean, failure: boolean = false) => {
+    return render(
       <DKItemRow
         name="Test Row"
         disabled={disabled}
@@ -26,7 +26,9 @@ describe("DKItemRow tests", () => {
 
   test("Check disabled style", async () => {
     const row = (await getScreen(true)).getByText("Test Row");
-    expect(row).toHaveStyle({ textDecoration: "line-through" });
+    expect(row).toHaveStyle({
+      cursor: "not-allowed"
+    });
   });
 
   test("Check success action", async () => {

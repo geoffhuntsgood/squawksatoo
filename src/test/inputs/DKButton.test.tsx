@@ -5,8 +5,8 @@ import { DKButton } from "../../inputs";
 describe("DKButton tests", () => {
   const clickMock = vi.fn();
 
-  const getScreen = async () => {
-    return await render(<DKButton label="Test Button" handleClick={clickMock}/>);
+  const getScreen = () => {
+    return render(<DKButton label="Test Button" handleClick={clickMock}/>);
   };
 
   test("Check initial render", async () => {

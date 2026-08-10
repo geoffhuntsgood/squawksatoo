@@ -72,92 +72,40 @@ export const getItemsForCategories = (
 };
 
 export const getKongColorInfo = (name: string, useKongColors: boolean) => {
+  let label = name;
+  let color = "black";
+
   if (!useKongColors) {
     return {
-      label: name,
-      color: "black"
+      label,
+      color
     };
   }
 
-  if (
-    name.startsWith("Japes Donkey") ||
-    name.startsWith("Aztec Donkey") ||
-    name.startsWith("Factory Donkey") ||
-    name.startsWith("Galleon Donkey") ||
-    name.startsWith("Forest Donkey") ||
-    name.startsWith("Caves Donkey") ||
-    name.startsWith("Castle Donkey") ||
-    name.startsWith("Helm Donkey") ||
-    name.startsWith("Isles Donkey")
-  ) {
-    return {
-      label: name.replace(" Donkey", ""),
-      color: kongColors.Donkey
-    };
-  } else if (
-    name.startsWith("Japes Diddy") ||
-    name.startsWith("Aztec Diddy") ||
-    name.startsWith("Factory Diddy") ||
-    name.startsWith("Galleon Diddy") ||
-    name.startsWith("Forest Diddy") ||
-    name.startsWith("Caves Diddy") ||
-    name.startsWith("Castle Diddy") ||
-    name.startsWith("Helm Diddy") ||
-    name.startsWith("Isles Diddy")
-  ) {
-    return {
-      label: name.replace(" Diddy", ""),
-      color: kongColors.Diddy
-    };
-  } else if (
-    name.startsWith("Japes Lanky") ||
-    name.startsWith("Aztec Lanky") ||
-    name.startsWith("Factory Lanky") ||
-    name.startsWith("Galleon Lanky") ||
-    name.startsWith("Forest Lanky") ||
-    name.startsWith("Caves Lanky") ||
-    name.startsWith("Castle Lanky") ||
-    name.startsWith("Helm Lanky") ||
-    name.startsWith("Isles Lanky")
-  ) {
-    return {
-      label: name.replace(" Lanky", ""),
-      color: kongColors.Lanky
-    };
-  } else if (
-    name.startsWith("Japes Tiny") ||
-    name.startsWith("Aztec Tiny") ||
-    name.startsWith("Factory Tiny") ||
-    name.startsWith("Galleon Tiny") ||
-    name.startsWith("Forest Tiny") ||
-    name.startsWith("Caves Tiny") ||
-    name.startsWith("Castle Tiny") ||
-    name.startsWith("Helm Tiny") ||
-    name.startsWith("Isles Tiny")
-  ) {
-    return {
-      label: name.replace(" Tiny", ""),
-      color: kongColors.Tiny
-    };
-  } else if (
-    name.startsWith("Japes Chunky") ||
-    name.startsWith("Aztec Chunky") ||
-    name.startsWith("Factory Chunky") ||
-    name.startsWith("Galleon Chunky") ||
-    name.startsWith("Forest Chunky") ||
-    name.startsWith("Caves Chunky") ||
-    name.startsWith("Castle Chunky") ||
-    name.startsWith("Helm Chunky") ||
-    name.startsWith("Isles Chunky")
-  ) {
-    return {
-      label: name.replace(" Chunky", ""),
-      color: kongColors.Chunky
-    };
-  } else {
-    return {
-      label: name,
-      color: "black"
-    };
-  }
+  const levels = [
+    "Japes",
+    "Aztec",
+    "Factory",
+    "Galleon",
+    "Forest",
+    "Caves",
+    "Castle",
+    "Helm",
+    "Isles"
+  ];
+  const kongs = ["Donkey", "Diddy", "Lanky", "Tiny", "Chunky"];
+
+  levels.some((level: string) => {
+    kongs.some((kong: string) => {
+      if (name.startsWith(`${level} ${kong}`)) {
+        label = name.replace(` ${kong}`, "");
+        color = kongColors[kong as keyof typeof kongColors];
+      }
+    });
+  });
+
+  return {
+    label,
+    color
+  };
 };

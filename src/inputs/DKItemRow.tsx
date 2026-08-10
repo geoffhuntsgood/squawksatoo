@@ -40,7 +40,15 @@ export const DKItemRow = ({
         <IconButton sx={styles.check} onClick={onSuccess} disabled={disabled}>
           <CheckCircle />
         </IconButton>
-        {name}
+        <span
+          style={{
+            userSelect: "none",
+            cursor: !disabled ? "pointer" : "not-allowed"
+          }}
+          onClick={!disabled ? onSuccess : () => {}}
+        >
+          {name}
+        </span>
         {onFailure && (
           <IconButton
             sx={styles.cancel}

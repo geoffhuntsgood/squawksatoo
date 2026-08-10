@@ -1,226 +1,145 @@
-import { Cancel, CheckCircle } from "@mui/icons-material";
-import { Grid, IconButton, Typography } from "@mui/material";
+import { Grid } from "@mui/material";
 import random from "random";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
-import { useReward } from "react-rewards";
 import { useStopwatch } from "react-timer-hook";
-import type { DKBBanana, DKBOptions } from "../classes";
-import { DKButton, DKItemRow, DKTimer } from "../inputs";
+import type { DKBBanana, GameOptions } from "../classes";
+import { DKButton, DKItemRow } from "../inputs";
+import { DKHR } from "./DKHR";
+import { GameHeader } from "./GameHeader";
 
 export const DKBGame = ({
   options,
   setOptions,
   setStart
 }: {
-  options: DKBOptions;
-  setOptions: Dispatch<SetStateAction<DKBOptions | null>>;
+  options: GameOptions;
+  setOptions: Dispatch<SetStateAction<GameOptions | null>>;
   setStart: Dispatch<SetStateAction<boolean>>;
 }) => {
-  if (options.seed.length > 0) {
-    random.use(options.seed);
-  }
-
-  const [header, setHeader] = useState("");
-  const [available, setAvailable] = useState<DKBBanana[]>([]);
+  const [available, setAvailable] = useState<DKBBanana[]>(options.bananas);
   const [displayed, setDisplayed] = useState<DKBBanana[]>([]);
-  const [successCount, setSuccessCount] = useState(0);
-  const [failureCount, setFailureCount] = useState(0);
-  const [disabled, setDisabled] = useState<string[]>([]);
+  const [completed, setCompleted] = useState<DKBBanana[]>([]);
+  const [total, setTotal] = useState(0);
+  const [rightCount, setRightCount] = useState(0);
+  const [wrongCount, setWrongCount] = useState(0);
 
   const stopwatch = useStopwatch({ autoStart: true, interval: 20 });
 
-  const rewardSettings = {
-    lifetime: 5000,
-    spread: 180,
-    elementCount: 50,
-    zIndex: 9999,
-    emoji: ["🍌"]
-  };
+  const replaceBanana = (displayIndex: number, success: boolean) => {
+    const notCompleted = [...available];
+    const onDeck = [...displayed];
+    const previous = onDeck[displayIndex];
+    const selected = random.choice(notCompleted);
 
-  const { reward: reward1 } = useReward("finished", "emoji", rewardSettings);
-  const { reward: reward2 } = useReward("done", "emoji", rewardSettings);
-
-  const markDisabled = (displayIndex: number, set: string) => {
-    const struck = [...disabled];
-    struck[displayIndex] = set;
-    setDisabled(struck);
-  };
-
-  const replaceOne = (displayIndex: number, success: boolean) => {
-    const items = [...available];
-    const shown = [...displayed];
-    const origin = shown[displayIndex];
-
-    if (items.length > 0) {
-      const index = random.int(0, items.length);
-      shown.splice(displayIndex, 1, items[index]);
+    if (selected) {
+      onDeck.splice(displayIndex, 1, selected);
+      const index = notCompleted.indexOf(selected);
 
       if (options.recycle) {
         if (success) {
-          items.splice(index, 1);
+          notCompleted.splice(index, 1);
         } else {
-          items.splice(index, 1, origin);
+          notCompleted.splice(index, 1, previous);
         }
       } else {
-        items.splice(index, 1);
+        notCompleted.splice(index, 1);
       }
 
-      markDisabled(displayIndex, "false");
-      setAvailable(items);
-      setDisplayed(shown);
-    } else {
-      markDisabled(displayIndex, "true");
+      setAvailable(notCompleted);
+      setDisplayed(onDeck);
     }
   };
 
-  const onComplete = (index: number, success: boolean) => {
+  const onComplete = (banana: DKBBanana, index: number, success: boolean) => {
+    if (!options.recycle || (options.recycle && success)) {
+      const done = [...completed];
+      done.push(banana);
+      setCompleted(done);
+    }
+
     if (success) {
-      setSuccessCount(successCount + 1);
+      setRightCount(rightCount + 1);
     } else {
-      setFailureCount(failureCount + 1);
+      setWrongCount(wrongCount + 1);
     }
+
     if (options.autoRefresh) {
-      replaceOne(index, success);
-    } else {
-      markDisabled(index, "true");
+      replaceBanana(index, success);
     }
   };
-
-  const onFailure = (index: number) => {
-    onComplete(index, false);
-  };
-
-  const getHR = () => (
-    <Grid size={12}>
-      <hr style={{ border: "2px solid darkgreen" }} />
-    </Grid>
-  );
 
   useEffect(() => {
-    const items = options.bananas;
-    const shown = [];
-    const struck = [];
-
-    if (disabled.length > 0) {
-      setDisabled([]);
+    if (options.seed) {
+      random.use(options.seed);
     }
+
+    if (options.autoRefresh) {
+      setTotal(options.bananas.length);
+    } else {
+      setTotal(Number(options.count));
+    }
+
+    const notCompleted = [...available];
+    const onDeck = [];
 
     for (let i = 0; i < Number(options.count); i++) {
-      const index = random.int(0, items.length);
-      shown.push(items[index]);
-      items.splice(index, 1);
-      struck.push("false");
+      const selected = random.choice(notCompleted);
+
+      if (selected) {
+        notCompleted.splice(notCompleted.indexOf(selected), 1);
+        onDeck.push(selected);
+      }
     }
-    setAvailable(items);
-    setDisplayed(shown);
-    setDisabled(struck);
+
+    setAvailable(notCompleted);
+    setDisplayed(onDeck);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    if (disabled.length > 0) {
-      if (disabled.every((item) => item === "true")) {
-        setHeader("GG!");
-        stopwatch.pause();
-        reward1();
-        reward2();
-      } else {
-        if (options.autoRefresh) {
-          setHeader(
-            `${available.length === 0 ? "None" : available.length} left`
-          );
-        } else {
-          setHeader("Go get 'em!");
-        }
-      }
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [disabled]);
-
-  const styles = {
-    icon: {
-      color: "white"
-    },
-    wrong: {
-      animation:
-        failureCount > 0
-          ? "wrongCounter 2s infinite"
-          : "rightCounter 2s infinite"
-    },
-    correct: {
-      animation: "rightCounter 2s infinite"
-    }
-  };
-
   return (
     <Grid container spacing={1}>
-      <Grid size={options.timer ? 4 : 6}>
-        <Typography color="textPrimary" variant="h1">
-          {header}
-        </Typography>
-        <div id="finished"></div>
-      </Grid>
-      <Grid size={options.timer ? 2 : 3}>
-        <Typography
-          color="textPrimary"
-          variant="h1"
-          sx={!stopwatch.isRunning ? styles.correct : {}}
-        >
-          <IconButton sx={!stopwatch.isRunning ? styles.correct : styles.icon}>
-            <CheckCircle />
-          </IconButton>
-          {successCount}
-        </Typography>
-      </Grid>
-      <Grid size={options.timer ? 2 : 3}>
-        <Typography
-          color="textPrimary"
-          variant="h1"
-          sx={!stopwatch.isRunning ? styles.wrong : {}}
-        >
-          <IconButton sx={!stopwatch.isRunning ? styles.wrong : styles.icon}>
-            <Cancel />
-          </IconButton>
-          {failureCount}
-        </Typography>
-      </Grid>
-      <Grid size={4}>
-        {options.timer && <DKTimer stopwatch={stopwatch} />}
-        <div id="done" style={{ float: "right" }}></div>
-      </Grid>
+      <GameHeader
+        timer={options.timer}
+        stopwatch={stopwatch}
+        total={total}
+        completed={rightCount}
+        autoRefresh={options.autoRefresh}
+        failures={wrongCount}
+        recycle={options.recycle}
+      />
 
-      {getHR()}
+      <DKHR />
 
       {displayed.length > 0 &&
-        displayed.map((item: DKBBanana, index: number) => {
-          return (
-            <DKItemRow
-              key={index}
-              name={item.name}
-              bgColor="#072207"
-              onSuccess={() => onComplete(index, true)}
-              onFailure={() => onFailure(index)}
-              disabled={disabled[index] === "true"}
-            />
-          );
-        })}
+        displayed.map((banana: DKBBanana, index: number) => (
+          <DKItemRow
+            key={index}
+            name={banana.name}
+            bgColor="#072207"
+            disabled={completed.indexOf(banana) !== -1}
+            onSuccess={() => onComplete(banana, index, true)}
+            onFailure={() => onComplete(banana, index, false)}
+          />
+        ))}
 
-      {getHR()}
+      <DKHR />
 
-      {options.timer && !disabled.every((item) => item === "true") && (
-        <DKButton
-          label={stopwatch.isRunning ? "Pause" : "Resume"}
-          handleClick={() =>
-            stopwatch.isRunning ? stopwatch.pause() : stopwatch.start()
-          }
-        />
-      )}
+      {options.timer &&
+        ((!options.recycle && rightCount + wrongCount < total) ||
+          (options.recycle && rightCount < total)) && (
+          <DKButton
+            label={stopwatch.isRunning ? "Pause" : "Resume"}
+            handleClick={() =>
+              stopwatch.isRunning ? stopwatch.pause() : stopwatch.start()
+            }
+          />
+        )}
+
       <DKButton
         label="Reconfigure"
         handleClick={() => {
           setOptions(null);
           setStart(false);
-          stopwatch.reset();
         }}
       />
     </Grid>

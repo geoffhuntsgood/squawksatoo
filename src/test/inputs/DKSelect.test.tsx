@@ -5,8 +5,8 @@ import { DKSelect } from "../../inputs";
 describe("DKSelect tests", () => {
   const selectMock = vi.fn();
 
-  const getScreen = async () => {
-    return await render(
+  const getScreen = () => {
+    return render(
       <DKSelect
         label="Test Select"
         value="0"

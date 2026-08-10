@@ -1,178 +1,110 @@
-import { CheckCircle } from "@mui/icons-material";
-import { Grid, IconButton, Typography } from "@mui/material";
+import { Grid } from "@mui/material";
 import random from "random";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
-import { useReward } from "react-rewards";
 import { useStopwatch } from "react-timer-hook";
-import type { DK64Item, DK64Options } from "../classes";
-import { DKButton, DKItemRow, DKTimer } from "../inputs";
+import type { DK64Item, GameOptions } from "../classes";
+import { DKButton, DKItemRow } from "../inputs";
 import { getKongColorInfo } from "../utils/levelApi";
+import { DKHR } from "./DKHR";
+import { GameHeader } from "./GameHeader";
 
 export const DK64Game = ({
   options,
   setOptions,
   setStart
 }: {
-  options: DK64Options;
-  setOptions: Dispatch<SetStateAction<DK64Options | null>>;
+  options: GameOptions;
+  setOptions: Dispatch<SetStateAction<GameOptions | null>>;
   setStart: Dispatch<SetStateAction<boolean>>;
 }) => {
-  if (options.seed.length > 0) {
-    random.use(options.seed);
-  }
-
-  const [header, setHeader] = useState("");
-  const [available, setAvailable] = useState<DK64Item[]>([]);
+  const [available, setAvailable] = useState<DK64Item[]>(options.items);
   const [displayed, setDisplayed] = useState<DK64Item[]>([]);
-  const [doneCount, setDoneCount] = useState(0);
-  const [disabled, setDisabled] = useState<string[]>([]);
+  const [completed, setCompleted] = useState<DK64Item[]>([]);
+  const [total, setTotal] = useState(0);
 
   const stopwatch = useStopwatch({ autoStart: true, interval: 20 });
 
-  const rewardSettings = {
-    lifetime: 5000,
-    spread: 180,
-    elementCount: 50,
-    zIndex: 9999,
-    emoji: ["🍌"]
-  };
+  const replaceItem = (displayIndex: number) => {
+    const notCompleted = [...available];
+    const onDeck = [...displayed];
+    const selected = random.choice(notCompleted);
 
-  const { reward: reward1 } = useReward("finished", "emoji", rewardSettings);
-  const { reward: reward2 } = useReward("done", "emoji", rewardSettings);
+    if (selected) {
+      notCompleted.splice(notCompleted.indexOf(selected), 1);
+      onDeck.splice(displayIndex, 1, selected);
 
-  const markDisabled = (displayIndex: number, set: string) => {
-    const struck = [...disabled];
-    struck[displayIndex] = set;
-    setDisabled(struck);
-  };
-
-  const replaceOne = (displayIndex: number) => {
-    const items = [...available];
-    const shown = [...displayed];
-
-    if (items.length > 0) {
-      const index = random.int(0, items.length);
-      shown.splice(displayIndex, 1, items[index]);
-      items.splice(index, 1);
-
-      markDisabled(displayIndex, "false");
-      setAvailable(items);
-      setDisplayed(shown);
-    } else {
-      markDisabled(displayIndex, "true");
+      setAvailable(notCompleted);
+      setDisplayed(onDeck);
     }
   };
 
-  const onComplete = (index: number) => {
-    setDoneCount(doneCount + 1);
+  const onComplete = (item: DK64Item, index: number) => {
+    const done = [...completed];
+    done.push(item);
+    setCompleted(done);
+
     if (options.autoRefresh) {
-      replaceOne(index);
-    } else {
-      markDisabled(index, "true");
+      replaceItem(index);
     }
   };
-
-  const getHR = () => (
-    <Grid size={12}>
-      <hr style={{ border: "2px solid darkgreen" }} />
-    </Grid>
-  );
 
   useEffect(() => {
-    const items: DK64Item[] = options.items;
-    const shown: DK64Item[] = [];
-    const struck: string[] = [];
-
-    if (disabled.length > 0) {
-      setDisabled([]);
+    if (options.seed) {
+      random.use(options.seed);
     }
+
+    if (options.autoRefresh) {
+      setTotal(options.items.length);
+    } else {
+      setTotal(Number(options.count));
+    }
+
+    const notCompleted = [...available];
+    const onDeck = [];
 
     for (let i = 0; i < Number(options.count); i++) {
-      const index = random.int(0, items.length);
-      shown.push(items[index]);
-      items.splice(index, 1);
-      struck.push("false");
+      const selected = random.choice(notCompleted);
+
+      if (selected) {
+        notCompleted.splice(notCompleted.indexOf(selected), 1);
+        onDeck.push(selected);
+      }
     }
-    setAvailable(items);
-    setDisplayed(shown);
-    setDisabled(struck);
+
+    setAvailable(notCompleted);
+    setDisplayed(onDeck);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    if (disabled.length > 0) {
-      if (disabled.every((item) => item === "true")) {
-        setHeader("GG!");
-        stopwatch.pause();
-        reward1();
-        reward2();
-      } else {
-        if (options.autoRefresh) {
-          setHeader(
-            `${available.length === 0 ? "None" : available.length} left`
-          );
-        } else {
-          setHeader("Go get 'em!");
-        }
-      }
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [disabled]);
-
-  const styles = {
-    icon: {
-      color: "white"
-    },
-    correct: {
-      animation: "rightCounter 2s infinite"
-    }
-  };
-
   return (
     <Grid container spacing={1}>
-      <Grid size={options.timer ? 4 : 6}>
-        <Typography color="textPrimary" variant="h1">
-          {header}
-        </Typography>
-        <div id="finished" />
-      </Grid>
-      <Grid size={options.timer ? 4 : 6}>
-        <Typography
-          color="textPrimary"
-          variant="h1"
-          sx={!stopwatch.isRunning ? styles.correct : {}}
-        >
-          <IconButton sx={!stopwatch.isRunning ? styles.correct : styles.icon}>
-            <CheckCircle />
-          </IconButton>
-          {doneCount} Complete
-        </Typography>
-      </Grid>
-      <Grid size={4}>
-        {options.timer && <DKTimer stopwatch={stopwatch} />}
-        <div id="done" style={{ float: "right" }} />
-      </Grid>
+      <GameHeader
+        timer={options.timer}
+        stopwatch={stopwatch}
+        total={total}
+        completed={completed.length}
+        autoRefresh={options.autoRefresh}
+      />
 
-      {getHR()}
+      <DKHR />
 
       {displayed.length > 0 &&
         displayed.map((item: DK64Item, index: number) => {
           const kongInfo = getKongColorInfo(item.name, options.useKongColors);
-
           return (
             <DKItemRow
               key={index}
               name={kongInfo.label}
               bgColor={options.useKongColors ? kongInfo.color : "#072207"}
-              disabled={disabled[index] === "true"}
-              onSuccess={() => onComplete(index)}
+              disabled={completed.indexOf(item) !== -1}
+              onSuccess={() => onComplete(item, index)}
             />
           );
         })}
 
-      {getHR()}
+      <DKHR />
 
-      {options.timer && !disabled.every((item) => item === "true") && (
+      {options.timer && completed.length < total && (
         <DKButton
           label={stopwatch.isRunning ? "Pause" : "Resume"}
           handleClick={() =>
@@ -186,7 +118,6 @@ export const DK64Game = ({
         handleClick={() => {
           setOptions(null);
           setStart(false);
-          stopwatch.reset();
         }}
       />
     </Grid>

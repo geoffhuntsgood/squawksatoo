@@ -3,8 +3,10 @@ import { DK64Category, LevelName } from "../../enums";
 import {
   getCategoriesForLevel,
   getItemsForCategories,
-  getItemsForLevel
+  getItemsForLevel,
+  getKongColorInfo
 } from "../../utils/levelApi";
+import { kongColors } from "../../utils/theme";
 
 describe("levelApi tests", () => {
   describe("getItemsForLevel tests", () => {
@@ -76,6 +78,44 @@ describe("levelApi tests", () => {
           false
         )
       ).toHaveLength(3);
+    });
+  });
+
+  describe("getKongColorInfo tests", () => {
+    test("useKongColors: No", () => {
+      const info = getKongColorInfo("Helm Donkey Medal", false);
+      expect(info.label).toBe("Helm Donkey Medal");
+      expect(info.color).toBe("black");
+    });
+
+    test("Japes Donkey", () => {
+      const info = getKongColorInfo("Japes Donkey GB", true);
+      expect(info.label).toBe("Japes GB");
+      expect(info.color).toBe(kongColors.Donkey);
+    });
+
+    test("Aztec Diddy", () => {
+      const info = getKongColorInfo("Aztec Diddy Doin' Stuff", true);
+      expect(info.label).toBe("Aztec Doin' Stuff");
+      expect(info.color).toBe(kongColors.Diddy);
+    });
+
+    test("Factory Lanky", () => {
+      const info = getKongColorInfo("Factory Lanky Collectable of Doom", true);
+      expect(info.label).toBe("Factory Collectable of Doom");
+      expect(info.color).toBe(kongColors.Lanky);
+    });
+
+    test("Galleon Tiny", () => {
+      const info = getKongColorInfo("Galleon Tiny Crown...?", true);
+      expect(info.label).toBe("Galleon Crown...?");
+      expect(info.color).toBe(kongColors.Tiny);
+    });
+
+    test("Forest Chunky", () => {
+      const info = getKongColorInfo("Forest Chunky uhhh", true);
+      expect(info.label).toBe("Forest uhhh");
+      expect(info.color).toBe(kongColors.Chunky);
     });
   });
 });

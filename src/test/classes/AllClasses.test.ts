@@ -2,10 +2,9 @@ import { describe, expect, test } from "vitest";
 import {
   DK64Item,
   DK64Level,
-  DK64Options,
   DKBBanana,
   DKBLayer,
-  DKBOptions
+  GameOptions
 } from "../../classes";
 import { DK64Category, DKBCategory, LayerName, LevelName } from "../../enums";
 
@@ -24,12 +23,6 @@ describe("Class instantiation sanity checks", () => {
     ).toHaveLength(1);
   });
 
-  test("DK64Options check", () => {
-    expect(new DK64Options("2", false, false, false, [], "").autoRefresh).toBe(
-      false
-    );
-  });
-
   test("DKBBanana check", () => {
     expect(new DKBBanana(1, "Banana", DKBCategory.Battle).name).toBe("Banana");
   });
@@ -42,7 +35,9 @@ describe("Class instantiation sanity checks", () => {
     ).toHaveLength(1);
   });
 
-  test("DKBOptions check", () => {
-    expect(new DKBOptions("3", true, false, true, [], "").timer).toBe(true);
+  test("GameOptions check", () => {
+    expect(
+      new GameOptions("3", "12345", true, false, true, false, [], []).timer
+    ).toBe(true);
   });
 });

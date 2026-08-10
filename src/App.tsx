@@ -1,15 +1,14 @@
 import { Box, Card, Tab, Tabs, ThemeProvider, Typography } from "@mui/material";
 import { useState } from "react";
-import { DK64Options, DKBOptions } from "./classes";
-import { DK64Config, DK64Game, DKBConfig, DKBGame } from "./components";
+import { GameOptions } from "./classes";
+import { DK64Game, DKBGame, GameConfig } from "./components";
 import { DKButton } from "./inputs";
 import { theme } from "./utils/theme";
 import type { GameType } from "./utils/types";
 
 const App = () => {
   const [game, setGame] = useState<GameType>("DKB");
-  const [dkbOptions, setDKBOptions] = useState<DKBOptions | null>(null);
-  const [dk64Options, setDK64Options] = useState<DK64Options | null>(null);
+  const [gameOptions, setGameOptions] = useState<GameOptions | null>(null);
 
   const [goLabel, setGoLabel] = useState("");
   const [start, setStart] = useState(false);
@@ -40,31 +39,30 @@ const App = () => {
             <Tab label="DK64" value="DK64" />
           </Tabs>
 
-          {game === "DKB" && (
-            <DKBConfig setOptions={setDKBOptions} setGoLabel={setGoLabel} />
-          )}
-          {game === "DK64" && (
-            <DK64Config setOptions={setDK64Options} setGoLabel={setGoLabel} />
-          )}
+          <GameConfig
+            currentGame={game}
+            setOptions={setGameOptions}
+            setGoLabel={setGoLabel}
+          />
 
           <Box sx={{ textAlign: "center" }}>
             <DKButton label={goLabel} handleClick={() => setStart(true)} />
           </Box>
         </>
       )}
-      {start && (
+      {start && gameOptions && (
         <>
-          {game === "DKB" && dkbOptions && (
+          {game === "DKB" && gameOptions.bananas.length > 0 && (
             <DKBGame
-              options={dkbOptions}
-              setOptions={setDKBOptions}
+              options={gameOptions}
+              setOptions={setGameOptions}
               setStart={setStart}
             />
           )}
-          {game === "DK64" && dk64Options && (
+          {game === "DK64" && gameOptions.items.length > 0 && (
             <DK64Game
-              options={dk64Options}
-              setOptions={setDK64Options}
+              options={gameOptions}
+              setOptions={setGameOptions}
               setStart={setStart}
             />
           )}

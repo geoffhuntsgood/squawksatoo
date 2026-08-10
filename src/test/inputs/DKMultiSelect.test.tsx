@@ -5,8 +5,8 @@ import { DKMultiSelect } from "../../inputs";
 describe("DKMultiSelect tests", () => {
   const selectMock = vi.fn();
 
-  const getScreen = async () => {
-    return await render(
+  const getScreen = () => {
+    return render(
       <DKMultiSelect
         label="Test Select"
         values={[]}

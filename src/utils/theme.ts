@@ -18,9 +18,10 @@ export const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         contained: {
+          width: "10rem",
           margin: "0 auto",
           padding: "0 1rem",
-          fontSize: "3rem",
+          fontSize: "2rem",
           color: "black",
           backgroundColor: outlined,
           borderRadius: "10px",

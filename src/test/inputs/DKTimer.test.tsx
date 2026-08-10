@@ -6,8 +6,8 @@ import { DKTimer } from "../../inputs";
 describe("DKTimer tests", async () => {
   const stopwatch = await renderHook(() => useStopwatch());
 
-  const getScreen = async () => {
-    return await render(<DKTimer stopwatch={stopwatch.result.current} />);
+  const getScreen = () => {
+    return render(<DKTimer stopwatch={stopwatch.result.current} />);
   };
 
   test("Check initial render", async () => {

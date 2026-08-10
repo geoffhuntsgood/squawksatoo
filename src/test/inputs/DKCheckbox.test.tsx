@@ -5,8 +5,8 @@ import { DKCheckbox } from "../../inputs";
 describe("DKCheckbox tests", () => {
   const checkMock = vi.fn();
 
-  const getScreen = async () => {
-    return await render(
+  const getScreen = () => {
+    return render(
       <DKCheckbox
         label="Test Checkbox"
         checked={true}

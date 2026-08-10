@@ -3,8 +3,8 @@ import { render } from "vitest-browser-react";
 import App from "../App";
 
 describe("App tests", () => {
-  const getScreen = async () => {
-    return await render(<App />);
+  const getScreen = () => {
+    return render(<App />);
   };
 
   test("Check initial render", async () => {

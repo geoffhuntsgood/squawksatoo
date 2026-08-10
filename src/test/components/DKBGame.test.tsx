@@ -1,6 +1,5 @@
 import { describe, expect, test, vi } from "vitest";
 import { render } from "vitest-browser-react";
-import type { DKBBanana } from "../../classes";
 import { DKBGame } from "../../components";
 import { freezer } from "../../layers/freezer";
 
@@ -9,35 +8,24 @@ describe("DKBGame tests", () => {
   const setOptionsMock = vi.fn();
   const setStartMock = vi.fn();
 
-  const getScreen = async (
-    count: string,
-    timer: boolean,
-    autoRefresh: boolean,
-    recycle: boolean,
-    seed: string,
-    bananas: DKBBanana[]
-  ) => {
-    return await render(
+  test("Check initial render", async () => {
+    const screen = await render(
       <DKBGame
         options={{
-          count,
-          timer,
-          autoRefresh,
-          recycle,
-          seed,
-          bananas
+          count: "5",
+          seed: "Seed",
+          timer: true,
+          autoRefresh: false,
+          recycle: false,
+          useKongColors: true,
+          bananas: freezer.bananas,
+          items: []
         }}
         setOptions={setOptionsMock}
         setStart={setStartMock}
       />
     );
-  };
 
-  test("Check initial render", async () => {
-    expect(
-      (await getScreen("1", true, false, true, "", freezer.bananas)).getByText(
-        "Go get 'em!"
-      )
-    ).toBeVisible();
+    expect(screen.getByText("Go get 'em!")).toBeVisible();
   });
 });
