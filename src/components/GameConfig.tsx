@@ -23,10 +23,12 @@ export const GameConfig = ({
   setGoLabel: Dispatch<SetStateAction<string>>;
 }) => {
   const [config, setConfig] = useState({
-    count: "1",
+    count: 1,
+    dkbTotal: 5,
+    dk64Total: 5,
     seed: "",
     timer: true,
-    autoRefresh: false,
+    autoRefresh: true,
     recycle: false,
     useKongColors: false
   });
@@ -49,12 +51,26 @@ export const GameConfig = ({
     getItemsForCategories(level as LevelName, [], hellMode)
   );
 
-  const getCount = () => {
+  const getCountRange = () => {
     const range = [];
     const totalLength = currentGame === "DKB" ? bananas.length : items.length;
     const maxAtOnce = totalLength > 5 ? 5 : totalLength;
     for (let i = 1; i <= maxAtOnce; i++) {
-      range.push(`${i}`);
+      range.push(String(i));
+    }
+    return range;
+  };
+
+  const getTotalRange = () => {
+    const range = [];
+    const total = currentGame === "DKB" ? bananas.length : items.length;
+    for (let i = 5; i <= total; i++) {
+      if (i % 5 === 0) {
+        range.push(String(i));
+      }
+    }
+    if (!range.includes(String(total))) {
+      range.push(String(total));
     }
     return range;
   };
@@ -67,16 +83,14 @@ export const GameConfig = ({
       hellMode
     );
 
-    if (bananas.length < Number(config.count)) {
-      setConfig((prev) => ({
-        ...prev,
-        count: String(bananas.length)
-      }));
-    }
+    setConfig((prev) => ({
+      ...prev,
+      dkbTotal: bananas.length,
+      count: bananas.length < prev.count ? bananas.length : prev.count
+    }));
 
     setDKBCats(getCategoriesForLayer(layer as LayerName));
     setBananas(bananas);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [layer, selectedDKBCats, includePostgame, hellMode]);
 
   useEffect(() => {
@@ -86,21 +100,19 @@ export const GameConfig = ({
       hellMode
     );
 
-    if (items.length < Number(config.count)) {
-      setConfig((prev) => ({
-        ...prev,
-        count: String(items.length)
-      }));
-    }
+    setConfig((prev) => ({
+      ...prev,
+      dk64Total: items.length,
+      count: items.length < prev.count ? items.length : prev.count
+    }));
 
     setDK64Cats(getCategoriesForLevel(level as LevelName));
     setItems(items);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [level, selectedDK64Cats, hellMode]);
 
   useEffect(() => {
     if (currentGame === "DKB" && bananas.length > 0) {
-      setGoLabel(`Get ${config.count}/${bananas.length}`);
+      setGoLabel(`Get ${config.count}/${config.dkbTotal}`);
       setOptions({
         ...config,
         bananas,
@@ -108,7 +120,7 @@ export const GameConfig = ({
       });
     }
     if (currentGame === "DK64" && items.length > 0) {
-      setGoLabel(`Get ${config.count}/${items.length}`);
+      setGoLabel(`Get ${config.count}/${config.dk64Total}`);
       setOptions({
         ...config,
         items,
@@ -160,20 +172,40 @@ export const GameConfig = ({
           )}
 
           <DKSelect
-            label="How many at once?"
-            value={config.count}
-            handleChange={(val) =>
-              setConfig({ ...config, count: val as string })
-            }
-            selectItems={getCount()}
+            mini={true}
+            label="# at once"
+            value={String(config.count)}
+            handleChange={(val) => setConfig({ ...config, count: Number(val) })}
+            selectItems={getCountRange()}
           />
+
+          {currentGame === "DKB" && (
+            <DKSelect
+              mini={true}
+              label="# total"
+              value={String(config.dkbTotal)}
+              handleChange={(val) =>
+                setConfig({ ...config, dkbTotal: Number(val) })
+              }
+              selectItems={getTotalRange()}
+            />
+          )}
+          {currentGame === "DK64" && (
+            <DKSelect
+              mini={true}
+              label="# total"
+              value={String(config.dk64Total)}
+              handleChange={(val) =>
+                setConfig({ ...config, dk64Total: Number(val) })
+              }
+              selectItems={getTotalRange()}
+            />
+          )}
 
           <DKTextBox
             label="Seed"
             value={config.seed}
-            handleChange={(val) =>
-              setConfig({ ...config, seed: val as string })
-            }
+            handleChange={(val) => setConfig({ ...config, seed: String(val) })}
           />
         </Box>
       </Grid>
@@ -184,7 +216,7 @@ export const GameConfig = ({
             label="Timer"
             checked={config.timer}
             handleChange={(val) =>
-              setConfig({ ...config, timer: val as boolean })
+              setConfig({ ...config, timer: Boolean(val) })
             }
           />
 
@@ -192,7 +224,7 @@ export const GameConfig = ({
             label="Auto-refresh"
             checked={config.autoRefresh}
             handleChange={(val) =>
-              setConfig({ ...config, autoRefresh: val as boolean })
+              setConfig({ ...config, autoRefresh: Boolean(val) })
             }
             helpText={`Continuously adds new goals until you run out (currently ${currentGame === "DKB" ? bananas.length : items.length}).`}
           />
@@ -202,7 +234,7 @@ export const GameConfig = ({
               label="Recycle wrong bananas"
               checked={config.recycle}
               handleChange={(val) =>
-                setConfig({ ...config, recycle: val as boolean })
+                setConfig({ ...config, recycle: Boolean(val) })
               }
               helpText="Adds a wrong-marked banana back to the pool so that the correct one can be obtained later."
             />
@@ -213,7 +245,7 @@ export const GameConfig = ({
               label="Use Kong colors"
               checked={config.useKongColors}
               handleChange={(val) =>
-                setConfig({ ...config, useKongColors: val as boolean })
+                setConfig({ ...config, useKongColors: Boolean(val) })
               }
               helpText="Shows Kong colors instead of their names."
             />

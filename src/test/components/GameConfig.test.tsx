@@ -33,12 +33,11 @@ describe("GameConfig tests", () => {
       await screen.getByText("5").click();
       await userEvent.type(screen.getByText("Seed").first(), "12345");
       await screen.getByText("Timer").click();
-      await screen.getByText("Auto-refresh").click();
       await screen.getByText("Recycle wrong bananas").click();
 
       expect(setOptionsMock).toHaveBeenLastCalledWith(
         expect.objectContaining({
-          count: "5",
+          count: 5,
           timer: false,
           autoRefresh: true,
           recycle: true,
@@ -47,7 +46,7 @@ describe("GameConfig tests", () => {
       );
     });
 
-    test("Change options that recount items", async () => {
+    test("Change DKB options that recount items", async () => {
       vi.resetAllMocks();
       const screen = await getScreen("DKB");
       await screen.getByRole("combobox").all()[2].click();
@@ -92,27 +91,28 @@ describe("GameConfig tests", () => {
       await screen.getByRole("combobox").all()[2].click();
       await screen.getByText("5").click();
       await userEvent.type(screen.getByText("Seed").first(), "12345");
-      await userEvent.click(screen.getByText("Timer"));
-      await userEvent.click(screen.getByText("Auto-refresh"));
-      await userEvent.click(screen.getByText("Use Kong colors"));
+      await screen.getByText("Timer").click();
+      await screen.getByText("Auto-refresh").click();
+      await screen.getByText("Use Kong colors").click();
 
       expect(setOptionsMock).toHaveBeenLastCalledWith(
         expect.objectContaining({
-          count: "5",
+          count: 5,
           timer: false,
-          autoRefresh: true,
+          autoRefresh: false,
           useKongColors: true,
           seed: "12345"
         })
       );
     });
 
-    test("Change options that recount items", async () => {
+    test("Change DK64 options that recount items", async () => {
       vi.resetAllMocks();
       const screen = await getScreen("DK64");
       await screen.getByRole("combobox").all()[2].click();
       await screen.getByText("5").click();
-      await userEvent.click(screen.getByText("Hell Mode"));
+      await screen.getByText("Hell Mode").click();
+      await screen.getByText("Auto-refresh").click();
       const selects = screen.getByRole("combobox").all();
       await selects[0].click(); // Level
       await screen.getByText(LevelName.Factory).click();

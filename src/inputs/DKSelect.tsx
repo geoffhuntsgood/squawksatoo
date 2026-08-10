@@ -11,16 +11,18 @@ export const DKSelect = ({
   label,
   value,
   handleChange,
-  selectItems
+  selectItems,
+  mini
 }: {
   label: string;
   value: string;
   handleChange: Dispatch<SetStateAction<string>>;
   selectItems: string[];
+  mini?: boolean;
 }) => (
   <>
     {selectItems.length > 0 && (
-      <FormControl fullWidth>
+      <FormControl fullWidth sx={{ width: mini ? "50%" : "100%" }}>
         <InputLabel id={`select-${label}`}>{label}</InputLabel>
         <Select
           value={value}

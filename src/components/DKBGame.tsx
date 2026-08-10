@@ -2,7 +2,7 @@ import { Grid } from "@mui/material";
 import random from "random";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import { useStopwatch } from "react-timer-hook";
-import type { DKBBanana, GameOptions } from "../classes";
+import { DKBBanana, type GameOptions } from "../classes";
 import { DKButton, DKItemRow } from "../inputs";
 import { DKHR } from "./DKHR";
 import { GameHeader } from "./GameHeader";
@@ -16,38 +16,34 @@ export const DKBGame = ({
   setOptions: Dispatch<SetStateAction<GameOptions | null>>;
   setStart: Dispatch<SetStateAction<boolean>>;
 }) => {
-  const [available, setAvailable] = useState<DKBBanana[]>(options.bananas);
+  const [available, setAvailable] = useState<DKBBanana[]>([]);
   const [displayed, setDisplayed] = useState<DKBBanana[]>([]);
   const [completed, setCompleted] = useState<DKBBanana[]>([]);
-  const [total, setTotal] = useState(0);
   const [rightCount, setRightCount] = useState(0);
   const [wrongCount, setWrongCount] = useState(0);
+  const [total] = useState(
+    options.autoRefresh ? options.dkbTotal : options.count
+  );
 
   const stopwatch = useStopwatch({ autoStart: true, interval: 20 });
 
   const replaceBanana = (displayIndex: number, success: boolean) => {
     const notCompleted = [...available];
     const onDeck = [...displayed];
-    const previous = onDeck[displayIndex];
-    const selected = random.choice(notCompleted);
 
-    if (selected) {
-      onDeck.splice(displayIndex, 1, selected);
-      const index = notCompleted.indexOf(selected);
+    const prevUp = onDeck[displayIndex];
+    const nextUp = notCompleted.shift();
 
-      if (options.recycle) {
-        if (success) {
-          notCompleted.splice(index, 1);
-        } else {
-          notCompleted.splice(index, 1, previous);
-        }
-      } else {
-        notCompleted.splice(index, 1);
+    if (prevUp && nextUp) {
+      onDeck.splice(displayIndex, 1, nextUp);
+
+      if (options.recycle && !success) {
+        notCompleted.splice(random.int(0, notCompleted.length), 0, prevUp);
       }
-
-      setAvailable(notCompleted);
-      setDisplayed(onDeck);
     }
+
+    setAvailable(notCompleted);
+    setDisplayed(onDeck);
   };
 
   const onComplete = (banana: DKBBanana, index: number, success: boolean) => {
@@ -73,21 +69,22 @@ export const DKBGame = ({
       random.use(options.seed);
     }
 
-    if (options.autoRefresh) {
-      setTotal(options.bananas.length);
-    } else {
-      setTotal(Number(options.count));
+    const notCompleted = [];
+    const initial = [...options.bananas];
+    for (let i = 0; i < total; i++) {
+      const banana = random.choice(initial);
+
+      if (banana) {
+        initial.splice(initial.indexOf(banana), 1);
+        notCompleted.push(banana);
+      }
     }
 
-    const notCompleted = [...available];
     const onDeck = [];
-
-    for (let i = 0; i < Number(options.count); i++) {
-      const selected = random.choice(notCompleted);
-
-      if (selected) {
-        notCompleted.splice(notCompleted.indexOf(selected), 1);
-        onDeck.push(selected);
+    for (let i = 0; i < options.count; i++) {
+      const banana = notCompleted.shift();
+      if (banana) {
+        onDeck.push(banana);
       }
     }
 

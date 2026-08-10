@@ -3,6 +3,7 @@ import random from "random";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import { useStopwatch } from "react-timer-hook";
 import type { DK64Item, GameOptions } from "../classes";
+import { DK64Category } from "../enums";
 import { DKButton, DKItemRow } from "../inputs";
 import { getKongColorInfo } from "../utils/levelApi";
 import { DKHR } from "./DKHR";
@@ -17,21 +18,22 @@ export const DK64Game = ({
   setOptions: Dispatch<SetStateAction<GameOptions | null>>;
   setStart: Dispatch<SetStateAction<boolean>>;
 }) => {
-  const [available, setAvailable] = useState<DK64Item[]>(options.items);
+  const [available, setAvailable] = useState<DK64Item[]>([]);
   const [displayed, setDisplayed] = useState<DK64Item[]>([]);
   const [completed, setCompleted] = useState<DK64Item[]>([]);
-  const [total, setTotal] = useState(0);
+  const [total] = useState(
+    options.autoRefresh ? options.dk64Total : options.count
+  );
 
   const stopwatch = useStopwatch({ autoStart: true, interval: 20 });
 
   const replaceItem = (displayIndex: number) => {
     const notCompleted = [...available];
     const onDeck = [...displayed];
-    const selected = random.choice(notCompleted);
+    const nextUp = notCompleted.shift();
 
-    if (selected) {
-      notCompleted.splice(notCompleted.indexOf(selected), 1);
-      onDeck.splice(displayIndex, 1, selected);
+    if (nextUp) {
+      onDeck.splice(displayIndex, 1, nextUp);
 
       setAvailable(notCompleted);
       setDisplayed(onDeck);
@@ -53,21 +55,32 @@ export const DK64Game = ({
       random.use(options.seed);
     }
 
-    if (options.autoRefresh) {
-      setTotal(options.items.length);
-    } else {
-      setTotal(Number(options.count));
+    const notCompleted = [];
+    const initial = [...options.items];
+    for (let i = 0; i < total; i++) {
+      const item = random.choice(initial);
+
+      if (item) {
+        initial.splice(initial.indexOf(item), 1);
+
+        if (item.category === DK64Category.ColoredBanana) {
+          const itemCopy = { ...item };
+          itemCopy.name = item.name.replace(
+            "{{X}}",
+            String(random.int(20, 100))
+          );
+          notCompleted.push(itemCopy);
+        } else {
+          notCompleted.push(item);
+        }
+      }
     }
 
-    const notCompleted = [...available];
     const onDeck = [];
-
-    for (let i = 0; i < Number(options.count); i++) {
-      const selected = random.choice(notCompleted);
-
-      if (selected) {
-        notCompleted.splice(notCompleted.indexOf(selected), 1);
-        onDeck.push(selected);
+    for (let i = 0; i < options.count; i++) {
+      const item = notCompleted.shift();
+      if (item) {
+        onDeck.push(item);
       }
     }
 

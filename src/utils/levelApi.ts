@@ -1,4 +1,3 @@
-import random from "random";
 import type { DK64Item, DK64Level } from "../classes";
 import { DK64Category, LevelName } from "../enums";
 import { aztec } from "../levels/aztec";
@@ -50,17 +49,6 @@ export const getItemsForCategories = (
   if (!hellMode) {
     items = items.filter((item: DK64Item) => !item.hellMode);
   }
-
-  items = items.map((item: DK64Item) => {
-    if (item.category === DK64Category.ColoredBanana) {
-      return {
-        ...item,
-        name: item.name.replace("{{X}}", String(random.int(20, 100)))
-      };
-    } else {
-      return item;
-    }
-  });
 
   if (categories.length === 0) {
     return items;

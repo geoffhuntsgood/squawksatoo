@@ -3,7 +3,9 @@ import type { DKBBanana } from "./DKBBanana";
 
 export class GameOptions {
   constructor(
-    public readonly count: string,
+    public readonly count: number,
+    public readonly dkbTotal: number,
+    public readonly dk64Total: number,
     public readonly seed: string,
     public readonly timer: boolean,
     public readonly autoRefresh: boolean,
