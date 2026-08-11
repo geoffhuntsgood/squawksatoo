@@ -55,6 +55,13 @@ export const theme = createTheme({
         }
       }
     },
+    MuiDialog: {
+      styleOverrides: {
+        paper: {
+          backgroundColor: menuBG
+        }
+      }
+    },
     MuiFormLabel: {
       styleOverrides: {
         root: {

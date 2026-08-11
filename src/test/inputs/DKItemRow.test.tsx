@@ -37,7 +37,22 @@ describe("DKItemRow tests", () => {
     expect(successMock).toHaveBeenCalledOnce();
   });
 
+  test("Check success action on text click", async () => {
+    vi.resetAllMocks();
+    const screen = await getScreen(false);
+    await screen.getByText("Test Row").click();
+    expect(successMock).toHaveBeenCalledOnce();
+  });
+
+  test("Check no interaction on text click when disabled", async () => {
+    vi.resetAllMocks();
+    const screen = await getScreen(true);
+    await screen.getByText("Test Row").click();
+    expect(successMock).not.toHaveBeenCalled();
+  });
+
   test("Check failure action", async () => {
+    vi.resetAllMocks();
     const screen = await getScreen(false, true);
     await screen.getByRole("button").last().click();
     expect(failureMock).toHaveBeenCalledOnce();

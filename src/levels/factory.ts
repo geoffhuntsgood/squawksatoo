@@ -169,6 +169,26 @@ export const factory: DK64Level = {
     {
       name: "Factory Chunky {{X}} Colored Bananas",
       category: DK64Category.ColoredBanana
+    },
+    {
+      name: "Factory Warp 1 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Factory Warp 2 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Factory Warp 3 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Factory Warp 4 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Factory Warp 5 Set",
+      category: DK64Category.Warp
     }
   ]
 };

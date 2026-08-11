@@ -3,8 +3,7 @@ import random from "random";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import { useStopwatch } from "react-timer-hook";
 import { DKBBanana, type GameOptions } from "../classes";
-import { DKButton, DKItemRow } from "../inputs";
-import { DKHR } from "./DKHR";
+import { DKButton, DKDialog, DKHR, DKItemRow } from "../inputs";
 import { GameHeader } from "./GameHeader";
 
 export const DKBGame = ({
@@ -16,6 +15,7 @@ export const DKBGame = ({
   setOptions: Dispatch<SetStateAction<GameOptions | null>>;
   setStart: Dispatch<SetStateAction<boolean>>;
 }) => {
+  const [reconfigOpen, setReconfigOpen] = useState(false);
   const [available, setAvailable] = useState<DKBBanana[]>([]);
   const [displayed, setDisplayed] = useState<DKBBanana[]>([]);
   const [completed, setCompleted] = useState<DKBBanana[]>([]);
@@ -64,6 +64,11 @@ export const DKBGame = ({
     }
   };
 
+  const reset = () => {
+    setOptions(null);
+    setStart(false);
+  };
+
   useEffect(() => {
     if (options.seed) {
       random.use(options.seed);
@@ -95,6 +100,17 @@ export const DKBGame = ({
 
   return (
     <Grid container spacing={1}>
+      <DKDialog
+        title="Are you sure?"
+        description="You'll lose your current progress!"
+        open={reconfigOpen}
+        setOpen={setReconfigOpen}
+        yesLabel="Yeah"
+        noLabel="Nah"
+        handleYesAction={reset}
+        handleNoAction={() => stopwatch.start()}
+      />
+
       <GameHeader
         timer={options.timer}
         stopwatch={stopwatch}
@@ -135,8 +151,15 @@ export const DKBGame = ({
       <DKButton
         label="Reconfigure"
         handleClick={() => {
-          setOptions(null);
-          setStart(false);
+          if (
+            (!options.recycle && rightCount + wrongCount < total) ||
+            (options.recycle && rightCount < total)
+          ) {
+            stopwatch.pause();
+            setReconfigOpen(true);
+          } else {
+            reset();
+          }
         }}
       />
     </Grid>

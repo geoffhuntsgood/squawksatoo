@@ -4,9 +4,8 @@ import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import { useStopwatch } from "react-timer-hook";
 import type { DK64Item, GameOptions } from "../classes";
 import { DK64Category } from "../enums";
-import { DKButton, DKItemRow } from "../inputs";
+import { DKButton, DKDialog, DKHR, DKItemRow } from "../inputs";
 import { getKongColorInfo } from "../utils/levelApi";
-import { DKHR } from "./DKHR";
 import { GameHeader } from "./GameHeader";
 
 export const DK64Game = ({
@@ -18,6 +17,7 @@ export const DK64Game = ({
   setOptions: Dispatch<SetStateAction<GameOptions | null>>;
   setStart: Dispatch<SetStateAction<boolean>>;
 }) => {
+  const [reconfigOpen, setReconfigOpen] = useState(false);
   const [available, setAvailable] = useState<DK64Item[]>([]);
   const [displayed, setDisplayed] = useState<DK64Item[]>([]);
   const [completed, setCompleted] = useState<DK64Item[]>([]);
@@ -48,6 +48,11 @@ export const DK64Game = ({
     if (options.autoRefresh) {
       replaceItem(index);
     }
+  };
+
+  const reset = () => {
+    setOptions(null);
+    setStart(false);
   };
 
   useEffect(() => {
@@ -91,6 +96,17 @@ export const DK64Game = ({
 
   return (
     <Grid container spacing={1}>
+      <DKDialog
+        title="Are you sure?"
+        description="You'll lose your current progress!"
+        open={reconfigOpen}
+        setOpen={setReconfigOpen}
+        yesLabel="Yeah"
+        noLabel="Nah"
+        handleYesAction={reset}
+        handleNoAction={() => stopwatch.start()}
+      />
+
       <GameHeader
         timer={options.timer}
         stopwatch={stopwatch}
@@ -129,8 +145,12 @@ export const DK64Game = ({
       <DKButton
         label="Reconfigure"
         handleClick={() => {
-          setOptions(null);
-          setStart(false);
+          if (completed.length < total) {
+            stopwatch.pause();
+            setReconfigOpen(true);
+          } else {
+            reset();
+          }
         }}
       />
     </Grid>

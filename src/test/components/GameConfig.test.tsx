@@ -29,8 +29,11 @@ describe("GameConfig tests", () => {
 
     test("Change DKB config options", async () => {
       const screen = await getScreen("DKB");
-      await screen.getByRole("combobox").all()[2].click();
+      const selects = screen.getByRole("combobox").all();
+      await selects[2].click(); // Count
       await screen.getByText("5").click();
+      await selects[3].click(); // Total
+      await screen.getByText("20").click();
       await userEvent.type(screen.getByText("Seed").first(), "12345");
       await screen.getByText("Timer").click();
       await screen.getByText("Recycle wrong bananas").click();
@@ -38,6 +41,7 @@ describe("GameConfig tests", () => {
       expect(setOptionsMock).toHaveBeenLastCalledWith(
         expect.objectContaining({
           count: 5,
+          dkbTotal: 20,
           timer: false,
           autoRefresh: true,
           recycle: true,
@@ -49,12 +53,12 @@ describe("GameConfig tests", () => {
     test("Change DKB options that recount items", async () => {
       vi.resetAllMocks();
       const screen = await getScreen("DKB");
-      await screen.getByRole("combobox").all()[2].click();
+      const selects = screen.getByRole("combobox").all();
+      await selects[2].click(); // Count
       await screen.getByText("5").click();
       await screen.getByText("Include Postgame").click();
       await screen.getByText("Hell Mode").click();
       await screen.getByText("Auto-refresh").click();
-      const selects = screen.getByRole("combobox").all();
       await selects[0].click(); // Layer
       await screen.getByText(LayerName.Groove).click();
       await selects[1].click(); // Category
@@ -88,8 +92,11 @@ describe("GameConfig tests", () => {
 
     test("Change DK64 config options", async () => {
       const screen = await getScreen("DK64");
-      await screen.getByRole("combobox").all()[2].click();
+      const selects = screen.getByRole("combobox").all();
+      await selects[2].click(); // Count
       await screen.getByText("5").click();
+      await selects[3].click(); // Total
+      await screen.getByText("10").first().click();
       await userEvent.type(screen.getByText("Seed").first(), "12345");
       await screen.getByText("Timer").click();
       await screen.getByText("Auto-refresh").click();
@@ -98,6 +105,7 @@ describe("GameConfig tests", () => {
       expect(setOptionsMock).toHaveBeenLastCalledWith(
         expect.objectContaining({
           count: 5,
+          dk64Total: 10,
           timer: false,
           autoRefresh: false,
           useKongColors: true,
@@ -109,11 +117,11 @@ describe("GameConfig tests", () => {
     test("Change DK64 options that recount items", async () => {
       vi.resetAllMocks();
       const screen = await getScreen("DK64");
-      await screen.getByRole("combobox").all()[2].click();
+      const selects = screen.getByRole("combobox").all();
+      await selects[2].click(); // Count
       await screen.getByText("5").click();
       await screen.getByText("Hell Mode").click();
       await screen.getByText("Auto-refresh").click();
-      const selects = screen.getByRole("combobox").all();
       await selects[0].click(); // Level
       await screen.getByText(LevelName.Factory).click();
       await selects[1].click(); // Category

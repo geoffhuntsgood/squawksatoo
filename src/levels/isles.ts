@@ -165,6 +165,30 @@ export const isles: DK64Level = {
     {
       name: "Castle Lobby Rainbow Coin",
       category: DK64Category.RainbowCoin
+    },
+    {
+      name: "Isles Warp 1 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Isles Warp 2 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Isles Warp 3 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Isles Warp 4 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Isles Warp 5 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Helm Lobby Warp 1 Set",
+      category: DK64Category.Warp
     }
   ]
 };

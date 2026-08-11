@@ -163,6 +163,22 @@ export const galleon: DK64Level = {
     {
       name: "Galleon Chunky {{X}} Colored Bananas",
       category: DK64Category.ColoredBanana
+    },
+    {
+      name: "Galleon Warp 1 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Galleon Warp 2 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Galleon Warp 3 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Galleon Warp 5 Set",
+      category: DK64Category.Warp
     }
   ]
 };

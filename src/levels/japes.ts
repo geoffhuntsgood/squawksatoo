@@ -163,6 +163,22 @@ export const japes: DK64Level = {
     {
       name: "Japes Chunky {{X}} Colored Bananas",
       category: DK64Category.ColoredBanana
+    },
+    {
+      name: "Japes Warp 1 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Japes Warp 2 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Japes Warp 3 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Japes Warp 4 Set",
+      category: DK64Category.Warp
     }
   ]
 };

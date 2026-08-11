@@ -1,5 +1,7 @@
 export * from "./DKButton";
 export * from "./DKCheckbox";
+export * from "./DKDialog";
+export * from "./DKHR";
 export * from "./DKItemRow";
 export * from "./DKMultiSelect";
 export * from "./DKSelect";

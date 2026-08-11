@@ -11,16 +11,16 @@ import { kongColors } from "../../utils/theme";
 describe("levelApi tests", () => {
   describe("getItemsForLevel tests", () => {
     const expected = {
-      [LevelName.All]: 331,
-      [LevelName.Isles]: 40,
-      [LevelName.Japes]: 40,
-      [LevelName.Aztec]: 41,
-      [LevelName.Factory]: 41,
-      [LevelName.Galleon]: 40,
-      [LevelName.Forest]: 41,
-      [LevelName.Caves]: 40,
-      [LevelName.Castle]: 40,
-      [LevelName.Helm]: 8
+      [LevelName.All]: 374,
+      [LevelName.Isles]: 46,
+      [LevelName.Japes]: 44,
+      [LevelName.Aztec]: 47,
+      [LevelName.Factory]: 46,
+      [LevelName.Galleon]: 44,
+      [LevelName.Forest]: 46,
+      [LevelName.Caves]: 44,
+      [LevelName.Castle]: 48,
+      [LevelName.Helm]: 9
     };
 
     Object.values(LevelName).forEach((level: LevelName) => {
@@ -32,16 +32,16 @@ describe("levelApi tests", () => {
 
   describe("getCategoriesForLevel tests", () => {
     const expected = {
-      [LevelName.All]: 10,
-      [LevelName.Isles]: 6,
-      [LevelName.Japes]: 8,
-      [LevelName.Aztec]: 8,
-      [LevelName.Factory]: 9,
-      [LevelName.Galleon]: 8,
-      [LevelName.Forest]: 8,
-      [LevelName.Caves]: 8,
-      [LevelName.Castle]: 8,
-      [LevelName.Helm]: 4
+      [LevelName.All]: 11,
+      [LevelName.Isles]: 7,
+      [LevelName.Japes]: 9,
+      [LevelName.Aztec]: 9,
+      [LevelName.Factory]: 10,
+      [LevelName.Galleon]: 9,
+      [LevelName.Forest]: 9,
+      [LevelName.Caves]: 9,
+      [LevelName.Castle]: 9,
+      [LevelName.Helm]: 5
     };
 
     Object.values(LevelName).forEach((level: LevelName) => {
@@ -54,13 +54,13 @@ describe("levelApi tests", () => {
   describe("getItemsForCategories tests", () => {
     test("Categories: 0, Hell Mode: No", () => {
       expect(getItemsForCategories(LevelName.Factory, [], false)).toHaveLength(
-        39
+        44
       );
     });
 
     test("Categories: 0, Hell Mode: Yes", () => {
       expect(getItemsForCategories(LevelName.Factory, [], true)).toHaveLength(
-        41
+        46
       );
     });
 

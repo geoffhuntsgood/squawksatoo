@@ -167,6 +167,26 @@ export const forest: DK64Level = {
     {
       name: "Forest Chunky {{X}} Colored Bananas",
       category: DK64Category.ColoredBanana
+    },
+    {
+      name: "Forest Warp 1 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Forest Warp 2 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Forest Warp 3 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Forest Warp 4 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Forest Warp 5 Set",
+      category: DK64Category.Warp
     }
   ]
 };

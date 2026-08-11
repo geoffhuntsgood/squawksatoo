@@ -163,6 +163,22 @@ export const caves: DK64Level = {
     {
       name: "Caves Chunky {{X}} Colored Bananas",
       category: DK64Category.ColoredBanana
+    },
+    {
+      name: "Caves Warp 1 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Caves Warp 2 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Caves Warp 4 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Caves Warp 5 Set",
+      category: DK64Category.Warp
     }
   ]
 };

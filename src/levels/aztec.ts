@@ -167,6 +167,30 @@ export const aztec: DK64Level = {
     {
       name: "Aztec Chunky {{X}} Colored Bananas",
       category: DK64Category.ColoredBanana
+    },
+    {
+      name: "Aztec Main Warp 1 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Aztec Main Warp 2 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Aztec Warp 3 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Aztec Warp 4 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Aztec Llama Temple Warp 1 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Aztec Llama Temple Warp 2 Set",
+      category: DK64Category.Warp
     }
   ]
 };

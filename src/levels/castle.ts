@@ -163,6 +163,38 @@ export const castle: DK64Level = {
     {
       name: "Castle Chunky {{X}} Colored Bananas",
       category: DK64Category.ColoredBanana
+    },
+    {
+      name: "Castle Main Warp 1 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Castle Main Warp 2 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Castle Main Warp 3 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Castle Warp 4 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Castle Warp 5 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Castle Crypt Warp 1 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Castle Crypt Warp 2 Set",
+      category: DK64Category.Warp
+    },
+    {
+      name: "Castle Crypt Warp 3 Set",
+      category: DK64Category.Warp
     }
   ]
 };

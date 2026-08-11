@@ -35,6 +35,10 @@ export const helm: DK64Level = {
     {
       name: "Key 8",
       category: DK64Category.Key
+    },
+    {
+      name: "Helm Warp 1 Set",
+      category: DK64Category.Warp
     }
   ]
 };
