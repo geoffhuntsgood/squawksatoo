@@ -160,6 +160,7 @@ export const theme = createTheme({
         root: {
           padding: "10px 0",
           width: "100%",
+          borderColor: "focused",
           ".MuiOutlinedInput-root": {
             height: "4rem",
             fontSize: "2rem",

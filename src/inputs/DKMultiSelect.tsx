@@ -12,12 +12,14 @@ export const DKMultiSelect = ({
   label,
   values,
   handleChange,
-  selectItems
+  selectItems,
+  mini
 }: {
   label: string;
   values: string[];
   handleChange: Dispatch<SetStateAction<string[]>>;
   selectItems: string[];
+  mini?: boolean;
 }) => {
   const handle = (event: SelectChangeEvent<typeof values>) => {
     const {
@@ -31,7 +33,7 @@ export const DKMultiSelect = ({
   };
 
   return (
-    <FormControl fullWidth>
+    <FormControl fullWidth sx={{ width: mini ? "50%" : "100%" }}>
       <InputLabel id={`multi-${label}`}>{label}</InputLabel>
       <Select
         multiple

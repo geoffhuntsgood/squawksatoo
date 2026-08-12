@@ -1,5 +1,5 @@
 import type { DK64Level } from "../classes/DK64Level";
-import { DK64Category, LevelName } from "../enums";
+import { DK64Barrel, DK64Category, LevelName } from "../enums";
 
 export const castle: DK64Level = {
   name: LevelName.Castle,
@@ -30,15 +30,18 @@ export const castle: DK64Level = {
     },
     {
       name: "Castle Diddy Ballroom Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.MinecartMayhem
     },
     {
       name: "Castle Diddy Tower Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.BigBugBash
     },
     {
       name: "Castle Lanky Dungeon Goo Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.KremlingKosh
     },
     {
       name: "Castle Lanky Sprint Crypt GB",
@@ -50,11 +53,13 @@ export const castle: DK64Level = {
     },
     {
       name: "Castle Lanky Wind Tower Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.BeaverBother
     },
     {
       name: "Castle Tiny Twirl Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.TeeteringTurtleTrouble
     },
     {
       name: "Castle Tiny Goo Hands GB",
@@ -70,11 +75,13 @@ export const castle: DK64Level = {
     },
     {
       name: "Castle Chunky Tree Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.BeaverBother
     },
     {
       name: "Castle Chunky Punch Crypt Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.SearchlightSeek
     },
     {
       name: "Castle Chunky Museum GB",

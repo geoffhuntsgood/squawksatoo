@@ -93,9 +93,9 @@ describe("GameConfig tests", () => {
     test("Change DK64 config options", async () => {
       const screen = await getScreen("DK64");
       const selects = screen.getByRole("combobox").all();
-      await selects[2].click(); // Count
+      await selects[3].click(); // Count
       await screen.getByText("5").click();
-      await selects[3].click(); // Total
+      await selects[4].click(); // Total
       await screen.getByText("10").first().click();
       await userEvent.type(screen.getByText("Seed").first(), "12345");
       await screen.getByText("Timer").click();
@@ -118,7 +118,7 @@ describe("GameConfig tests", () => {
       vi.resetAllMocks();
       const screen = await getScreen("DK64");
       const selects = screen.getByRole("combobox").all();
-      await selects[2].click(); // Count
+      await selects[3].click(); // Count
       await screen.getByText("5").click();
       await screen.getByText("Hell Mode").click();
       await screen.getByText("Auto-refresh").click();

@@ -1,5 +1,5 @@
 import type { DK64Level } from "../classes/DK64Level";
-import { DK64Category, LevelName } from "../enums";
+import { DK64Barrel, DK64Category, LevelName } from "../enums";
 
 export const japes: DK64Level = {
   name: LevelName.Japes,
@@ -42,11 +42,13 @@ export const japes: DK64Level = {
     },
     {
       name: "Japes Lanky Tunnel Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.MadMazeMaul
     },
     {
       name: "Japes Lanky Slope Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.SpeedySwingSortie
     },
     {
       name: "Japes Lanky Painting Hill GB",
@@ -58,7 +60,8 @@ export const japes: DK64Level = {
     },
     {
       name: "Japes Tiny Tunnel Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.SplishSplashSalvage
     },
     {
       name: "Japes Tiny Stump GB",
@@ -82,7 +85,8 @@ export const japes: DK64Level = {
     },
     {
       name: "Japes Chunky Beehive Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.MinecartMayhem
     },
     {
       name: "Japes Donkey BP",

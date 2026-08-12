@@ -1,5 +1,5 @@
 import type { DK64Level } from "../classes/DK64Level";
-import { DK64Category, LevelName } from "../enums";
+import { DK64Barrel, DK64Category, LevelName } from "../enums";
 
 export const aztec: DK64Level = {
   name: LevelName.Aztec,
@@ -14,7 +14,8 @@ export const aztec: DK64Level = {
     },
     {
       name: "Aztec Donkey Sand Tunnel Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.StealthySnoop
     },
     {
       name: "Aztec Donkey 5DT GB",
@@ -42,7 +43,8 @@ export const aztec: DK64Level = {
     },
     {
       name: "Aztec Lanky Llama Temple Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.TeeteringTurtleTrouble
     },
     {
       name: "Aztec Lanky Matching Game GB",
@@ -50,7 +52,8 @@ export const aztec: DK64Level = {
     },
     {
       name: "Aztec Lanky 5DT Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.BigBugBash
     },
     {
       name: "Aztec Tiny Klaptraps GB",
@@ -78,11 +81,13 @@ export const aztec: DK64Level = {
     },
     {
       name: "Aztec Chunky Tunnel Cage Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.BusyBarrelBarrage
     },
     {
       name: "Aztec Chunky 5DT Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.KremlingKosh
     },
     {
       name: "Aztec Donkey BP",

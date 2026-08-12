@@ -1,5 +1,5 @@
 import type { DK64Level } from "../classes/DK64Level";
-import { DK64Category, LevelName } from "../enums";
+import { DK64Barrel, DK64Category, LevelName } from "../enums";
 
 export const forest: DK64Level = {
   name: LevelName.Forest,
@@ -10,7 +10,8 @@ export const forest: DK64Level = {
     },
     {
       name: "Forest Donkey Blast Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.PerilPathPanic
     },
     {
       name: "Forest Donkey Mill Levers GB",
@@ -18,11 +19,13 @@ export const forest: DK64Level = {
     },
     {
       name: "Forest Donkey Thorn Barn Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.MinecartMayhem
     },
     {
       name: "Forest Diddy Mushroom Top Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.TeeteringTurtleTrouble
     },
     {
       name: "Forest Diddy Mill Cage GB",
@@ -42,7 +45,8 @@ export const forest: DK64Level = {
     },
     {
       name: "Forest Lanky Mushroom Light Room Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.KrazyKongKlamour
     },
     {
       name: "Forest Lanky Mill Attic GB",
@@ -54,7 +58,8 @@ export const forest: DK64Level = {
     },
     {
       name: "Forest Tiny Mushroom Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.SpeedySwingSortie
     },
     {
       name: "Forest Tiny Stump Klaptraps GB",

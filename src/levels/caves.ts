@@ -1,12 +1,13 @@
 import type { DK64Level } from "../classes/DK64Level";
-import { DK64Category, LevelName } from "../enums";
+import { DK64Barrel, DK64Category, LevelName } from "../enums";
 
 export const caves: DK64Level = {
   name: LevelName.Caves,
   items: [
     {
       name: "Caves Donkey Blast Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.BusyBarrelBarrage
     },
     {
       name: "Caves Donkey Rotating Cabin GB",
@@ -22,7 +23,8 @@ export const caves: DK64Level = {
     },
     {
       name: "Caves Diddy Waterfall Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.MadMazeMaul
     },
     {
       name: "Caves Diddy Upper 5DC GB",
@@ -54,7 +56,8 @@ export const caves: DK64Level = {
     },
     {
       name: "Caves Tiny Mini Cave Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.KrazyKongKlamour
     },
     {
       name: "Caves Tiny Ice Shield GB",
@@ -78,7 +81,8 @@ export const caves: DK64Level = {
     },
     {
       name: "Caves Chunky 5DC Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.SearchlightSeek
     },
     {
       name: "Caves Chunky 5DI GB",

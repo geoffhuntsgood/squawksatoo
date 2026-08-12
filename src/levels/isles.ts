@@ -1,5 +1,5 @@
 import type { DK64Level } from "../classes/DK64Level";
-import { DK64Category, LevelName } from "../enums";
+import { DK64Barrel, DK64Category, LevelName } from "../enums";
 
 export const isles: DK64Level = {
   name: LevelName.Isles,
@@ -22,7 +22,8 @@ export const isles: DK64Level = {
     },
     {
       name: "Isles Diddy Spring Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.BattyBarrelBandit
     },
     {
       name: "Isles Diddy Caged GB",
@@ -30,7 +31,8 @@ export const isles: DK64Level = {
     },
     {
       name: "Isles Diddy Summit Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.PerilPathPanic
     },
     {
       name: "Isles Diddy Guitar GB",
@@ -50,11 +52,13 @@ export const isles: DK64Level = {
     },
     {
       name: "Isles Lanky Balloon Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.SearchlightSeek
     },
     {
       name: "Isles Tiny Gong Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.BigBugBash
     },
     {
       name: "Isles Tiny Caged GB",
@@ -82,7 +86,8 @@ export const isles: DK64Level = {
     },
     {
       name: "Isles Chunky Gone Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.KremlingKosh
     },
     {
       name: "Isles Donkey BP",

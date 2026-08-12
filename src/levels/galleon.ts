@@ -1,5 +1,5 @@
 import type { DK64Level } from "../classes/DK64Level";
-import { DK64Category, LevelName } from "../enums";
+import { DK64Barrel, DK64Category, LevelName } from "../enums";
 
 export const galleon: DK64Level = {
   name: LevelName.Galleon,
@@ -18,7 +18,8 @@ export const galleon: DK64Level = {
     },
     {
       name: "Galleon Donkey 5DS Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.KrazyKongKlamour
     },
     {
       name: "Galleon Diddy Ship Switch GB",
@@ -30,11 +31,13 @@ export const galleon: DK64Level = {
     },
     {
       name: "Galleon Diddy Gold Tower Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.StealthySnoop
     },
     {
       name: "Galleon Diddy 5DS Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.SplishSplashSalvage
     },
     {
       name: "Galleon Lanky Enguarde GB",
@@ -42,7 +45,8 @@ export const galleon: DK64Level = {
     },
     {
       name: "Galleon Lanky Gold Tower Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.SearchlightSeek
     },
     {
       name: "Galleon Lanky 2DS GB",
@@ -58,11 +62,13 @@ export const galleon: DK64Level = {
     },
     {
       name: "Galleon Tiny Submarine Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.BigBugBash
     },
     {
       name: "Galleon Tiny 2DS Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.KremlingKosh
     },
     {
       name: "Galleon Tiny 5DS GB",
@@ -82,7 +88,8 @@ export const galleon: DK64Level = {
     },
     {
       name: "Galleon Chunky 5DS Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.BattyBarrelBandit
     },
     {
       name: "Galleon Donkey BP",

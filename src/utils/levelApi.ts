@@ -1,5 +1,5 @@
 import type { DK64Item, DK64Level } from "../classes";
-import { DK64Category, LevelName } from "../enums";
+import { DK64Barrel, DK64Category, LevelName } from "../enums";
 import { aztec } from "../levels/aztec";
 import { castle } from "../levels/castle";
 import { caves } from "../levels/caves";
@@ -25,35 +25,52 @@ const allLevels: DK64Level[] = [
 
 export const getItemsForLevel = (levelName: LevelName): DK64Item[] => {
   return levelName === LevelName.All
-    ? allLevels.flatMap((level: DK64Level) => level.items)
-    : allLevels.filter((level: DK64Level) => level.name === levelName)[0].items;
+    ? allLevels.flatMap((level) => level.items)
+    : allLevels.filter((level) => level.name === levelName)[0].items;
 };
 
 export const getCategoriesForLevel = (levelName: LevelName): DK64Category[] => {
   const levelItems = getItemsForLevel(levelName);
-  const cats: DK64Category[] = [];
-  levelItems.forEach((item: DK64Item) => {
-    const cat = item.category;
-    if (!cats.includes(cat)) cats.push(cat);
-  });
-  return cats;
+  return [...new Set(levelItems.map((item) => item.category))];
+};
+
+export const getBarrelsForLevel = (levelName: LevelName): DK64Barrel[] => {
+  const levelItems = getItemsForLevel(levelName);
+  return [
+    ...new Set(
+      levelItems
+        .map((item) => item.subCategory)
+        .filter((barrel) => barrel !== undefined)
+    )
+  ];
 };
 
 export const getItemsForCategories = (
   levelName: LevelName,
   categories: DK64Category[],
-  hellMode: boolean
+  hellMode: boolean,
+  barrels?: DK64Barrel[]
 ): DK64Item[] => {
   let items = getItemsForLevel(levelName);
 
   if (!hellMode) {
-    items = items.filter((item: DK64Item) => !item.hellMode);
+    items = items.filter((item) => !item.hellMode);
   }
 
-  if (categories.length === 0) {
-    return items;
+  if (categories.length > 0 && barrels && barrels.length > 0) {
+    return items.filter((item) =>
+      categories.includes(item.category) && item.subCategory
+        ? barrels.includes(item.subCategory)
+        : true
+    );
+  } else if (categories.length > 0) {
+    return items.filter((item) => categories.includes(item.category));
+  } else if (barrels && barrels.length > 0) {
+    return items.filter((item) =>
+      item.subCategory ? barrels.includes(item.subCategory) : true
+    );
   } else {
-    return items.filter((item: DK64Item) => categories.includes(item.category));
+    return items;
   }
 };
 
@@ -81,8 +98,8 @@ export const getKongColorInfo = (name: string, useKongColors: boolean) => {
   ];
   const kongs = ["Donkey", "Diddy", "Lanky", "Tiny", "Chunky"];
 
-  levels.some((level: string) => {
-    kongs.some((kong: string) => {
+  levels.some((level) => {
+    kongs.some((kong) => {
       if (name.startsWith(`${level} ${kong}`)) {
         label = name.replace(` ${kong}`, "");
         color = kongColors[kong as keyof typeof kongColors];

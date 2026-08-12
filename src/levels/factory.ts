@@ -1,5 +1,5 @@
 import type { DK64Level } from "../classes/DK64Level";
-import { DK64Category, LevelName } from "../enums";
+import { DK64Barrel, DK64Category, LevelName } from "../enums";
 
 export const factory: DK64Level = {
   name: LevelName.Factory,
@@ -23,7 +23,8 @@ export const factory: DK64Level = {
     },
     {
       name: "Factory Diddy Block Tower Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.PerilPathPanic
     },
     {
       name: "Factory Diddy Number Pin GB",
@@ -31,7 +32,8 @@ export const factory: DK64Level = {
     },
     {
       name: "Factory Diddy Storage Vines Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.BeaverBother
     },
     {
       name: "Factory Diddy Production Spring GB",
@@ -43,7 +45,8 @@ export const factory: DK64Level = {
     },
     {
       name: "Factory Lanky Testing Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.BattyBarrelBandit
     },
     {
       name: "Factory Lanky Piano Game GB",
@@ -67,7 +70,8 @@ export const factory: DK64Level = {
     },
     {
       name: "Factory Tiny Production Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.KrazyKongKlamour
     },
     {
       name: "Factory Chunky Dark Room GB",
@@ -75,7 +79,8 @@ export const factory: DK64Level = {
     },
     {
       name: "Factory Chunky Arcade Hallway Bonus GB",
-      category: DK64Category.GB
+      category: DK64Category.GB,
+      subCategory: DK64Barrel.StashSnatch
     },
     {
       name: "Factory Chunky Toy Monster GB",

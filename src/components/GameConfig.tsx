@@ -1,13 +1,20 @@
 import { Box, Grid } from "@mui/material";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import { DK64Item, DKBBanana, GameOptions } from "../classes";
-import { DK64Category, DKBCategory, LayerName, LevelName } from "../enums";
+import {
+  DK64Barrel,
+  DK64Category,
+  DKBCategory,
+  LayerName,
+  LevelName
+} from "../enums";
 import { DKCheckbox, DKMultiSelect, DKSelect, DKTextBox } from "../inputs";
 import {
   getBananasForCategories,
   getCategoriesForLayer
 } from "../utils/layerApi";
 import {
+  getBarrelsForLevel,
   getCategoriesForLevel,
   getItemsForCategories
 } from "../utils/levelApi";
@@ -40,6 +47,8 @@ export const GameConfig = ({
   const [level, setLevel] = useState<string>(LevelName.All);
   const [dk64Cats, setDK64Cats] = useState<DK64Category[]>([]);
   const [selectedDK64Cats, setSelectedDK64Cats] = useState<string[]>([]);
+  const [dk64Barrels, setDK64Barrels] = useState<DK64Barrel[]>([]);
+  const [selectedDK64Barrels, setSelectedDK64Barrels] = useState<string[]>([]);
 
   const [includePostgame, setIncludePostgame] = useState(false);
   const [hellMode, setHellMode] = useState(false);
@@ -97,7 +106,8 @@ export const GameConfig = ({
     const items = getItemsForCategories(
       level as LevelName,
       selectedDK64Cats as DK64Category[],
-      hellMode
+      hellMode,
+      selectedDK64Barrels as DK64Barrel[]
     );
 
     setConfig((prev) => ({
@@ -107,8 +117,9 @@ export const GameConfig = ({
     }));
 
     setDK64Cats(getCategoriesForLevel(level as LevelName));
+    setDK64Barrels(getBarrelsForLevel(level as LevelName));
     setItems(items);
-  }, [level, selectedDK64Cats, hellMode]);
+  }, [level, selectedDK64Cats, selectedDK64Barrels, hellMode]);
 
   useEffect(() => {
     if (currentGame === "DKB" && bananas.length > 0) {
@@ -163,17 +174,27 @@ export const GameConfig = ({
           )}
 
           {currentGame === "DK64" && (
-            <DKMultiSelect
-              label="Categories"
-              values={selectedDK64Cats}
-              handleChange={setSelectedDK64Cats}
-              selectItems={dk64Cats}
-            />
+            <>
+              <DKMultiSelect
+                mini={true}
+                label="Categories"
+                values={selectedDK64Cats}
+                handleChange={setSelectedDK64Cats}
+                selectItems={dk64Cats}
+              />
+              <DKMultiSelect
+                mini={true}
+                label="Barrels"
+                values={selectedDK64Barrels}
+                handleChange={setSelectedDK64Barrels}
+                selectItems={dk64Barrels}
+              />
+            </>
           )}
 
           <DKSelect
             mini={true}
-            label="# at once"
+            label="Shown"
             value={String(config.count)}
             handleChange={(val) => setConfig({ ...config, count: Number(val) })}
             selectItems={getCountRange()}
@@ -182,7 +203,7 @@ export const GameConfig = ({
           {currentGame === "DKB" && (
             <DKSelect
               mini={true}
-              label="# total"
+              label="Total"
               value={String(config.dkbTotal)}
               handleChange={(val) =>
                 setConfig({ ...config, dkbTotal: Number(val) })
@@ -193,7 +214,7 @@ export const GameConfig = ({
           {currentGame === "DK64" && (
             <DKSelect
               mini={true}
-              label="# total"
+              label="Total"
               value={String(config.dk64Total)}
               handleChange={(val) =>
                 setConfig({ ...config, dk64Total: Number(val) })
