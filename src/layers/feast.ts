@@ -293,7 +293,7 @@ export const feast: DKBLayer = {
     {
       num: 58,
       name: "Muckin' Up Cat-Scratch Kitchen",
-      category: DKBCategory.Regular
+      category: DKBCategory.Triple
     },
     {
       num: 59,

@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import random from "random";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import { useStopwatch } from "react-timer-hook";
@@ -123,17 +123,26 @@ export const DKBGame = ({
 
       <DKHR />
 
-      {displayed.length > 0 &&
-        displayed.map((banana: DKBBanana, index: number) => (
-          <DKItemRow
-            key={index}
-            name={banana.name}
-            bgColor="#072207"
-            disabled={completed.indexOf(banana) !== -1}
-            onSuccess={() => onComplete(banana, index, true)}
-            onFailure={() => onComplete(banana, index, false)}
-          />
-        ))}
+      <Box
+        sx={{
+          width: "100%",
+          margin: "0 auto",
+          maxHeight: "50vh",
+          overflowY: "scroll"
+        }}
+      >
+        {displayed.length > 0 &&
+          displayed.map((banana: DKBBanana, index: number) => (
+            <DKItemRow
+              key={index}
+              name={banana.name}
+              bgColor="#072207"
+              disabled={completed.indexOf(banana) !== -1}
+              onSuccess={() => onComplete(banana, index, true)}
+              onFailure={() => onComplete(banana, index, false)}
+            />
+          ))}
+      </Box>
 
       <DKHR />
 

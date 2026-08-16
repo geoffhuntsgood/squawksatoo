@@ -61,9 +61,14 @@ export const GameConfig = ({
   );
 
   const getCountRange = () => {
+    if (currentGame === "DKB" && layer === LayerName.All) {
+      return ["1", "2", "3", "4", "5", "10", "15", "20"];
+    }
+
     const range = [];
     const totalLength = currentGame === "DKB" ? bananas.length : items.length;
     const maxAtOnce = totalLength > 5 ? 5 : totalLength;
+
     for (let i = 1; i <= maxAtOnce; i++) {
       range.push(String(i));
     }
