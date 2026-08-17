@@ -1,5 +1,7 @@
 name: NPM Build/Lint/Test
-"on": push
+permissions:
+  contents: read
+on: push
 jobs:
   unit_test-lint:
     runs-on: ubuntu-latest
