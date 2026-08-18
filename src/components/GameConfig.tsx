@@ -89,6 +89,32 @@ export const GameConfig = ({
     return range;
   };
 
+  const getHellModeTooltip = () => {
+    if (currentGame === "DKB") {
+      return (
+        <>
+          Adds long goals to the pool:
+          <ul>
+            <li>Rehearsal bananas</li>
+            <li>A Complete Fossil Collection</li>
+            <li>The Best of the Bunch</li>
+          </ul>
+        </>
+      );
+    } else {
+      return (
+        <>
+          Adds long goals to the pool:
+          <ul>
+            <li>Company Coins</li>
+            <li>DK Arcade GB</li>
+            <li>Rareware GB</li>
+          </ul>
+        </>
+      );
+    }
+  };
+
   useEffect(() => {
     const bananas = getBananasForCategories(
       layer as LayerName,
@@ -290,7 +316,7 @@ export const GameConfig = ({
             label="Hell Mode"
             checked={hellMode}
             handleChange={setHellMode}
-            helpText={`Adds long goals like ${currentGame === "DK64" ? "Company Coins" : '"A Complete Fossil Collection"'} to the pool.`}
+            helpText={getHellModeTooltip()}
           />
         </Box>
       </Grid>

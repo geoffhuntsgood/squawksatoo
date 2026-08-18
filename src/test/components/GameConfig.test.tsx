@@ -5,12 +5,11 @@ import { GameConfig } from "../../components";
 import { DK64Category, DKBCategory, LayerName, LevelName } from "../../enums";
 import type { GameType } from "../../utils/types";
 
-// TODO: Add tests
 describe("GameConfig tests", () => {
   const setOptionsMock = vi.fn();
   const setGoLabelMock = vi.fn();
 
-  const getScreen = async (currentGame: GameType) => {
+  const getScreen = (currentGame: GameType) => {
     return render(
       <GameConfig
         currentGame={currentGame}
@@ -79,6 +78,20 @@ describe("GameConfig tests", () => {
             }
           ]
         })
+      );
+    });
+
+    test("Expanded count for All Layers", async () => {
+      vi.resetAllMocks();
+      const screen = await getScreen("DKB");
+      const selects = screen.getByRole("combobox").all();
+      await selects[0].click();
+      await screen.getByText(LayerName.All).click();
+      await selects[2].click();
+      await screen.getByText("15").click();
+
+      expect(setOptionsMock).toHaveBeenLastCalledWith(
+        expect.objectContaining({ count: 15 })
       );
     });
   });

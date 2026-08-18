@@ -9,6 +9,7 @@ import {
 describe("layerApi tests", () => {
   describe("getBananasForLayer tests", () => {
     const expected = {
+      [LayerName.PreVoid]: 369,
       [LayerName.Ingot]: 36,
       [LayerName.Lagoon]: 56,
       [LayerName.Hilltop]: 38,
@@ -38,6 +39,7 @@ describe("layerApi tests", () => {
 
   describe("getCategoriesForLayer tests", () => {
     const expected = {
+      [LayerName.PreVoid]: 16,
       [LayerName.Ingot]: 14,
       [LayerName.Lagoon]: 10,
       [LayerName.Hilltop]: 13,
@@ -111,7 +113,7 @@ describe("layerApi tests", () => {
           LayerName.Freezer,
           [DKBCategory.ShiftySmash, DKBCategory.Challenge],
           true,
-          false
+          true
         )
       ).toHaveLength(22);
     });

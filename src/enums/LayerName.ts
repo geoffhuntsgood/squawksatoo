@@ -1,4 +1,5 @@
 export enum LayerName {
+  PreVoid = "Pre-Void Special",
   Ingot = "Ingot",
   Lagoon = "Lagoon",
   Hilltop = "Hilltop",

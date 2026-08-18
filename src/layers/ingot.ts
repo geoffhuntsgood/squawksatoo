@@ -219,7 +219,8 @@ export const ingot: DKBLayer = {
       num: 35,
       name: "The Best of the Bunch",
       category: DKBCategory.Regular,
-      isPostgame: true
+      isPostgame: true,
+      hellMode: true
     },
     {
       num: 36,

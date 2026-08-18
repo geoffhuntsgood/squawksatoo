@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { DK64Category, LevelName } from "../../enums";
+import { DK64Barrel, DK64Category, LevelName } from "../../enums";
 import {
   getCategoriesForLevel,
   getItemsForCategories,
@@ -78,6 +78,41 @@ describe("levelApi tests", () => {
           false
         )
       ).toHaveLength(3);
+    });
+
+    test("Categories: 0, Hell Mode: No, Barrels: 1", () => {
+      const items = getItemsForCategories(LevelName.Factory, [], false, [
+        DK64Barrel.BeaverBother
+      ]);
+      expect(items).toContainEqual({
+        name: "Factory Diddy Storage Vines Bonus GB",
+        category: DK64Category.GB,
+        subCategory: DK64Barrel.BeaverBother
+      });
+      expect(items).not.toContainEqual({
+        name: "Factory Diddy Block Tower Bonus GB",
+        category: DK64Category.GB,
+        subCategory: DK64Barrel.PerilPathPanic
+      });
+    });
+
+    test("Categories: 1, Hell Mode: No, Barrels: 1", () => {
+      const items = getItemsForCategories(
+        LevelName.Galleon,
+        [DK64Category.GB],
+        false,
+        [DK64Barrel.BattyBarrelBandit]
+      );
+      expect(items).toContainEqual({
+        name: "Galleon Chunky 5DS Bonus GB",
+        category: DK64Category.GB,
+        subCategory: DK64Barrel.BattyBarrelBandit
+      });
+      expect(items).not.toContainEqual({
+        name: "Galleon Tiny Submarine Bonus GB",
+        category: DK64Category.GB,
+        subCategory: DK64Barrel.BigBugBash
+      });
     });
   });
 

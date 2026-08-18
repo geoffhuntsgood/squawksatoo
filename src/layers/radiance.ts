@@ -108,56 +108,65 @@ export const radiance: DKBLayer = {
       num: 21,
       name: "Ran the First Scale!",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 22,
       name: "Summited the Snaking Path",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 23,
       name: "Ran the Second Scale!",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 24,
       name: "Floated Aloft with Laser Precision",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 25,
       name: "Ran the Third Scale!",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 26,
       name: "Snaked by without Going Boom",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 27,
       name: "Ran the Fourth Scale!",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 28,
       name: "Sink like a Crock",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 29,
       name: "Ran the Final Scale!",
       isPostgame: true,
       category: DKBCategory.Triple,
-      category2: DKBCategory.Rehearsal
+      category2: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 30,

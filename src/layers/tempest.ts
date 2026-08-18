@@ -83,50 +83,58 @@ export const tempest: DKBLayer = {
       num: 16,
       name: "Salty Forecast Cleared",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 17,
       name: "Smart Suction to Skip the Slip",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 18,
       name: "Glowing Forecast Cleared",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 19,
       name: "Smart Suction to Light the Way",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 20,
       name: "Golden Forecast Cleared",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 21,
       name: "Smart Suction to Build a Bridge",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 22,
       name: "Smart Suction to Guide the Ice",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 23,
       name: "Elephant Elder's Forecast Cleared",
       isPostgame: true,
       category: DKBCategory.Triple,
-      category2: DKBCategory.Rehearsal
+      category2: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 24,

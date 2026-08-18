@@ -210,62 +210,72 @@ export const lagoon: DKBLayer = {
       num: 41,
       name: "Past the First Scrappin' Ground",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 42,
       name: "Lure and Destroy!",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 43,
       name: "Past the Second Scrappin' Ground",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 44,
       name: "Lift and Destroy!",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 45,
       name: "Past the Third Scrappin' Ground",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 46,
       name: "Wallop and Destroy!",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 47,
       name: "Past the Fourth Scrappin' Ground",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 48,
       name: "Launch and Destroy!",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 49,
       name: "Bounce and Destroy!",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 50,
       name: "Past the Fifth Scrappin' Ground",
       isPostgame: true,
       category: DKBCategory.Triple,
-      category2: DKBCategory.Rehearsal
+      category2: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 51,

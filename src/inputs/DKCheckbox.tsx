@@ -4,7 +4,7 @@ import {
   FormControlLabel,
   Typography
 } from "@mui/material";
-import type { ChangeEvent, Dispatch, SetStateAction } from "react";
+import type { ChangeEvent, Dispatch, JSX, SetStateAction } from "react";
 import { DKTooltip } from "./DKTooltip";
 
 export const DKCheckbox = ({
@@ -16,7 +16,7 @@ export const DKCheckbox = ({
   label: string;
   checked: boolean;
   handleChange: Dispatch<SetStateAction<boolean>>;
-  helpText?: string;
+  helpText?: string | JSX.Element;
 }) => (
   <FormControl fullWidth>
     <FormControlLabel

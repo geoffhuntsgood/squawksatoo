@@ -378,56 +378,65 @@ export const forest: DKBLayer = {
       num: 39,
       name: "Off to a Flying Start!",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 40,
       name: "Pretty Thing Preening in a Birdcage",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 41,
       name: "Survived Sizzle-Wing Circus!",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 42,
       name: "Faced the Fire and Lasers",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 43,
       name: "Taking the Low Road",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 44,
       name: "Bounded by Bouncy-Bounce Park!",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 45,
       name: "A Peek at the Peak",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 46,
       name: "Simmering in the Lava Pond",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 47,
       name: "Topped the Tower of Turbulence!",
       isPostgame: true,
       category: DKBCategory.Triple,
-      category2: DKBCategory.Rehearsal
+      category2: DKBCategory.Rehearsal,
+      hellMode: true
     }
   ]
 };

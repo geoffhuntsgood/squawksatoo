@@ -368,89 +368,103 @@ export const freezer: DKBLayer = {
       num: 62,
       name: "Amuse-Boost Finish Line",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 63,
       name: "Amuse-Boost Fast Finish",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 64,
       name: "Shifty Smash: Trot up the Tower",
       isPostgame: true,
       category: DKBCategory.Rehearsal,
-      category2: DKBCategory.ShiftySmash
+      category2: DKBCategory.ShiftySmash,
+      hellMode: true
     },
     {
       num: 65,
       name: "Hurl d'Oeuvres Finish Line",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 66,
       name: "Hurl d'Oeuvres Fast Finish",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 67,
       name: "Shifty Smash: Damp Dodge 'n' Dash",
       isPostgame: true,
       category: DKBCategory.Rehearsal,
-      category2: DKBCategory.ShiftySmash
+      category2: DKBCategory.ShiftySmash,
+      hellMode: true
     },
     {
       num: 68,
       name: "Shocking Cioppino Finish Line",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 69,
       name: "Shocking Cioppino Fast Finish",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 70,
       name: "Shifty Smash: Splashy Ascent",
       isPostgame: true,
       category: DKBCategory.Rehearsal,
-      category2: DKBCategory.ShiftySmash
+      category2: DKBCategory.ShiftySmash,
+      hellMode: true
     },
     {
       num: 71,
       name: "Switcheroo Entrée Finish Line",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 72,
       name: "Switcheroo Entrée Fast Finish",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 73,
       name: "Shifty Smash: Swift Switcheroo",
       isPostgame: true,
       category: DKBCategory.Rehearsal,
-      category2: DKBCategory.ShiftySmash
+      category2: DKBCategory.ShiftySmash,
+      hellMode: true
     },
     {
       num: 74,
       name: "Dangerous Dessert Finish Line",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 75,
       name: "Dangerous Dessert Fast Finish",
       isPostgame: true,
-      category: DKBCategory.Rehearsal
+      category: DKBCategory.Rehearsal,
+      hellMode: true
     },
     {
       num: 87,

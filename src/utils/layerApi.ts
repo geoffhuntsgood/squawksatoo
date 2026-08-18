@@ -39,10 +39,28 @@ const allLayers: DKBLayer[] = [
 ];
 
 export const getBananasForLayer = (layerName: LayerName): DKBBanana[] => {
-  return layerName === LayerName.All
-    ? allLayers.flatMap((layer: DKBLayer) => layer.bananas)
-    : allLayers.filter((layer: DKBLayer) => layer.name === layerName)[0]
-        .bananas;
+  if (layerName === LayerName.All) {
+    return allLayers.flatMap((layer: DKBLayer) => layer.bananas);
+  }
+
+  if (layerName === LayerName.PreVoid) {
+    return allLayers
+      .filter((layer: DKBLayer) =>
+        [
+          LayerName.Lagoon,
+          LayerName.Hilltop,
+          LayerName.Canyon,
+          LayerName.Divide,
+          LayerName.Freezer,
+          LayerName.Forest,
+          LayerName.Junction
+        ].includes(layer.name)
+      )
+      .flatMap((layer: DKBLayer) => layer.bananas);
+  }
+
+  return allLayers.filter((layer: DKBLayer) => layer.name === layerName)[0]
+    .bananas;
 };
 
 export const getCategoriesForLayer = (layerName: LayerName): DKBCategory[] => {
