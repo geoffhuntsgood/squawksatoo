@@ -8,6 +8,7 @@ describe("GameHeader tests", async () => {
   const getStopwatch = async (isRunning: boolean) => await renderHook(() => useStopwatch({ autoStart: isRunning }));
 
   const getScreen = (
+    timer: boolean,
     stopwatch: useStopwatchResultType,
     total: number,
     completed: number,
@@ -17,7 +18,7 @@ describe("GameHeader tests", async () => {
   ) => {
     return render(
       <GameHeader
-        timer={true}
+        timer={timer}
         stopwatch={stopwatch}
         total={total}
         completed={completed}
@@ -30,25 +31,25 @@ describe("GameHeader tests", async () => {
 
   test("Check initial render", async () => {
     const watch = (await getStopwatch(false)).result.current;
-    const screen = await getScreen(watch, 1, 1, false, false);
+    const screen = await getScreen(false, watch, 1, 1, false, false);
     expect(screen.getByText("GG!")).toBeInTheDocument();
   });
 
   test("Check failure inclusion", async () => {
     const watch = (await getStopwatch(false)).result.current;
-    const screen = await getScreen(watch, 3, 0, false, true, 2);
+    const screen = await getScreen(false, watch, 3, 0, false, true, 2);
     expect(screen.getByText("1 left")).toBeInTheDocument();
   });
 
   test("Check failure inclusion without recycling", async () => {
     const watch = (await getStopwatch(true)).result.current;
-    const screen = await getScreen(watch, 4, 2, false, true, 2);
+    const screen = await getScreen(false, watch, 4, 2, false, true, 2);
     expect(screen.getByText("GG!")).toBeInTheDocument();
   });
 
   test("Check failure exclusion", async () => {
     const watch = (await getStopwatch(true)).result.current;
-    const screen = await getScreen(watch, 5, 2, true, true, 4);
+    const screen = await getScreen(true, watch, 5, 2, true, true, 4);
     expect(screen.getByText("3 left")).toBeInTheDocument();
   });
 });

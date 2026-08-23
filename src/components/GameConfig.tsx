@@ -94,8 +94,9 @@ export const GameConfig = ({
       return (
         <>
           Adds long goals to the pool:
-          <ul>
+          <ul style={{ margin: "0" }}>
             <li>Rehearsal bananas</li>
+            <li>Battle and Boss Rushes</li>
             <li>A Complete Fossil Collection</li>
             <li>The Best of the Bunch</li>
           </ul>
@@ -105,7 +106,7 @@ export const GameConfig = ({
       return (
         <>
           Adds long goals to the pool:
-          <ul>
+          <ul style={{ margin: "0" }}>
             <li>Company Coins</li>
             <li>DK Arcade GB</li>
             <li>Rareware GB</li>

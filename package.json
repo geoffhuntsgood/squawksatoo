@@ -10,7 +10,8 @@
     "test": "vitest run --browser.headless",
     "test:watch": "vitest --browser.headless",
     "coverage": "vitest run --browser.headless --coverage",
-    "coverage:watch": "vitest --browser.headless --coverage"
+    "coverage:watch": "vitest --browser.headless --coverage",
+    "prep": "npm i && npm run lint && npm run coverage && npm run build"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -43,8 +44,5 @@
   },
   "prettier": {
     "trailingComma": "none"
-  },
-  "allowScripts": {
-    "esbuild@0.27.7": true
   }
 }

@@ -2,13 +2,13 @@
 
 Inspired by Talkatoo% runs in Super Mario Odyssey, this app randomly selects bananas to find in Donkey Kong Bananza, or items in Donkey Kong 64.
 
-Hosted at https://geoffhuntsgood.com/squawksatoo.
+Hosted at <https://geoffhuntsgood.com/squawksatoo>.
 
 ## Configuration
 
 The app will start by displaying configuration settings, depending on which base game you are playing.
 
-### DK Bananza
+### DKB
 
 Selecting a layer will generate categories based on the available bananas in that layer. These can be individually selected, or left blank to include them all. The count display allows for 1-5 bananas to show at once.
 

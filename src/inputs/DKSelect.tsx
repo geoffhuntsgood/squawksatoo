@@ -23,11 +23,18 @@ export const DKSelect = ({
   <>
     {selectItems.length > 0 && (
       <FormControl fullWidth sx={{ width: mini ? "50%" : "100%" }}>
-        <InputLabel id={`select-${label}`}>{label}</InputLabel>
+        <InputLabel id={`select-${label}-label`} htmlFor={`select-${label}`}>
+          {label}
+        </InputLabel>
         <Select
+          slotProps={{
+            input: {
+              id: `select-${label}`
+            }
+          }}
           value={value}
           label={label}
-          labelId={`select-${label}`}
+          labelId={`select-${label}-label`}
           onChange={(event: SelectChangeEvent) =>
             handleChange(event.target.value)
           }

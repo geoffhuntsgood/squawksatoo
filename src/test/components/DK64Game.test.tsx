@@ -1,33 +1,117 @@
 import { describe, expect, test, vi } from "vitest";
 import { render } from "vitest-browser-react";
+import type { DK64Item } from "../../classes";
 import { DK64Game } from "../../components";
+import { DK64Category } from "../../enums";
+import { factory } from "../../levels/factory";
 import { japes } from "../../levels/japes";
 
-// TODO: Add tests
 describe("DK64Game tests", () => {
   const setOptionsMock = vi.fn();
   const setStartMock = vi.fn();
 
-  test("Check initial render", async () => {
-    const screen = await render(
+  const getScreen = (
+    count: number,
+    dk64Total: number,
+    seed: string | null,
+    timer: boolean,
+    autoRefresh: boolean,
+    useKongColors: boolean,
+    items: DK64Item[]
+  ) => {
+    return render(
       <DK64Game
         options={{
-          count: 5,
-          dkbTotal: 10,
-          dk64Total: 10,
-          seed: "Seed",
-          timer: true,
-          autoRefresh: false,
+          count,
+          dkbTotal: 0,
+          dk64Total,
+          seed: seed || "",
+          timer,
+          autoRefresh,
           recycle: false,
-          useKongColors: true,
+          useKongColors,
           bananas: [],
-          items: japes.items
+          items
         }}
         setOptions={setOptionsMock}
         setStart={setStartMock}
       />
     );
+  };
 
+  test("Check game with seed and no autoRefresh", async () => {
+    const screen = await getScreen(
+      5,
+      10,
+      "Seed",
+      true,
+      false,
+      false,
+      japes.items
+    );
     expect(screen.getByText("Go get 'em!")).toBeVisible();
+    expect(screen.getByText("Japes Tunnel Fairy")).toBeVisible();
+
+    await screen.getByText("Japes Tunnel Fairy").click();
+    await screen.getByText("Japes Diddy Mountaintop GB").click();
+    await screen.getByText("Japes Diddy Medal").click();
+    await screen.getByText("Japes Diddy BP").click();
+    await screen.getByText("Japes Lanky Medal").click();
+
+    expect(screen.getByText("GG!")).toBeVisible();
+    expect(screen.getByText("5")).toBeVisible();
+  });
+
+  test("Check game with seed and autoRefresh (with reset)", async () => {
+    const screen = await getScreen(
+      1,
+      10,
+      "Seed",
+      false,
+      true,
+      true,
+      japes.items
+    );
+    expect(screen.getByText("10 left")).toBeVisible();
+    expect(screen.getByText("Japes Tunnel Fairy")).toBeVisible();
+
+    await screen.getByText("Japes Tunnel Fairy").click();
+
+    expect(screen.getByText("Japes Tunnel Fairy")).not.toBeInTheDocument();
+    expect(screen.getByText("Japes Mountaintop GB")).toBeVisible();
+
+    await screen.getByText("RECONFIGURE").click();
+    await screen.getByText("NAH").click();
+    await screen.getByText("RECONFIGURE").click();
+    await screen.getByText("YEAH").click();
+
+    expect(setOptionsMock).toHaveBeenCalledWith(null);
+    expect(setStartMock).toHaveBeenCalledWith(false);
+  });
+
+  test("Pause/resume and reset completed game", async () => {
+    vi.resetAllMocks();
+    const screen = await getScreen(
+      1,
+      5,
+      null,
+      true,
+      false,
+      false,
+      factory.items.filter((item) => item.category === DK64Category.CompanyCoin)
+    );
+
+    await screen.getByText("PAUSE").click();
+    expect(screen.getByText("0").first()).toHaveStyle(
+      "animation: rightCounter 2s infinite"
+    );
+    await screen.getByText("RESUME").click();
+
+    await screen.getByText("Nintendo Coin").click();
+    await screen.getByText("RECONFIGURE").click();
+
+    expect(screen.getByText("YEAH")).not.toBeInTheDocument();
+    expect(setOptionsMock).toHaveBeenCalledWith(null);
+    expect(setStartMock).toHaveBeenCalledWith(false);
   });
 });

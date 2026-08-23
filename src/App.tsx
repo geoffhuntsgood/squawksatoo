@@ -35,7 +35,7 @@ const App = () => {
             value={game}
             onChange={(_, newValue) => setGame(newValue)}
           >
-            <Tab label="DK BANANZA" value="DKB" />
+            <Tab label="DKB" value="DKB" />
             <Tab label="DK64" value="DK64" />
           </Tabs>
 

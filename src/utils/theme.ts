@@ -160,19 +160,18 @@ export const theme = createTheme({
         root: {
           padding: "10px 0",
           width: "100%",
-          borderColor: "focused",
           ".MuiOutlinedInput-root": {
             height: "4rem",
             fontSize: "2rem",
             "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
               borderColor: focused
+            },
+            "&:hover .MuiOutlinedInput-notchedOutline": {
+              borderColor: focused
             }
           },
           ".MuiOutlinedInput-notchedOutline": {
             border: `2px solid ${outlined}`
-          },
-          "&:hover .MuiOutlinedInput-notchedOutline": {
-            borderColor: focused
           }
         }
       }

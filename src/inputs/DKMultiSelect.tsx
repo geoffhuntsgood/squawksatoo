@@ -34,12 +34,19 @@ export const DKMultiSelect = ({
 
   return (
     <FormControl fullWidth sx={{ width: mini ? "50%" : "100%" }}>
-      <InputLabel id={`multi-${label}`}>{label}</InputLabel>
+      <InputLabel id={`multi-${label}-label`} htmlFor={`multi-${label}`}>
+        {label}
+      </InputLabel>
       <Select
+        slotProps={{
+          input: {
+            id: `multi-${label}`
+          }
+        }}
         multiple
         value={values}
         label={label}
-        labelId={`multi-${label}`}
+        labelId={`multi-${label}-label`}
         onChange={handle}
         renderValue={(selected) => selected.join(", ")}
       >

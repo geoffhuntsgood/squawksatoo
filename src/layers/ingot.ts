@@ -132,70 +132,80 @@ export const ingot: DKBLayer = {
       name: "Finished Four Fights!",
       isPostgame: true,
       category: DKBCategory.Quintuple,
-      category2: DKBCategory.Battle
+      category2: DKBCategory.Battle,
+      hellMode: true
     },
     {
       num: 23,
       name: "Beat Eight Bouts!",
       isPostgame: true,
       category: DKBCategory.Quintuple,
-      category2: DKBCategory.Battle
+      category2: DKBCategory.Battle,
+      hellMode: true
     },
     {
       num: 24,
       name: "Won Thirteen Throwdowns!",
       isPostgame: true,
       category: DKBCategory.Quintuple,
-      category2: DKBCategory.Battle
+      category2: DKBCategory.Battle,
+      hellMode: true
     },
     {
       num: 25,
       name: "Battle Rush Cleared!",
       isPostgame: true,
       category: DKBCategory.Quintuple,
-      category2: DKBCategory.Battle
+      category2: DKBCategory.Battle,
+      hellMode: true
     },
     {
       num: 26,
       name: "Kong-quered Inflammonite!",
       isPostgame: true,
       category: DKBCategory.Quintuple,
-      category2: DKBCategory.Battle
+      category2: DKBCategory.Battle,
+      hellMode: true
     },
     {
       num: 27,
       name: "Kong-quered Abracajabya!",
       isPostgame: true,
       category: DKBCategory.Quintuple,
-      category2: DKBCategory.Battle
+      category2: DKBCategory.Battle,
+      hellMode: true
     },
     {
       num: 28,
       name: "Kong-quered Sinister Blusterwing!",
       isPostgame: true,
       category: DKBCategory.Quintuple,
-      category2: DKBCategory.Battle
+      category2: DKBCategory.Battle,
+      hellMode: true
     },
     {
       num: 29,
       name: "Kong-quered Muckety-Muck!",
       isPostgame: true,
       category: DKBCategory.Quintuple,
-      category2: DKBCategory.Battle
+      category2: DKBCategory.Battle,
+      hellMode: true
     },
     {
       num: 30,
       name: "Kong-quered Stompenclomper!",
       isPostgame: true,
       category: DKBCategory.Quintuple,
-      category2: DKBCategory.Battle
+      category2: DKBCategory.Battle,
+      hellMode: true
     },
     {
       num: 31,
       name: "Kong-quered the Boss Rush!",
       isPostgame: true,
       category: DKBCategory.Quintuple,
-      category2: DKBCategory.Battle
+      category2: DKBCategory.Battle,
+      hellMode: true
     },
     {
       num: 32,
