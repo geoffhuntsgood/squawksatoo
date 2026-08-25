@@ -223,7 +223,8 @@ export const ingot: DKBLayer = {
       num: 34,
       name: "Claimed on the Crane",
       category: DKBCategory.Regular,
-      isPostgame: true
+      isPostgame: true,
+      hellMode: true
     },
     {
       num: 35,
