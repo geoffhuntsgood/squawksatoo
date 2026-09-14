@@ -73,9 +73,11 @@ export const GameHeader = ({
     } else {
       if (autoRefresh) {
         if (failures && !recycle) {
-          setHeader(`${total - completed - failures} left`);
+          const display = total - completed - failures;
+          setHeader(`${display < 0 ? 0 : display} left`);
         } else {
-          setHeader(`${total - completed} left`);
+          const display = total - completed;
+          setHeader(`${display < 0 ? 0 : display} left`);
         }
       }
     }
