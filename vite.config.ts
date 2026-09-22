@@ -18,7 +18,6 @@ export default defineConfig({
       exclude: [
         ...configDefaults.exclude,
         "src/main.tsx",
-        "src/declarations.d.ts",
         "src/**/index.ts",
         "src/utils/theme.ts",
         "src/utils/types.ts"

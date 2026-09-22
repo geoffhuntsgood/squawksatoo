@@ -1,5 +1,4 @@
 import { useStopwatch } from "react-timer-hook";
-import { describe, expect, test } from "vitest";
 import { render, renderHook } from "vitest-browser-react";
 import { GameHeader } from "../../components";
 import type { useStopwatchResultType } from "react-timer-hook/dist/types/src/useStopwatch";
